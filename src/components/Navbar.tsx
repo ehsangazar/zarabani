@@ -74,7 +74,7 @@ const Navbar = () => {
             );
           })}
           <a
-            href="https://linkedin.com/in/zara-bani"
+            href="https://www.linkedin.com/in/zara-bani-95a0991a8/"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative ml-3 overflow-hidden rounded-xl px-6 py-2.5 text-sm font-bold text-white transition-transform transition-shadow duration-300 hover:scale-105 hover:shadow-xl hover:shadow-accent/30"
@@ -142,7 +142,7 @@ const Navbar = () => {
               );
             })}
             <a
-              href="https://linkedin.com/in/zara-bani"
+              href="https://www.linkedin.com/in/zara-bani-95a0991a8/"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}

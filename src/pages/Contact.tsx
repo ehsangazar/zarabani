@@ -104,12 +104,12 @@ const Contact = () => {
                       LinkedIn
                     </p>
                     <a
-                      href="https://linkedin.com/in/zara-bani"
+                      href="https://www.linkedin.com/in/zara-bani-95a0991a8/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-semibold text-primary-dark hover:text-primary transition-colors"
                     >
-                      linkedin.com/in/zara-bani
+                      linkedin.com/in/zara-bani-95a0991a8
                     </a>
                   </div>
                 </div>

@@ -41,7 +41,7 @@ const Footer = () => {
               {/* Social Links */}
               <div className="flex gap-3">
                 <a
-                  href="https://linkedin.com/in/zara-bani"
+                  href="https://www.linkedin.com/in/zara-bani-95a0991a8/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm transition-transform transition-shadow hover:scale-110 hover:bg-primary hover:shadow-lg hover:shadow-primary/30"
