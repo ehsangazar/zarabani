@@ -9,6 +9,7 @@ export interface CaseStudy {
   technologies: string[]
   achievements: string[]
   component: ComponentType
+  pdfPath?: string
 }
 
 // Cache for processed case studies
@@ -34,7 +35,8 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
           'User-centered approach validated through testing',
           'Real-world impact on postpartum mental health support'
         ],
-        component: Omaia
+        component: Omaia,
+        pdfPath: '/cases/omaia/case-study.pdf'
       }
     ]
 
