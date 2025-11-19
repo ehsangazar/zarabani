@@ -1,6 +1,5 @@
 import { type ComponentType } from 'react'
 import Omaia from '../pages/projects/case-studies/Omaia'
-import ExampleProject from '../pages/projects/case-studies/ExampleProject'
 
 export interface CaseStudy {
   id: string
@@ -36,19 +35,6 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
           'Real-world impact on postpartum mental health support'
         ],
         component: Omaia
-      },
-      {
-        id: 'example-project',
-        title: 'Example Case Study - Mobile Banking App',
-        description: 'A case study demonstrating how to add new projects using the markdown-based system.',
-        category: 'Mobile App Design',
-        technologies: ['UX Research', 'Mobile Design', 'Prototyping', 'User Testing'],
-        achievements: [
-          '50% increase in user engagement',
-          'Improved user satisfaction scores',
-          'Streamlined transaction process'
-        ],
-        component: ExampleProject
       }
     ]
 
