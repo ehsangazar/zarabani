@@ -4,10 +4,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+    <footer className="relative overflow-hidden bg-primary-dark text-white">
       {/* Decorative Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.1)_0%,transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1)_0%,transparent_50%)]"></div>
 
       <div className="relative">
         {/* Main Footer Content */}
@@ -15,12 +13,19 @@ const Footer = () => {
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
             {/* Brand Column */}
             <div className="lg:col-span-2">
-              <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600 text-xl font-bold shadow-xl shadow-indigo-500/30">
-                  ZB
+              <div className="mb-6 flex items-center gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-2 rounded-3xl bg-primary/20 blur-xl"></div>
+                  <div className="relative flex items-center justify-center rounded-3xl bg-white shadow-2xl shadow-primary/30 overflow-hidden">
+                    <img 
+                      src="/zara-logo.png" 
+                      alt="Zara Bani Logo" 
+                      className="h-20 w-auto object-contain"
+                    />
+                  </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-extrabold text-white">
+                  <h3 className="text-3xl font-extrabold text-white mb-1">
                     Zara Bani
                   </h3>
                   <p className="text-sm font-bold uppercase tracking-wider text-gradient">
@@ -28,7 +33,7 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
-              <p className="mb-8 max-w-md text-slate-300 leading-relaxed">
+              <p className="mb-8 max-w-md text-neutral leading-relaxed">
                 Passionate about creating meaningful, user-centered experiences
                 that make a real impact. Let's build something amazing together.
               </p>
@@ -39,7 +44,7 @@ const Footer = () => {
                   href="https://linkedin.com/in/zara-bani"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm transition-all hover:scale-110 hover:bg-gradient-to-br hover:from-indigo-600 hover:to-violet-600 hover:shadow-lg hover:shadow-indigo-500/30"
+                  className="group flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm transition-transform transition-shadow hover:scale-110 hover:bg-primary hover:shadow-lg hover:shadow-primary/30"
                 >
                   <svg
                     className="h-5 w-5 text-white transition-transform group-hover:scale-110"
@@ -51,7 +56,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="mailto:zara.bani@example.com"
-                  className="group flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm transition-all hover:scale-110 hover:bg-gradient-to-br hover:from-violet-600 hover:to-fuchsia-600 hover:shadow-lg hover:shadow-violet-500/30"
+                  className="group flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm transition-transform transition-shadow hover:scale-110 hover:bg-secondary hover:shadow-lg hover:shadow-secondary/30"
                 >
                   <svg
                     className="h-5 w-5 text-white transition-transform group-hover:scale-110"
@@ -85,9 +90,9 @@ const Footer = () => {
                   <Link
                     key={link.to}
                     to={link.to}
-                    className="group flex items-center gap-2 text-slate-300 transition-all hover:text-white"
+                    className="group flex items-center gap-2 text-neutral hover:text-white"
                   >
-                    <span className="h-1 w-1 rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 transition-all group-hover:w-6"></span>
+                    <span className="h-1 w-1 rounded-full bg-primary group-hover:w-6"></span>
                     <span className="font-medium">{link.label}</span>
                   </Link>
                 ))}
@@ -101,21 +106,21 @@ const Footer = () => {
               </h4>
               <div className="space-y-4">
                 <div>
-                  <p className="mb-2 text-sm font-bold uppercase tracking-wider text-slate-400">
+                  <p className="mb-2 text-sm font-bold uppercase tracking-wider text-neutral/60">
                     Email
                   </p>
                   <a
                     href="mailto:zara.bani@example.com"
-                    className="font-medium text-slate-300 transition-all hover:text-gradient"
+                    className="font-medium text-neutral hover:text-gradient"
                   >
                     zara.bani@example.com
                   </a>
                 </div>
                 <div>
-                  <p className="mb-2 text-sm font-bold uppercase tracking-wider text-slate-400">
+                  <p className="mb-2 text-sm font-bold uppercase tracking-wider text-neutral/60">
                     Location
                   </p>
-                  <p className="font-medium text-slate-300">Birmingham, UK</p>
+                  <p className="font-medium text-neutral">London, UK</p>
                 </div>
               </div>
             </div>
@@ -126,15 +131,15 @@ const Footer = () => {
         <div className="border-t border-white/10 bg-black/20 backdrop-blur-sm">
           <div className="mx-auto max-w-7xl px-6 py-6 lg:px-8">
             <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-              <p className="text-sm text-slate-400">
+              <p className="text-sm text-neutral/60">
                 © {currentYear}{" "}
                 <span className="font-bold text-white">Zara Bani</span>. All
                 rights reserved.
               </p>
               <div className="flex items-center gap-2">
-                <span className="text-sm text-slate-400">Crafted with</span>
+                <span className="text-sm text-neutral/60">Crafted with</span>
                 <span className="animate-pulse text-lg">💜</span>
-                <span className="text-sm text-slate-400">and care</span>
+                <span className="text-sm text-neutral/60">and care</span>
               </div>
             </div>
           </div>

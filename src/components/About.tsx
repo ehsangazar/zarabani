@@ -2,22 +2,22 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-indigo-50/30 py-24 px-6 lg:px-8"
+      className="relative overflow-hidden bg-white py-24 px-6 lg:px-8"
     >
       {/* Background Decorations */}
-      <div className="absolute top-20 left-0 h-64 w-64 blob bg-gradient-to-br from-violet-400/10 to-fuchsia-400/10"></div>
-      <div className="absolute bottom-20 right-0 h-80 w-80 blob bg-gradient-to-br from-indigo-400/10 to-violet-400/10"></div>
+      <div className="absolute top-20 left-0 h-64 w-64 blob bg-secondary/10"></div>
+      <div className="absolute bottom-20 right-0 h-80 w-80 blob bg-primary/10"></div>
 
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-20 text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-2xl border border-indigo-200/50 bg-white/80 px-5 py-2.5 backdrop-blur-sm">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 px-5 py-2.5 backdrop-blur-sm">
             <span className="text-2xl">👋</span>
             <span className="text-sm font-bold uppercase tracking-widest text-gradient">
               About Me
             </span>
           </div>
-          <h2 className="mx-auto max-w-3xl text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+          <h2 className="mx-auto max-w-3xl text-4xl font-extrabold tracking-tight text-primary-dark sm:text-5xl lg:text-6xl">
             Designing with purpose,{" "}
             <span className="text-gradient">driven by curiosity</span>
           </h2>
@@ -28,25 +28,23 @@ const About = () => {
           {/* Left Column - Bio */}
           <div className="space-y-6">
             <div className="glass group rounded-3xl p-8 shadow-xl transition-all hover:shadow-2xl">
-              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 to-violet-600 text-2xl shadow-lg">
+              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-2xl shadow-lg">
                 ✨
               </div>
-              <p className="mb-6 text-lg leading-relaxed text-slate-700">
+              <p className="mb-6 text-lg leading-relaxed text-primary-dark/80">
                 Hi! I'm{" "}
                 <strong className="font-bold text-gradient">Zara Bani</strong>,
                 a UX designer passionate about creating thoughtful experiences
                 that put people first, while aligning with business goals. I've
-                been learning and working in this field for about three years,
-                and I'm currently pursuing my Master's in User Experience Design
-                at Birmingham City University.
+                been learning and working in this field for about three years.
               </p>
             </div>
 
             <div className="glass group rounded-3xl p-8 shadow-xl transition-all hover:shadow-2xl">
-              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-fuchsia-600 text-2xl shadow-lg">
+              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary text-2xl shadow-lg">
                 🎯
               </div>
-              <p className="mb-6 text-lg leading-relaxed text-slate-700">
+              <p className="mb-6 text-lg leading-relaxed text-primary-dark/80">
                 Working in this field has been a game changer; it constantly
                 pushes me to think creatively, stay curious, and challenge
                 assumptions. What excites me most is going beyond the surface to
@@ -56,10 +54,10 @@ const About = () => {
             </div>
 
             <div className="glass group rounded-3xl p-8 shadow-xl transition-all hover:shadow-2xl">
-              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-fuchsia-600 to-rose-600 text-2xl shadow-lg">
+              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-2xl shadow-lg">
                 🤝
               </div>
-              <p className="text-lg leading-relaxed text-slate-700">
+              <p className="text-lg leading-relaxed text-primary-dark/80">
                 Collaborating in cross-functional teams has taught me the value
                 of clear communication, empathy, and teamwork. I enjoy learning
                 from others, sharing ideas, and creating designs that make a
@@ -71,40 +69,40 @@ const About = () => {
 
           {/* Right Column - Experience Card */}
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <div className="glass group relative overflow-hidden rounded-3xl p-10 shadow-2xl transition-all hover:shadow-indigo-500/20">
+            <div className="glass group relative overflow-hidden rounded-3xl p-10 shadow-2xl transition-all hover:shadow-primary/20">
               {/* Decorative gradient */}
-              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br from-indigo-400/20 to-violet-400/20 blur-3xl"></div>
+              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/20 blur-3xl"></div>
 
               <div className="relative">
                 {/* Header */}
                 <div className="mb-8">
-                  <div className="mb-4 inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-2 shadow-lg shadow-indigo-500/30">
+                  <div className="mb-4 inline-flex items-center gap-3 rounded-2xl bg-primary px-4 py-2 shadow-lg shadow-primary/30">
                     <span className="text-2xl">💼</span>
                     <span className="text-sm font-bold uppercase tracking-wider text-white">
                       Current Role
                     </span>
                   </div>
-                  <h3 className="mb-3 text-3xl font-extrabold text-slate-900">
+                  <h3 className="mb-3 text-3xl font-extrabold text-primary-dark">
                     User Experience Designer
                   </h3>
                   <div className="flex items-center gap-2">
                     <span className="text-lg font-bold text-gradient">
                       At TarsimInc
                     </span>
-                    <span className="text-slate-400">•</span>
-                    <span className="text-slate-600">May 2022 — Sep 2024</span>
+                    <span className="text-primary-dark/60">•</span>
+                    <span className="text-primary-dark/80">May 2022 — Sep 2024</span>
                   </div>
                 </div>
 
                 {/* Responsibilities */}
                 <div className="space-y-5">
                   <div className="group/item flex items-start gap-4">
-                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 shadow-lg transition-transform group-hover/item:scale-110">
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary shadow-lg transition-transform group-hover/item:scale-110">
                       <span className="text-lg font-bold text-white">1</span>
                     </div>
-                    <p className="text-slate-700 leading-relaxed">
+                    <p className="text-primary-dark/80 leading-relaxed">
                       Contributed to{" "}
-                      <strong className="font-bold text-indigo-700">
+                      <strong className="font-bold text-primary">
                         6 diverse digital products
                       </strong>
                       , participating in user research, creating user flows,
@@ -114,12 +112,12 @@ const About = () => {
                   </div>
 
                   <div className="group/item flex items-start gap-4">
-                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 shadow-lg transition-transform group-hover/item:scale-110">
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-secondary shadow-lg transition-transform group-hover/item:scale-110">
                       <span className="text-lg font-bold text-white">2</span>
                     </div>
-                    <p className="text-slate-700 leading-relaxed">
+                    <p className="text-primary-dark/80 leading-relaxed">
                       Worked on{" "}
-                      <strong className="font-bold text-violet-700">
+                      <strong className="font-bold text-secondary">
                         storytelling techniques
                       </strong>{" "}
                       to communicate design decisions clearly and ensure
@@ -128,12 +126,12 @@ const About = () => {
                   </div>
 
                   <div className="group/item flex items-start gap-4">
-                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-fuchsia-500 to-rose-500 shadow-lg transition-transform group-hover/item:scale-110">
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-accent shadow-lg transition-transform group-hover/item:scale-110">
                       <span className="text-lg font-bold text-white">3</span>
                     </div>
-                    <p className="text-slate-700 leading-relaxed">
+                    <p className="text-primary-dark/80 leading-relaxed">
                       Collaborated{" "}
-                      <strong className="font-bold text-fuchsia-700">
+                      <strong className="font-bold text-accent">
                         cross-functionally
                       </strong>{" "}
                       with developers and product managers, ensuring technical
@@ -143,7 +141,7 @@ const About = () => {
                 </div>
 
                 {/* Skills Tags */}
-                <div className="mt-8 rounded-2xl border border-indigo-100/50 bg-gradient-to-br from-indigo-50/50 to-violet-50/30 p-6">
+                <div className="mt-8 rounded-2xl border border-primary/10 bg-warm/50 p-6">
                   <p className="mb-4 text-sm font-bold uppercase tracking-wider text-gradient">
                     Core Competencies
                   </p>
@@ -158,7 +156,7 @@ const About = () => {
                     ].map((skill) => (
                       <span
                         key={skill}
-                        className="rounded-xl border border-indigo-200/50 bg-white/80 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:scale-105 hover:border-indigo-300 hover:shadow-md"
+                        className="rounded-xl border border-primary/20 bg-white/80 px-4 py-2 text-sm font-semibold text-primary-dark/80 shadow-sm transition-transform transition-shadow hover:scale-105 hover:border-primary/40 hover:shadow-md"
                       >
                         {skill}
                       </span>

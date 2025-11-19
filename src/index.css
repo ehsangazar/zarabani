@@ -3,29 +3,67 @@
 /* Custom Design System Variables */
 @layer base {
   :root {
-    --color-primary: 238 76% 60%;
-    --color-primary-dark: 238 76% 50%;
-    --color-secondary: 283 89% 68%;
-    --color-accent: 349 89% 60%;
-    --color-warm: 38 92% 50%;
+    --color-primary: #B24B01;
+    /* Burnt Orange */
+    --color-primary-dark: #223830;
+    /* Dark Green */
+    --color-secondary: #EAA64B;
+    /* Golden Yellow */
+    --color-accent: #487B79;
+    /* Teal */
+    --color-warm: #ECDBCC;
+    /* Pale Beige */
+    --color-neutral: #CDD7D7;
+    /* Light Grey/Blue */
   }
+}
+
+@theme {
+  --color-primary: #B24B01;
+  --color-primary-dark: #223830;
+  --color-secondary: #EAA64B;
+  --color-accent: #487B79;
+  --color-warm: #ECDBCC;
+  --color-neutral: #CDD7D7;
 }
 
 /* Custom Animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes mesh-gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes fade-in-up {
@@ -33,6 +71,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -72,10 +111,9 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Mesh Gradient Background */
+/* Mesh Background */
 .mesh-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #667eea 100%);
-  background-size: 400% 400%;
+  background: #B24B01;
 }
 
 /* Artistic Shapes */
@@ -100,18 +138,15 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #6366f1, #8b5cf6);
+  background: #B24B01;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #4f46e5, #7c3aed);
+  background: #8a3a01;
 }
 
-/* Text Gradient */
+/* Text Gradient - Now solid color */
 .text-gradient {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #B24B01;
 }

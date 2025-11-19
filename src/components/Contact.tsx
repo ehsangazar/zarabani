@@ -26,26 +26,26 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-gradient-to-br from-indigo-50/30 via-white to-violet-50/30 py-24 px-6 lg:px-8"
+      className="relative overflow-hidden bg-warm/30 py-24 px-6 lg:px-8"
     >
       {/* Background Decorations */}
-      <div className="absolute top-20 right-0 h-96 w-96 blob bg-gradient-to-br from-indigo-400/10 to-violet-400/10"></div>
-      <div className="absolute bottom-20 left-0 h-80 w-80 blob bg-gradient-to-br from-fuchsia-400/10 to-rose-400/10"></div>
+      <div className="absolute top-20 right-0 h-96 w-96 blob bg-primary/10"></div>
+      <div className="absolute bottom-20 left-0 h-80 w-80 blob bg-primary/10"></div>
 
       <div className="relative mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="mb-20 text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-2xl border border-indigo-200/50 bg-white/80 px-5 py-2.5 backdrop-blur-sm">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 px-5 py-2.5 backdrop-blur-sm">
             <span className="text-2xl">💬</span>
             <span className="text-sm font-bold uppercase tracking-widest text-gradient">
               Get In Touch
             </span>
           </div>
-          <h2 className="mx-auto mb-6 max-w-3xl text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+          <h2 className="mx-auto mb-6 max-w-3xl text-4xl font-extrabold tracking-tight text-primary-dark sm:text-5xl lg:text-6xl">
             Let's Create Something{" "}
             <span className="text-gradient">Amazing Together</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-xl text-slate-600">
+          <p className="mx-auto max-w-2xl text-xl text-primary-dark/80">
             I'm always interested in new opportunities and collaborations. Let's
             build better experiences together!
           </p>
@@ -56,14 +56,14 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-6">
             <div className="glass rounded-3xl p-8 shadow-xl">
-              <h3 className="mb-8 text-3xl font-extrabold text-slate-900">
+              <h3 className="mb-8 text-3xl font-extrabold text-primary-dark">
                 Connect With Me
               </h3>
 
               <div className="space-y-6">
                 {/* Email */}
-                <div className="group flex items-center gap-4 rounded-2xl border border-indigo-100/50 bg-white/50 p-5 transition-all hover:scale-105 hover:border-indigo-200 hover:shadow-lg">
-                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 shadow-lg shadow-indigo-500/30 transition-transform group-hover:rotate-6">
+                <div className="group flex items-center gap-4 rounded-2xl border border-primary/10 bg-white/50 p-5 transition-transform transition-shadow hover:scale-105 hover:border-primary/20 hover:shadow-lg">
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-primary shadow-lg shadow-primary/30 transition-transform group-hover:rotate-6">
                     <svg
                       className="h-7 w-7 text-white"
                       fill="none"
@@ -79,18 +79,18 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <p className="mb-1 text-sm font-bold uppercase tracking-wider text-slate-500">
+                    <p className="mb-1 text-sm font-bold uppercase tracking-wider text-primary-dark/60">
                       Email
                     </p>
-                    <p className="font-semibold text-slate-900">
+                    <p className="font-semibold text-primary-dark">
                       zara.bani@example.com
                     </p>
                   </div>
                 </div>
 
                 {/* LinkedIn */}
-                <div className="group flex items-center gap-4 rounded-2xl border border-indigo-100/50 bg-white/50 p-5 transition-all hover:scale-105 hover:border-indigo-200 hover:shadow-lg">
-                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-fuchsia-600 shadow-lg shadow-violet-500/30 transition-transform group-hover:rotate-6">
+                <div className="group flex items-center gap-4 rounded-2xl border border-primary/10 bg-white/50 p-5 transition-transform transition-shadow hover:scale-105 hover:border-primary/20 hover:shadow-lg">
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-secondary shadow-lg shadow-secondary/30 transition-transform group-hover:rotate-6">
                     <svg
                       className="h-7 w-7 text-white"
                       fill="currentColor"
@@ -100,14 +100,14 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <p className="mb-1 text-sm font-bold uppercase tracking-wider text-slate-500">
+                    <p className="mb-1 text-sm font-bold uppercase tracking-wider text-primary-dark/60">
                       LinkedIn
                     </p>
                     <a
                       href="https://linkedin.com/in/zara-bani"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-semibold text-gradient transition-all hover:underline"
+                      className="font-semibold text-gradient hover:underline"
                     >
                       linkedin.com/in/zara-bani
                     </a>
@@ -116,24 +116,24 @@ const Contact = () => {
               </div>
 
               {/* CTA Card */}
-              <div className="mt-8 rounded-2xl border border-indigo-100/50 bg-gradient-to-br from-indigo-50/50 to-violet-50/30 p-6">
+              <div className="mt-8 rounded-2xl border border-primary/10 bg-warm/50 p-6">
                 <div className="mb-4 flex items-center gap-2">
                   <span className="text-2xl">✨</span>
                   <p className="text-sm font-bold uppercase tracking-wider text-gradient">
                     Available for
                   </p>
                 </div>
-                <ul className="space-y-2 text-sm text-slate-700">
+                <ul className="space-y-2 text-sm text-primary-dark/80">
                   <li className="flex items-center gap-2">
-                    <span className="flex h-1.5 w-1.5 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500"></span>
+                    <span className="flex h-1.5 w-1.5 rounded-full bg-primary"></span>
                     <span>Full-time UX Design opportunities</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="flex h-1.5 w-1.5 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500"></span>
+                    <span className="flex h-1.5 w-1.5 rounded-full bg-secondary"></span>
                     <span>Freelance & Contract projects</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="flex h-1.5 w-1.5 rounded-full bg-gradient-to-br from-fuchsia-500 to-rose-500"></span>
+                    <span className="flex h-1.5 w-1.5 rounded-full bg-accent"></span>
                     <span>Consulting & Advisory roles</span>
                   </li>
                 </ul>
@@ -144,10 +144,10 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="glass rounded-3xl p-8 shadow-2xl lg:p-10">
             <div className="mb-8">
-              <h3 className="mb-2 text-2xl font-extrabold text-slate-900">
+              <h3 className="mb-2 text-2xl font-extrabold text-primary-dark">
                 Send a Message
               </h3>
-              <p className="text-slate-600">
+              <p className="text-primary-dark/80">
                 Fill out the form below and I'll get back to you soon!
               </p>
             </div>
@@ -156,7 +156,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="mb-2 block text-sm font-bold text-slate-700"
+                  className="mb-2 block text-sm font-bold text-primary-dark/80"
                 >
                   Your Name
                 </label>
@@ -167,7 +167,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-xl border-2 border-indigo-100/50 bg-white/50 px-5 py-3.5 text-slate-900 placeholder-slate-400 backdrop-blur-sm transition-all focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-500/10"
+                  className="w-full rounded-xl border-2 border-primary/10 bg-white/50 px-5 py-3.5 text-primary-dark placeholder-primary-dark/40 backdrop-blur-sm transition-shadow focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10"
                   placeholder="John Doe"
                 />
               </div>
@@ -175,7 +175,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="mb-2 block text-sm font-bold text-slate-700"
+                  className="mb-2 block text-sm font-bold text-primary-dark/80"
                 >
                   Email Address
                 </label>
@@ -186,7 +186,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-xl border-2 border-indigo-100/50 bg-white/50 px-5 py-3.5 text-slate-900 placeholder-slate-400 backdrop-blur-sm transition-all focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-500/10"
+                  className="w-full rounded-xl border-2 border-primary/10 bg-white/50 px-5 py-3.5 text-primary-dark placeholder-primary-dark/40 backdrop-blur-sm transition-shadow focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10"
                   placeholder="john@example.com"
                 />
               </div>
@@ -194,7 +194,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="mb-2 block text-sm font-bold text-slate-700"
+                  className="mb-2 block text-sm font-bold text-primary-dark/80"
                 >
                   Your Message
                 </label>
@@ -205,17 +205,17 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full resize-none rounded-xl border-2 border-indigo-100/50 bg-white/50 px-5 py-3.5 text-slate-900 placeholder-slate-400 backdrop-blur-sm transition-all focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-500/10"
+                  className="w-full resize-none rounded-xl border-2 border-primary/10 bg-white/50 px-5 py-3.5 text-primary-dark placeholder-primary-dark/40 backdrop-blur-sm transition-shadow focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10"
                   placeholder="Tell me about your project..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="group relative w-full overflow-hidden rounded-xl px-8 py-4 text-base font-bold text-white shadow-2xl shadow-indigo-500/30 transition-all hover:scale-105 hover:shadow-indigo-500/40"
+                className="group relative w-full overflow-hidden rounded-xl px-8 py-4 text-base font-bold text-white shadow-2xl shadow-primary/30 transition-all hover:scale-105 hover:shadow-primary/40"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600"></span>
-                <span className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 opacity-0 transition-opacity group-hover:opacity-100"></span>
+                <span className="absolute inset-0 bg-primary"></span>
+
                 <span className="relative flex items-center justify-center gap-2">
                   Send Message
                   <svg

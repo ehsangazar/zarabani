@@ -23,9 +23,9 @@ const Projects = () => {
 
   if (loading) {
     return (
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen flex items-center justify-center">
+      <section className="pt-24 py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-gray-600">Loading projects...</p>
         </div>
       </section>
@@ -33,13 +33,13 @@ const Projects = () => {
   }
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen">
+    <section className="pt-24 py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             My Work
           </h1>
-          <div className="w-24 h-1 bg-purple-600 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Here are some of the projects I've worked on, showcasing my approach to user-centered design and measurable impact.
           </p>
@@ -53,12 +53,12 @@ const Projects = () => {
             >
               <div className="p-6">
                 <div className="mb-3">
-                  <span className="inline-block bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full font-medium">
+                  <span className="inline-block bg-primary/10 text-primary text-xs px-2 py-1 rounded-full font-medium">
                     {project.category}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary">
                   {project.title}
                 </h3>
 
@@ -67,11 +67,11 @@ const Projects = () => {
                 </p>
 
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-purple-600 mb-2">Key Achievements:</h4>
+                  <h4 className="text-sm font-semibold text-primary mb-2">Key Achievements:</h4>
                   <ul className="space-y-1">
                     {project.achievements.map((achievement, i) => (
                       <li key={i} className="text-sm text-gray-700 flex items-start">
-                        <span className="text-purple-500 mr-2">•</span>
+                        <span className="text-primary mr-2">•</span>
                         {achievement}
                       </li>
                     ))}
@@ -84,7 +84,7 @@ const Projects = () => {
                     {project.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full"
+                        className="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
                       >
                         {tech}
                       </span>
@@ -94,7 +94,7 @@ const Projects = () => {
 
                 <Link
                   to={`/projects/${project.id}`}
-                  className="inline-block bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors font-medium text-sm"
+                  className="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 font-medium text-sm"
                 >
                   View Case Study
                 </Link>

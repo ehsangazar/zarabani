@@ -1,3 +1,7 @@
+import { type ComponentType } from 'react'
+import Omaia from '../pages/projects/case-studies/Omaia'
+import ExampleProject from '../pages/projects/case-studies/ExampleProject'
+
 export interface CaseStudy {
   id: string
   title: string
@@ -5,61 +9,8 @@ export interface CaseStudy {
   category: string
   technologies: string[]
   achievements: string[]
-  content: string
-  frontmatter: {
-    title: string
-    description: string
-    category: string
-    technologies: string[]
-    achievements: string[]
-  }
+  component: ComponentType
 }
-
-// Parse frontmatter from markdown content
-function parseFrontmatter(content: string): { frontmatter: any, content: string } {
-  const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/
-  const match = content.match(frontmatterRegex)
-
-  if (!match) {
-    return { frontmatter: {}, content }
-  }
-
-  const frontmatterStr = match[1]
-  const markdownContent = match[2]
-
-  // Simple frontmatter parser (for YAML-like format)
-  const frontmatter: any = {}
-  const lines = frontmatterStr.split('\n')
-
-  lines.forEach(line => {
-    const colonIndex = line.indexOf(':')
-    if (colonIndex > 0) {
-      const key = line.substring(0, colonIndex).trim()
-      let value = line.substring(colonIndex + 1).trim()
-
-      // Handle arrays
-      if (value.startsWith('[') && value.endsWith(']')) {
-        try {
-          value = JSON.parse(value)
-        } catch {
-          // If JSON parse fails, keep as string
-        }
-      } else if (value.startsWith('"') && value.endsWith('"')) {
-        value = value.slice(1, -1)
-      }
-
-      frontmatter[key] = value
-    }
-  })
-
-  return { frontmatter, content: markdownContent }
-}
-
-// Auto-generated case study imports - DO NOT EDIT MANUALLY
-// Run 'npm run generate-case-studies' to update
-
-import example_projectContent from '/src/content/case-studies/example-project/index.md?raw'
-import omaiaContent from '/src/content/case-studies/omaia/index.md?raw'
 
 // Cache for processed case studies
 let caseStudiesCache: CaseStudy[] | null = null
@@ -71,42 +22,35 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
   }
 
   try {
-    const caseStudies: CaseStudy[] = []
-    // Process example-project case study
-    try {
-      const { frontmatter, content: markdownContent } = parseFrontmatter(example_projectContent)
-
-      caseStudies.push({
-        id: 'example-project',
-        title: frontmatter.title || 'example-project',
-        description: frontmatter.description || '',
-        category: frontmatter.category || 'Project',
-        technologies: Array.isArray(frontmatter.technologies) ? frontmatter.technologies : [],
-        achievements: Array.isArray(frontmatter.achievements) ? frontmatter.achievements : [],
-        content: markdownContent,
-        frontmatter
-      })
-    } catch (error) {
-      console.warn('Failed to load example-project case study:', error)
-    }
-
-    // Process omaia case study
-    try {
-      const { frontmatter, content: markdownContent } = parseFrontmatter(omaiaContent)
-
-      caseStudies.push({
+    const caseStudies: CaseStudy[] = [
+      {
         id: 'omaia',
-        title: frontmatter.title || 'omaia',
-        description: frontmatter.description || '',
-        category: frontmatter.category || 'Project',
-        technologies: Array.isArray(frontmatter.technologies) ? frontmatter.technologies : [],
-        achievements: Array.isArray(frontmatter.achievements) ? frontmatter.achievements : [],
-        content: markdownContent,
-        frontmatter
-      })
-    } catch (error) {
-      console.warn('Failed to load omaia case study:', error)
-    }
+        title: 'Habit-Forming and Emotionally Engaging Design to Support and Retain Postpartum Mothers',
+        description: 'Omaia is a human-centred UX product, showcasing an end-to-end design process to support postpartum mothers through emotionally engaging and user-driven solutions.',
+        category: 'UX Design Case Study',
+        technologies: ['UX Research', 'User Surveys', 'Wireframing', 'Prototyping', 'Usability Testing', 'Behavioral Design'],
+        achievements: [
+          'Comprehensive UX design process from research to MVP',
+          'Emotional validation through design thinking',
+          'User-centered approach validated through testing',
+          'Real-world impact on postpartum mental health support'
+        ],
+        component: Omaia
+      },
+      {
+        id: 'example-project',
+        title: 'Example Case Study - Mobile Banking App',
+        description: 'A case study demonstrating how to add new projects using the markdown-based system.',
+        category: 'Mobile App Design',
+        technologies: ['UX Research', 'Mobile Design', 'Prototyping', 'User Testing'],
+        achievements: [
+          '50% increase in user engagement',
+          'Improved user satisfaction scores',
+          'Streamlined transaction process'
+        ],
+        component: ExampleProject
+      }
+    ]
 
     caseStudiesCache = caseStudies
     return caseStudies

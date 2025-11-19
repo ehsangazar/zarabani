@@ -95,40 +95,40 @@ const colorClasses: Record<
   { gradient: string; text: string; shadow: string; border: string }
 > = {
   indigo: {
-    gradient: "from-indigo-600 to-violet-600",
-    text: "text-indigo-700",
-    shadow: "shadow-indigo-500/20",
-    border: "border-indigo-200/50",
+    gradient: "from-primary to-secondary",
+    text: "text-primary",
+    shadow: "shadow-primary/20",
+    border: "border-primary/50",
   },
   violet: {
-    gradient: "from-violet-600 to-purple-600",
-    text: "text-violet-700",
-    shadow: "shadow-violet-500/20",
-    border: "border-violet-200/50",
+    gradient: "from-secondary to-accent",
+    text: "text-secondary",
+    shadow: "shadow-secondary/20",
+    border: "border-secondary/50",
   },
   fuchsia: {
-    gradient: "from-fuchsia-600 to-pink-600",
-    text: "text-fuchsia-700",
-    shadow: "shadow-fuchsia-500/20",
-    border: "border-fuchsia-200/50",
+    gradient: "from-accent to-primary",
+    text: "text-accent",
+    shadow: "shadow-accent/20",
+    border: "border-accent/50",
   },
   rose: {
-    gradient: "from-rose-600 to-pink-600",
-    text: "text-rose-700",
-    shadow: "shadow-rose-500/20",
-    border: "border-rose-200/50",
+    gradient: "from-primary via-secondary to-accent",
+    text: "text-primary",
+    shadow: "shadow-primary/20",
+    border: "border-primary/50",
   },
   amber: {
-    gradient: "from-amber-600 to-orange-600",
-    text: "text-amber-700",
-    shadow: "shadow-amber-500/20",
-    border: "border-amber-200/50",
+    gradient: "from-secondary to-primary",
+    text: "text-secondary",
+    shadow: "shadow-secondary/20",
+    border: "border-secondary/50",
   },
   emerald: {
-    gradient: "from-emerald-600 to-teal-600",
-    text: "text-emerald-700",
-    shadow: "shadow-emerald-500/20",
-    border: "border-emerald-200/50",
+    gradient: "from-primary-dark to-accent",
+    text: "text-primary-dark",
+    shadow: "shadow-primary-dark/20",
+    border: "border-primary-dark/50",
   },
 };
 
@@ -136,26 +136,26 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-violet-50/30 py-24 px-6 lg:px-8"
+      className="relative overflow-hidden bg-warm/20 py-24 px-6 lg:px-8"
     >
       {/* Background Decorations */}
-      <div className="absolute top-40 right-0 h-96 w-96 blob bg-gradient-to-br from-indigo-400/10 to-violet-400/10"></div>
-      <div className="absolute bottom-40 left-0 h-80 w-80 blob bg-gradient-to-br from-fuchsia-400/10 to-rose-400/10"></div>
+      <div className="absolute top-40 right-0 h-96 w-96 blob bg-primary/10"></div>
+      <div className="absolute bottom-40 left-0 h-80 w-80 blob bg-primary/10"></div>
 
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-20 text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-2xl border border-indigo-200/50 bg-white/80 px-5 py-2.5 backdrop-blur-sm">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 px-5 py-2.5 backdrop-blur-sm">
             <span className="text-2xl">💼</span>
             <span className="text-sm font-bold uppercase tracking-widest text-gradient">
               Portfolio
             </span>
           </div>
-          <h2 className="mx-auto mb-6 max-w-4xl text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+          <h2 className="mx-auto mb-6 max-w-4xl text-4xl font-extrabold tracking-tight text-primary-dark sm:text-5xl lg:text-6xl">
             Case Studies &{" "}
             <span className="text-gradient">Featured Projects</span>
           </h2>
-          <p className="mx-auto max-w-3xl text-xl text-slate-600">
+          <p className="mx-auto max-w-3xl text-xl text-primary-dark/80">
             Here are some of the projects I've worked on, showcasing my approach
             to user-centered design and measurable impact.
           </p>
@@ -173,24 +173,24 @@ const Projects = () => {
               >
                 {/* Decorative gradient blob */}
                 <div
-                  className={`absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br ${colors.gradient} opacity-10 blur-3xl transition-opacity group-hover:opacity-20`}
+                  className={`absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary opacity-10 blur-3xl transition-opacity group-hover:opacity-20`}
                 ></div>
 
                 <div className="relative">
                   {/* Icon */}
                   <div
-                    className={`mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${colors.gradient} text-3xl shadow-lg ${colors.shadow} transition-transform group-hover:scale-110 group-hover:rotate-6`}
+                    className={`mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-3xl shadow-lg ${colors.shadow} transition-transform group-hover:scale-110 group-hover:rotate-6`}
                   >
                     {project.icon}
                   </div>
 
                   {/* Title */}
-                  <h3 className="mb-4 text-xl font-extrabold text-slate-900 group-hover:text-gradient transition-all">
+                  <h3 className="mb-4 text-xl font-extrabold text-primary-dark group-hover:text-gradient">
                     {project.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mb-6 text-sm leading-relaxed text-slate-600">
+                  <p className="mb-6 text-sm leading-relaxed text-primary-dark/80">
                     {project.description}
                   </p>
 
@@ -208,10 +208,10 @@ const Projects = () => {
                       {project.achievements.map((achievement, i) => (
                         <li
                           key={i}
-                          className="flex items-start gap-2 text-sm text-slate-700"
+                          className="flex items-start gap-2 text-sm text-primary-dark/80"
                         >
                           <span
-                            className={`mt-1 flex h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gradient-to-br ${colors.gradient}`}
+                            className={`mt-1 flex h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary`}
                           />
                           <span className="leading-relaxed">{achievement}</span>
                         </li>
@@ -221,14 +221,14 @@ const Projects = () => {
 
                   {/* Technologies */}
                   <div>
-                    <h4 className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-500">
+                    <h4 className="mb-3 text-xs font-bold uppercase tracking-wider text-primary-dark/60">
                       Skills Applied
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, i) => (
                         <span
                           key={i}
-                          className={`rounded-lg border ${colors.border} bg-white/80 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition-all hover:scale-105 hover:shadow-md`}
+                          className={`rounded-lg border ${colors.border} bg-white/80 px-3 py-1.5 text-xs font-semibold text-primary-dark/80 shadow-sm transition-all hover:scale-105 hover:shadow-md`}
                         >
                           {tech}
                         </span>
