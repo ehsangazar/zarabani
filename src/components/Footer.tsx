@@ -55,7 +55,7 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href="mailto:zara.bani@example.com"
+                  href="mailto:me@zarabani.design"
                   className="group flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm transition-transform transition-shadow hover:scale-110 hover:bg-secondary hover:shadow-lg hover:shadow-secondary/30"
                 >
                   <svg
@@ -110,10 +110,10 @@ const Footer = () => {
                     Email
                   </p>
                   <a
-                    href="mailto:zara.bani@example.com"
+                    href="mailto:me@zarabani.design"
                     className="font-medium text-neutral hover:text-gradient"
                   >
-                    zara.bani@example.com
+                    me@zarabani.design
                   </a>
                 </div>
                 <div>

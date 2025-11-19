@@ -80,10 +80,10 @@ const Contact = () => {
                       Email
                     </p>
                     <a
-                      href="mailto:zara.bani@example.com"
+                      href="mailto:me@zarabani.design"
                       className="font-semibold text-primary-dark hover:text-primary transition-colors"
                     >
-                      zara.bani@example.com
+                      me@zarabani.design
                     </a>
                   </div>
                 </div>
