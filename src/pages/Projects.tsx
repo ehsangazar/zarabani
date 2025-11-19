@@ -22,68 +22,106 @@ const Projects = () => {
 
   if (loading) {
     return (
-      <section className="pt-24 py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen flex items-center justify-center">
+      <section className="pt-24 py-20 px-4 sm:px-6 lg:px-8 bg-warm/20 min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading projects...</p>
+          <div className="relative">
+            <div className="animate-spin rounded-full h-16 w-16 border-4 border-primary/20 border-t-primary mx-auto mb-4"></div>
+            <div className="absolute inset-0 rounded-full border-4 border-transparent border-r-secondary animate-spin" style={{ animationDirection: 'reverse', animationDuration: '1.5s' }}></div>
+          </div>
+          <p className="text-primary-dark font-medium">Loading projects...</p>
         </div>
       </section>
     )
   }
 
   return (
-    <section className="pt-24 py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            My Work
+    <section className="relative pt-24 py-20 px-4 sm:px-6 lg:px-8 bg-warm/20 min-h-screen overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute top-20 right-0 h-96 w-96 bg-primary/5 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-20 left-0 h-80 w-80 bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+      
+      <div className="relative max-w-7xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-20 fade-in-up">
+          <div className="inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 backdrop-blur-sm px-5 py-2.5 mb-6 shadow-lg">
+            <span className="text-2xl">💼</span>
+            <span className="text-sm font-bold uppercase tracking-widest text-primary">
+              Portfolio
+            </span>
+          </div>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-primary-dark mb-6">
+            Case Studies &{' '}
+            <span className="text-primary">
+              Featured Work
+            </span>
           </h1>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <div className="w-32 h-1.5 bg-primary mx-auto mb-8 rounded-full"></div>
+          <p className="text-xl text-primary-dark/80 max-w-3xl mx-auto leading-relaxed">
             Here are some of the projects I've worked on, showcasing my approach to user-centered design and measurable impact.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              className="group relative glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="p-6">
-                <div className="mb-3">
-                  <span className="inline-block bg-primary/10 text-primary text-xs px-2 py-1 rounded-full font-medium">
+              {/* Overlay on Hover */}
+              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Decorative Corner Element */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative p-8">
+                {/* Category Badge */}
+                <div className="mb-4">
+                  <span className="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-bold px-4 py-2 rounded-full border border-primary/20 backdrop-blur-sm">
+                    <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
                     {project.category}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary">
+                {/* Title */}
+                <h3 className="text-2xl font-extrabold text-primary-dark mb-4 group-hover:text-primary transition-colors duration-300 leading-tight">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                {/* Description */}
+                <p className="text-primary-dark/70 mb-6 leading-relaxed text-base">
                   {project.description}
                 </p>
 
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-primary mb-2">Key Achievements:</h4>
-                  <ul className="space-y-1">
+                {/* Achievements Section */}
+                <div className="mb-6 p-4 rounded-2xl bg-warm/40 border border-primary/10">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">✨</span>
+                    <h4 className="text-sm font-bold uppercase tracking-wider text-primary">
+                      Key Achievements
+                    </h4>
+                  </div>
+                  <ul className="space-y-2">
                     {project.achievements.map((achievement, i) => (
-                      <li key={i} className="text-sm text-gray-700 flex items-start">
-                        <span className="text-primary mr-2">•</span>
-                        {achievement}
+                      <li key={i} className="flex items-start gap-3 text-sm text-primary-dark/80">
+                        <span className="mt-1.5 flex h-2 w-2 flex-shrink-0 rounded-full bg-primary"></span>
+                        <span className="leading-relaxed">{achievement}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-800 mb-2">Skills Applied:</h4>
+                {/* Technologies Section */}
+                <div className="mb-6">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-primary-dark/60 mb-3">
+                    Skills Applied
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                        className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/80 border border-primary/20 text-xs font-semibold text-primary-dark/80 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 backdrop-blur-sm"
                       >
                         {tech}
                       </span>
@@ -91,22 +129,35 @@ const Projects = () => {
                   </div>
                 </div>
 
+                {/* Download Button */}
                 {project.pdfPath && (
                   <a
                     href={project.pdfPath}
                     download
-                    className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 font-medium text-sm transition-colors"
+                    className="group/btn relative inline-flex items-center justify-center gap-3 w-full bg-primary text-white px-6 py-4 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300 overflow-hidden"
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Download Case Study
+                    <span className="relative z-10 flex items-center gap-2">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      Download Case Study
+                    </span>
+                    <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
                   </a>
                 )}
               </div>
             </div>
           ))}
         </div>
+
+        {/* Empty State Message */}
+        {projects.length === 0 && (
+          <div className="text-center py-20">
+            <div className="text-6xl mb-4">📂</div>
+            <h3 className="text-2xl font-bold text-primary-dark mb-2">No projects yet</h3>
+            <p className="text-primary-dark/60">Check back soon for case studies!</p>
+          </div>
+        )}
       </div>
     </section>
   )
