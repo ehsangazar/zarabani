@@ -26,7 +26,7 @@ export const TurningAssumptionsIntoValidatedSolutions: BlogPostComponent = {
     date: '2024-12-20',
     readTime: 12,
     tags: ['UX Design', 'Product Design', 'Validation', 'Framework', 'User Research'],
-    featuredImage: '/src/assets/blog-featured-images/assumptions-framework.png'
+    featuredImage: '/blog/assumptions-framework.png'
   },
   content: (
     <div className="blog-content">
