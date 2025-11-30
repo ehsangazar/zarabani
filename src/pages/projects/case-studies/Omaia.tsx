@@ -288,22 +288,27 @@ const Omaia = () => {
         {
           src: "/case-studies/Omaia/6.png",
           title: "Brainstorming Storyboard Requirements",
+          mainStatement: "How do we support for the ideal solution scenario?",
           desc: "To facilitate our generation phase, we further reframed our design requirements into key actionable statements that are broad enough to allow multiple solutions, but narrow enough to set focus.",
         },
         {
           src: "/case-studies/Omaia/7.png",
           title: "Approaching a Solution",
-          desc: "Emphasising emotional recovery through a visual, personal, and reflective journey 🌳. Leveraging our key findings and persona insights, we understood that the ideal solution must gently reconnect mothers with their emotional journey—validating their experiences and encouraging small acts of self-care.",
+          mainStatement: "Emphasising emotional recovery through a visual, personal, and reflective journey 🌳",
+          desc: "Leveraging our key findings and persona insights, we understood that the ideal solution must gently reconnect mothers with their emotional journey—validating their experiences and encouraging small acts of self-care.",
+          additionalDesc: "This led us to the approach of visualising emotional recovery through the metaphor of cultivation—breaking down the overwhelming postpartum phase into small, nurturing moments that reflect progress, resilience, and self-compassion.",
         },
         {
           src: "/case-studies/Omaia/8.png",
           title: "Feature Prioritisation",
-          desc: "Limited resources forced us to re-prioritise our features based on impact and effort. With a shorter time scope and technical feasibility, we decided to divide our initial features only focusing on features that requires low effort but yields high impact.",
+          mainStatement: "Limited resources forced us to re-prioritise our features based on impact and effort.",
+          desc: "With a shorter time scope and technical feasibility, we decided to divide our initial features only focusing on features that requires low effort but yields high impact. This was facilitated by an initial voting system and A LOT of referring back to our persona's pain points and characteristics.",
         },
         {
           src: "/case-studies/Omaia/9.png",
           title: "System Architecture",
-          desc: "Consideration for our persona's context directed a user flow focusing on minimum steps, time and cognitive effort that could deliver emotional validation and visible progress.",
+          mainStatement: "Consideration for our persona's context directed a user flow focusing on minimum steps, time and cognitive effort that could deliver emotional validation and visible progress.",
+          desc: "To support this, we mapped out key flows—like emotional check-ins, quick self-care tasks, and community engagement—ensuring users could complete meaningful actions in just a few taps, with immediate visual feedback to reinforce a sense of care and growth.",
         },
       ].map((section, idx) => (
         <section key={idx} className="my-20">
@@ -315,9 +320,21 @@ const Omaia = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
                 {section.mainStatement}
               </h2>
-              <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
+              <p className="text-lg text-primary-dark/70 leading-relaxed mb-4">
                 {section.desc}
               </p>
+              {section.additionalDesc && (
+                <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
+                  {section.additionalDesc.split('cultivation').map((part, i, arr) => 
+                    i === arr.length - 1 ? part : (
+                      <span key={i}>
+                        {part}
+                        <span className="text-green-600 font-semibold">cultivation</span>
+                      </span>
+                    )
+                  )}
+                </p>
+              )}
             </>
           ) : (
             <>
@@ -334,16 +351,16 @@ const Omaia = () => {
       ))}
 
       {/* Solution */}
-      <section className="py-20 my-20">
-        <h2 className="text-5xl font-bold text-primary-dark mb-6">
+      <section className="py-20 my-20 text-center">
+        <h3 className="text-xl font-bold text-primary mb-4">
           Our Solution - Omaia
-        </h2>
-        <p className="text-2xl text-primary-dark/80 mb-6 leading-relaxed">
+        </h3>
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
           A nurturing, personal, and reflective approach to supporting
           postpartum mothers, cultivating self-care and connection through
           gentle motivation.
-        </p>
-        <p className="text-xl text-primary-dark/60 italic mb-12">
+        </h2>
+        <p className="text-lg text-primary-dark/60 italic mb-12">
           Every act of care helps your garden (your mind) flourish.
         </p>
 
@@ -363,13 +380,13 @@ const Omaia = () => {
             className="w-full md:w-1/2"
           />
           <div className="flex-1">
-            <h3 className="text-3xl font-bold text-primary-dark mb-4">
-              Your Garden of Growth 🌿
+            <h3 className="text-xl font-bold text-primary mb-4">
+              Your Garden of Growth 🌳
             </h3>
-            <p className="text-lg text-primary-dark/80 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-8">
               A space to visualise nurturing your well-being with bite-sized
               daily acts.
-            </p>
+            </h2>
 
             <div className="space-y-6">
               {[
@@ -386,11 +403,13 @@ const Omaia = () => {
                   desc: "Collect your blooms in the Plant Library and exchange them for real-world rewards and staying inspired",
                 },
               ].map((feature, idx) => (
-                <div key={idx} className="p-5">
+                <div key={idx}>
                   <h4 className="font-bold text-primary-dark mb-2 text-lg">
                     {feature.title}
                   </h4>
-                  <p className="text-primary-dark/80">{feature.desc}</p>
+                  <p className="text-primary-dark/70">
+                    • {feature.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -404,12 +423,12 @@ const Omaia = () => {
             className="w-full md:w-1/2"
           />
           <div className="flex-1">
-            <h3 className="text-3xl font-bold text-primary-dark mb-4">
+            <h3 className="text-xl font-bold text-primary mb-4">
               Support for uninspiring days 🧡
             </h3>
-            <p className="text-lg text-primary-dark/80 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-8">
               A safe, honest space to feel seen, heard, and supported.
-            </p>
+            </h2>
 
             <div className="space-y-6">
               {[
@@ -426,11 +445,13 @@ const Omaia = () => {
                   desc: "Send a flower from your Plant Library to someone who made you feel heard. Celebrate care with care",
                 },
               ].map((feature, idx) => (
-                <div key={idx} className="p-5">
+                <div key={idx}>
                   <h4 className="font-bold text-primary-dark mb-2 text-lg">
                     {feature.title}
                   </h4>
-                  <p className="text-primary-dark/80">{feature.desc}</p>
+                  <p className="text-primary-dark/70">
+                    • {feature.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -440,20 +461,23 @@ const Omaia = () => {
 
       {/* Iterations */}
       <section className="my-20">
-        <h2 className="text-4xl font-bold text-primary-dark mb-6">
+        <h3 className="text-xl font-bold text-primary mb-4">
           Iterations from Usability Tests
-        </h2>
-        <p className="text-lg text-primary-dark/80 leading-relaxed mb-12">
+        </h3>
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
           Through several rounds of moderated testing, we did informed
-          iterations that helped refocus hierarchy and navigation. We asked the
-          participants to complete several scenarios and observed their movement
-          patterns, mental models and ability to complete the tasks.
+          iterations that helped refocus hierarchy and navigation.
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed mb-12">
+          We asked the participants to complete several scenarios and observed their movement
+          patterns, mental models and ability to complete the tasks. Through multiple rounds of feedback, we were able to make thoughtful changes to layout, language, and flow to ease mental load and help support feel just a tap away.
         </p>
 
         {[
           {
             img: "/case-studies/Omaia/13.png",
-            title: "Making rewards tangibles",
+            title: "1. Making rewards tangibles",
+            firstParagraph: "Users couldn't find the reward plan and they were unsure what their progress was leading to.",
             insight:
               "Without a clear goal, motivation dropped over time. (Goal-Gradient Effect)",
             solution:
@@ -462,7 +486,8 @@ const Omaia = () => {
           },
           {
             img: "/case-studies/Omaia/14.png",
-            title: 'Reframing "Tasks" as "Nourishments"',
+            title: '2. Reframing "Tasks" as "Nourishments"',
+            firstParagraph: '"Tasks" felt like an obligation and chores and another burden for users.',
             insight:
               "(Cognitive Bias) Language affects perception and emotional response. (Framing Effect)",
             solution:
@@ -472,9 +497,11 @@ const Omaia = () => {
           {
             img: "/case-studies/Omaia/15.png",
             title:
-              "A/B Testing: Visibility vs. Anonymity in the community (Hive)",
-            insight:
-              "Half of the users preferred profile photos to feel connected to real people. The other half valued anonymity to speak freely.",
+              "3. A/B Testing: Visibility vs. Anonymity in the community (Hive)",
+            abTestResults: [
+              "5/10 >> Half of the users preferred profile photos to feel connected to real people.",
+              "5/10 >> The other half valued anonymity to speak freely.",
+            ],
             solution:
               "Insights informed a flexible profile setting, letting users choose how they show up.",
             reverse: false,
@@ -495,16 +522,38 @@ const Omaia = () => {
               <h3 className="text-2xl font-bold text-primary-dark mb-4">
                 {iteration.title}
               </h3>
-              <div className="p-4 mb-4">
-                <p className="text-sm font-semibold text-secondary mb-1">
-                  Insight
+              {iteration.firstParagraph && (
+                <p className="text-lg text-primary-dark/80 mb-4">
+                  {iteration.firstParagraph}
                 </p>
-                <p className="text-primary-dark/80">{iteration.insight}</p>
-              </div>
-              <div className="p-4">
-                <p className="text-sm font-semibold text-accent mb-1">
-                  Solution
-                </p>
+              )}
+              {iteration.abTestResults ? (
+                <div className="mb-4">
+                  <ul className="space-y-2 mb-4">
+                    {iteration.abTestResults.map((result, idx) => (
+                      <li key={idx} className="text-primary-dark/80">
+                        {result}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                iteration.insight && (
+                  <div className="mb-4">
+                    <p className="text-primary-dark/80">
+                      <span className="text-primary font-semibold">Insight: </span>
+                      {iteration.insight.split(/(\([^)]+\))/).map((part, i) => 
+                        part.startsWith('(') && part.endsWith(')') ? (
+                          <span key={i} className="font-bold">{part}</span>
+                        ) : (
+                          <span key={i}>{part}</span>
+                        )
+                      )}
+                    </p>
+                  </div>
+                )
+              )}
+              <div>
                 <p className="text-primary-dark/80">{iteration.solution}</p>
               </div>
             </div>
@@ -560,27 +609,27 @@ const Omaia = () => {
 
       {/* Takeaways */}
       <section className="py-20 my-20">
-        <h2 className="text-4xl font-bold text-primary-dark mb-12">
+        <h3 className="text-xl font-bold text-primary mb-4">
           Project Takeaways
-        </h2>
+        </h3>
 
         <div className="space-y-8">
-          <div className="p-8">
-            <h3 className="text-2xl font-bold text-primary-dark mb-4">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-4">
               Designing for emotion requires empathy, not assumption
-            </h3>
-            <p className="text-lg text-primary-dark/80 leading-relaxed">
+            </h2>
+            <p className="text-lg text-primary-dark/70 leading-relaxed">
               What looked good on paper didn't always resonate in practice.
               Early concepts rooted in behavioural models only became meaningful
               once tested with real postpartum mothers.
             </p>
           </div>
 
-          <div className="p-8">
+          <div>
             <h3 className="text-2xl font-bold text-primary-dark mb-4">
               Real voices shifted our design direction
             </h3>
-            <p className="text-lg text-primary-dark/80 leading-relaxed">
+            <p className="text-lg text-primary-dark/70 leading-relaxed">
               Our initial design intentions were rooted in structure and flow,
               but through research and survey responses, we uncovered a deeper
               need for emotional validation, connection, and gentleness. These
