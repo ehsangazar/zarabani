@@ -1,16 +1,86 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllCaseStudies, type CaseStudy } from '../utils/caseStudies'
+import { allProjects } from '../utils/projects'
+
+interface CombinedProject {
+  id: string
+  title: string
+  description: string
+  category: string
+  technologies: string[]
+  achievements: string[]
+  caseStudyId?: string
+  isCaseStudy: boolean
+}
 
 const Projects = () => {
-  const [projects, setProjects] = useState<CaseStudy[]>([])
+  const [projects, setProjects] = useState<CombinedProject[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const loadProjects = async () => {
       try {
         const caseStudies = await getAllCaseStudies()
-        setProjects(caseStudies)
+        
+        // Create a map of case studies by ID
+        const caseStudyMap = new Map<string, CaseStudy>()
+        caseStudies.forEach(cs => {
+          caseStudyMap.set(cs.id, cs)
+        })
+
+        // Combine all projects with case studies
+        // Start with case studies (prioritize Omaia first)
+        const combined: CombinedProject[] = []
+        
+        // Add Omaia first if it exists
+        const omaiaCaseStudy = caseStudyMap.get('omaia')
+        const omaiaProject = allProjects.find(p => p.id === 'omaia')
+        if (omaiaCaseStudy && omaiaProject) {
+          combined.push({
+            id: omaiaCaseStudy.id,
+            title: omaiaCaseStudy.title,
+            description: omaiaCaseStudy.description,
+            category: omaiaCaseStudy.category,
+            technologies: omaiaCaseStudy.technologies,
+            achievements: omaiaCaseStudy.achievements,
+            caseStudyId: omaiaCaseStudy.id,
+            isCaseStudy: true,
+          })
+        }
+
+        // Add other case studies (excluding Omaia)
+        caseStudies.forEach(cs => {
+          if (cs.id !== 'omaia') {
+            combined.push({
+              id: cs.id,
+              title: cs.title,
+              description: cs.description,
+              category: cs.category,
+              technologies: cs.technologies,
+              achievements: cs.achievements,
+              caseStudyId: cs.id,
+              isCaseStudy: true,
+            })
+          }
+        })
+
+        // Add other projects that don't have case studies
+        allProjects.forEach(project => {
+          if (!caseStudyMap.has(project.id)) {
+            combined.push({
+              id: project.id,
+              title: project.title,
+              description: project.description,
+              category: 'Featured Project',
+              technologies: project.technologies,
+              achievements: project.achievements,
+              isCaseStudy: false,
+            })
+          }
+        })
+
+        setProjects(combined)
       } catch (error) {
         console.error('Failed to load projects:', error)
       } finally {
@@ -131,18 +201,24 @@ const Projects = () => {
                 </div>
 
                 {/* View Project Button */}
-                <Link
-                  to={`/projects/${project.id}`}
-                  className="group/btn relative inline-flex items-center justify-center gap-3 w-full bg-primary text-white px-6 py-4 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300 overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    View Case Study
-                    <svg className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </span>
-                  <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
-                </Link>
+                {project.isCaseStudy && project.caseStudyId ? (
+                  <Link
+                    to={`/projects/${project.caseStudyId}`}
+                    className="group/btn relative inline-flex items-center justify-center gap-3 w-full bg-primary text-white px-6 py-4 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300 overflow-hidden"
+                  >
+                    <span className="relative z-10 flex items-center gap-2">
+                      View Case Study
+                      <svg className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </span>
+                    <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
+                  </Link>
+                ) : (
+                  <div className="w-full bg-primary/10 text-primary-dark px-6 py-4 rounded-xl font-bold text-sm text-center border border-primary/20">
+                    Project Overview
+                  </div>
+                )}
               </div>
             </div>
           ))}
