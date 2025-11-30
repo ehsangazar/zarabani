@@ -282,7 +282,8 @@ const Omaia = () => {
         {
           src: "/case-studies/Omaia/5.png",
           title: "User Storyboarding",
-          desc: "Placing the persona in an ideal context scenario helps identify the minimum required functions of our MVP. At this stage, our primary goal is to extract a list of design requirements that we have to support in order for these ideal scenarios to happen.",
+          mainStatement: "Placing the persona in an ideal context scenario helps identify the minimum required functions of our MVP.",
+          desc: "At this stage, our primary goal is to extract a list of design requirements that we have to support in order for these ideal scenarios to happen. These requirements would then lead our idea generation phase.",
         },
         {
           src: "/case-studies/Omaia/6.png",
@@ -306,12 +307,28 @@ const Omaia = () => {
         },
       ].map((section, idx) => (
         <section key={idx} className="my-20">
-          <h2 className="text-4xl font-bold text-primary-dark mb-6">
-            {section.title}
-          </h2>
-          <p className="text-lg text-primary-dark/80 leading-relaxed mb-8">
-            {section.desc}
-          </p>
+          {section.mainStatement ? (
+            <>
+              <h3 className="text-xl font-bold text-primary mb-4">
+                {section.title}
+              </h3>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
+                {section.mainStatement}
+              </h2>
+              <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
+                {section.desc}
+              </p>
+            </>
+          ) : (
+            <>
+              <h2 className="text-4xl font-bold text-primary-dark mb-6">
+                {section.title}
+              </h2>
+              <p className="text-lg text-primary-dark/80 leading-relaxed mb-8">
+                {section.desc}
+              </p>
+            </>
+          )}
           <img src={section.src} alt={section.title} className="w-full" />
         </section>
       ))}
