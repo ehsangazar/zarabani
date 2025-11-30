@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { allProjects } from '../utils/projects';
 
 const colorClasses: Record<
@@ -75,10 +76,11 @@ const Projects = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {allProjects.map((project, index) => {
             const colors = colorClasses[project.color];
+            const isCaseStudy = !!project.caseStudyId;
             return (
               <div
                 key={index}
-                className="group glass relative overflow-hidden rounded-3xl p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                className="group glass relative overflow-hidden rounded-3xl p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Decorative gradient blob */}
@@ -86,7 +88,7 @@ const Projects = () => {
                   className={`absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary opacity-10 blur-3xl transition-opacity group-hover:opacity-20`}
                 ></div>
 
-                <div className="relative">
+                <div className="relative flex flex-col flex-grow">
                   {/* Icon */}
                   <div
                     className={`mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-3xl shadow-lg ${colors.shadow} transition-transform group-hover:scale-110 group-hover:rotate-6`}
@@ -130,7 +132,7 @@ const Projects = () => {
                   </div>
 
                   {/* Technologies */}
-                  <div>
+                  <div className="mb-6">
                     <h4 className="mb-3 text-xs font-bold uppercase tracking-wider text-primary-dark/60">
                       Skills Applied
                     </h4>
@@ -146,25 +148,22 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Hover indicator */}
-                  <div
-                    className={`mt-6 flex items-center gap-2 text-sm font-bold ${colors.text} opacity-0 transition-opacity group-hover:opacity-100`}
+                  {/* Spacer to push button to bottom */}
+                  <div className="mt-auto"></div>
+
+                  {/* View Project Button */}
+                  <Link
+                    to={`/projects/${project.id}`}
+                    className="group/btn relative inline-flex items-center justify-center gap-3 w-full bg-primary text-white px-6 py-4 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300 overflow-hidden mt-6"
                   >
-                    <span>View Details</span>
-                    <svg
-                      className="h-4 w-4 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2.5}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </svg>
-                  </div>
+                    <span className="relative z-10 flex items-center gap-2">
+                      {isCaseStudy ? 'View Case Study' : 'View Project'}
+                      <svg className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </span>
+                    <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
+                  </Link>
                 </div>
               </div>
             );

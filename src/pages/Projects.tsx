@@ -137,7 +137,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              className="group relative glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Overlay on Hover */}
@@ -146,7 +146,7 @@ const Projects = () => {
               {/* Decorative Corner Element */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              <div className="relative p-8">
+              <div className="relative p-8 flex flex-col flex-grow">
                 {/* Category Badge */}
                 <div className="mb-4">
                   <span className="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-bold px-4 py-2 rounded-full border border-primary/20 backdrop-blur-sm">
@@ -200,25 +200,22 @@ const Projects = () => {
                   </div>
                 </div>
 
+                {/* Spacer to push button to bottom */}
+                <div className="mt-auto"></div>
+
                 {/* View Project Button */}
-                {project.isCaseStudy && project.caseStudyId ? (
-                  <Link
-                    to={`/projects/${project.caseStudyId}`}
-                    className="group/btn relative inline-flex items-center justify-center gap-3 w-full bg-primary text-white px-6 py-4 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300 overflow-hidden"
-                  >
-                    <span className="relative z-10 flex items-center gap-2">
-                      View Case Study
-                      <svg className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
-                    </span>
-                    <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
-                  </Link>
-                ) : (
-                  <div className="w-full bg-primary/10 text-primary-dark px-6 py-4 rounded-xl font-bold text-sm text-center border border-primary/20">
-                    Project Overview
-                  </div>
-                )}
+                <Link
+                  to={`/projects/${project.id}`}
+                  className="group/btn relative inline-flex items-center justify-center gap-3 w-full bg-primary text-white px-6 py-4 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300 overflow-hidden mt-6"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    {project.isCaseStudy ? 'View Case Study' : 'View Project'}
+                    <svg className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
+                  <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
+                </Link>
               </div>
             </div>
           ))}
