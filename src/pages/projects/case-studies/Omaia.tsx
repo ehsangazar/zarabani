@@ -126,7 +126,7 @@ const Omaia = () => {
         />
 
         <div className="mt-8">
-          <h3 className="text-xl font-bold text-primary-dark mb-3">
+          <h3 className="text-3xl font-bold text-primary-dark mb-3 text-center">
             The biggest themes we discovered were:
           </h3>
           <img
