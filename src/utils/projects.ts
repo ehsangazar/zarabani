@@ -89,29 +89,33 @@ export const allProjects: Project[] = [
   },
   {
     id: 'company-website',
-    title: "Company Website Redesign",
+    title: "Redesigning Tarsim's Website",
     description:
-      "Revamped the company's public website, aligning with updated branding and visual identity.",
+      "Led the redesign of the company's website to align with updated branding and visual identity, creating a cohesive digital presence that reflects core services while improving usability and engagement.",
     icon: "🌐",
     color: "rose",
     achievements: [
       "25% increase in user retention",
       "More consistent brand perception",
+      "Enhanced user navigation",
+      "Improved clarity around service offerings",
     ],
-    technologies: ["Web Design", "Branding", "Visual Identity"],
+    technologies: ["Web Design", "Branding", "Visual Identity", "Mobile-First Design", "UX Design"],
   },
   {
     id: 'food-menu-app',
     title: "Digital Food Menu App",
     description:
-      "Designed a digital food menu app for restaurants shifting from a traditional system, reducing customer ordering time and improving decision-making.",
+      "Developed an innovative digital food menu app for restaurants, fast-food joints, bars, and coffee shops, simplifying the ordering process and streamlining operations for both customers and restaurant owners.",
     icon: "🍽️",
     color: "amber",
     achievements: [
       "40% reduction in customer ordering time",
-      "Streamlined user flow through research and iterative testing",
+      "Eliminated paper menus reducing costs",
+      "Enabled instant menu updates and price adjustments",
+      "Streamlined order submission process for waitstaff",
     ],
-    technologies: ["Mobile App Design", "User Research", "Iterative Testing"],
+    technologies: ["Mobile App Design", "User Research", "Iterative Testing", "Product Design", "UX/UI Design"],
   },
 ];
 
