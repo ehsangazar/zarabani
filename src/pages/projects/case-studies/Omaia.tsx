@@ -46,13 +46,13 @@ const Omaia = () => {
 
       {/* Problem Discovery */}
       <section className="my-20">
-        <h2 className="text-4xl font-bold text-primary-dark mb-6">
+        <h3 className="text-xl font-bold text-primary mb-4">
           Problem Discovery
-        </h2>
-        <p className="text-xl text-primary-dark font-semibold mb-4">
+        </h3>
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
           Mental health crisis among new mothers is growing.
-        </p>
-        <p className="text-lg text-primary-dark/80 leading-relaxed mb-8">
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
           As we began exploring the landscape of postpartum care, a troubling
           pattern started to emerge. Through early desk research and real-world
           stories, we uncovered a growing mental health crisis among new
@@ -105,14 +105,14 @@ const Omaia = () => {
 
       {/* Validating Assumptions */}
       <section className="my-20">
-        <h2 className="text-4xl font-bold text-primary-dark mb-6">
+        <h3 className="text-xl font-bold text-primary mb-4">
           Validating Our Assumptions
-        </h2>
-        <p className="text-xl text-primary-dark font-semibold mb-4">
+        </h3>
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
           Conducting a survey with 20+ participants revealed the emotional toll
           of postpartum life
-        </p>
-        <p className="text-lg text-primary-dark/80 leading-relaxed mb-8">
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
           We conducted a survey with postpartum mothers to validate our initial
           findings and better understand the emotional struggles they face after
           childbirth, how they navigate hormonal changes, and the role of
@@ -139,15 +139,15 @@ const Omaia = () => {
 
       {/* Market Analysis */}
       <section className="my-20">
-        <h2 className="text-4xl font-bold text-primary-dark mb-6">
+        <h3 className="text-xl font-bold text-primary mb-4">
           Analysing Market & Competitors
-        </h2>
-        <p className="text-lg text-primary-dark/80 leading-relaxed mb-6">
+        </h3>
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
           Our competitive analysis revealed that the postpartum support app
           market is still emerging and not saturated yet, with only a few
           dedicated solutions to the emotional recovery of new mothers.
-        </p>
-        <p className="text-lg text-primary-dark/80 leading-relaxed mb-8">
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
           Looking at the popular players within the space, we discovered a
           similar feature offering across the apps that is centred around
           self-care and community. We hypothesised that these might be key
@@ -206,14 +206,14 @@ const Omaia = () => {
 
       {/* Research */}
       <section className="my-20">
-        <h2 className="text-4xl font-bold text-primary-dark mb-6">
+        <h3 className="text-xl font-bold text-primary mb-4">
           Researching Problem Space
-        </h2>
-        <p className="text-xl text-primary-dark font-semibold mb-4">
+        </h3>
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
           Subject-matter research showed the effective use cases of the 'Hook'
           model to encourage small, consistent acts of self-care
-        </p>
-        <p className="text-lg text-primary-dark/80 leading-relaxed mb-6">
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed mb-6">
           Fairly new in behavioural science, we naturally started with a
           deep-dive into literature research on behavioural frameworks,
           particularly the Hook model that could encourage continued self-care
@@ -235,12 +235,12 @@ const Omaia = () => {
 
       {/* Personas */}
       <section className="my-20">
-        <h2 className="text-4xl font-bold text-primary-dark mb-6">
+        <h3 className="text-xl font-bold text-primary mb-4">
           Defining Persona
-        </h2>
-        <p className="text-xl text-primary-dark font-semibold mb-12">
+        </h3>
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-12">
           Consolidating our key insights into 2 personas
-        </p>
+        </h2>
 
         <div className="grid md:grid-cols-2 gap-10">
           {[
