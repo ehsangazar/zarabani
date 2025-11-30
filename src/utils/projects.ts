@@ -46,38 +46,45 @@ export const allProjects: Project[] = [
   },
   {
     id: 'document-management',
-    title: "Document & Book Management Software Redesign",
+    title: "Redesigning Document Management, a SaaS Platform",
     description:
-      "Redesigned document and book management desktop software used by librarians and multiple user roles, streamlining the high-volume data input process to boost efficiency and reduce task time.",
+      "Redesigned a multi-role SaaS platform catering to librarians, document enthusiasts, and organizations, streamlining high-volume data entry and boosting workflow efficiency.",
     icon: "📖",
     color: "violet",
     achievements: [
-      "35% reduction in data input time",
-      "Improved interface for four distinct personas",
+      "35% reduction in task completion time",
+      "Improved interface for three distinct user roles",
       "Enhanced librarian workflow efficiency",
+      "Cleaner information architecture and simplified navigation",
     ],
     technologies: [
       "Desktop UX",
       "Information Architecture",
       "User Research",
       "Interface Design",
+      "Qualitative Surveys",
+      "Observational Research",
     ],
   },
   {
     id: 'library-platform',
     title: "Library Platform Redesign",
     description:
-      "Redesigned a library platform used by 14 libraries, addressing key usability challenges identified through stakeholder interviews and user research.",
+      "Redesigned a digital platform serving 14 libraries, creating a more intuitive and user-friendly experience with improved content hierarchy and enhanced book information accessibility.",
     icon: "🏛️",
     color: "fuchsia",
     achievements: [
-      "60% improvement in user satisfaction and engagement",
-      "Optimized display of detailed book information",
+      "60% increase in user satisfaction and engagement",
+      "Improved filtering and search functionality",
+      "Enhanced layout making complex book data more accessible",
+      "Clearer content hierarchy",
     ],
     technologies: [
       "User Research",
       "Stakeholder Interviews",
       "Platform Redesign",
+      "Information Architecture",
+      "Usability Testing",
     ],
   },
   {
