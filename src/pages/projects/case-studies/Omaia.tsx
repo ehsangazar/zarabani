@@ -364,21 +364,25 @@ const Omaia = () => {
           Every act of care helps your garden (your mind) flourish.
         </p>
 
-        <img
-          src="/case-studies/Omaia/10.png"
-          alt="Solution overview"
+        <video
+          src="/case-studies/Omaia/video1.mp4"
+          controls
           className="w-1/3 mx-auto"
-        />
+        >
+          Your browser does not support the video tag.
+        </video>
       </section>
 
       {/* Features */}
       <section className="my-20">
         <div className="flex flex-col md:flex-row gap-12 items-center mb-20">
-          <img
-            src="/case-studies/Omaia/11.png"
-            alt="Garden of Growth"
-            className="w-full md:w-1/2"
-          />
+          <video
+            src="/case-studies/Omaia/video2.mp4"
+            controls
+            className="w-1/3 mx-auto"
+          >
+            Your browser does not support the video tag.
+          </video>
           <div className="flex-1">
             <h3 className="text-xl font-bold text-primary mb-4">
               Your Garden of Growth 🌳
@@ -417,11 +421,13 @@ const Omaia = () => {
         </div>
 
         <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
-          <img
-            src="/case-studies/Omaia/12.png"
-            alt="Support for uninspiring days"
-            className="w-full md:w-1/2"
-          />
+          <video
+            src="/case-studies/Omaia/video3.mp4"
+            controls
+            className="w-1/3 mx-auto"
+          >
+            Your browser does not support the video tag.
+          </video>
           <div className="flex-1">
             <h3 className="text-xl font-bold text-primary mb-4">
               Support for uninspiring days 🧡
