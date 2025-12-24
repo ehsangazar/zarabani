@@ -200,7 +200,7 @@ export const TurningAssumptionsIntoValidatedSolutions: BlogPostComponent = {
           href="https://www.linkedin.com/in/zara-bani-95a0991a8/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-warm transition-all duration-300 transform hover:scale-105 shadow-lg"
+          className="inline-block bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-warm/40 transition-all duration-300 transform hover:scale-105 shadow-lg"
         >
           Connect on LinkedIn
         </a>
