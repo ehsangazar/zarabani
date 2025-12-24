@@ -32,7 +32,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] overflow-hidden pt-20">
         {/* Animated Background */}
-        <div className="absolute inset-0 bg-warm">
+        <div className="absolute inset-0 bg-warm/40">
           {/* Artistic Blob Shapes */}
           <div className="absolute top-20 right-0 h-96 w-96 blob bg-primary/20 animate-float"></div>
           <div
