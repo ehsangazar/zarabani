@@ -26,7 +26,7 @@ export const allProjects: Project[] = [
   },
   {
     id: 'daqqaq',
-    title: "Multilingual Online Learning Platform (Daqqaq)",
+    title: "Multilingual Online Learning Platform",
     description:
       "Designed a multilingual online learning platform used by 1,000+ students, simplifying complex content delivery by supporting three distinct content types on a single screen without causing cognitive overload.",
     icon: "📚",
