@@ -155,96 +155,49 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column - Info Card */}
+          {/* Right Column - Image Card */}
           <div
             className="relative z-10 lg:col-span-5 fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <div className="glass group relative overflow-hidden rounded-3xl p-8 shadow-2xl shadow-primary/10 transition-all hover:shadow-primary/20">
+            <div className="glass group relative overflow-hidden rounded-3xl shadow-2xl shadow-primary/10 transition-all hover:shadow-primary/20">
               {/* Decorative Elements */}
               <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl"></div>
-              <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl"></div>
+              <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-secondary/10 blur-3xl"></div>
 
-              <div className="relative">
-                {/* Header */}
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <p className="mb-2 text-sm font-bold uppercase tracking-wider text-gradient">
-                      Currently shaping @ TarsimInc
-                    </p>
-                    <p className="mb-2 text-2xl font-extrabold text-primary-dark">
-                      Product & UX Designer
-                    </p>
-                    <p className="text-sm leading-relaxed text-primary-dark/80">
-                      Leading discovery, research synthesis, and experience
-                      strategy across multilingual platforms.
-                    </p>
+              <div className="relative p-8">
+                {/* Image */}
+                <div className="relative mx-auto max-w-sm">
+                  {/* Decorative frame */}
+                  <div className="absolute -inset-4 bg-primary/20 rounded-3xl blur-2xl"></div>
+                  <div className="absolute -inset-2 bg-primary/10 rounded-3xl"></div>
+                  
+                  {/* Image container */}
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img 
+                      src="/zara.png" 
+                      alt="Zara Bani" 
+                      className="w-full h-full object-cover aspect-[3/4]"
+                    />
                   </div>
-                  <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-3xl bg-primary text-3xl font-bold text-white shadow-xl shadow-primary/30 transition-transform group-hover:scale-110 group-hover:rotate-6">
-                    Z
+                  
+                  {/* Decorative accent */}
+                  <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-secondary rounded-2xl shadow-xl flex items-center justify-center text-4xl opacity-90">
+                    ✨
                   </div>
                 </div>
 
-                {/* Impact Section */}
+                {/* Quick Info */}
                 <div className="mt-8 space-y-4 rounded-2xl border border-primary/10 bg-warm/50 p-6">
                   <div className="flex items-center gap-2">
-                    <span className="text-lg">✨</span>
+                    <span className="text-lg">📍</span>
                     <p className="text-sm font-bold uppercase tracking-wider text-gradient">
-                      Recent impact
+                      Location
                     </p>
                   </div>
-                  <ul className="space-y-4 text-sm text-primary-dark">
-                    <li className="flex items-start gap-3">
-                      <span className="mt-1.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
-                        ✓
-                      </span>
-                      <span className="leading-relaxed">
-                        <strong className="font-bold text-primary">
-                          70% adoption
-                        </strong>{" "}
-                        in 3 months for multilingual learning platform by
-                        aligning product vision and experience roadmap.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="mt-1.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-secondary text-xs font-bold text-white">
-                        ✓
-                      </span>
-                      <span className="leading-relaxed">
-                        Reduced data input time by{" "}
-                        <strong className="font-bold text-secondary">
-                          35%
-                        </strong>{" "}
-                        across enterprise librarian workflows with system-level
-                        IA improvements.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="mt-1.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">
-                        ✓
-                      </span>
-                      <span className="leading-relaxed">
-                        Elevated library platform satisfaction by{" "}
-                        <strong className="font-bold text-accent">
-                          60%
-                        </strong>{" "}
-                        through insights-led redesign across 14 institutions.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Testimonial */}
-                <div className="mt-6 flex items-start gap-4 rounded-2xl border border-white/50 bg-white/60 p-5 shadow-lg backdrop-blur-sm">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xl shadow-lg">
-                    💬
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm italic leading-relaxed text-primary-dark/80">
-                      "Zara balances empathy with rigorous product thinking—her
-                      work makes complex journeys feel intuitive and trusted."
-                    </p>
-                  </div>
+                  <p className="text-primary-dark font-semibold">
+                    London, UK
+                  </p>
                 </div>
               </div>
             </div>
