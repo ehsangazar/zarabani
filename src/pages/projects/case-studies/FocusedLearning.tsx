@@ -59,7 +59,7 @@ const FocusedLearning = () => {
       </div>
 
       {/* Problem Discovery */}
-      <section className="my-20">
+      <section className="my-10">
         <h2 className="text-3xl md:text-4xl font-bold text-[#057251]">
           Problem Discovery (What was broken)
         </h2>
@@ -80,6 +80,17 @@ const FocusedLearning = () => {
             />
           </div>
         </div>
+      </section>
+
+      {/* Outcome */}
+      <section className="my-10">
+        <hr className="my-8 border-primary-dark/20" />
+        <h2 className="text-3xl md:text-4xl font-bold text-[#057251]">
+          Outcome (What changed)
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed mt-4">
+          Daqqaq brought lesson materials into one structured lesson page, reduced the effort to complete a session, and improved
+        </p>
       </section>
 
     </div>
