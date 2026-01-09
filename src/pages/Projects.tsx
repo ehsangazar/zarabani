@@ -30,39 +30,20 @@ const Projects = () => {
         })
 
         // Combine all projects with case studies
-        // Start with case studies (prioritize Omaia first)
+        // Add case studies in the order they appear in the array
         const combined: CombinedProject[] = []
         
-        // Add Omaia first if it exists
-        const omaiaCaseStudy = caseStudyMap.get('omaia')
-        const omaiaProject = allProjects.find(p => p.id === 'omaia')
-        if (omaiaCaseStudy && omaiaProject) {
+        caseStudies.forEach(cs => {
           combined.push({
-            id: omaiaCaseStudy.id,
-            title: omaiaCaseStudy.title,
-            description: omaiaCaseStudy.description,
-            category: omaiaCaseStudy.category,
-            technologies: omaiaCaseStudy.technologies,
-            achievements: omaiaCaseStudy.achievements,
-            caseStudyId: omaiaCaseStudy.id,
+            id: cs.id,
+            title: cs.title,
+            description: cs.description,
+            category: cs.category,
+            technologies: cs.technologies,
+            achievements: cs.achievements,
+            caseStudyId: cs.id,
             isCaseStudy: true,
           })
-        }
-
-        // Add other case studies (excluding Omaia)
-        caseStudies.forEach(cs => {
-          if (cs.id !== 'omaia') {
-            combined.push({
-              id: cs.id,
-              title: cs.title,
-              description: cs.description,
-              category: cs.category,
-              technologies: cs.technologies,
-              achievements: cs.achievements,
-              caseStudyId: cs.id,
-              isCaseStudy: true,
-            })
-          }
         })
 
         // Add other projects that don't have case studies
