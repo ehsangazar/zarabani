@@ -25,26 +25,6 @@ export const allProjects: Project[] = [
     caseStudyId: 'omaia',
   },
   {
-    id: 'daqqaq',
-    title: "Multilingual Online Learning Platform",
-    description:
-      "Designed a multilingual online learning platform used by 1,000+ students, simplifying complex content delivery by supporting three distinct content types on a single screen without causing cognitive overload.",
-    icon: "📚",
-    color: "indigo",
-    achievements: [
-      "70% adoption rate within the first three months",
-      "35% reduction in task completion time",
-      "Students transitioned from external platforms to Daqqaq",
-    ],
-    technologies: [
-      "UX Research",
-      "User Flows",
-      "Wireframes",
-      "Prototypes",
-      "Usability Testing",
-    ],
-  },
-  {
     id: 'document-management',
     title: "Redesigning Document Management, a SaaS Platform",
     description:

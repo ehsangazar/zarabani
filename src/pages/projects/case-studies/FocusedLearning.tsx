@@ -4,15 +4,15 @@ const FocusedLearning = () => {
       {/* Hero Section */}
       <div className="mb-8">
         <h1 className="text-5xl md:text-6xl font-bold text-primary-dark mb-6">
-          A learning hub that made course materials easier to find, follow, and
-          finish
+          From Cognitive Chaos to Focused Learning
         </h1>
       </div>
 
       {/* Introduction */}
       <section className="my-10">
         <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
-          A case study in applying psychological principles to redesign an
+          A learning hub that made course materials easier to find, follow, and
+          finish. A case study in applying psychological principles to redesign an
           educational platform for 10,000+ students.
         </p>
       </section>

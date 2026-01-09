@@ -41,7 +41,7 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
       },
       {
         id: 'focused-learning',
-        title: 'From Cognitive Chaos to Focused Learning',
+        title: 'A learning hub that made course materials easier to find, follow, and finish',
         description: 'A case study in applying psychological principles to redesign an educational platform for 10,000+ students.',
         category: 'UX Design Case Study',
         technologies: ['UX Research', 'Cognitive Design', 'Information Architecture', 'User Experience Design'],

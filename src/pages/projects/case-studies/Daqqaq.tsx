@@ -6,10 +6,10 @@ const Daqqaq = () => {
       {/* Hero Section */}
       <div className="py-12 mb-16">
         <h1 className="text-5xl md:text-6xl font-bold text-primary-dark mb-6">
-          Daqqaq
+          Multilingual Online Learning Platform
         </h1>
         <p className="text-2xl text-primary-dark/80 mb-8 leading-relaxed">
-          Multilingual Online Learning Platform
+          Daqqaq
         </p>
         <div className="grid md:grid-cols-2 gap-8 mt-12">
           <div>

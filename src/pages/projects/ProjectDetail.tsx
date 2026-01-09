@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom'
 import { getCaseStudyById, type CaseStudy } from '../../utils/caseStudies'
 import { allProjects, type Project } from '../../utils/projects'
 import ProjectDetailTemplate from './ProjectDetailTemplate'
-import Daqqaq from './case-studies/Daqqaq'
 import DocumentManagement from './case-studies/DocumentManagement'
 import LibraryPlatform from './case-studies/LibraryPlatform'
 import CompanyWebsite from './case-studies/CompanyWebsite'
@@ -144,74 +143,6 @@ const ProjectDetail = () => {
 
   // Render regular project
   if (project) {
-    // Check if it's Daqqaq with custom detail page
-    if (project.id === 'daqqaq') {
-      return (
-        <div className="min-h-screen bg-white">
-          {/* Hero Section */}
-          <section className="bg-gradient-to-br from-warm/40 via-warm/20 to-neutral/20 py-24 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
-                <div className="mb-6 flex justify-center">
-                  <div className="inline-flex h-24 w-24 items-center justify-center rounded-3xl bg-primary/10 text-5xl shadow-xl shadow-primary/20 transition-transform hover:scale-110">
-                    {project.icon}
-                  </div>
-                </div>
-                <div className="mb-6">
-                  <span className="inline-flex items-center gap-2 bg-primary/10 text-primary text-sm px-4 py-2 rounded-full font-semibold border border-primary/50">
-                    <span className="w-2 h-2 bg-primary rounded-full"></span>
-                    Featured Project
-                  </span>
-                </div>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-primary-dark mb-8 leading-tight">
-                  {project.title}
-                </h1>
-                <p className="text-xl sm:text-2xl text-primary-dark/80 leading-relaxed max-w-4xl mx-auto">
-                  {project.description}
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Breadcrumb */}
-          <section className="bg-white border-b border-neutral/30 py-4 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-              <nav className="flex items-center gap-2 text-sm">
-                <Link
-                  to="/"
-                  className="text-primary-dark/60 hover:text-primary transition-colors"
-                >
-                  Home
-                </Link>
-                <svg className="w-4 h-4 text-primary-dark/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-                <Link
-                  to="/projects"
-                  className="text-primary-dark/60 hover:text-primary transition-colors"
-                >
-                  Projects
-                </Link>
-                <svg className="w-4 h-4 text-primary-dark/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-                <span className="text-primary-dark font-semibold">
-                  {project.title}
-                </span>
-              </nav>
-            </div>
-          </section>
-
-          {/* Project Content */}
-          <section className="py-20 px-4 sm:px-6 lg:px-8 bg-warm/20">
-            <div className="max-w-7xl mx-auto">
-              <Daqqaq />
-            </div>
-          </section>
-        </div>
-      )
-    }
-
     // Check if it's document-management with custom detail page
     if (project.id === 'document-management') {
       return (
