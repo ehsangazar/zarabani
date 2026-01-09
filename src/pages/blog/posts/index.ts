@@ -2,6 +2,7 @@
 // Import all blog post components here
 
 import { TurningAssumptionsIntoValidatedSolutions } from './TurningAssumptionsIntoValidatedSolutions'
+import { TikTokNotificationsPersuasiveDesign } from './TikTokNotificationsPersuasiveDesign'
 import type { BlogPostComponent, BlogPostMetadata } from './TurningAssumptionsIntoValidatedSolutions'
 
 // Export the types for use in other files
@@ -9,6 +10,7 @@ export type { BlogPostComponent, BlogPostMetadata }
 
 // Export all blog posts as an array
 export const allBlogPosts: BlogPostComponent[] = [
+  TikTokNotificationsPersuasiveDesign,
   TurningAssumptionsIntoValidatedSolutions,
   // Add more blog posts here as you create them
 ]

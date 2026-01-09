@@ -39,18 +39,6 @@ const Hero = () => {
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left Column - Main Content */}
           <div className="relative z-10 space-y-10 lg:col-span-7 fade-in-up">
-            {/* Badge */}
-            <div className="inline-flex">
-              <span className="group relative inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 px-5 py-2.5 text-xs font-bold uppercase tracking-widest backdrop-blur-sm hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10">
-                <span className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 transition-opacity group-hover:opacity-100"></span>
-                <span className="relative flex items-center gap-2">
-                  <span className="flex h-2 w-2">
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
-                  </span>
-                  <span className="text-gradient">Product · UX · Strategy</span>
-                </span>
-              </span>
-            </div>
 
             {/* Headline */}
             <div className="space-y-6">
