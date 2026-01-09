@@ -1,25 +1,4 @@
-import { useState } from 'react'
-
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // In a real application, you would handle form submission here
-    alert('Thank you for your message! I will get back to you soon.')
-    setFormData({ name: '', email: '', message: '' })
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
 
   return (
     <section className="relative pt-24 py-20 px-4 sm:px-6 lg:px-8 bg-warm/20 min-h-screen overflow-hidden">
@@ -49,9 +28,9 @@ const Contact = () => {
         </div>
 
         {/* Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="flex justify-center">
           {/* Contact Info */}
-          <div className="space-y-6">
+          <div className="max-w-2xl w-full space-y-6">
             <div className="glass rounded-3xl p-8 shadow-xl">
               <h2 className="text-3xl font-extrabold text-primary-dark mb-8">
                 Connect With Me
@@ -139,99 +118,6 @@ const Contact = () => {
                 </ul>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="glass rounded-3xl p-8 lg:p-10 shadow-xl">
-            <div className="mb-8">
-              <h3 className="mb-2 text-2xl font-extrabold text-primary-dark">
-                Send a Message
-              </h3>
-              <p className="text-primary-dark/80">
-                Fill out the form below and I'll get back to you soon!
-              </p>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="mb-2 block text-sm font-bold text-primary-dark/80"
-                >
-                  Your Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full rounded-xl border-2 border-primary/10 bg-white/50 px-5 py-3.5 text-primary-dark placeholder-primary-dark/40 backdrop-blur-sm transition-all focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10"
-                  placeholder="John Doe"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="mb-2 block text-sm font-bold text-primary-dark/80"
-                >
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full rounded-xl border-2 border-primary/10 bg-white/50 px-5 py-3.5 text-primary-dark placeholder-primary-dark/40 backdrop-blur-sm transition-all focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10"
-                  placeholder="john@example.com"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="mb-2 block text-sm font-bold text-primary-dark/80"
-                >
-                  Your Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full resize-none rounded-xl border-2 border-primary/10 bg-white/50 px-5 py-3.5 text-primary-dark placeholder-primary-dark/40 backdrop-blur-sm transition-all focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10"
-                  placeholder="Tell me about your project or just say hello!"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="group relative w-full overflow-hidden rounded-xl bg-primary px-8 py-4 text-base font-bold text-white shadow-lg shadow-primary/30 transition-all hover:scale-105 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/40"
-              >
-                <span className="relative flex items-center justify-center gap-2">
-                  Send Message
-                  <svg
-                    className="h-5 w-5 transition-transform group-hover:translate-x-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2.5}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </form>
           </div>
         </div>
       </div>
