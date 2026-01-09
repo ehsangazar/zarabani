@@ -60,55 +60,28 @@ const FocusedLearning = () => {
 
       {/* Problem Discovery */}
       <section className="my-20">
-        <h3 className="text-xl font-bold text-primary mb-4">
-          Problem Discovery
-        </h3>
-        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
-          [Add your problem statement here]
+        <h2 className="text-3xl md:text-4xl font-bold text-[#057251]">
+          Problem Discovery (What was broken)
         </h2>
-        <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
-          [Add your problem description here]
-        </p>
-      </section>
-
-      {/* Research */}
-      <section className="my-20">
-        <h3 className="text-xl font-bold text-primary mb-4">Research</h3>
-        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
-          [Add your research findings here]
-        </h2>
-        <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
-          [Add your research description here]
-        </p>
-      </section>
-
-      {/* Solution */}
-      <section className="my-20">
-        <h3 className="text-xl font-bold text-primary mb-4">Solution</h3>
-        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
-          [Add your solution description here]
-        </h2>
-        <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
-          [Add your solution details here]
-        </p>
-      </section>
-
-      {/* Takeaways */}
-      <section className="py-20 my-20">
-        <h3 className="text-xl font-bold text-primary mb-4">
-          Project Takeaways
-        </h3>
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-4">
-              [Add your key takeaway here]
-            </h2>
-            <p className="text-lg text-primary-dark/70 leading-relaxed">
-              [Add your takeaway description here]
+        <div className="flex flex-col md:flex-row gap-10 items-center">
+          <div className="w-full md:w-2/3">
+            <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
+              For over 10,000 students, learning was a constant struggle of assembly. Critical materials for a single lesson were scattered across disconnected platforms, forcing them to piece together their own education.
+              </p>
+              <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
+              Students were relying on YouTube and other informal methods to follow online lessons. Materials were spread across formats (video/audio + book PDFs + script text), so students wasted time switching between sources, losing their place, and re-finding the same content again.
             </p>
+          </div>
+          <div className="w-full md:w-1/3">
+            <img
+              src="/case-studies/Daqqaq/3.png"
+              alt="Problem Discovery - Scattered learning materials"
+              className="w-full"
+            />
           </div>
         </div>
       </section>
+
     </div>
   );
 }
