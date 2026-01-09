@@ -113,7 +113,7 @@ const FocusedLearning = () => {
 
       {/* Research & Understanding the Problem */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[25px] font-semibold tracking-[0%] text-[#C96C32] mb-4">
+        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
           Research & Understanding the Problem
         </h3>
         <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A]">
@@ -133,7 +133,7 @@ const FocusedLearning = () => {
 
       {/* Research approach */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[25px] font-semibold tracking-[0%] text-[#C96C32] mb-4">
+        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
           Research approach
         </h3>
         <p className="text-lg text-primary-dark/70 leading-relaxed mb-6">
@@ -169,7 +169,7 @@ const FocusedLearning = () => {
 
       {/* Current Study Flow */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[25px] font-semibold tracking-[0%] text-[#C96C32] mb-4">
+        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
           Current Study Flow
         </h3>
         <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
@@ -193,7 +193,7 @@ const FocusedLearning = () => {
 
       {/* Key insights and persona shaping */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[25px] font-semibold tracking-[0%] text-[#C96C32] mb-4">
+        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
           Key insights and persona shaping
         </h3>
         <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
@@ -282,7 +282,7 @@ const FocusedLearning = () => {
       <section className="my-10">
         <div className="flex flex-col md:flex-row gap-10 items-center">
           <div className="w-full md:w-2/3">
-            <h3 className="font-['Poppins'] text-[25px] font-semibold tracking-[0%] text-[#C96C32] mb-4">
+            <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
               Resulted in
             </h3>
             <h2 className="font-['Poppins'] text-[32px] font-bold italic tracking-[0%] text-[#3A3A3A] mb-4">
@@ -327,7 +327,7 @@ const FocusedLearning = () => {
 
       {/* Design Principles */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[25px] font-semibold tracking-[0%] text-[#C96C32] mb-4">
+        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
           Design Principles
         </h3>
         <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
@@ -350,7 +350,7 @@ const FocusedLearning = () => {
 
       {/* Defining Success */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[25px] font-semibold tracking-[0%] text-[#C96C32] mb-4">
+        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
           Defining Success
         </h3>
         <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
@@ -416,7 +416,7 @@ const FocusedLearning = () => {
 
       {/* Design */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[25px] font-semibold tracking-[0%] text-[#C96C32] mb-4">
+        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
           Design
         </h3>
         <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
@@ -493,7 +493,7 @@ const FocusedLearning = () => {
 
       {/* Testing */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[25px] font-semibold tracking-[0%] text-[#C96C32] mb-4">
+        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
           Testing
         </h3>
         <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
