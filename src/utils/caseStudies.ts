@@ -1,5 +1,6 @@
 import { type ComponentType } from 'react'
 import Omaia from '../pages/projects/case-studies/Omaia'
+import FocusedLearning from '../pages/projects/case-studies/FocusedLearning'
 
 export interface CaseStudy {
   id: string
@@ -37,6 +38,18 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
         ],
         component: Omaia,
         pdfPath: '/cases/omaia/case-study.pdf'
+      },
+      {
+        id: 'focused-learning',
+        title: 'From Cognitive Chaos to Focused Learning',
+        description: 'A case study in applying psychological principles to redesign an educational platform for 10,000+ students.',
+        category: 'UX Design Case Study',
+        technologies: ['UX Research', 'Cognitive Design', 'Information Architecture', 'User Experience Design'],
+        achievements: [
+          'Add your achievements here'
+        ],
+        component: FocusedLearning,
+        pdfPath: '/cases/focused-learning/case-study.pdf'
       }
     ]
 
