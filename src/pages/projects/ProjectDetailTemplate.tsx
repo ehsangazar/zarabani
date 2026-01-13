@@ -116,7 +116,7 @@ const ProjectDetailTemplate = ({ project }: ProjectDetailTemplateProps) => {
 
       {/* Project Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-warm/20">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Achievements Section */}
           <div className="mb-16 glass rounded-3xl p-8 md:p-12 shadow-xl">
             <div className="flex items-center gap-3 mb-8">

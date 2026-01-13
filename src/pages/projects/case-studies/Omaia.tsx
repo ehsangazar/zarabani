@@ -1,6 +1,6 @@
 const Omaia = () => {
   return (
-    <div className="max-w-6xl mx-auto px-8 md:px-12">
+    <div className="max-w-5xl mx-auto px-8 md:px-12">
       {/* Hero Section */}
       <div className="py-12 mb-16">
         <h1 className="text-5xl md:text-6xl font-bold text-primary-dark mb-6">
