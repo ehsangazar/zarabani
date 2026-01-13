@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const stats = [
   {
     label: "Shipped digital products",
-    value: "6+",
+    value: "10+",
     icon: "🚀",
   },
   {
@@ -38,49 +38,25 @@ const Hero = () => {
       <div className="relative mx-auto max-w-7xl px-6 py-12 sm:py-16 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left Column - Main Content */}
-          <div className="relative z-10 space-y-10 lg:col-span-7 fade-in-up">
+          <div className="relative z-10 space-y-10 lg:col-span-8 fade-in-up">
 
             {/* Headline */}
             <div className="space-y-6">
+              <p className="text-xl sm:text-2xl font-medium text-primary">
+                Hello there, I'm Zara Bani
+              </p>
               <h1 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-primary-dark sm:text-6xl lg:text-7xl">
-                Crafting digital experiences that balance{" "}
-                <span className="relative inline-block">
-                  <span className="text-gradient">human insight</span>
-                  <svg
-                    className="absolute -bottom-2 left-0 w-full"
-                    height="8"
-                    viewBox="0 0 200 8"
-                    fill="none"
-                  >
-                    <path
-                      d="M1 5C50 2 150 2 199 5"
-                      stroke="url(#gradient)"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="gradient"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="0%"
-                      >
-                        <stop offset="0%" stopColor="#B24B01" />
-                        <stop offset="50%" stopColor="#B24B01" />
-                        <stop offset="100%" stopColor="#B24B01" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </span>{" "}
-                and measurable impact.
+                Product & UX designer
               </h1>
-              <p className="max-w-2xl text-xl leading-relaxed text-primary-dark/80 sm:text-2xl">
-                I'm <span className="font-bold text-gradient">Zara Bani</span>,
-                a Product & UX Designer shaping thoughtful products for complex
-                ecosystems. I translate research into strategic product
-                decisions, turning unchecked assumptions into validated
-                solutions.
+              <p className="max-w-3xl text-lg sm:text-xl leading-relaxed text-primary-dark/80">
+                I'm an end-to-end Product Designer and storyteller, focused on
+                turning user pain into product decisions that balance usability,
+                feasibility, and business goals. I help teams move from insight
+                to action by aligning user needs with practical constraints,
+                making informed trade-offs, and shaping clear, usable solutions
+                across SaaS, B2B, and B2C products. My experience includes
+                complex, data-heavy platforms, multi-role systems, and SaaS
+                products, where clarity, scalability, and usability are critical.
               </p>
             </div>
 
@@ -107,15 +83,6 @@ const Hero = () => {
                       d="M13 7l5 5m0 0l-5 5m5-5H6"
                     />
                   </svg>
-                </span>
-              </Link>
-              <Link
-                to="/contact"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-2xl border-2 border-primary/20 bg-white/80 px-8 py-4 text-base font-bold backdrop-blur-sm transition-all hover:scale-105 hover:shadow-xl"
-              >
-
-                <span className="relative text-gradient">
-                  Book a Strategy Call
                 </span>
               </Link>
             </div>
@@ -145,7 +112,7 @@ const Hero = () => {
 
           {/* Right Column - Image Card */}
           <div
-            className="relative z-10 lg:col-span-5 fade-in-up"
+            className="relative z-10 lg:col-span-4 fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
             <div className="glass group relative overflow-hidden rounded-3xl shadow-2xl shadow-primary/10 transition-all hover:shadow-primary/20">
@@ -167,11 +134,6 @@ const Hero = () => {
                       alt="Zara Bani" 
                       className="w-full h-full object-cover aspect-[3/4]"
                     />
-                  </div>
-                  
-                  {/* Decorative accent */}
-                  <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-secondary rounded-2xl shadow-xl flex items-center justify-center text-4xl opacity-90">
-                    ✨
                   </div>
                 </div>
 
