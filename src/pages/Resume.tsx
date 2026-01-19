@@ -23,9 +23,13 @@ const Resume = () => {
           margin: 0 auto;
           padding: 0.75in 1in;
           background: white;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-          line-height: 1.6;
-          color: var(--color-primary-dark);
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+          font-size: 11pt;
+          line-height: 1.5;
+          color: #1a1a1a;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-rendering: optimizeLegibility;
         }
 
         @media screen {
@@ -74,20 +78,21 @@ const Resume = () => {
         }
 
         .resume-name {
-          font-size: 2.75rem;
-          font-weight: 800;
+          font-size: 2.25rem;
+          font-weight: 700;
           margin: 0;
-          color: var(--color-primary-dark);
-          letter-spacing: -0.03em;
-          line-height: 1.1;
+          color: #1a1a1a;
+          letter-spacing: -0.02em;
+          line-height: 1.2;
         }
 
         .resume-title {
-          font-size: 1.25rem;
+          font-size: 1.125rem;
           color: var(--color-primary);
           margin: 0;
-          font-weight: 600;
-          letter-spacing: -0.01em;
+          font-weight: 500;
+          letter-spacing: 0.01em;
+          line-height: 1.4;
         }
 
         .header-badge {
@@ -95,14 +100,15 @@ const Resume = () => {
           align-items: center;
           gap: 0.4rem;
           padding: 0.375rem 0.75rem;
-          background: rgba(178, 75, 1, 0.1);
-          border: 1px solid rgba(178, 75, 1, 0.2);
-          border-radius: 8px;
-          font-size: 0.8rem;
-          font-weight: 600;
+          background: rgba(178, 75, 1, 0.08);
+          border: 1px solid rgba(178, 75, 1, 0.15);
+          border-radius: 6px;
+          font-size: 0.75rem;
+          font-weight: 500;
           color: var(--color-primary);
-          margin-top: 0.25rem;
+          margin-top: 0.375rem;
           width: fit-content;
+          letter-spacing: 0.02em;
         }
 
         .contact-info {
@@ -127,31 +133,32 @@ const Resume = () => {
         .contact-item {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
-          font-size: 0.85rem;
+          gap: 0.625rem;
+          font-size: 0.875rem;
+          line-height: 1.5;
         }
 
         .contact-item-icon {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 28px;
-          height: 28px;
+          width: 24px;
+          height: 24px;
           background: rgba(178, 75, 1, 0.1);
-          border-radius: 6px;
+          border-radius: 5px;
           flex-shrink: 0;
-          font-size: 0.9rem;
+          font-size: 0.875rem;
         }
 
         .contact-item-text {
-          color: var(--color-primary-dark);
-          font-weight: 500;
+          color: #2d3748;
+          font-weight: 400;
         }
 
         .contact-item-link {
           color: var(--color-primary);
           text-decoration: none;
-          font-weight: 600;
+          font-weight: 500;
           transition: color 0.2s;
           word-break: break-word;
         }
@@ -172,14 +179,15 @@ const Resume = () => {
         }
 
         .section-title {
-          font-size: 1.125rem;
+          font-size: 0.875rem;
           font-weight: 700;
-          color: var(--color-primary-dark);
-          margin: 0 0 1.25rem 0;
-          padding-bottom: 0.5rem;
-          border-bottom: 2px solid var(--color-primary);
+          color: #1a1a1a;
+          margin: 0 0 1rem 0;
+          padding-bottom: 0.375rem;
+          border-bottom: 1.5px solid var(--color-primary);
           text-transform: uppercase;
-          letter-spacing: 1.5px;
+          letter-spacing: 0.1em;
+          line-height: 1.4;
         }
 
         .experience-item {
@@ -196,53 +204,56 @@ const Resume = () => {
         }
 
         .job-title {
-          font-size: 1.125rem;
-          font-weight: 700;
-          color: var(--color-primary-dark);
+          font-size: 1rem;
+          font-weight: 600;
+          color: #1a1a1a;
           margin: 0;
-          letter-spacing: -0.01em;
+          letter-spacing: -0.005em;
+          line-height: 1.4;
         }
 
         .company {
-          font-size: 0.95rem;
-          color: var(--color-accent);
-          font-weight: 600;
-          margin: 0.375rem 0 0 0;
+          font-size: 0.875rem;
+          color: #4a5568;
+          font-weight: 500;
+          margin: 0.25rem 0 0 0;
+          line-height: 1.4;
         }
 
         .date {
-          font-size: 0.875rem;
-          color: var(--color-primary-dark);
-          font-weight: 500;
+          font-size: 0.8125rem;
+          color: #718096;
+          font-weight: 400;
           white-space: nowrap;
+          line-height: 1.4;
         }
 
         .description {
-          margin: 0.75rem 0;
-          color: var(--color-primary-dark);
-          line-height: 1.65;
-          font-size: 0.95rem;
+          margin: 0.625rem 0;
+          color: #4a5568;
+          line-height: 1.6;
+          font-size: 0.875rem;
         }
 
         .achievements-list {
-          margin: 0.75rem 0 0 0;
-          padding-left: 1.5rem;
+          margin: 0.625rem 0 0 0;
+          padding-left: 1.25rem;
           list-style-type: disc;
         }
 
         .achievements-list li {
-          margin-bottom: 0.5rem;
-          color: var(--color-primary-dark);
-          line-height: 1.65;
-          font-size: 0.9rem;
-          padding-left: 0.5rem;
+          margin-bottom: 0.375rem;
+          color: #4a5568;
+          line-height: 1.6;
+          font-size: 0.875rem;
+          padding-left: 0.375rem;
           list-style-position: outside;
         }
 
         .achievements-list li::marker {
           color: var(--color-primary);
-          font-weight: bold;
-          font-size: 1.2em;
+          font-weight: 600;
+          font-size: 1em;
         }
 
         .skills-grid {
@@ -259,39 +270,41 @@ const Resume = () => {
         }
 
         .skill-item {
-          padding: 0.625rem 0.875rem;
-          background: var(--color-warm);
-          border-radius: 6px;
-          font-size: 0.875rem;
-          color: var(--color-primary-dark);
-          font-weight: 600;
+          padding: 0.5rem 0.75rem;
+          background: rgba(236, 219, 204, 0.3);
+          border-radius: 4px;
+          font-size: 0.8125rem;
+          color: #2d3748;
+          font-weight: 500;
           text-align: center;
-          border: 1px solid var(--color-neutral);
+          border: 1px solid rgba(178, 75, 1, 0.1);
+          line-height: 1.4;
         }
 
         .summary {
-          color: var(--color-primary-dark);
-          line-height: 1.75;
-          font-size: 0.95rem;
-          text-align: justify;
+          color: #4a5568;
+          line-height: 1.65;
+          font-size: 0.875rem;
+          text-align: left;
         }
 
         .print-button {
           position: fixed;
           bottom: 2rem;
           right: 2rem;
-          padding: 0.875rem 1.75rem;
+          padding: 0.75rem 1.5rem;
           background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
           color: white;
           border: none;
-          border-radius: 12px;
+          border-radius: 8px;
           font-weight: 600;
           cursor: pointer;
           box-shadow: 0 10px 25px rgba(178, 75, 1, 0.25);
           transition: all 0.3s ease;
-          font-size: 1rem;
+          font-size: 0.875rem;
           z-index: 100;
-          letter-spacing: 0.3px;
+          letter-spacing: 0.05em;
+          line-height: 1.4;
         }
 
         .print-button:hover {
