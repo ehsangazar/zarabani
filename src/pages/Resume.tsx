@@ -128,7 +128,7 @@ const Resume = () => {
 
         .header-content {
           display: grid;
-          grid-template-columns: 1fr auto;
+          grid-template-columns: 1.5fr 1fr;
           gap: 1.5rem;
           align-items: start;
         }
@@ -147,7 +147,7 @@ const Resume = () => {
         }
 
         .resume-name {
-          font-size: 2.25rem;
+          font-size: 2.75rem;
           font-weight: 700;
           margin: 0;
           color: #1a1a1a;
@@ -156,7 +156,7 @@ const Resume = () => {
         }
 
         .resume-title {
-          font-size: 1.125rem;
+          font-size: 1.375rem;
           color: var(--color-primary);
           margin: 0;
           font-weight: 500;
@@ -172,7 +172,7 @@ const Resume = () => {
           background: rgba(178, 75, 1, 0.08);
           border: 1px solid rgba(178, 75, 1, 0.15);
           border-radius: 6px;
-          font-size: 0.75rem;
+          font-size: 0.875rem;
           font-weight: 500;
           color: var(--color-primary);
           margin-top: 0.375rem;
@@ -183,13 +183,14 @@ const Resume = () => {
         .contact-info {
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
-          padding: 1rem;
+          gap: 0.25rem;
+          padding: 0.5rem;
           background: rgba(236, 219, 204, 0.3);
           backdrop-filter: blur(10px);
           border-radius: 12px;
           border: 1px solid rgba(178, 75, 1, 0.1);
-          min-width: 260px;
+          min-width: 280px;
+          max-width: 380px;
         }
 
         @media print {
@@ -202,21 +203,21 @@ const Resume = () => {
         .contact-item {
           display: flex;
           align-items: center;
-          gap: 0.625rem;
-          font-size: 0.875rem;
-          line-height: 1.5;
+          gap: 0.5rem;
+          font-size: 0.8125rem;
+          line-height: 1.3;
         }
 
         .contact-item-icon {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 24px;
-          height: 24px;
+          width: 20px;
+          height: 20px;
           background: rgba(178, 75, 1, 0.1);
           border-radius: 5px;
           flex-shrink: 0;
-          font-size: 0.875rem;
+          font-size: 0.75rem;
         }
 
         .contact-item-text {
@@ -411,6 +412,12 @@ const Resume = () => {
               <div className="contact-item-icon">📧</div>
               <a href="mailto:zahra.ghorbanikhorabadi@mail.bcu.ac.uk" className="contact-item-link" itemProp="email">
                 zahra.ghorbanikhorabadi@mail.bcu.ac.uk
+              </a>
+            </div>
+            <div className="contact-item">
+              <div className="contact-item-icon">📧</div>
+              <a href="mailto:info@zarabani.design" className="contact-item-link">
+                info@zarabani.design
               </a>
             </div>
             <div className="contact-item">
