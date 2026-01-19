@@ -82,20 +82,186 @@ const Resume = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      {/* Print Styles */}
+      {/* Print Styles - Optimized for ATS Compatibility */}
       <style>{`
+        /* Print-specific page setup */
+        @page {
+          size: letter;
+          margin: 0.5in 0.75in;
+        }
+        
         @media print {
-          body {
-            margin: 0;
-            padding: 0;
+          /* Reset body styles */
+          * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
           }
+          
+          body {
+            margin: 0 !important;
+            padding: 0 !important;
+            background: white !important;
+          }
+          
+          /* Hide non-essential elements */
           .no-print {
             display: none !important;
           }
+          
+          /* Main container - ATS friendly dimensions */
           .resume-container {
-            max-width: 8.5in;
-            margin: 0 auto;
-            padding: 0.5in 0.75in;
+            max-width: 8.5in !important;
+            margin: 0 auto !important;
+            padding: 0.5in 0.75in !important;
+            background: white !important;
+            color: #000 !important;
+            font-family: Arial, Helvetica, sans-serif !important;
+            font-size: 11pt !important;
+            line-height: 1.5 !important;
+          }
+          
+          /* Hide all icons and SVG graphics for ATS */
+          .contact-item-icon,
+          .header-icon,
+          .contact-item-icon svg,
+          .header-icon svg {
+            display: none !important;
+            visibility: hidden !important;
+          }
+          
+          /* Show text labels when printing */
+          .print-label {
+            display: inline !important;
+            font-weight: 600 !important;
+            margin-right: 0.25rem !important;
+            color: #000 !important;
+          }
+          
+          /* Force all text to be black for optimal OCR/ATS parsing */
+          h1, h2, h3, h4, h5, h6,
+          .resume-name,
+          .resume-title,
+          .job-title,
+          .company,
+          .section-title,
+          .summary,
+          .description,
+          .contact-item-text,
+          .contact-item-link,
+          .achievements-list li,
+          .skill-item,
+          p, span, div, a, li {
+            color: #000 !important;
+          }
+          
+          .date {
+            color: #333 !important;
+          }
+          
+          /* Remove all decorative elements */
+          .resume-header::before {
+            display: none !important;
+            content: none !important;
+          }
+          
+          /* Simplify borders - use simple black lines */
+          .resume-header {
+            border-bottom: 1px solid #000 !important;
+            background: transparent !important;
+            box-shadow: none !important;
+          }
+          
+          .section-title {
+            border-bottom: 1px solid #000 !important;
+            color: #000 !important;
+            background: transparent !important;
+          }
+          
+          /* Simplify contact info box */
+          .contact-info {
+            background: transparent !important;
+            border: 1px solid #ccc !important;
+            backdrop-filter: none !important;
+            box-shadow: none !important;
+            padding: 0.5rem !important;
+          }
+          
+          /* Ensure links are visible and underlined */
+          .contact-item-link,
+          a {
+            color: #000 !important;
+            text-decoration: underline !important;
+          }
+          
+          /* Simplify skill items for ATS */
+          .skill-item {
+            background: transparent !important;
+            border: 1px solid #ccc !important;
+            color: #000 !important;
+            box-shadow: none !important;
+          }
+          
+          /* Simplify header badge */
+          .header-badge {
+            background: transparent !important;
+            border: 1px solid #ccc !important;
+            color: #000 !important;
+            box-shadow: none !important;
+          }
+          
+          /* Remove all visual effects */
+          * {
+            box-shadow: none !important;
+            text-shadow: none !important;
+            background-image: none !important;
+            filter: none !important;
+            opacity: 1 !important;
+          }
+          
+          /* Ensure proper page breaks */
+          .experience-item {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+          }
+          
+          .section-page-break {
+            page-break-before: always !important;
+            break-before: page !important;
+          }
+          
+          /* Remove gradients */
+          .resume-header::before,
+          .resume-header::after {
+            display: none !important;
+            content: none !important;
+          }
+          
+          /* Ensure standard fonts for ATS parsing */
+          * {
+            font-family: Arial, Helvetica, sans-serif !important;
+          }
+          
+          /* Ensure proper spacing for readability */
+          .section {
+            margin-bottom: 1.5rem !important;
+          }
+          
+          .experience-item {
+            margin-bottom: 1.5rem !important;
+          }
+          
+          /* Make sure all text is selectable */
+          * {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+          }
+          
+          /* Keep links simple - URLs are in href attribute for ATS */
+          a {
+            text-decoration: underline !important;
           }
         }
 
@@ -229,7 +395,41 @@ const Resume = () => {
           background: rgba(178, 75, 1, 0.1);
           border-radius: 5px;
           flex-shrink: 0;
-          font-size: 0.75rem;
+        }
+
+        .contact-item-icon svg {
+          width: 14px;
+          height: 14px;
+          fill: var(--color-primary);
+          display: block;
+        }
+
+        .header-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 16px;
+          height: 16px;
+          margin-right: 0.25rem;
+          flex-shrink: 0;
+        }
+
+        .header-icon svg {
+          width: 14px;
+          height: 14px;
+          fill: var(--color-primary);
+          display: block;
+        }
+
+        @media print {
+          .contact-item-icon svg,
+          .header-icon svg {
+            display: none !important;
+          }
+        }
+
+        .print-label {
+          display: none;
         }
 
         .contact-item-text {
@@ -417,7 +617,12 @@ const Resume = () => {
             <h1 className="resume-name" itemProp="name">Zara Bani</h1>
             <h2 className="resume-title" itemProp="jobTitle">Product Designer</h2>
             <div className="header-badge">
-              <span aria-hidden="true">📍</span>
+              <span className="header-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+              </span>
+              <span className="print-label">Location:</span>
               <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                 <span itemProp="addressLocality">London</span>, <span itemProp="addressCountry">UK</span>
               </span>
@@ -426,29 +631,54 @@ const Resume = () => {
           
           <div className="contact-info">
             <div className="contact-item">
-              <div className="contact-item-icon" aria-hidden="true">📧</div>
+              <div className="contact-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+              </div>
+              <span className="print-label">Email:</span>
               <a href="mailto:zahra.ghorbanikhorabadi@mail.bcu.ac.uk" className="contact-item-link" itemProp="email" aria-label="Email: zahra.ghorbanikhorabadi@mail.bcu.ac.uk">
                 zahra.ghorbanikhorabadi@mail.bcu.ac.uk
               </a>
             </div>
             <div className="contact-item">
-              <div className="contact-item-icon" aria-hidden="true">📧</div>
+              <div className="contact-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+              </div>
+              <span className="print-label">Email:</span>
               <a href="mailto:me@zarabani.design" className="contact-item-link" itemProp="email" aria-label="Email: me@zarabani.design">
                 me@zarabani.design
               </a>
             </div>
             <div className="contact-item">
-              <div className="contact-item-icon" aria-hidden="true">📱</div>
+              <div className="contact-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+              </div>
+              <span className="print-label">Phone:</span>
               <span className="contact-item-text" itemProp="telephone" aria-label="Phone: +44 7876636625">+44 7876636625</span>
             </div>
             <div className="contact-item">
-              <div className="contact-item-icon" aria-hidden="true">🔗</div>
+              <div className="contact-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM18.92 8h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.34.16-2h4.68c.09.66.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/>
+                </svg>
+              </div>
+              <span className="print-label">Website:</span>
               <a href="https://zarabani.design" target="_blank" rel="noopener noreferrer" className="contact-item-link" itemProp="url" aria-label="Website: zarabani.design">
                 zarabani.design
               </a>
             </div>
             <div className="contact-item">
-              <div className="contact-item-icon" aria-hidden="true">💼</div>
+              <div className="contact-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </div>
+              <span className="print-label">LinkedIn:</span>
               <a href="https://www.linkedin.com/in/zara-bani-95a0991a8/" target="_blank" rel="noopener noreferrer" className="contact-item-link" itemProp="sameAs" aria-label="LinkedIn Profile">
                 LinkedIn Profile
               </a>
