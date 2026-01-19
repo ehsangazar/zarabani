@@ -22,8 +22,20 @@ const Resume = () => {
       "addressCountry": "UK"
     },
     "email": "zahra.ghorbanikhorabadi@mail.bcu.ac.uk",
-    "telephone": "+44-7876636625",
+    "telephone": "+44 7876636625",
     "url": "https://zarabani.design",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "email": "zahra.ghorbanikhorabadi@mail.bcu.ac.uk",
+        "contactType": "Personal"
+      },
+      {
+        "@type": "ContactPoint",
+        "email": "me@zarabani.design",
+        "contactType": "Professional"
+      }
+    ],
     "sameAs": [
       "https://www.linkedin.com/in/zara-bani-95a0991a8/"
     ],
@@ -63,7 +75,7 @@ const Resume = () => {
   };
 
   return (
-    <div className="resume-container">
+    <div className="resume-container" lang="en" itemScope itemType="https://schema.org/Resume">
       {/* Structured Data for ATS */}
       <script
         type="application/ld+json"
@@ -249,6 +261,11 @@ const Resume = () => {
           margin-bottom: 2.5rem;
         }
 
+        .section-page-break {
+          page-break-before: always;
+          break-before: page;
+        }
+
         .section-title {
           font-size: 0.875rem;
           font-weight: 700;
@@ -400,7 +417,7 @@ const Resume = () => {
             <h1 className="resume-name" itemProp="name">Zara Bani</h1>
             <h2 className="resume-title" itemProp="jobTitle">Product Designer</h2>
             <div className="header-badge">
-              <span>📍</span>
+              <span aria-hidden="true">📍</span>
               <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                 <span itemProp="addressLocality">London</span>, <span itemProp="addressCountry">UK</span>
               </span>
@@ -409,30 +426,30 @@ const Resume = () => {
           
           <div className="contact-info">
             <div className="contact-item">
-              <div className="contact-item-icon">📧</div>
-              <a href="mailto:zahra.ghorbanikhorabadi@mail.bcu.ac.uk" className="contact-item-link" itemProp="email">
+              <div className="contact-item-icon" aria-hidden="true">📧</div>
+              <a href="mailto:zahra.ghorbanikhorabadi@mail.bcu.ac.uk" className="contact-item-link" itemProp="email" aria-label="Email: zahra.ghorbanikhorabadi@mail.bcu.ac.uk">
                 zahra.ghorbanikhorabadi@mail.bcu.ac.uk
               </a>
             </div>
             <div className="contact-item">
-              <div className="contact-item-icon">📧</div>
-              <a href="mailto:info@zarabani.design" className="contact-item-link">
-                info@zarabani.design
+              <div className="contact-item-icon" aria-hidden="true">📧</div>
+              <a href="mailto:me@zarabani.design" className="contact-item-link" itemProp="email" aria-label="Email: me@zarabani.design">
+                me@zarabani.design
               </a>
             </div>
             <div className="contact-item">
-              <div className="contact-item-icon">📱</div>
-              <span className="contact-item-text" itemProp="telephone">+44 7876636625</span>
+              <div className="contact-item-icon" aria-hidden="true">📱</div>
+              <span className="contact-item-text" itemProp="telephone" aria-label="Phone: +44 7876636625">+44 7876636625</span>
             </div>
             <div className="contact-item">
-              <div className="contact-item-icon">🔗</div>
-              <a href="https://zarabani.design" target="_blank" rel="noopener noreferrer" className="contact-item-link" itemProp="url">
+              <div className="contact-item-icon" aria-hidden="true">🔗</div>
+              <a href="https://zarabani.design" target="_blank" rel="noopener noreferrer" className="contact-item-link" itemProp="url" aria-label="Website: zarabani.design">
                 zarabani.design
               </a>
             </div>
             <div className="contact-item">
-              <div className="contact-item-icon">💼</div>
-              <a href="https://www.linkedin.com/in/zara-bani-95a0991a8/" target="_blank" rel="noopener noreferrer" className="contact-item-link" itemProp="sameAs">
+              <div className="contact-item-icon" aria-hidden="true">💼</div>
+              <a href="https://www.linkedin.com/in/zara-bani-95a0991a8/" target="_blank" rel="noopener noreferrer" className="contact-item-link" itemProp="sameAs" aria-label="LinkedIn Profile">
                 LinkedIn Profile
               </a>
             </div>
@@ -441,7 +458,7 @@ const Resume = () => {
       </header>
 
       {/* Summary */}
-      <section className="section">
+      <section className="section" aria-label="Professional Summary">
         <h2 className="section-title">Professional Summary</h2>
         <p className="summary" itemProp="description">
           Product Designer and UX Designer with 4+ years of experience designing B2B and B2C SaaS products across web and mobile platforms. End-to-end designer with strong expertise in User Experience Research, Interaction Design, Usability Testing, and User Interface Design, delivering 10+ real-world products from discovery to handoff. Experienced in designing data-heavy platforms, multi-role systems, and scalable SaaS solutions, where clarity, accessibility, and usability are critical. Known for translating user pain points into practical, business-aligned design decisions through research-driven thinking and close collaboration with Product Managers and Engineers. Proficient in Figma, Design Systems, Wireframing, Prototyping, and Accessibility standards (WCAG).
@@ -449,7 +466,7 @@ const Resume = () => {
       </section>
 
       {/* Experience */}
-      <section className="section">
+      <section className="section" aria-label="Professional Experience">
         <h2 className="section-title">Professional Experience</h2>
         
         <div className="experience-item" itemScope itemType="https://schema.org/OrganizationRole">
@@ -461,7 +478,7 @@ const Resume = () => {
               </p>
             </div>
             <span className="date">
-              <time itemProp="startDate" dateTime="2024-09">September 2024</time> — <time itemProp="endDate">Present</time>
+              <time itemProp="startDate" dateTime="2024-09">September 2024</time> — <time itemProp="endDate" dateTime="2025-01">Present</time>
             </span>
           </div>
           <ul className="achievements-list">
@@ -516,9 +533,9 @@ const Resume = () => {
       </section>
 
       {/* Skills */}
-      <section className="section">
+      <section className="section section-page-break" aria-label="Skills and Expertise">
         <h2 className="section-title">Skills & Expertise</h2>
-        <div className="skills-grid" itemScope itemType="https://schema.org/ItemList">
+        <div className="skills-grid" itemScope itemType="https://schema.org/ItemList" role="list">
           <div className="skill-item" itemProp="itemListElement">Product Design</div>
           <div className="skill-item" itemProp="itemListElement">User Experience Design (UX)</div>
           <div className="skill-item" itemProp="itemListElement">User Interface Design (UI)</div>
@@ -555,7 +572,7 @@ const Resume = () => {
       </section>
 
       {/* Education */}
-      <section className="section">
+      <section className="section" aria-label="Education">
         <h2 className="section-title">Education</h2>
         
         <div className="experience-item" itemScope itemType="https://schema.org/EducationalOccupationalCredential">
@@ -592,7 +609,7 @@ const Resume = () => {
       </section>
 
       {/* Certifications */}
-      <section className="section">
+      <section className="section" aria-label="Certifications">
         <h2 className="section-title">Certifications</h2>
         
         <div className="experience-item">
@@ -632,7 +649,7 @@ const Resume = () => {
       </section>
 
       {/* Languages */}
-      <section className="section">
+      <section className="section" aria-label="Languages">
         <h2 className="section-title">Languages</h2>
         <div className="skills-grid">
           <div className="skill-item">English (Professional)</div>
