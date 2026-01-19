@@ -604,7 +604,7 @@ const Resume = () => {
             <div className="contact-item">
               <span className="contact-label">LinkedIn:</span>
               <a href="https://www.linkedin.com/in/zara-bani-95a0991a8/" target="_blank" rel="noopener noreferrer" className="contact-item-link" itemProp="sameAs" aria-label="LinkedIn Profile">
-                LinkedIn Profile
+                https://www.linkedin.com/in/zara-bani-95a0991a8
               </a>
             </div>
             <div className="contact-item">
