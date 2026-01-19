@@ -1,6 +1,75 @@
+import { useEffect } from 'react';
+
 const Resume = () => {
+  // Update document meta tags for ATS
+  useEffect(() => {
+    document.title = 'Zara Bani - Product Designer Resume';
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Zara Bani - Product & UX Designer with 4+ years of experience designing B2B and B2C SaaS products. Expert in UX research, interaction design, and usability testing.');
+    }
+  }, []);
+
+  // Structured data for ATS parsing
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Zara Bani",
+    "jobTitle": "Product Designer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "London",
+      "addressCountry": "UK"
+    },
+    "email": "zahra.ghorbanikhorabadi@mail.bcu.ac.uk",
+    "telephone": "+44-7876636625",
+    "url": "https://zarabani.design",
+    "sameAs": [
+      "https://www.linkedin.com/in/zara-bani-95a0991a8/"
+    ],
+    "alumniOf": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "Birmingham City University",
+        "degree": "MSc in User Experience Design"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "University of Qom",
+        "degree": "BA in English Language and Literature"
+      }
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Product Designer",
+      "occupationLocation": {
+        "@type": "City",
+        "name": "London"
+      }
+    },
+    "knowsAbout": [
+      "Product Design",
+      "User Experience Design",
+      "UX Research",
+      "Interaction Design",
+      "Usability Testing",
+      "User Interface Design",
+      "Figma",
+      "Design Systems",
+      "Accessibility",
+      "Wireframing",
+      "Prototyping"
+    ]
+  };
+
   return (
     <div className="resume-container">
+      {/* Structured Data for ATS */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       {/* Print Styles */}
       <style>{`
         @media print {
@@ -157,7 +226,7 @@ const Resume = () => {
 
         .contact-item-link {
           color: var(--color-primary);
-          text-decoration: none;
+          text-decoration: underline;
           font-weight: 500;
           transition: color 0.2s;
           word-break: break-word;
@@ -171,6 +240,7 @@ const Resume = () => {
         @media print {
           .contact-item-link {
             color: var(--color-primary-dark);
+            text-decoration: underline;
           }
         }
 
@@ -323,38 +393,40 @@ const Resume = () => {
       </button>
 
       {/* Header */}
-      <header className="resume-header">
+      <header className="resume-header" itemScope itemType="https://schema.org/Person">
         <div className="header-content">
           <div className="header-main">
-            <h1 className="resume-name">Zara Bani</h1>
-            <h2 className="resume-title">Product Designer</h2>
+            <h1 className="resume-name" itemProp="name">Zara Bani</h1>
+            <h2 className="resume-title" itemProp="jobTitle">Product Designer</h2>
             <div className="header-badge">
               <span>📍</span>
-              <span>London, UK</span>
+              <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+                <span itemProp="addressLocality">London</span>, <span itemProp="addressCountry">UK</span>
+              </span>
             </div>
           </div>
           
           <div className="contact-info">
             <div className="contact-item">
               <div className="contact-item-icon">📧</div>
-              <a href="mailto:zahra.ghorbanikhorabadi@mail.bcu.ac.uk" className="contact-item-link">
+              <a href="mailto:zahra.ghorbanikhorabadi@mail.bcu.ac.uk" className="contact-item-link" itemProp="email">
                 zahra.ghorbanikhorabadi@mail.bcu.ac.uk
               </a>
             </div>
             <div className="contact-item">
               <div className="contact-item-icon">📱</div>
-              <span className="contact-item-text">+44 7876636625</span>
+              <span className="contact-item-text" itemProp="telephone">+44 7876636625</span>
             </div>
             <div className="contact-item">
               <div className="contact-item-icon">🔗</div>
-              <a href="https://zarabani.design" target="_blank" rel="noopener noreferrer" className="contact-item-link">
+              <a href="https://zarabani.design" target="_blank" rel="noopener noreferrer" className="contact-item-link" itemProp="url">
                 zarabani.design
               </a>
             </div>
             <div className="contact-item">
               <div className="contact-item-icon">💼</div>
-              <a href="https://www.linkedin.com/in/zara-bani-95a0991a8/" target="_blank" rel="noopener noreferrer" className="contact-item-link">
-                https://www.linkedin.com/in/zara-bani-95a0991a8
+              <a href="https://www.linkedin.com/in/zara-bani-95a0991a8/" target="_blank" rel="noopener noreferrer" className="contact-item-link" itemProp="sameAs">
+                LinkedIn Profile
               </a>
             </div>
           </div>
@@ -364,8 +436,8 @@ const Resume = () => {
       {/* Summary */}
       <section className="section">
         <h2 className="section-title">Professional Summary</h2>
-        <p className="summary">
-          Product & UX Designer with 4+ years of experience designing B2B and B2C SaaS products across web and mobile. End-to-end designer with strong expertise in UX research, interaction design, and usability testing, delivering 10+ real-world products from discovery to handoff. Experienced in designing data-heavy platforms, multi-role systems, and scalable SaaS solutions, where clarity, accessibility, and usability are critical. Known for translating user pain points into practical, business-aligned design decisions through research-driven thinking and close collaboration with product managers and engineers.
+        <p className="summary" itemProp="description">
+          Product Designer and UX Designer with 4+ years of experience designing B2B and B2C SaaS products across web and mobile platforms. End-to-end designer with strong expertise in User Experience Research, Interaction Design, Usability Testing, and User Interface Design, delivering 10+ real-world products from discovery to handoff. Experienced in designing data-heavy platforms, multi-role systems, and scalable SaaS solutions, where clarity, accessibility, and usability are critical. Known for translating user pain points into practical, business-aligned design decisions through research-driven thinking and close collaboration with Product Managers and Engineers. Proficient in Figma, Design Systems, Wireframing, Prototyping, and Accessibility standards (WCAG).
         </p>
       </section>
 
@@ -373,13 +445,17 @@ const Resume = () => {
       <section className="section">
         <h2 className="section-title">Professional Experience</h2>
         
-        <div className="experience-item">
+        <div className="experience-item" itemScope itemType="https://schema.org/OrganizationRole">
           <div className="experience-header">
             <div>
-              <h3 className="job-title">Product Designer (Freelance)</h3>
-              <p className="company">Self-Employed | London, UK</p>
+              <h3 className="job-title" itemProp="roleName">Product Designer (Freelance)</h3>
+              <p className="company" itemProp="worksFor" itemScope itemType="https://schema.org/Organization">
+                <span itemProp="name">Self-Employed</span> | <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress"><span itemProp="addressLocality">London</span>, <span itemProp="addressCountry">UK</span></span>
+              </p>
             </div>
-            <span className="date">September 2024 — Present</span>
+            <span className="date">
+              <time itemProp="startDate" dateTime="2024-09">September 2024</time> — <time itemProp="endDate">Present</time>
+            </span>
           </div>
           <ul className="achievements-list">
             <li>Delivered UX/UI solutions for early-stage startups, supporting user flows, interface design, and usability improvements</li>
@@ -390,13 +466,17 @@ const Resume = () => {
           </ul>
         </div>
 
-        <div className="experience-item">
+        <div className="experience-item" itemScope itemType="https://schema.org/OrganizationRole">
           <div className="experience-header">
             <div>
-              <h3 className="job-title">Product Designer (UI UX Designer)</h3>
-              <p className="company">TarsimInc</p>
+              <h3 className="job-title" itemProp="roleName">Product Designer (UI UX Designer)</h3>
+              <p className="company" itemProp="worksFor" itemScope itemType="https://schema.org/Organization">
+                <span itemProp="name">TarsimInc</span>
+              </p>
             </div>
-            <span className="date">May 2022 — September 2024</span>
+            <span className="date">
+              <time itemProp="startDate" dateTime="2022-05">May 2022</time> — <time itemProp="endDate" dateTime="2024-09">September 2024</time>
+            </span>
           </div>
           <ul className="achievements-list">
             <li>Led end-to-end UX/UI design across 10+ B2B and B2C SaaS products, owning research, flows, wireframes, prototyping, and usability testing</li>
@@ -408,13 +488,17 @@ const Resume = () => {
           </ul>
         </div>
 
-        <div className="experience-item">
+        <div className="experience-item" itemScope itemType="https://schema.org/OrganizationRole">
           <div className="experience-header">
             <div>
-              <h3 className="job-title">UI UX Designer</h3>
-              <p className="company">NetNap</p>
+              <h3 className="job-title" itemProp="roleName">UI UX Designer</h3>
+              <p className="company" itemProp="worksFor" itemScope itemType="https://schema.org/Organization">
+                <span itemProp="name">NetNap</span>
+              </p>
             </div>
-            <span className="date">December 2021 — April 2022</span>
+            <span className="date">
+              <time itemProp="startDate" dateTime="2021-12">December 2021</time> — <time itemProp="endDate" dateTime="2022-04">April 2022</time>
+            </span>
           </div>
           <ul className="achievements-list">
             <li>Designed end-to-end user journeys for a web-based product, from requirements to high-fidelity UI</li>
@@ -427,32 +511,39 @@ const Resume = () => {
       {/* Skills */}
       <section className="section">
         <h2 className="section-title">Skills & Expertise</h2>
-        <div className="skills-grid">
-          <div className="skill-item">Product Design</div>
-          <div className="skill-item">User Experience (UX)</div>
-          <div className="skill-item">Interaction Design</div>
-          <div className="skill-item">User Research</div>
-          <div className="skill-item">Usability Testing</div>
-          <div className="skill-item">User Journeys</div>
-          <div className="skill-item">Information Architecture</div>
-          <div className="skill-item">Wireframing & Prototyping</div>
-          <div className="skill-item">Design Systems</div>
-          <div className="skill-item">Accessibility (WCAG)</div>
-          <div className="skill-item">High-Fidelity UI</div>
-          <div className="skill-item">Figma</div>
-          <div className="skill-item">Responsive Design</div>
-          <div className="skill-item">UI Components</div>
-          <div className="skill-item">Design Handoff</div>
-          <div className="skill-item">Component Libraries</div>
-          <div className="skill-item">Qualitative & Quantitative Research</div>
-          <div className="skill-item">Interviews</div>
-          <div className="skill-item">Competitive Analysis</div>
-          <div className="skill-item">Heuristic Evaluation</div>
-          <div className="skill-item">Cross-functional Collaboration</div>
-          <div className="skill-item">HTML & CSS</div>
-          <div className="skill-item">Agile Teams</div>
-          <div className="skill-item">Stakeholder Communication</div>
-          <div className="skill-item">Design Iteration</div>
+        <div className="skills-grid" itemScope itemType="https://schema.org/ItemList">
+          <div className="skill-item" itemProp="itemListElement">Product Design</div>
+          <div className="skill-item" itemProp="itemListElement">User Experience Design (UX)</div>
+          <div className="skill-item" itemProp="itemListElement">User Interface Design (UI)</div>
+          <div className="skill-item" itemProp="itemListElement">Interaction Design</div>
+          <div className="skill-item" itemProp="itemListElement">User Research</div>
+          <div className="skill-item" itemProp="itemListElement">Usability Testing</div>
+          <div className="skill-item" itemProp="itemListElement">User Journeys</div>
+          <div className="skill-item" itemProp="itemListElement">Information Architecture</div>
+          <div className="skill-item" itemProp="itemListElement">Wireframing</div>
+          <div className="skill-item" itemProp="itemListElement">Prototyping</div>
+          <div className="skill-item" itemProp="itemListElement">Design Systems</div>
+          <div className="skill-item" itemProp="itemListElement">Accessibility (WCAG)</div>
+          <div className="skill-item" itemProp="itemListElement">High-Fidelity UI Design</div>
+          <div className="skill-item" itemProp="itemListElement">Figma</div>
+          <div className="skill-item" itemProp="itemListElement">Responsive Design</div>
+          <div className="skill-item" itemProp="itemListElement">UI Components</div>
+          <div className="skill-item" itemProp="itemListElement">Design Handoff</div>
+          <div className="skill-item" itemProp="itemListElement">Component Libraries</div>
+          <div className="skill-item" itemProp="itemListElement">Qualitative Research</div>
+          <div className="skill-item" itemProp="itemListElement">Quantitative Research</div>
+          <div className="skill-item" itemProp="itemListElement">User Interviews</div>
+          <div className="skill-item" itemProp="itemListElement">Competitive Analysis</div>
+          <div className="skill-item" itemProp="itemListElement">Heuristic Evaluation</div>
+          <div className="skill-item" itemProp="itemListElement">Cross-functional Collaboration</div>
+          <div className="skill-item" itemProp="itemListElement">HTML</div>
+          <div className="skill-item" itemProp="itemListElement">CSS</div>
+          <div className="skill-item" itemProp="itemListElement">Agile Methodology</div>
+          <div className="skill-item" itemProp="itemListElement">Stakeholder Communication</div>
+          <div className="skill-item" itemProp="itemListElement">Design Iteration</div>
+          <div className="skill-item" itemProp="itemListElement">SaaS Design</div>
+          <div className="skill-item" itemProp="itemListElement">B2B Design</div>
+          <div className="skill-item" itemProp="itemListElement">B2C Design</div>
         </div>
       </section>
 
@@ -460,26 +551,34 @@ const Resume = () => {
       <section className="section">
         <h2 className="section-title">Education</h2>
         
-        <div className="experience-item">
+        <div className="experience-item" itemScope itemType="https://schema.org/EducationalOccupationalCredential">
           <div className="experience-header">
             <div>
-              <h3 className="job-title">MSc in User Experience Design</h3>
-              <p className="company">Birmingham City University | Birmingham, UK</p>
+              <h3 className="job-title" itemProp="credentialCategory">MSc in User Experience Design</h3>
+              <p className="company" itemProp="recognizedBy" itemScope itemType="https://schema.org/EducationalOrganization">
+                <span itemProp="name">Birmingham City University</span> | <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress"><span itemProp="addressLocality">Birmingham</span>, <span itemProp="addressCountry">UK</span></span>
+              </p>
             </div>
-            <span className="date">January 2025 — January 2026</span>
+            <span className="date">
+              <time itemProp="startDate" dateTime="2025-01">January 2025</time> — <time itemProp="endDate" dateTime="2026-01">January 2026</time>
+            </span>
           </div>
-          <p className="description">
+          <p className="description" itemProp="description">
             Key focus: Human Centred Design, UX Research & Evaluation, HTML & CSS, Interaction Design, Advanced and Immersive Technologies, Accessibility and assistive technology, Visual Interface Design
           </p>
         </div>
 
-        <div className="experience-item">
+        <div className="experience-item" itemScope itemType="https://schema.org/EducationalOccupationalCredential">
           <div className="experience-header">
             <div>
-              <h3 className="job-title">BA in English Language and Literature</h3>
-              <p className="company">University of Qom | Qom, Iran</p>
+              <h3 className="job-title" itemProp="credentialCategory">BA in English Language and Literature</h3>
+              <p className="company" itemProp="recognizedBy" itemScope itemType="https://schema.org/EducationalOrganization">
+                <span itemProp="name">University of Qom</span> | <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress"><span itemProp="addressLocality">Qom</span>, <span itemProp="addressCountry">Iran</span></span>
+              </p>
             </div>
-            <span className="date">September 2017 — July 2022</span>
+            <span className="date">
+              <time itemProp="startDate" dateTime="2017-09">September 2017</time> — <time itemProp="endDate" dateTime="2022-07">July 2022</time>
+            </span>
           </div>
           <p className="description">GPA: 17.38 out of 20</p>
         </div>
