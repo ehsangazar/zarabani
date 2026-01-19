@@ -299,7 +299,7 @@ const Resume = () => {
 
         .header-content {
           display: grid;
-          grid-template-columns: 1.5fr 1fr;
+          grid-template-columns: 1fr 1.2fr;
           gap: 1.5rem;
           align-items: start;
         }
@@ -360,8 +360,6 @@ const Resume = () => {
           backdrop-filter: blur(10px);
           border-radius: 12px;
           border: 1px solid rgba(178, 75, 1, 0.15);
-          min-width: 280px;
-          max-width: 380px;
           box-shadow: 0 2px 8px rgba(178, 75, 1, 0.08);
         }
 
