@@ -607,6 +607,48 @@ const FocusedLearning = () => {
         />
       </div>
 
+      {/* Technical Consideration */}
+      <section className="my-10">
+        <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#C96C32]">
+          Technical Consideration
+        </h3>
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
+          Technical Consideration & Scope Trade-offs
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed">
+          During the design phase, we explored an idea to further reduce cognitive effort when students returned to resume a lesson. .
+        </p>
+      </section>
+
+      <div className="my-16">
+        <img
+          src="/case-studies/Daqqaq/blue6.png"
+          alt="Technical Consideration & Scope Trade-offs"
+          className="w-full"
+        />
+      </div>
+
+      {/* Accessibility check */}
+      <section className="my-10">
+        <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#2563EB] mb-2">
+          Accessibility check
+        </h3>
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
+          Designing for Everyone: WCAG 2.1 Compliant
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed">
+          To ensure that all students, including those with visual impairments or those studying in low-light environments, can read the content without effort, we strictly followed WCAG 2.1 guidelines. the interface was engineered to meet high accessibility standards, focusing on readability and assistive technology compatibility:
+        </p>
+      </section>
+
+      <div className="my-16">
+        <img
+          src="/case-studies/Daqqaq/blue7.png"
+          alt="Designing for Everyone: WCAG 2.1 Compliant"
+          className="w-full"
+        />
+      </div>
+
       {/* Testing */}
       <section className="my-10">
         <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#C96C32]">
