@@ -129,6 +129,121 @@ const DocumentManagement = () => {
         </div>
       </section>
 
+      {/* Selection of the designed solutions */}
+      <section className="my-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-8">
+          Selection of the designed solutions
+        </h2>
+      </section>
+
+      <div className="grid grid-cols-2 gap-8 my-16">
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/1.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/2.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/3.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/4.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full row-span-2">
+          <img
+            src="/case-studies/document-management/6.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/5.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/7.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/8.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/9.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/10.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/11.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/12.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/13.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/14.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            src="/case-studies/document-management/15.png"
+            alt="Selection of the designed solutions"
+            className="w-full"
+          />
+        </div>
+      </div>
+
       {/* Key Results Section */}
       <section className="my-20">
         <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-8">
