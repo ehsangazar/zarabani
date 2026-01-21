@@ -60,7 +60,7 @@ const FocusedLearning = () => {
 
       {/* Problem Discovery */}
       <section className="my-10">
-        <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A]">
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A]">
           Problem Discovery (What was broken)
         </h2>
         <div className="flex flex-col md:flex-row gap-10 items-center">
@@ -92,7 +92,7 @@ const FocusedLearning = () => {
       {/* Outcome */}
       <section className="my-10">
         <hr className="my-8 border-primary-dark/20" />
-        <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A]">
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A]">
           Outcome (What changed)
         </h2>
         <p className="text-lg text-primary-dark/70 leading-relaxed mt-4">
@@ -113,10 +113,10 @@ const FocusedLearning = () => {
 
       {/* Research & Understanding the Problem */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
+        <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#C96C32]">
           Research & Understanding the Problem
         </h3>
-        <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A]">
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A]">
           To move beyond assumptions, we focused on uncovering the root causes
           of student friction. We needed to understand how students actually
           study online material and where the experience breaks down.
@@ -133,7 +133,7 @@ const FocusedLearning = () => {
 
       {/* Research approach */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
+        <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#C96C32]">
           Research approach
         </h3>
         <p className="text-lg text-primary-dark/70 leading-relaxed mb-6">
@@ -169,10 +169,10 @@ const FocusedLearning = () => {
 
       {/* Current Study Flow */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
+        <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#C96C32]">
           Current Study Flow
         </h3>
-        <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
           From research and observations, we gathered the current study flow
           students go through:
         </h2>
@@ -193,10 +193,10 @@ const FocusedLearning = () => {
 
       {/* Key insights and persona shaping */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
+        <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#C96C32]">
           Key insights and persona shaping
         </h3>
-        <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
           Based on the insights, persona started to get shaped
         </h2>
         <p className="text-lg text-primary-dark/70 leading-relaxed">
@@ -282,7 +282,7 @@ const FocusedLearning = () => {
       <section className="my-10">
         <div className="flex flex-col md:flex-row gap-10 items-center">
           <div className="w-full md:w-2/3">
-            <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
+            <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#C96C32]">
               Resulted in
             </h3>
             <h2 className="font-['Poppins'] text-[32px] font-bold italic tracking-[0%] text-[#3A3A3A] mb-4">
@@ -317,7 +317,7 @@ const FocusedLearning = () => {
         </h3>
       </div>
 
-      <div className="mb-16 mt-[-40px]">
+      <div className="mb-16 mt-[-34px]">
         <img
           src="/case-studies/Daqqaq/13.png"
           alt="The issue wasn't just access to content"
@@ -327,10 +327,10 @@ const FocusedLearning = () => {
 
       {/* Design Principles */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
+        <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#C96C32]">
           Design Principles
         </h3>
-        <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
           Designing for Cognitive Cohesion
         </h2>
         <p className="text-lg text-primary-dark/70 leading-relaxed">
@@ -350,10 +350,10 @@ const FocusedLearning = () => {
 
       {/* Defining Success */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
+        <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#C96C32]">
           Defining Success
         </h3>
-        <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
           Designing for Cognitive Cohesion
         </h2>
         <p className="text-lg text-primary-dark/70 leading-relaxed">
@@ -414,12 +414,128 @@ const FocusedLearning = () => {
         </p>
       </section>
 
+      {/* Pre-Design */}
+      <section className="my-10">
+        <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#2563EB] mb-2">
+          Pre-Design
+        </h3>
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
+          Exploring Layout Trade-offs: Accommodating Multiple Content Types
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed">
+          One of the key challenges in this project was accommodating multiple content types, like video or audio, book PDFs, descriptive text, scripts, notes, and controls, on a single lesson page without overwhelming students.
+        </p>
+      </section>
+
+      <div className="my-16">
+        <img
+          src="/case-studies/Daqqaq/blue1.png"
+          alt="Exploring Layout Trade-offs: Accommodating Multiple Content Types"
+          className="w-full"
+        />
+      </div>
+
+      <div className="my-16">
+        <img
+          src="/case-studies/Daqqaq/blue2.png"
+          alt="Exploring Layout Trade-offs: Accommodating Multiple Content Types"
+          className="w-full"
+        />
+      </div>
+
+      <div className="my-16">
+        <img
+          src="/case-studies/Daqqaq/blue3.png"
+          alt="Exploring Layout Trade-offs: Accommodating Multiple Content Types"
+          className="w-full"
+        />
+      </div>
+
+      {/* Validate assumptions */}
+      <section className="my-10">
+        <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#2563EB] mb-2">
+          Validate assumptions
+        </h3>
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
+          Vibe Coding saved me here!
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed mb-4">
+          I had three weeks remain till the deadline and needed to validate the two proposed solutions.
+        </p>
+        <p className="text-lg text-primary-dark/70 leading-relaxed">
+          These sketches were quickly prototyped using Magic Patterns, allowing us to test assumptions around scanning behavior, focus, and interaction flow before moving into Figma and detailed UI design.
+        </p>
+      </section>
+
+      <div className="grid md:grid-cols-2 gap-8 my-16">
+        <div className="w-full">
+          <div className="w-full aspect-video bg-black flex items-center justify-center">
+            <video
+              src="/case-studies/Daqqaq/blueleftvideo.mov"
+              controls
+              className="w-full h-full object-contain"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p className="text-center mt-4 text-primary-dark/70">Prototype A</p>
+        </div>
+        <div className="w-full">
+          <div className="w-full aspect-video bg-black flex items-center justify-center">
+            <video
+              src="/case-studies/Daqqaq/blueirghtvideo.mov"
+              controls
+              className="w-full h-full object-contain"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p className="text-center mt-4 text-primary-dark/70">Prototype B</p>
+        </div>
+      </div>
+
+      {/* Choosing prototype A */}
+      <section className="my-10">
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
+          Choosing prototype A to go with
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed">
+          To validate both layout directions, we tested Sketch A and Sketch B with 20 students.
+        </p>
+      </section>
+
+      <div className="my-8ad">
+        <img
+          src="/case-studies/Daqqaq/blue4.png"
+          alt="Choosing prototype A to go with"
+          className="w-full"
+        />
+      </div>
+
+      {/* Decision & Refinement */}
+      <section className="my-10">
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
+          Decision & Refinement
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed">
+          Based on these findings, we chose Sketch A as the primary direction due to its ability to keep all relevant materials visible and accessible during study.
+        </p>
+      </section>
+
+      <div className="mt-[-34px] mb-16">
+        <img
+          src="/case-studies/Daqqaq/blue5.png"
+          alt="Decision & Refinement"
+          className="w-full"
+        />
+      </div>
+
       {/* Design */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
+        <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#C96C32]">
           Design
         </h3>
-        <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
           Designing for Cognitive Ease
         </h2>
         <p className="text-lg text-primary-dark/70 leading-relaxed">
@@ -483,7 +599,7 @@ const FocusedLearning = () => {
         />
       </div>
 
-      <div className="mt-[-40px]">
+      <div className="mt-[-34px]">
         <img
           src="/case-studies/Daqqaq/25.png"
           alt="Designing for Cognitive Ease"
@@ -493,10 +609,10 @@ const FocusedLearning = () => {
 
       {/* Testing */}
       <section className="my-10">
-        <h3 className="font-['Poppins'] text-[22px] font-semibold tracking-[0%] text-[#C96C32]">
+        <h3 className="font-['Poppins'] text-[18px] font-semibold tracking-[0%] text-[#C96C32]">
           Testing
         </h3>
-        <h2 className="font-['Poppins'] text-[40px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
+        <h2 className="font-['Poppins'] text-[34px] font-bold tracking-[0%] text-[#3A3A3A] mb-4">
           Validation & Usability Testing
         </h2>
         <p className="text-lg text-primary-dark/70 leading-relaxed">
