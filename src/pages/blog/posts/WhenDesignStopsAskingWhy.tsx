@@ -4,7 +4,7 @@ import type { BlogPostComponent } from './TurningAssumptionsIntoValidatedSolutio
 export const WhenDesignStopsAskingWhy: BlogPostComponent = {
   metadata: {
     slug: 'when-design-stops-asking-why',
-    title: 'When design stops asking why and starts asking, "Can AI do it?"',
+    title: 'When AI answers "how" before design gets to ask "why"',
     excerpt: 'The question dropped into the Slack channel before the user research summary. Before the problem was clearly defined. Your product manager already generated three interface options in ChatGPT—now they\'re asking which one to build. Not whether to build. Not why. Which. And when you slow the conversation down to ask those questions, strategic thinking starts to read as bottleneck behaviour.',
     author: 'Zara Bani',
     date: '2026-01-31',
