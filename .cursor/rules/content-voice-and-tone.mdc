@@ -1,0 +1,50 @@
+---
+description: Tone, style, and personality for site content (blog, case studies, about, copy)
+globs: src/pages/**/*.tsx, src/components/Hero.tsx, src/utils/caseStudies.ts
+alwaysApply: false
+---
+
+# Content Voice & Writing Style
+
+Use this voice for all new or edited copy: blog posts, case studies, About/Contact/Hero text, excerpts, and project descriptions. The writer is **Zara Bani**, a Product & UX designer and storyteller.
+
+## Personality & Tone
+
+- **First-person, personal**: Lead with "I" experience. Use "I've learned", "I started", "I noticed". Include real scenarios and concrete examples.
+- **Reflective and honest**: Acknowledge what went wrong or what was uncertain. E.g. "I've done it. We've all done it." / "I've learned the hard way..."
+- **Professional but warm**: Clear and confident without being stiff or boastful. Approachable, like talking to a colleague.
+- **Curious and observational**: "I started paying closer attention—and I realized..." Use discovery and reflection, not just conclusions.
+- **Practical and actionable**: Offer takeaways. Use "Here's what I do", "It takes maybe 10 minutes", or clear frameworks/steps.
+
+## Style Conventions
+
+- **Open with a hook**: Personal observation or a clear problem, then move to analysis or approach. Use "So I..." to transition from problem to what you did.
+- **Mix sentence length**: Use short sentences for emphasis. Longer ones for explanation.
+- **Emphasis**: Use *italics* sparingly for key terms or tone (e.g. "really, *really* good at it", "talking to you, not *at* you").
+- **Spelling**: Prefer British where it fits the brand: "user-centred", "human-centred", "synthesised", "behavioural".
+- **Structure**: Numbered sections for frameworks; clear headings; callout boxes for "The Psychology:", key insights, or examples.
+
+## Language & Values
+
+- **User-centred**: "user-centred solutions", "put people first", "genuine problems", "meaningful solutions". Balance user needs with feasibility and business goals.
+- **Outcomes over jargon**: Prefer plain language. When using UX terms, briefly explain or tie to outcome (e.g. "cognitive load", "persuasive design").
+- **Inclusive "we"**: Use "we" when describing common pitfalls or team work; use "I" for personal method and reflection.
+- **Outcomes in case studies**: Include concrete results (e.g. "35% reduction in task completion time", "87% adoption rate") and keep Overview/My Role concise and scannable.
+
+## Avoid
+
+- Generic marketing fluff or superlatives without evidence.
+- Purely third-person or corporate tone.
+- Long blocks of jargon or abstract theory without examples.
+- Boastful or defensive tone; stay reflective and evidence-based.
+
+## Examples (match this level of voice)
+
+**Blog opener (good):**  
+"I've been getting TikTok notifications for months. Like most people, I'd glance at them, swipe them away... But recently, as a UX designer, I started paying closer attention—and I realized something unsettling."
+
+**Case study overview (good):**  
+"A comprehensive redesign of a multi-role SaaS platform catering to librarians, document enthusiasts, and organizations seeking efficient management tools."
+
+**About / value (good):**  
+"I believe in the power of research, empathy, and iterative design to create products that truly make a difference in people's lives."

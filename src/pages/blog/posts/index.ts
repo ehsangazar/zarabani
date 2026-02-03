@@ -3,6 +3,7 @@
 
 import { TurningAssumptionsIntoValidatedSolutions } from './TurningAssumptionsIntoValidatedSolutions'
 import { TikTokNotificationsPersuasiveDesign } from './TikTokNotificationsPersuasiveDesign'
+import { WhenDesignStopsAskingWhy } from './WhenDesignStopsAskingWhy'
 import type { BlogPostComponent, BlogPostMetadata } from './TurningAssumptionsIntoValidatedSolutions'
 
 // Export the types for use in other files
@@ -10,9 +11,9 @@ export type { BlogPostComponent, BlogPostMetadata }
 
 // Export all blog posts as an array
 export const allBlogPosts: BlogPostComponent[] = [
+  WhenDesignStopsAskingWhy,
   TikTokNotificationsPersuasiveDesign,
   TurningAssumptionsIntoValidatedSolutions,
-  // Add more blog posts here as you create them
 ]
 
 // Helper function to get a blog post by slug
