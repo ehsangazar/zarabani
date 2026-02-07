@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Icon from "./Icon";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,7 +37,7 @@ const Contact = () => {
         {/* Section Header */}
         <div className="mb-20 text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 px-5 py-2.5 backdrop-blur-sm">
-            <span className="text-2xl">💬</span>
+            <Icon name="chat_bubble_outline" size={2} />
             <span className="text-sm font-bold uppercase tracking-widest text-gradient">
               Get In Touch
             </span>
@@ -118,7 +119,7 @@ const Contact = () => {
               {/* CTA Card */}
               <div className="mt-8 rounded-2xl border border-primary/10 bg-warm/50 p-6">
                 <div className="mb-4 flex items-center gap-2">
-                  <span className="text-2xl">✨</span>
+                  <Icon name="auto_awesome" size={2} />
                   <p className="text-sm font-bold uppercase tracking-wider text-gradient">
                     Available for
                   </p>

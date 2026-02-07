@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Icon from "./Icon";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -138,7 +139,7 @@ const Footer = () => {
               </p>
               <div className="flex items-center gap-2">
                 <span className="text-sm text-neutral/60">Crafted with</span>
-                <span className="animate-pulse text-lg">💜</span>
+                <Icon name="favorite" size={1.25} className="animate-pulse text-primary" />
                 <span className="text-sm text-neutral/60">and care</span>
               </div>
             </div>

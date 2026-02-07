@@ -1,3 +1,5 @@
+import Icon from "./Icon";
+
 const About = () => {
   return (
     <section
@@ -12,7 +14,7 @@ const About = () => {
         {/* Section Header */}
         <div className="mb-20 text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 px-5 py-2.5 backdrop-blur-sm">
-            <span className="text-2xl">👋</span>
+            <Icon name="waving_hand" size={2} />
             <span className="text-sm font-bold uppercase tracking-widest text-gradient">
               About Me
             </span>
@@ -28,8 +30,8 @@ const About = () => {
           {/* Left Column - Bio */}
           <div className="space-y-6">
             <div className="glass group rounded-3xl p-8 shadow-xl transition-all hover:shadow-2xl">
-              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-2xl shadow-lg">
-                ✨
+              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-2xl shadow-lg text-white">
+                <Icon name="auto_awesome" size={2} />
               </div>
               <p className="mb-6 text-lg leading-relaxed text-primary-dark/80">
                 Hi! I'm{" "}
@@ -41,8 +43,8 @@ const About = () => {
             </div>
 
             <div className="glass group rounded-3xl p-8 shadow-xl transition-all hover:shadow-2xl">
-              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary text-2xl shadow-lg">
-                🎯
+              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary text-2xl shadow-lg text-white">
+                <Icon name="track_changes" size={2} />
               </div>
               <p className="mb-6 text-lg leading-relaxed text-primary-dark/80">
                 Working in this field has been a game changer; it constantly
@@ -54,8 +56,8 @@ const About = () => {
             </div>
 
             <div className="glass group rounded-3xl p-8 shadow-xl transition-all hover:shadow-2xl">
-              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-2xl shadow-lg">
-                🤝
+              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-2xl shadow-lg text-white">
+                <Icon name="handshake" size={2} />
               </div>
               <p className="text-lg leading-relaxed text-primary-dark/80">
                 Collaborating in cross-functional teams has taught me the value
@@ -77,7 +79,7 @@ const About = () => {
                 {/* Header */}
                 <div className="mb-8">
                   <div className="mb-4 inline-flex items-center gap-3 rounded-2xl bg-primary px-4 py-2 shadow-lg shadow-primary/30">
-                    <span className="text-2xl">💼</span>
+                    <Icon name="work" size={2} className="text-white" />
                     <span className="text-sm font-bold uppercase tracking-wider text-white">
                       Current Role
                     </span>

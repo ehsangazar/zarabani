@@ -1,21 +1,10 @@
 import { Link } from "react-router-dom";
+import Icon from "./Icon";
 
 const stats = [
-  {
-    label: "Shipped digital products",
-    value: "10+",
-    icon: "🚀",
-  },
-  {
-    label: "Measured adoption increase",
-    value: "70%",
-    icon: "📈",
-  },
-  {
-    label: "Research hours with users",
-    value: "400+",
-    icon: "👥",
-  },
+  { label: "Shipped digital products", value: "10+", icon: "rocket_launch" },
+  { label: "Measured adoption increase", value: "70%", icon: "trending_up" },
+  { label: "Research hours with users", value: "400+", icon: "groups" },
 ];
 
 const Hero = () => {
@@ -97,7 +86,7 @@ const Hero = () => {
                 >
                   <div className="absolute inset-0 bg-primary/5 opacity-0 transition-opacity group-hover:opacity-100"></div>
                   <div className="relative">
-                    <p className="mb-1 text-2xl">{stat.icon}</p>
+                    <Icon name={stat.icon} size={2} className="mb-1 text-primary-dark/80" />
                     <p className="text-4xl font-extrabold text-gradient">
                       {stat.value}
                     </p>
@@ -140,7 +129,7 @@ const Hero = () => {
                 {/* Quick Info */}
                 <div className="mt-8 space-y-4 rounded-2xl border border-primary/10 bg-warm/50 p-6">
                   <div className="flex items-center gap-2">
-                    <span className="text-lg">📍</span>
+                    <Icon name="location_on" size={1.25} className="text-primary-dark/80" />
                     <p className="text-sm font-bold uppercase tracking-wider text-gradient">
                       Location
                     </p>

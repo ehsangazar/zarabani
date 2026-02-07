@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllBlogPosts, type BlogPostComponent } from '../pages/blog/posts'
+import Icon from './Icon'
 
 const BlogPreview = () => {
   const [posts, setPosts] = useState<BlogPostComponent[]>([])
@@ -45,7 +46,7 @@ const BlogPreview = () => {
         {/* Section Header */}
         <div className="mb-16 text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 px-5 py-2.5 backdrop-blur-sm">
-            <span className="text-2xl">✍️</span>
+            <Icon name="edit_note" size={2} />
             <span className="text-sm font-bold uppercase tracking-widest text-gradient">
               Articles
             </span>

@@ -1,4 +1,5 @@
 import PageMeta from '../components/PageMeta'
+import Icon from '../components/Icon'
 
 const About = () => {
   const skills = [
@@ -46,7 +47,7 @@ const About = () => {
           {/* Header Section */}
           <div className="text-center mb-20 fade-in-up">
             <div className="inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 backdrop-blur-sm px-5 py-2.5 mb-6 shadow-lg">
-              <span className="text-2xl">👋</span>
+              <Icon name="waving_hand" size={2} />
               <span className="text-sm font-bold uppercase tracking-widest text-primary">
                 About Me
               </span>
@@ -66,8 +67,8 @@ const About = () => {
           <div className="mb-20">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="glass rounded-3xl p-8 shadow-xl">
-                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-2xl shadow-lg">
-                  🎯
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-2xl shadow-lg text-white">
+                  <Icon name="track_changes" size={2} />
                 </div>
                 <h3 className="text-2xl font-bold text-primary-dark mb-4">My Journey</h3>
                 <p className="text-lg text-primary-dark/80 leading-relaxed mb-4">
@@ -79,8 +80,8 @@ const About = () => {
               </div>
               
               <div className="glass rounded-3xl p-8 shadow-xl">
-                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary text-2xl shadow-lg">
-                  💡
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary text-2xl shadow-lg text-white">
+                  <Icon name="lightbulb" size={2} />
             </div>
                 <h3 className="text-2xl font-bold text-primary-dark mb-4">My Approach</h3>
                 <p className="text-lg text-primary-dark/80 leading-relaxed mb-4">
@@ -97,7 +98,7 @@ const About = () => {
           <div className="mb-20">
             <div className="text-center mb-12">
               <div className="mb-4 inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 px-5 py-2.5 backdrop-blur-sm">
-                <span className="text-2xl">💼</span>
+                <Icon name="work" size={2} className="text-primary" />
                 <span className="text-sm font-bold uppercase tracking-widest text-primary">
                   Experience
                 </span>
@@ -110,7 +111,7 @@ const About = () => {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6 gap-4">
                   <div className="flex-1">
                     <div className="mb-3 inline-flex items-center gap-3 rounded-2xl bg-primary px-4 py-2 shadow-lg">
-                      <span className="text-xl">💼</span>
+                      <Icon name="work" size={1.5} className="text-white" />
                       <span className="text-sm font-bold uppercase tracking-wider text-white">
                         Current Role
                       </span>
@@ -147,7 +148,7 @@ const About = () => {
           <div className="mb-20">
             <div className="text-center mb-12">
               <div className="mb-4 inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 px-5 py-2.5 backdrop-blur-sm">
-                <span className="text-2xl">🛠️</span>
+                <Icon name="construction" size={2} />
                 <span className="text-sm font-bold uppercase tracking-widest text-primary">
                   Skills
                 </span>
@@ -170,8 +171,8 @@ const About = () => {
 
           {/* Call to Action */}
           <div className="text-center glass rounded-3xl p-12 shadow-xl border border-primary/10">
-            <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-3xl shadow-lg">
-              💬
+            <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-white shadow-lg">
+              <Icon name="chat_bubble_outline" size={3} />
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-primary-dark mb-6">Let's Work Together</h2>
             <p className="text-lg text-primary-dark/80 mb-8 max-w-3xl mx-auto leading-relaxed">

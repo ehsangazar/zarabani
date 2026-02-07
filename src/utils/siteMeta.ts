@@ -30,23 +30,6 @@ function toAbsoluteUrl(path: string): string {
   return path.startsWith('/') ? `${SITE_URL}${path}` : `${base}${path}`
 }
 
-const META_NAMES = [
-  'description',
-  'og:title',
-  'og:description',
-  'og:image',
-  'og:url',
-  'og:type',
-  'og:site_name',
-  'twitter:card',
-  'twitter:title',
-  'twitter:description',
-  'twitter:image',
-] as const
-
-const OG_PROP_KEYS = ['og:title', 'og:description', 'og:image', 'og:url', 'og:type', 'og:site_name'] as const
-const TWITTER_NAMES = ['twitter:card', 'twitter:title', 'twitter:description', 'twitter:image'] as const
-
 function getOrCreateMeta(attribute: 'name' | 'property', key: string): HTMLMetaElement {
   const selector = attribute === 'name' ? `meta[name="${key}"]` : `meta[property="${key}"]`
   let el = document.querySelector<HTMLMetaElement>(selector)

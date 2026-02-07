@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllCaseStudies, type CaseStudy } from '../utils/caseStudies'
 import { allProjects } from '../utils/projects'
+import Icon from './Icon'
 
 interface CombinedProject {
   id: string
@@ -99,7 +100,7 @@ const Projects = () => {
         {/* Section Header */}
         <div className="mb-20 text-center fade-in-up">
           <div className="mb-6 inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 backdrop-blur-sm px-5 py-2.5 shadow-lg">
-            <span className="text-2xl">💼</span>
+            <Icon name="work" size={2} />
             <span className="text-sm font-bold uppercase tracking-widest text-primary">
               Portfolio
             </span>
@@ -150,7 +151,7 @@ const Projects = () => {
                 {/* Achievements Section */}
                 <div className="mb-6 p-4 rounded-2xl bg-warm/40 border border-primary/10">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-lg">✨</span>
+                    <Icon name="auto_awesome" size={1.25} />
                     <h4 className="text-sm font-bold uppercase tracking-wider text-primary">
                       Key Achievements
                     </h4>
@@ -206,7 +207,7 @@ const Projects = () => {
         {/* Empty State Message */}
         {projects.length === 0 && (
           <div className="text-center py-20">
-            <div className="text-6xl mb-4">📂</div>
+            <Icon name="folder_open" size={4} className="mb-4 text-primary-dark/40" />
             <h3 className="text-2xl font-bold text-primary-dark mb-2">No projects yet</h3>
             <p className="text-primary-dark/60">Check back soon for case studies!</p>
           </div>

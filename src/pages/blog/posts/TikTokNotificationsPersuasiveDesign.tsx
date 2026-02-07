@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import Icon from '../../../components/Icon'
 
 export interface BlogPostMetadata {
   slug: string
@@ -337,7 +338,7 @@ export const TikTokNotificationsPersuasiveDesign: BlogPostComponent = {
 
         <div className="space-y-6 mb-8">
           <div className="bg-green-50 border-l-4 border-green-600 p-6">
-            <h3 className="font-bold text-primary-dark mb-3">✅ Good Use: Personalization That Helps</h3>
+            <h3 className="font-bold text-primary-dark mb-3 flex items-center gap-2"><Icon name="check_circle" size={1.5} className="text-green-600" /> Good Use: Personalization That Helps</h3>
             <p className="text-primary-dark/80">
               <strong>Example:</strong> A meditation app sends you a notification at the time you usually meditate: "Ready for your evening practice?"
             </p>
@@ -347,7 +348,7 @@ export const TikTokNotificationsPersuasiveDesign: BlogPostComponent = {
           </div>
 
           <div className="bg-red-50 border-l-4 border-red-600 p-6">
-            <h3 className="font-bold text-primary-dark mb-3">❌ Bad Use: Personalization That Exploits</h3>
+            <h3 className="font-bold text-primary-dark mb-3 flex items-center gap-2"><Icon name="cancel" size={1.5} className="text-red-600" /> Bad Use: Personalization That Exploits</h3>
             <p className="text-primary-dark/80">
               <strong>Example:</strong> A shopping app notices you browse late at night when you're tired and vulnerable, so it sends notifications at 11 PM with "LAST CHANCE!" messaging.
             </p>

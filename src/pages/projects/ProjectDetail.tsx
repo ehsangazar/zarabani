@@ -4,6 +4,7 @@ import { getCaseStudyById, type CaseStudy } from '../../utils/caseStudies'
 import { allProjects, type Project } from '../../utils/projects'
 import ProjectDetailTemplate from './ProjectDetailTemplate'
 import PageMeta from '../../components/PageMeta'
+import Icon from '../../components/Icon'
 import DocumentManagement from './case-studies/DocumentManagement'
 import LibraryPlatform from './case-studies/LibraryPlatform'
 import CompanyWebsite from './case-studies/CompanyWebsite'
@@ -159,8 +160,8 @@ const ProjectDetail = () => {
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12">
                 <div className="mb-6 flex justify-center">
-                  <div className="inline-flex h-24 w-24 items-center justify-center rounded-3xl bg-secondary/10 text-5xl shadow-xl shadow-secondary/20 transition-transform hover:scale-110">
-                    {project.icon}
+                  <div className="inline-flex h-24 w-24 items-center justify-center rounded-3xl bg-secondary/10 text-5xl shadow-xl shadow-secondary/20 transition-transform hover:scale-110 text-secondary">
+                    <Icon name={project.icon} size={3} />
                   </div>
                 </div>
                 <div className="mb-6">
@@ -228,8 +229,8 @@ const ProjectDetail = () => {
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12">
                 <div className="mb-6 flex justify-center">
-                  <div className="inline-flex h-24 w-24 items-center justify-center rounded-3xl bg-accent/10 text-5xl shadow-xl shadow-accent/20 transition-transform hover:scale-110">
-                    {project.icon}
+                  <div className="inline-flex h-24 w-24 items-center justify-center rounded-3xl bg-accent/10 text-5xl shadow-xl shadow-accent/20 transition-transform hover:scale-110 text-accent">
+                    <Icon name={project.icon} size={3} />
                   </div>
                 </div>
                 <div className="mb-6">
@@ -297,8 +298,8 @@ const ProjectDetail = () => {
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12">
                 <div className="mb-6 flex justify-center">
-                  <div className="inline-flex h-24 w-24 items-center justify-center rounded-3xl bg-primary/10 text-5xl shadow-xl shadow-primary/20 transition-transform hover:scale-110">
-                    {project.icon}
+                  <div className="inline-flex h-24 w-24 items-center justify-center rounded-3xl bg-primary/10 text-5xl shadow-xl shadow-primary/20 transition-transform hover:scale-110 text-primary">
+                    <Icon name={project.icon} size={3} />
                   </div>
                 </div>
                 <div className="mb-6">
@@ -366,8 +367,8 @@ const ProjectDetail = () => {
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12">
                 <div className="mb-6 flex justify-center">
-                  <div className="inline-flex h-24 w-24 items-center justify-center rounded-3xl bg-secondary/10 text-5xl shadow-xl shadow-secondary/20 transition-transform hover:scale-110">
-                    {project.icon}
+                  <div className="inline-flex h-24 w-24 items-center justify-center rounded-3xl bg-secondary/10 text-5xl shadow-xl shadow-secondary/20 transition-transform hover:scale-110 text-secondary">
+                    <Icon name={project.icon} size={3} />
                   </div>
                 </div>
                 <div className="mb-6">

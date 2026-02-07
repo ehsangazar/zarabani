@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllBlogPosts, type BlogPostComponent } from './blog/posts'
 import PageMeta from '../components/PageMeta'
+import Icon from '../components/Icon'
 
 const Blog = () => {
   const [posts, setPosts] = useState<BlogPostComponent[]>([])
@@ -59,7 +60,7 @@ const Blog = () => {
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="mb-6 inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 px-5 py-2.5 backdrop-blur-sm">
-            <span className="text-2xl">✍️</span>
+            <Icon name="edit_note" size={2} />
             <span className="text-sm font-bold uppercase tracking-widest text-gradient">
               Articles
             </span>

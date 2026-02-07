@@ -294,7 +294,7 @@ const Omaia = () => {
         {
           src: "/case-studies/Omaia/7.png",
           title: "Approaching a Solution",
-          mainStatement: "Emphasising emotional recovery through a visual, personal, and reflective journey 🌳",
+          mainStatement: "Emphasising emotional recovery through a visual, personal, and reflective journey",
           desc: "Leveraging our key findings and persona insights, we understood that the ideal solution must gently reconnect mothers with their emotional journey—validating their experiences and encouraging small acts of self-care.",
           additionalDesc: "This led us to the approach of visualising emotional recovery through the metaphor of cultivation—breaking down the overwhelming postpartum phase into small, nurturing moments that reflect progress, resilience, and self-compassion.",
         },
@@ -385,7 +385,7 @@ const Omaia = () => {
           </video>
           <div className="flex-1">
             <h3 className="text-xl font-bold text-primary mb-4">
-              Your Garden of Growth 🌳
+              Your Garden of Growth
             </h3>
             <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-8">
               A space to visualise nurturing your well-being with bite-sized
@@ -430,7 +430,7 @@ const Omaia = () => {
           </video>
           <div className="flex-1">
             <h3 className="text-xl font-bold text-primary mb-4">
-              Support for uninspiring days 🧡
+              Support for uninspiring days
             </h3>
             <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-8">
               A safe, honest space to feel seen, heard, and supported.

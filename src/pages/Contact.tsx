@@ -1,4 +1,5 @@
 import PageMeta from '../components/PageMeta'
+import Icon from '../components/Icon'
 
 const Contact = () => {
   return (
@@ -16,7 +17,7 @@ const Contact = () => {
         {/* Header Section */}
         <div className="text-center mb-20 fade-in-up">
           <div className="inline-flex items-center gap-2 rounded-2xl border border-primary/20 bg-white/80 backdrop-blur-sm px-5 py-2.5 mb-6 shadow-lg">
-            <span className="text-2xl">💬</span>
+            <Icon name="chat_bubble_outline" size={2} />
             <span className="text-sm font-bold uppercase tracking-widest text-primary">
               Get In Touch
             </span>
@@ -103,7 +104,7 @@ const Contact = () => {
               {/* Available For Section */}
               <div className="rounded-2xl border border-primary/10 bg-warm/40 p-6">
                 <div className="mb-4 flex items-center gap-2">
-                  <span className="text-2xl">✨</span>
+                  <Icon name="auto_awesome" size={2} />
                   <p className="text-sm font-bold uppercase tracking-wider text-primary">
                     Available for
                   </p>

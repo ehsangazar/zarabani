@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { Project } from '../../utils/projects'
+import Icon from '../../components/Icon'
 
 interface ProjectDetailTemplateProps {
   project: Project
@@ -64,9 +65,9 @@ const ProjectDetailTemplate = ({ project }: ProjectDetailTemplateProps) => {
           <div className="text-center mb-12">
             <div className="mb-6 flex justify-center">
               <div
-                className={`inline-flex h-24 w-24 items-center justify-center rounded-3xl ${colors.bg} text-5xl shadow-xl ${colors.shadow} transition-transform hover:scale-110`}
+                className={`inline-flex h-24 w-24 items-center justify-center rounded-3xl ${colors.bg} ${colors.text} text-5xl shadow-xl ${colors.shadow} transition-transform hover:scale-110`}
               >
-                {project.icon}
+                <Icon name={project.icon} size={3} className={colors.text} />
               </div>
             </div>
             <div className="mb-6">
@@ -120,7 +121,7 @@ const ProjectDetailTemplate = ({ project }: ProjectDetailTemplateProps) => {
           {/* Achievements Section */}
           <div className="mb-16 glass rounded-3xl p-8 md:p-12 shadow-xl">
             <div className="flex items-center gap-3 mb-8">
-              <span className="text-3xl">✨</span>
+              <Icon name="auto_awesome" size={2} className="text-primary" />
               <h2 className="text-3xl font-extrabold text-primary-dark">
                 Key Achievements
               </h2>
@@ -143,7 +144,7 @@ const ProjectDetailTemplate = ({ project }: ProjectDetailTemplateProps) => {
           {/* Technologies Section */}
           <div className="glass rounded-3xl p-8 md:p-12 shadow-xl">
             <div className="flex items-center gap-3 mb-8">
-              <span className="text-3xl">🛠️</span>
+              <Icon name="construction" size={2} className="text-primary" />
               <h2 className="text-3xl font-extrabold text-primary-dark">
                 Skills & Technologies Applied
               </h2>
