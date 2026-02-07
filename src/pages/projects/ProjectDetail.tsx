@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { getCaseStudyById, type CaseStudy } from '../../utils/caseStudies'
 import { allProjects, type Project } from '../../utils/projects'
 import ProjectDetailTemplate from './ProjectDetailTemplate'
+import PageMeta from '../../components/PageMeta'
 import DocumentManagement from './case-studies/DocumentManagement'
 import LibraryPlatform from './case-studies/LibraryPlatform'
 import CompanyWebsite from './case-studies/CompanyWebsite'
@@ -82,6 +83,11 @@ const ProjectDetail = () => {
   if (caseStudy) {
     return (
       <div className="min-h-screen bg-white">
+        <PageMeta
+          title={caseStudy.title}
+          description={caseStudy.description}
+          path={`/projects/${caseStudy.id}`}
+        />
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-warm/40 via-warm/20 to-neutral/20 py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -147,6 +153,7 @@ const ProjectDetail = () => {
     if (project.id === 'document-management') {
       return (
         <div className="min-h-screen bg-white">
+          <PageMeta title={project.title} description={project.description} path={`/projects/${project.id}`} />
           {/* Hero Section */}
           <section className="bg-gradient-to-br from-warm/40 via-warm/20 to-neutral/20 py-24 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
@@ -215,6 +222,7 @@ const ProjectDetail = () => {
     if (project.id === 'library-platform') {
       return (
         <div className="min-h-screen bg-white">
+          <PageMeta title={project.title} description={project.description} path={`/projects/${project.id}`} />
           {/* Hero Section */}
           <section className="bg-gradient-to-br from-warm/40 via-warm/20 to-neutral/20 py-24 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
@@ -283,6 +291,7 @@ const ProjectDetail = () => {
     if (project.id === 'company-website') {
       return (
         <div className="min-h-screen bg-white">
+          <PageMeta title={project.title} description={project.description} path={`/projects/${project.id}`} />
           {/* Hero Section */}
           <section className="bg-gradient-to-br from-warm/40 via-warm/20 to-neutral/20 py-24 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
@@ -351,6 +360,7 @@ const ProjectDetail = () => {
     if (project.id === 'food-menu-app') {
       return (
         <div className="min-h-screen bg-white">
+          <PageMeta title={project.title} description={project.description} path={`/projects/${project.id}`} />
           {/* Hero Section */}
           <section className="bg-gradient-to-br from-warm/40 via-warm/20 to-neutral/20 py-24 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
@@ -415,7 +425,12 @@ const ProjectDetail = () => {
       )
     }
     
-    return <ProjectDetailTemplate project={project} />
+    return (
+      <>
+        <PageMeta title={project.title} description={project.description} path={`/projects/${project.id}`} />
+        <ProjectDetailTemplate project={project} />
+      </>
+    )
   }
 
   return null

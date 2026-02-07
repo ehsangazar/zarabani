@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { setPageMeta, SITE_TITLE, SITE_DESCRIPTION, DEFAULT_OG_IMAGE, getPageUrl } from '../utils/siteMeta'
+import { setPageMeta, SITE_DESCRIPTION, getPageUrl } from '../utils/siteMeta'
 import type { PageMetaInput } from '../utils/siteMeta'
 
 export interface PageMetaProps extends PageMetaInput {
@@ -25,7 +25,7 @@ const PageMeta = ({
     setPageMeta({
       title,
       description: description ?? SITE_DESCRIPTION,
-      image: image ?? DEFAULT_OG_IMAGE,
+      image: image ?? undefined,
       url,
       type,
       publishedTime,
