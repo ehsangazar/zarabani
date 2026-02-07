@@ -4,6 +4,7 @@
 import { TurningAssumptionsIntoValidatedSolutions } from './TurningAssumptionsIntoValidatedSolutions'
 import { TikTokNotificationsPersuasiveDesign } from './TikTokNotificationsPersuasiveDesign'
 import { WhenDesignStopsAskingWhy } from './WhenDesignStopsAskingWhy'
+import { WhyProductDesignersShouldBeStorytellers } from './WhyProductDesignersShouldBeStorytellers'
 import type { BlogPostComponent, BlogPostMetadata } from './TurningAssumptionsIntoValidatedSolutions'
 
 // Export the types for use in other files
@@ -11,6 +12,7 @@ export type { BlogPostComponent, BlogPostMetadata }
 
 // Export all blog posts as an array
 export const allBlogPosts: BlogPostComponent[] = [
+  WhyProductDesignersShouldBeStorytellers,
   WhenDesignStopsAskingWhy,
   TikTokNotificationsPersuasiveDesign,
   TurningAssumptionsIntoValidatedSolutions,

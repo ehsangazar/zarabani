@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getBlogPostBySlug, getRelatedPosts, type BlogPostComponent } from './posts'
+
+type TocSection = { id: string; title: string }
 
 const BlogDetail = () => {
   const { slug } = useParams<{ slug: string }>()
@@ -10,6 +12,8 @@ const BlogDetail = () => {
   const [error, setError] = useState<string | null>(null)
   const [readingProgress, setReadingProgress] = useState(0)
   const [activeSection, setActiveSection] = useState<string>('')
+  const [tocSections, setTocSections] = useState<TocSection[]>([])
+  const contentRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const loadPost = () => {
@@ -54,8 +58,31 @@ const BlogDetail = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Intersection observer for table of contents
+  // Build table of contents from post sections (after content is in the DOM)
   useEffect(() => {
+    if (!post) {
+      setTocSections([])
+      return
+    }
+    const buildToc = () => {
+      const contentEl = contentRef.current
+      if (!contentEl) return
+      const sections = contentEl.querySelectorAll('section[id]')
+      const toc: TocSection[] = Array.from(sections).map((section) => {
+        const h2 = section.querySelector('h2')
+        const title = h2?.textContent?.trim() || section.id.replace(/-/g, ' ')
+        return { id: section.id, title }
+      })
+      setTocSections(toc)
+    }
+    // Run after React has committed the content to the DOM
+    const id = requestAnimationFrame(buildToc)
+    return () => cancelAnimationFrame(id)
+  }, [post])
+
+  // Intersection observer for table of contents active state
+  useEffect(() => {
+    if (!post || tocSections.length === 0) return
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -73,7 +100,7 @@ const BlogDetail = () => {
     return () => {
       sections.forEach((section) => observer.unobserve(section))
     }
-  }, [post])
+  }, [post, tocSections.length])
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -147,18 +174,6 @@ const BlogDetail = () => {
       </div>
     )
   }
-
-  // Table of contents sections
-  const tocSections = [
-    { id: 'identify-assumptions', title: '1. Identify the Assumptions Early' },
-    { id: 'prioritize-assumptions', title: '2. Prioritize the Risky Assumptions' },
-    { id: 'smallest-test', title: '3. Choose the Smallest Possible Test' },
-    { id: 'turn-findings-into-action', title: '4. Turn Findings into Action' },
-    { id: 'document-learning', title: '5. Document the Learning' },
-    { id: 'why-this-matters', title: 'Why This Matters' },
-    { id: 'common-pitfalls', title: 'Common Pitfalls to Avoid' },
-    { id: 'final-thoughts', title: 'Final Thoughts' },
-  ]
 
   return (
     <div className="min-h-screen bg-white">
@@ -284,37 +299,39 @@ const BlogDetail = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="lg:grid lg:grid-cols-12 lg:gap-12">
-            {/* Table of Contents - Sidebar */}
-            <aside className="hidden lg:block lg:col-span-3">
-              <div className="sticky top-24">
-                <div className="bg-white rounded-xl border border-neutral/30 p-6 shadow-lg shadow-primary/5">
-                  <h3 className="text-lg font-bold text-primary-dark mb-4 flex items-center gap-2">
-                    <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    Table of Contents
-                  </h3>
-                  <nav className="space-y-2">
-                    {tocSections.map((section) => (
-                      <button
-                        key={section.id}
-                        onClick={() => scrollToSection(section.id)}
-                        className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-all ${
-                          activeSection === section.id
-                            ? 'bg-primary text-white font-semibold'
-                            : 'text-primary-dark/70 hover:bg-primary/10 hover:text-primary'
-                        }`}
-                      >
-                        {section.title}
-                      </button>
-                    ))}
-                  </nav>
+            {/* Table of Contents - Sidebar (only when post has sections with ids) */}
+            {tocSections.length > 0 && (
+              <aside className="hidden lg:block lg:col-span-3">
+                <div className="sticky top-24">
+                  <div className="bg-white rounded-xl border border-neutral/30 p-6 shadow-lg shadow-primary/5">
+                    <h3 className="text-lg font-bold text-primary-dark mb-4 flex items-center gap-2">
+                      <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                      Table of Contents
+                    </h3>
+                    <nav className="space-y-2">
+                      {tocSections.map((section) => (
+                        <button
+                          key={section.id}
+                          onClick={() => scrollToSection(section.id)}
+                          className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-all ${
+                            activeSection === section.id
+                              ? 'bg-primary text-white font-semibold'
+                              : 'text-primary-dark/70 hover:bg-primary/10 hover:text-primary'
+                          }`}
+                        >
+                          {section.title}
+                        </button>
+                      ))}
+                    </nav>
+                  </div>
                 </div>
-              </div>
-            </aside>
+              </aside>
+            )}
 
             {/* Blog Content */}
-            <article className="lg:col-span-9">
+            <article className={tocSections.length > 0 ? 'lg:col-span-9' : 'lg:col-span-12'}>
               <div className="bg-white rounded-2xl shadow-xl shadow-primary/10 border border-neutral/30 p-8 sm:p-12 lg:p-16">
                 {/* Featured Image */}
                 {post.metadata.featuredImage && (
@@ -328,7 +345,7 @@ const BlogDetail = () => {
                 )}
 
                 {/* Content */}
-                <div className="prose prose-lg max-w-none 
+                <div ref={contentRef} className="prose prose-lg max-w-none 
                   prose-headings:text-primary-dark prose-headings:font-bold prose-headings:scroll-mt-24
                   prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
                   prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
