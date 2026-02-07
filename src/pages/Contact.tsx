@@ -1,7 +1,13 @@
-const Contact = () => {
+import PageMeta from '../components/PageMeta'
 
+const Contact = () => {
   return (
     <section className="relative pt-24 py-20 px-4 sm:px-6 lg:px-8 bg-warm/20 min-h-screen overflow-hidden">
+      <PageMeta
+        title="Contact"
+        description="Get in touch with Zara Bani for new opportunities and collaborations. Let's build better experiences together."
+        path="/contact"
+      />
       {/* Background Decorations */}
       <div className="absolute top-20 right-0 h-96 w-96 bg-primary/5 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-20 left-0 h-80 w-80 bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>

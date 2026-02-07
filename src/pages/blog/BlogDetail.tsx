@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getBlogPostBySlug, getRelatedPosts, type BlogPostComponent } from './posts'
+import PageMeta from '../../components/PageMeta'
 
 type TocSection = { id: string; title: string }
 
@@ -177,6 +178,15 @@ const BlogDetail = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <PageMeta
+        title={post.metadata.title}
+        description={post.metadata.excerpt}
+        image={post.metadata.featuredImage ?? undefined}
+        path={`/blog/${post.metadata.slug}`}
+        type="article"
+        publishedTime={post.metadata.date}
+        author={post.metadata.author}
+      />
       {/* Reading Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200 z-50">
         <div 

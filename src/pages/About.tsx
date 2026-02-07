@@ -1,3 +1,5 @@
+import PageMeta from '../components/PageMeta'
+
 const About = () => {
   const skills = [
     "User Research & Testing",
@@ -29,6 +31,11 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <PageMeta
+        title="About"
+        description="UX designer passionate about creating thoughtful experiences that put people first. Based in London. User research, wireframing, prototyping, and cross-functional collaboration."
+        path="/about"
+      />
       {/* Main Content */}
       <section className="relative pt-24 py-20 px-4 sm:px-6 lg:px-8 bg-warm/20 min-h-screen overflow-hidden">
         {/* Background Decorations */}

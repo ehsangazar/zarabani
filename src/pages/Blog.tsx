@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllBlogPosts, type BlogPostComponent } from './blog/posts'
+import PageMeta from '../components/PageMeta'
 
 const Blog = () => {
   const [posts, setPosts] = useState<BlogPostComponent[]>([])
@@ -43,6 +44,11 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <PageMeta
+        title="Blog"
+        description="Thoughts on UX design, product strategy, AI and design judgment, storytelling in design, and the design process."
+        path="/blog"
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-warm/40 via-warm/20 to-neutral/20 pt-32 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Animated background elements */}

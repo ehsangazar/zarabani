@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllCaseStudies, type CaseStudy } from '../utils/caseStudies'
 import { allProjects } from '../utils/projects'
+import PageMeta from '../components/PageMeta'
 
 interface CombinedProject {
   id: string
@@ -88,6 +89,11 @@ const Projects = () => {
 
   return (
     <section className="relative pt-24 py-20 px-4 sm:px-6 lg:px-8 bg-warm/20 min-h-screen overflow-hidden">
+      <PageMeta
+        title="Projects"
+        description="Case studies and featured work in UX and product design. User-centred design with measurable impact."
+        path="/projects"
+      />
       {/* Background Decorations */}
       <div className="absolute top-20 right-0 h-96 w-96 bg-primary/5 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-20 left-0 h-80 w-80 bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
