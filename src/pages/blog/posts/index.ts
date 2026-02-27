@@ -2,6 +2,7 @@
 // Import all blog post components here
 
 import { TurningAssumptionsIntoValidatedSolutions } from './TurningAssumptionsIntoValidatedSolutions'
+import { FigmaMcpClaudeConnection } from './FigmaMcpClaudeConnection'
 import { TikTokNotificationsPersuasiveDesign } from './TikTokNotificationsPersuasiveDesign'
 import { WhenDesignStopsAskingWhy } from './WhenDesignStopsAskingWhy'
 import { WhyProductDesignersShouldBeStorytellers } from './WhyProductDesignersShouldBeStorytellers'
@@ -12,6 +13,7 @@ export type { BlogPostComponent, BlogPostMetadata }
 
 // Export all blog posts as an array
 export const allBlogPosts: BlogPostComponent[] = [
+  FigmaMcpClaudeConnection,
   WhyProductDesignersShouldBeStorytellers,
   WhenDesignStopsAskingWhy,
   TikTokNotificationsPersuasiveDesign,

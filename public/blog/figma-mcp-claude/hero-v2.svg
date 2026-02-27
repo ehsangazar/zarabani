@@ -1,0 +1,51 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="180" y1="150" x2="1420" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#F8FAFC" stop-opacity="0.93"/>
+    </linearGradient>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="220" cy="140" r="150" fill="#18A0FB" fill-opacity="0.2" filter="url(#blur)"/>
+  <circle cx="1370" cy="770" r="190" fill="#F97316" fill-opacity="0.18" filter="url(#blur)"/>
+
+  <rect x="160" y="120" width="1280" height="660" rx="36" fill="url(#panel)"/>
+
+  <text x="800" y="255" text-anchor="middle" fill="#0F172A" font-size="78" font-family="Georgia, 'Times New Roman', serif" font-weight="700">MCP Console</text>
+
+  <!-- Figma logo -->
+  <g transform="translate(300,360)">
+    <rect x="0" y="0" width="92" height="92" rx="46" fill="#F24E1E"/>
+    <rect x="0" y="96" width="92" height="92" rx="46" fill="#A259FF"/>
+    <rect x="0" y="192" width="92" height="92" rx="46" fill="#0ACF83"/>
+    <rect x="96" y="0" width="92" height="92" rx="46" fill="#FF7262"/>
+    <rect x="96" y="96" width="92" height="92" rx="46" fill="#1ABCFE"/>
+    <text x="94" y="334" text-anchor="middle" fill="#111827" font-size="40" font-family="Inter, Arial, sans-serif" font-weight="700">Figma</text>
+  </g>
+
+  <text x="800" y="515" text-anchor="middle" fill="#334155" font-size="72" font-family="Georgia, 'Times New Roman', serif" font-weight="700">+</text>
+
+  <!-- Claude logo (stylized mark + wordmark) -->
+  <g transform="translate(1030,360)">
+    <circle cx="95" cy="95" r="22" fill="#D97706"/>
+    <circle cx="95" cy="43" r="18" fill="#EA580C"/>
+    <circle cx="95" cy="147" r="18" fill="#EA580C"/>
+    <circle cx="43" cy="95" r="18" fill="#EA580C"/>
+    <circle cx="147" cy="95" r="18" fill="#EA580C"/>
+    <circle cx="58" cy="58" r="14" fill="#F59E0B"/>
+    <circle cx="132" cy="58" r="14" fill="#F59E0B"/>
+    <circle cx="58" cy="132" r="14" fill="#F59E0B"/>
+    <circle cx="132" cy="132" r="14" fill="#F59E0B"/>
+    <text x="95" y="334" text-anchor="middle" fill="#111827" font-size="40" font-family="Inter, Arial, sans-serif" font-weight="700">Claude</text>
+  </g>
+
+  <text x="800" y="710" text-anchor="middle" fill="#475569" font-size="34" font-family="Inter, Arial, sans-serif">Context in, better decisions out</text>
+</svg>
