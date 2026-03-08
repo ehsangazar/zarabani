@@ -1,6 +1,20 @@
+import type { CSSProperties } from "react";
+
+const omaiaLegacyPalette: CSSProperties = {
+  ["--color-primary" as string]: "#B24B01",
+  ["--color-primary-dark" as string]: "#223830",
+  ["--color-secondary" as string]: "#EAA64B",
+  ["--color-accent" as string]: "#487B79",
+  ["--color-warm" as string]: "#ECDBCC",
+  ["--color-neutral" as string]: "#CDD7D7",
+};
+
 const Omaia = () => {
   return (
-    <div className="max-w-5xl mx-auto px-8 md:px-12">
+    <div
+      className="max-w-5xl mx-auto px-8 md:px-12"
+      style={omaiaLegacyPalette}
+    >
       {/* Hero Section */}
       <div className="py-12 mb-16">
         <h1 className="text-5xl md:text-6xl font-bold text-primary-dark mb-6">
@@ -650,4 +664,3 @@ const Omaia = () => {
 }
 
 export default Omaia
-
