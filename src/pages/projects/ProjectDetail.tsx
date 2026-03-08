@@ -99,7 +99,7 @@ const ProjectDetail = () => {
                   {caseStudy.category}
                 </span>
               </div>
-              <h1 className={`${caseStudy.id === 'focused-learning' ? 'text-4xl sm:text-5xl lg:text-6xl' : 'text-5xl sm:text-6xl lg:text-7xl'} font-extrabold text-primary-dark mb-8 leading-tight`}>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-dark mb-8 leading-tight">
                 {caseStudy.title}
               </h1>
               {caseStudy.id !== 'focused-learning' && (
@@ -172,7 +172,7 @@ const ProjectDetail = () => {
                     Featured Project
                   </span>
                 </div>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-primary-dark mb-8 leading-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-dark mb-8 leading-tight">
                   {project.title}
                 </h1>
                 <p className="text-xl sm:text-2xl text-primary-dark/80 leading-relaxed max-w-4xl mx-auto">
@@ -241,7 +241,7 @@ const ProjectDetail = () => {
                     Featured Project
                   </span>
                 </div>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-primary-dark mb-8 leading-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-dark mb-8 leading-tight">
                   {project.title}
                 </h1>
                 <p className="text-xl sm:text-2xl text-primary-dark/80 leading-relaxed max-w-4xl mx-auto">
@@ -310,7 +310,7 @@ const ProjectDetail = () => {
                     Featured Project
                   </span>
                 </div>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-primary-dark mb-8 leading-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-dark mb-8 leading-tight">
                   {project.title}
                 </h1>
                 <p className="text-xl sm:text-2xl text-primary-dark/80 leading-relaxed max-w-4xl mx-auto">
@@ -379,7 +379,7 @@ const ProjectDetail = () => {
                     Featured Project
                   </span>
                 </div>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-primary-dark mb-8 leading-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-dark mb-8 leading-tight">
                   {project.title}
                 </h1>
                 <p className="text-xl sm:text-2xl text-primary-dark/80 leading-relaxed max-w-4xl mx-auto">

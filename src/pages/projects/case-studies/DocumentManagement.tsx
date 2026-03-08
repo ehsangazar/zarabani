@@ -5,7 +5,7 @@ const DocumentManagement = () => {
     <div className="max-w-5xl mx-auto px-8 md:px-12">
       {/* Hero Section */}
       <div className="py-12 mb-16">
-        <h1 className="text-5xl md:text-6xl font-bold text-primary-dark mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-primary-dark mb-6">
           Document Management
         </h1>
         <p className="text-2xl text-primary-dark/80 mb-8 leading-relaxed">
