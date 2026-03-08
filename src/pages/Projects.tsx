@@ -10,7 +10,6 @@ interface CombinedProject {
   title: string
   description: string
   category: string
-  technologies: string[]
   achievements: string[]
   caseStudyId?: string
   isCaseStudy: boolean
@@ -41,7 +40,6 @@ const Projects = () => {
             title: cs.title,
             description: cs.description,
             category: cs.category,
-            technologies: cs.technologies,
             achievements: cs.achievements,
             caseStudyId: cs.id,
             isCaseStudy: true,
@@ -56,7 +54,6 @@ const Projects = () => {
               title: project.title,
               description: project.description,
               category: 'Featured Project',
-              technologies: project.technologies,
               achievements: project.achievements,
               isCaseStudy: false,
             })
@@ -169,23 +166,6 @@ const Projects = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                {/* Technologies Section */}
-                <div className="mb-6">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-primary-dark/60 mb-3">
-                    Skills Applied
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/80 border border-primary/20 text-xs font-semibold text-primary-dark/80 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 backdrop-blur-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
                 </div>
 
                 {/* Spacer to push button to bottom */}
