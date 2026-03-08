@@ -115,8 +115,9 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
           {projects.map((project, index) => (
-            <div
+            <Link
               key={index}
+              to={`/projects/${project.id}`}
               className="group relative glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -167,9 +168,8 @@ const Projects = () => {
                 <div className="mt-auto"></div>
 
                 {/* View Project Button */}
-                <Link
-                  to={`/projects/${project.id}`}
-                  className="group/btn relative inline-flex items-center justify-center gap-3 w-full bg-primary text-white px-6 py-4 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300 overflow-hidden mt-6"
+                <span
+                  className="group/btn relative inline-flex items-center justify-center gap-3 w-full bg-primary text-white px-6 py-4 rounded-xl font-bold text-sm shadow-lg group-hover:shadow-xl group-hover:bg-primary/90 transition-all duration-300 overflow-hidden mt-6"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     {project.isCaseStudy ? 'View Case Study' : 'View Project'}
@@ -178,9 +178,9 @@ const Projects = () => {
                     </svg>
                   </span>
                   <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
