@@ -3,7 +3,7 @@ const FocusedLearning = () => {
     <div className="max-w-5xl mx-auto px-8 md:px-12">
       {/* Hero Section */}
       <div className="mb-8">
-        <h1 className="text-5xl md:text-6xl font-bold text-primary-dark mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-primary-dark mb-6">
           From Cognitive Chaos to Focused Learning
         </h1>
       </div>
@@ -674,4 +674,3 @@ const FocusedLearning = () => {
 }
 
 export default FocusedLearning
-
