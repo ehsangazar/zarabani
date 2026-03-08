@@ -4,48 +4,48 @@ This document defines the official color palette for the Zarabani portfolio webs
 
 ## Primary Colors
 
-### Primary (#B24B01)
-- **Hex**: `#B24B01`
-- **Name**: Burnt Orange
+### Primary (#09244c)
+- **Hex**: `#09244c`
+- **Name**: Deep Navy
 - **Usage**: Primary brand color, main CTAs, key highlights
 - **CSS Variable**: `--color-primary`
 - **Tailwind Class**: `primary`
 
-### Primary Dark (#223830)
-- **Hex**: `#223830`
-- **Name**: Dark Green
+### Primary Dark (#06162e)
+- **Hex**: `#06162e`
+- **Name**: Midnight Navy
 - **Usage**: Headings, dark text, strong contrast elements
 - **CSS Variable**: `--color-primary-dark`
 - **Tailwind Class**: `primary-dark`
 
 ## Secondary Colors
 
-### Secondary (#EAA64B)
-- **Hex**: `#EAA64B`
-- **Name**: Golden Yellow
+### Secondary (#12366f)
+- **Hex**: `#12366f`
+- **Name**: Royal Navy
 - **Usage**: Secondary actions, accents, gradients
 - **CSS Variable**: `--color-secondary`
 - **Tailwind Class**: `secondary`
 
-### Accent (#487B79)
-- **Hex**: `#487B79`
-- **Name**: Teal
+### Accent (#1b4d99)
+- **Hex**: `#1b4d99`
+- **Name**: Accent Blue
 - **Usage**: Accent elements, tertiary actions, decorative elements
 - **CSS Variable**: `--color-accent`
 - **Tailwind Class**: `accent`
 
 ## Neutral Colors
 
-### Warm (#ECDBCC)
-- **Hex**: `#ECDBCC`
-- **Name**: Pale Beige
+### Warm (#eef3fb)
+- **Hex**: `#eef3fb`
+- **Name**: Mist Blue
 - **Usage**: Backgrounds, subtle highlights, warm tones
 - **CSS Variable**: `--color-warm`
 - **Tailwind Class**: `warm`
 
-### Neutral (#CDD7D7)
-- **Hex**: `#CDD7D7`
-- **Name**: Light Grey/Blue
+### Neutral (#cfd8ea)
+- **Hex**: `#cfd8ea`
+- **Name**: Cool Light Blue
 - **Usage**: Backgrounds, borders, subtle elements
 - **CSS Variable**: `--color-neutral`
 - **Tailwind Class**: `neutral`
@@ -55,8 +55,8 @@ This document defines the official color palette for the Zarabani portfolio webs
 ```
 ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐
 │   Primary   │  Secondary  │    Warm     │   Neutral   │   Accent    │ Primary Dark│
-│  #B24B01    │  #EAA64B    │  #ECDBCC    │  #CDD7D7    │  #487B79    │  #223830    │
-│ Burnt Orange│Golden Yellow│ Pale Beige  │Light Grey/Blue│    Teal    │ Dark Green  │
+│  #09244c    │  #12366f    │  #eef3fb    │  #cfd8ea    │  #1b4d99    │  #06162e    │
+│  Deep Navy  │ Royal Navy  │  Mist Blue  │Cool Light Blue│Accent Blue│Midnight Navy│
 └─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┘
 ```
 
@@ -100,8 +100,7 @@ Colors are defined in `src/index.css` using CSS custom properties and Tailwind t
 
 ## Accessibility
 
-- **Primary Dark (#223830)**: WCAG AA compliant for text on light backgrounds
-- **Primary (#B24B01)**: WCAG AA compliant for text on white/light backgrounds
+- **Primary Dark (#06162e)**: WCAG AA compliant for text on light backgrounds
+- **Primary (#09244c)**: WCAG AA compliant for text on white/light backgrounds
 - Always ensure sufficient contrast ratios when combining colors
 - Test color combinations with accessibility tools
-

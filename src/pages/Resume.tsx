@@ -110,7 +110,7 @@ const Resume = () => {
             margin: 0 auto !important;
             padding: 0.5in 0.75in !important;
             background: white !important;
-            color: #223830 !important;
+            color: #06162e !important;
             font-family: Arial, Helvetica, sans-serif !important;
             font-size: 11pt !important;
             line-height: 1.5 !important;
@@ -118,31 +118,31 @@ const Resume = () => {
           
           /* Labels with website colors */
           .contact-label {
-            color: #B24B01 !important;
+            color: #09244c !important;
             font-weight: 600 !important;
           }
           
           /* Headings and main text with website colors */
           .resume-name,
           h1, h2, h3, h4, h5, h6 {
-            color: #223830 !important;
+            color: #06162e !important;
           }
           
           .resume-title {
-            color: #B24B01 !important;
+            color: #09244c !important;
           }
           
           .job-title {
-            color: #223830 !important;
+            color: #06162e !important;
           }
           
           .company {
-            color: #487B79 !important;
+            color: #1b4d99 !important;
           }
           
           .section-title {
-            color: #223830 !important;
-            border-bottom: 2px solid #B24B01 !important;
+            color: #06162e !important;
+            border-bottom: 2px solid #09244c !important;
           }
           
           .summary,
@@ -152,17 +152,17 @@ const Resume = () => {
           .skills-list,
           .skills-list span,
           p, li {
-            color: #223830 !important;
+            color: #06162e !important;
           }
           
           .date {
-            color: #487B79 !important;
+            color: #1b4d99 !important;
           }
           
           /* Links with website colors */
           .contact-item-link,
           a {
-            color: #B24B01 !important;
+            color: #09244c !important;
             text-decoration: underline !important;
           }
           
@@ -181,20 +181,20 @@ const Resume = () => {
           
           /* Header badge with website colors */
           .header-badge {
-            background: rgba(236, 219, 204, 0.3) !important;
-            border: 1px solid rgba(178, 75, 1, 0.2) !important;
-            color: #223830 !important;
+            background: rgba(245, 245, 245, 0.6) !important;
+            border: 1px solid rgba(9, 36, 76, 0.2) !important;
+            color: #06162e !important;
             box-shadow: none !important;
           }
           
           .header-badge .contact-label {
-            color: #B24B01 !important;
+            color: #09244c !important;
           }
           
           /* Contact info box with website colors */
           .contact-info {
-            background: rgba(236, 219, 204, 0.2) !important;
-            border: 1px solid rgba(178, 75, 1, 0.15) !important;
+            background: rgba(245, 245, 245, 0.45) !important;
+            border: 1px solid rgba(9, 36, 76, 0.15) !important;
             backdrop-filter: none !important;
             box-shadow: none !important;
             padding: 0.5rem !important;
@@ -202,7 +202,7 @@ const Resume = () => {
           
           /* Achievement list markers with website colors */
           .achievements-list li::marker {
-            color: #B24B01 !important;
+            color: #09244c !important;
           }
           
           /* Remove all visual effects */
@@ -340,8 +340,8 @@ const Resume = () => {
           align-items: center;
           gap: 0.4rem;
           padding: 0.375rem 0.75rem;
-          background: rgba(178, 75, 1, 0.1);
-          border: 1px solid rgba(178, 75, 1, 0.2);
+          background: rgba(9, 36, 76, 0.1);
+          border: 1px solid rgba(9, 36, 76, 0.2);
           border-radius: 6px;
           font-size: 0.875rem;
           font-weight: 500;
@@ -356,11 +356,11 @@ const Resume = () => {
           flex-direction: column;
           gap: 0.25rem;
           padding: 0.75rem;
-          background: rgba(236, 219, 204, 0.4);
+          background: rgba(245, 245, 245, 0.4);
           backdrop-filter: blur(10px);
           border-radius: 12px;
-          border: 1px solid rgba(178, 75, 1, 0.15);
-          box-shadow: 0 2px 8px rgba(178, 75, 1, 0.08);
+          border: 1px solid rgba(9, 36, 76, 0.15);
+          box-shadow: 0 2px 8px rgba(9, 36, 76, 0.08);
         }
 
         @media print {
@@ -551,7 +551,7 @@ const Resume = () => {
           border-radius: 8px;
           font-weight: 600;
           cursor: pointer;
-          box-shadow: 0 10px 25px rgba(178, 75, 1, 0.25);
+          box-shadow: 0 10px 25px rgba(9, 36, 76, 0.25);
           transition: all 0.3s ease;
           font-size: 0.875rem;
           z-index: 100;
@@ -561,7 +561,7 @@ const Resume = () => {
 
         .print-button:hover {
           transform: translateY(-3px);
-          box-shadow: 0 15px 35px rgba(178, 75, 1, 0.35);
+          box-shadow: 0 15px 35px rgba(9, 36, 76, 0.35);
         }
 
         .print-button:active {

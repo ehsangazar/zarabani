@@ -3,28 +3,28 @@
 /* Custom Design System Variables */
 @layer base {
   :root {
-    --color-primary: #B24B01;
-    /* Burnt Orange */
-    --color-primary-dark: #223830;
-    /* Dark Green */
-    --color-secondary: #EAA64B;
-    /* Golden Yellow */
-    --color-accent: #487B79;
-    /* Teal */
-    --color-warm: #ECDBCC;
-    /* Pale Beige */
-    --color-neutral: #CDD7D7;
-    /* Light Grey/Blue */
+    --color-primary: #09244c;
+    /* Deep navy */
+    --color-primary-dark: #06162e;
+    /* Midnight navy */
+    --color-secondary: #12366f;
+    /* Royal navy */
+    --color-accent: #1b4d99;
+    /* Accent blue */
+    --color-warm: #eef3fb;
+    /* Light blue tint */
+    --color-neutral: #cfd8ea;
+    /* Cool light blue */
   }
 }
 
 @theme {
-  --color-primary: #B24B01;
-  --color-primary-dark: #223830;
-  --color-secondary: #EAA64B;
-  --color-accent: #487B79;
-  --color-warm: #ECDBCC;
-  --color-neutral: #CDD7D7;
+  --color-primary: #09244c;
+  --color-primary-dark: #06162e;
+  --color-secondary: #12366f;
+  --color-accent: #1b4d99;
+  --color-warm: #eef3fb;
+  --color-neutral: #cfd8ea;
 }
 
 /* Custom Animations */
@@ -113,7 +113,7 @@
 
 /* Mesh Background */
 .mesh-gradient {
-  background: #B24B01;
+  background: #09244c;
 }
 
 /* Artistic Shapes */
@@ -134,19 +134,19 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #eef3fb;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #B24B01;
+  background: #09244c;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8a3a01;
+  background: #071c3c;
 }
 
 /* Text Gradient - Now solid color */
 .text-gradient {
-  color: #B24B01;
+  color: #09244c;
 }
