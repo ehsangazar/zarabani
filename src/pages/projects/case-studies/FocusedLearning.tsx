@@ -185,7 +185,7 @@ const FocusedLearning = () => {
 
       <div className="my-16">
         <img
-          src="/case-studies/Daqqaq/7.png"
+          src="/case-studies/d833c781-e5b9-4562-854e-acd8c62c3443.png"
           alt="Current Study Flow"
           className="w-full"
         />
