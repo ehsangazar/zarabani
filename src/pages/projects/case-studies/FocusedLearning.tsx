@@ -146,9 +146,10 @@ const FocusedLearning = () => {
             formats, and manage their study flow.
           </li>
           <li>
-            <strong>Observation</strong> to see how students navigate lesson
-            content in practice, including how they switch between videos, PDFs,
-            and text while studying.
+            <strong>Exit Intent Survey</strong> to gather quantitative data on
+            why students were disengaging with the material. This survey asked
+            targeted questions with multiple-choice options, each option based
+            on our assumptions about potential friction points.
           </li>
           <li>
             <strong>Discussions with the instructor team</strong> to understand
