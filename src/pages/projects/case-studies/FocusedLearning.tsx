@@ -67,16 +67,15 @@ const FocusedLearning = () => {
           <div className="w-full md:w-2/3">
             <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
               For over 10,000 students, learning was a constant struggle of
-              assembly. Critical materials for a single lesson were scattered
-              across disconnected platforms, forcing them to piece together
-              their own education.
+              assembly.
             </p>
             <p className="text-lg text-primary-dark/70 leading-relaxed mb-8">
-              Students were relying on YouTube and other informal methods to
-              follow online lessons. Materials were spread across formats
-              (video/audio + book PDFs + script text), so students wasted time
-              switching between sources, losing their place, and re-finding the
-              same content again.
+              Analytics revealed a <strong>70% drop-off</strong> in student
+              activity; while all students landed on the lesson page,{" "}
+              <strong>only 30% interacted</strong> with the content by clicking
+              the download buttons or external YouTube links. This pattern was
+              directly linked to <strong>lower performance of students</strong>
+              , as the assessment criteria and results indicated.
             </p>
           </div>
           <div className="w-full md:w-1/3">
