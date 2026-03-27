@@ -218,35 +218,6 @@ const Omaia = () => {
         </div>
       </section>
 
-      {/* Research */}
-      <section className="my-20">
-        <h3 className="text-xl font-bold text-primary mb-4">
-          Researching Problem Space
-        </h3>
-        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
-          Subject-matter research showed the effective use cases of the 'Hook'
-          model to encourage small, consistent acts of self-care
-        </h2>
-        <p className="text-lg text-primary-dark/70 leading-relaxed mb-6">
-          Fairly new in behavioural science, we naturally started with a
-          deep-dive into literature research on behavioural frameworks,
-          particularly the Hook model that could encourage continued self-care
-          without adding pressure.
-        </p>
-        <p className="text-lg text-primary-dark/80 leading-relaxed mb-8">
-          We tailored its core ideas to fit the emotional landscape of new
-          mothers—using gentle prompts, validating rewards, and moments of
-          reflection to support small, meaningful actions that feel achievable &
-          mothers could return to, even with busy hands and tired minds.
-        </p>
-
-        <img
-          src="/case-studies/Omaia/4.png"
-          alt="Hook model research"
-          className="w-full my-8"
-        />
-      </section>
-
       {/* Personas */}
       <section className="my-20">
         <h3 className="text-xl font-bold text-primary mb-4">
@@ -289,6 +260,35 @@ const Omaia = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Research */}
+      <section className="my-20">
+        <h3 className="text-xl font-bold text-primary mb-4">
+          Researching Problem Space
+        </h3>
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
+          Subject-matter research showed the effective use cases of the 'Hook'
+          model to encourage small, consistent acts of self-care
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed mb-6">
+          Fairly new in behavioural science, we naturally started with a
+          deep-dive into literature research on behavioural frameworks,
+          particularly the Hook model that could encourage continued self-care
+          without adding pressure.
+        </p>
+        <p className="text-lg text-primary-dark/80 leading-relaxed mb-8">
+          We tailored its core ideas to fit the emotional landscape of new
+          mothers—using gentle prompts, validating rewards, and moments of
+          reflection to support small, meaningful actions that feel achievable &
+          mothers could return to, even with busy hands and tired minds.
+        </p>
+
+        <img
+          src="/case-studies/Omaia/4.png"
+          alt="Hook model research"
+          className="w-full my-8"
+        />
       </section>
 
       {/* Process Images */}
