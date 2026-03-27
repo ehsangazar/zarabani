@@ -262,27 +262,6 @@ const Omaia = () => {
         </div>
       </section>
 
-      <section className="my-20">
-        <h3 className="text-xl font-bold text-primary mb-4">
-          User Storyboarding
-        </h3>
-        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
-          Placing the persona in an ideal context scenario helps identify the
-          minimum required functions of our MVP.
-        </h2>
-        <p className="text-lg text-primary-dark/70 leading-relaxed mb-4">
-          At this stage, our primary goal is to extract a list of design
-          requirements that we have to support in order for these ideal
-          scenarios to happen. These requirements would then lead our idea
-          generation phase.
-        </p>
-        <img
-          src="/case-studies/Omaia/5.png"
-          alt="User Storyboarding"
-          className="w-full rounded-2xl border border-primary-dark/10"
-        />
-      </section>
-
       {/* Research */}
       <section className="my-20">
         <h3 className="text-xl font-bold text-primary mb-4">
@@ -309,6 +288,27 @@ const Omaia = () => {
           src="/case-studies/Omaia/4.png"
           alt="Hook model research"
           className="w-full my-8"
+        />
+      </section>
+
+      <section className="my-20">
+        <h3 className="text-xl font-bold text-primary mb-4">
+          User Storyboarding
+        </h3>
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
+          Placing the persona in an ideal context scenario helps identify the
+          minimum required functions of our MVP.
+        </h2>
+        <p className="text-lg text-primary-dark/70 leading-relaxed mb-4">
+          At this stage, our primary goal is to extract a list of design
+          requirements that we have to support in order for these ideal
+          scenarios to happen. These requirements would then lead our idea
+          generation phase.
+        </p>
+        <img
+          src="/case-studies/Omaia/5.png"
+          alt="User Storyboarding"
+          className="w-full rounded-2xl border border-primary-dark/10"
         />
       </section>
 
