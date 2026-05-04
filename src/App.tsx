@@ -9,6 +9,7 @@ import Blog from './pages/Blog'
 import ProjectDetail from './pages/projects/ProjectDetail'
 import BlogDetail from './pages/blog/BlogDetail'
 import Resume from './pages/Resume'
+import ProjectPasswordGate from './components/ProjectPasswordGate'
 
 function App() {
   return (
@@ -25,7 +26,14 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/projects/:id" element={<ProjectDetail />} />
+              <Route
+                path="/projects/:id"
+                element={
+                  <ProjectPasswordGate>
+                    <ProjectDetail />
+                  </ProjectPasswordGate>
+                }
+              />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogDetail />} />
               <Route path="/contact" element={<Contact />} />

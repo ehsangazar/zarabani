@@ -36,6 +36,16 @@ The GitHub Actions workflow will automatically deploy the site on every push to 
 
 ## Development
 
+### Project Password
+
+Project detail pages are protected by a client-side password gate. Set the password in your environment before building or running the site:
+
+```bash
+VITE_PROJECTS_PASSWORD="your-password"
+```
+
+If the variable is not set, the local fallback password is `zara2026`.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
