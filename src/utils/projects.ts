@@ -26,9 +26,9 @@ export const allProjects: Project[] = [
   },
   {
     id: 'document-management',
-    title: "Redesigning Document Management, a SaaS Platform",
+    title: "Redesigning a B2B SaaS Library Management System",
     description:
-      "Redesigned a multi-role SaaS platform catering to librarians, document enthusiasts, and organizations, streamlining high-volume data entry and boosting workflow efficiency.",
+      "Improving complex catalogue management and data-heavy workflows for institutional libraries",
     icon: "menu_book",
     color: "violet",
     achievements: [
@@ -98,4 +98,3 @@ export const allProjects: Project[] = [
     technologies: ["Mobile App Design", "User Research", "Iterative Testing", "Product Design", "UX/UI Design"],
   },
 ];
-
