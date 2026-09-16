@@ -102,7 +102,7 @@ const ProjectDetail = () => {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-dark mb-8 leading-tight">
                 {caseStudy.title}
               </h1>
-              {caseStudy.id !== 'focused-learning' && (
+              {caseStudy.id !== 'focused-learning' && caseStudy.id !== 'altrata-boolean-search' && (
                 <p className="text-xl sm:text-2xl text-primary-dark/80 leading-relaxed max-w-4xl mx-auto">
                   {caseStudy.description}
                 </p>

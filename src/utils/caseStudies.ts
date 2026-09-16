@@ -1,6 +1,7 @@
 import { type ComponentType } from 'react'
 import Omaia from '../pages/projects/case-studies/Omaia'
 import FocusedLearning from '../pages/projects/case-studies/FocusedLearning'
+import AltrataBooleanSearch from '../pages/projects/case-studies/AltrataBooleanSearch'
 
 export interface CaseStudy {
   id: string
@@ -24,6 +25,20 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
 
   try {
     const caseStudies: CaseStudy[] = [
+      {
+        id: 'altrata-boolean-search',
+        title: 'Turning a parity request into a scalable Boolean search framework for an enterprise data platform',
+        description: 'I was asked to add OR logic to one filter. After researching how customers actually built searches, I argued for a reusable logic model across the entire Advanced Search experience.',
+        category: 'Product Design Case Study',
+        technologies: ['Product Strategy', 'Interaction Design', 'UX Research', 'Prototyping', 'Usability Testing', 'Enterprise SaaS'],
+        achievements: [
+          'Reframed a parity request into a platform-wide search capability',
+          'Designed and prototyped two opposing interaction models',
+          'Led three rounds of validation across internal teams, customer-facing teams and clients',
+          'Partnered with Product and Engineering to prioritise findings into implementation scope'
+        ],
+        component: AltrataBooleanSearch,
+      },
       {
         id: 'focused-learning',
         title: 'A learning hub that made course materials easier to find, follow, and finish',
