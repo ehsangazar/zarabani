@@ -50,10 +50,6 @@ const imageSpaces: Record<number, { title: string; notes: string[] }> = {
     title: 'Concept B — progressive Boolean controls',
     notes: ['Active criteria reveal the relevant operators.', 'Controls remain close to the filters and values they affect.'],
   },
-  241: {
-    title: 'Concept B — the editable search summary',
-    notes: ['Higher-level relationships read in context.', 'Values, inclusion, exclusion and operators can be edited in the summary.', 'Add filter provides another entry point into the search.'],
-  },
   266: {
     title: 'Concept B — searching for a filter value',
     notes: ['An entered value such as CEO surfaces the relevant filter and matching value.'],
@@ -65,6 +61,17 @@ const imageSpaces: Record<number, { title: string; notes: string[] }> = {
 }
 
 function ImageSpace({ after }: { after: number }) {
+  if (after === 241) {
+    return (
+      <figure className="al-figure al-source-image al-round-prototype">
+        <video controls playsInline preload="metadata" poster="/case-studies/altrata/round-two-concept-a-poster.jpg" aria-label="Concept A interactive prototype with an editable search summary">
+          <source src="/case-studies/altrata/round-two-concept-a-prototype.mp4" type="video/mp4" />
+          Your browser does not support embedded video.
+        </video>
+        <figcaption>Concept A · Editable search-summary prototype</figcaption>
+      </figure>
+    )
+  }
   const space = imageSpaces[after]
   if (!space) return null
   return (

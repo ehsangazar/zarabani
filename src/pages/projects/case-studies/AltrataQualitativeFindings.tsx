@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 
-type Callout = { x: number; y: number; routeY?: number; marker?: 'dot' | 'ring'; title: string; text: string }
+type Callout = { x: number; y: number; routeY?: number; marker?: 'dot' | 'ring'; title: string; text: ReactNode }
 
-function AnnotatedScreen({ src, alt, callouts, portrait = false, intro, outro }: { src: string; alt: string; callouts: Callout[]; portrait?: boolean; intro?: ReactNode; outro?: ReactNode }) {
+export function AnnotatedScreen({ src, alt, callouts, portrait = false, intro, outro }: { src: string; alt: string; callouts: Callout[]; portrait?: boolean; intro?: ReactNode; outro?: ReactNode }) {
   const figure = useRef<HTMLElement>(null)
   const [lines, setLines] = useState<{ path: string; x: number; y: number; marker: 'dot' | 'ring' }[]>([])
   const [canvas, setCanvas] = useState({ width: 1, height: 1 })
@@ -19,13 +19,16 @@ function AnnotatedScreen({ src, alt, callouts, portrait = false, intro, outro }:
         const box = note.getBoundingClientRect()
         const x = screen.left - bounds.left + screen.width * callouts[i].x / 100
         const y = screen.top - bounds.top + screen.height * callouts[i].y / 100
-        const endX = box.left - bounds.left - 8
+        const notesLeft = box.right <= screen.left
+        const endX = notesLeft ? box.right - bounds.left + 8 : box.left - bounds.left - 8
         const endY = box.top - bounds.top + 12
-        const gap = box.left - screen.right
-        const elbow = screen.right - bounds.left + gap * (i === 0 ? .3 : .65)
+        const gap = notesLeft ? screen.left - box.right : box.left - screen.right
+        const elbow = notesLeft
+          ? screen.left - bounds.left - gap * (i === 0 ? .3 : .65)
+          : screen.right - bounds.left + gap * (i === 0 ? .3 : .65)
         const routeY = screen.top - bounds.top + screen.height * (callouts[i].routeY ?? callouts[i].y) / 100
         const marker = callouts[i].marker ?? 'dot'
-        const startX = marker === 'ring' ? x + 11 : x
+        const startX = marker === 'ring' ? x + (notesLeft ? -11 : 11) : x
         return { x, y, marker, path: `M ${startX} ${y} V ${routeY} H ${elbow} V ${endY} H ${endX}` }
       }))
     }
@@ -66,7 +69,7 @@ export default function AltrataQualitativeFindings() {
       <h3>Too many connectors</h3>
       <p>Users could not tell which conditions a module-level connector controlled. Participants questioned:</p>
       <ul className="ae-participant-questions"><li>Which filters does this connector apply to?</li><li>Does it only affect the two adjacent filters?</li><li>Does it change the logic of previous selections?</li></ul>
-      <AnnotatedScreen portrait src="/case-studies/altrata/round-one-connectors.png" alt="Concept B filter panel with active criteria and contextual module connectors" intro={<p><strong>The design change:</strong> Show operators only when relevant criteria are active, only for Concept B.</p>} outro={<aside className="ae-margin-open-question"><span className="ae-label">Question kept open</span><h4>Was cross-module useful?</h4><p>Internal participants saw limited value, but the builder made its scope clearer. I kept it in Concept A for the next round rather than turning an internal observation into a product rule.</p></aside>} callouts={[
+      <AnnotatedScreen portrait src="/case-studies/altrata/round-one-connectors.png" alt="Concept B filter panel with active criteria and contextual module connectors" intro={<p><strong>The design change:</strong> Show operators only when relevant criteria are active, only for Concept B.</p>} outro={<aside className="ae-margin-open-question"><span className="ae-label">Question kept open</span><h4>Was cross-module Boolean useful?</h4><p>Internal participants saw limited value, but the builder made its scope clearer. I kept it in Concept A for the next round rather than turning an internal observation into a product rule.</p></aside>} callouts={[
         { x: 59, y: 49, title: 'Active criteria give the connector context', text: 'Wealth Tier and Place of residence are selected; the AND / OR control sits between their named modules.' },
         { x: 85, y: 74.5, title: 'Inactive modules stay quieter', text: 'Role and Experience show no connector between them in this view, supporting the decision to reveal operators only when relevant criteria are active.' },
       ]} />

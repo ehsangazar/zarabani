@@ -1,7 +1,7 @@
-import type { ComponentType, ReactNode } from 'react'
+import { useEffect, useRef, useState, type ComponentType, type ReactNode } from 'react'
 import source from './altrata-content.json'
 import AltrataExistingScreen from './AltrataExistingScreen'
-import AltrataQualitativeFindings from './AltrataQualitativeFindings'
+import AltrataQualitativeFindings, { AnnotatedScreen } from './AltrataQualitativeFindings'
 import { emphasizeAltrata } from './altrataEmphasis'
 import './altrata-editorial.css'
 
@@ -110,10 +110,76 @@ function RoundOneSnapshot() {
     </div></section></>
 }
 
+function CollaborationOpportunity() {
+  return <section className="ae-collaboration-opportunity">
+    <header><Label>Collaboration opportunity</Label><h3>Include the search criteria in export file</h3><p>Several participants described workflows where the search criteria needed to travel with the results, whether the recipient worked inside or outside Altrata.</p></header>
+    <AnnotatedScreen src="/case-studies/altrata/round-two-export-summary.png" alt="Export menu offering results with the search summary or data only" callouts={[
+      { x: 97, y: 42, title: 'For people without an Altrata seat', text: <>We explored <strong>including the search summary in exports</strong> for people without an Altrata seat, such as gift officers, CEOs and other decision-makers.</> },
+    ]} />
+    <AnnotatedScreen src="/case-studies/altrata/round-two-share-query.png" alt="Share query dialog for sending an editable query to Altrata colleagues" callouts={[
+      { x: 30.5, y: 29, title: 'For colleagues working in Altrata', text: <>We explored the possibility of <strong>sharing the query state</strong> so another researcher or colleague with an Altrata seat could inspect, modify and continue the same work.</> },
+    ]} />
+  </section>
+}
+
+function BooleanScopeFinding() {
+  return <section className="ae-boolean-scope-finding">
+    <p className="ae-boolean-intro">The research revealed a clear boundary: OR was easy to understand when it grouped alternatives within one criterion, but harder to justify and interpret when it connected separate modules.</p>
+    <div className="ae-boolean-overview">
+      <section className="ae-boolean-worked"><Label>What worked</Label><h4>OR within one criterion was easy to explain</h4><div className="ae-boolean-examples"><span>CEO OR CTO</span><span>New York OR Washington</span><span>Healthcare OR Financial Services</span></div></section>
+      <section className="ae-boolean-problems"><Label>What broke across modules</Label><div><article><b>01</b><h4>No convincing client scenario</h4><p>When OR sat between separate modules—for example, Location and Role—participants struggled to explain when a client would need it.</p></article><article><b>02</b><h4>Unclear connector scope</h4><p>In Concept B, participants could not easily tell which section the connector belonged to or what it controlled.</p></article></div></section>
+      <aside className="ae-boolean-conclusion"><Label>Conclusion</Label><p>The capability was adding <strong>more cognitive cost than demonstrated value.</strong></p></aside>
+      <section className="ae-boolean-decisions"><Label>Design decision</Label><div><article><span>Concept B</span><h4>Remove it from the filter panel</h4><p>We removed module-level AND / OR and moved the relationship into the search summary, where it could be read in context.</p></article><article><span>Concept A</span><h4>Keep it for client validation</h4><p>Cross-module AND / OR remained in the builder for another round, where its scope was more explicit.</p></article></div></section>
+    </div>
+    <ValueConnectorComparison />
+  </section>
+}
+
+function ValueConnectorComparison() {
+  const figure = useRef<HTMLElement>(null)
+  const [line, setLine] = useState({ width: 1, height: 1, path: '', startX: 0, startY: 0, endX: 0, endY: 0 })
+
+  useEffect(() => {
+    const root = figure.current
+    if (!root) return
+    const images = [...root.querySelectorAll('img')]
+    const update = () => {
+      const bounds = root.getBoundingClientRect()
+      const before = images[0].getBoundingClientRect()
+      const after = images[1].getBoundingClientRect()
+      const startX = before.left - bounds.left + before.width * .60
+      const startY = before.top - bounds.top + before.height * .405
+      const endX = after.left - bounds.left + after.width * .09
+      const endY = after.top - bounds.top + after.height * .61
+      const elbow = (before.right + after.left) / 2 - bounds.left
+      setLine({ width: bounds.width, height: bounds.height, startX, startY, endX, endY, path: `M ${startX} ${startY} H ${elbow} V ${endY} H ${endX}` })
+    }
+    const observer = new ResizeObserver(update)
+    observer.observe(root)
+    images.forEach(image => { observer.observe(image); image.addEventListener('load', update) })
+    update()
+    return () => { observer.disconnect(); images.forEach(image => image.removeEventListener('load', update)) }
+  }, [])
+
+  return <figure ref={figure} className="ae-value-connector-comparison">
+    <figcaption><strong>Clarifying the value-level connector</strong><p>There was also confusion about the AND / OR control at value level. We moved it from above the filter input to directly above the selected values, making it clear which values the relationship applied to.</p></figcaption>
+    <div className="ae-value-connector-images">
+      <div><span>Before · detached from the values</span><img src="/case-studies/altrata/round-two-value-connector-before.png" alt="Before refinement: the AND OR control sits above the role-category input" /></div>
+      <div><span>After · placed with the values</span><img src="/case-studies/altrata/round-two-value-connector-after.png" alt="After refinement: the AND OR control sits directly above the selected role values" /></div>
+    </div>
+    <svg className="ae-value-move-line" viewBox={`0 0 ${line.width} ${line.height}`} preserveAspectRatio="none" aria-hidden="true">
+      <defs><marker id="ae-value-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" /></marker></defs>
+      <path d={line.path} markerEnd="url(#ae-value-arrow)" />
+    </svg>
+  </figure>
+}
+
 function Schematic({ kind }: { kind: 'logic' | 'summary' | 'exclude' | 'discovery' }) {
+  if (kind === 'summary') {
+    return <figure className="ae-summary-screenshot"><img src="/case-studies/altrata/round-two-search-summary.png" alt="Search results summary showing the selected criteria and Boolean relationships in a readable sentence" /></figure>
+  }
   return <figure className="ae-schematic"><figcaption>Interaction principle · illustrative diagram</figcaption>
     {kind === 'logic' && <><div className="ae-query-row"><span>Role title</span><b>CEO</b><em>OR</em><b>CTO</b></div><div className="ae-connector">AND</div><div className="ae-query-row"><span>Location</span><b>New York</b><em>OR</em><b>Washington</b></div><p>Alternatives stay inside a clear criterion. The complete relationship is reviewed in the summary.</p></>}
-    {kind === 'summary' && <><div className="ae-query-row"><span>Explore</span><b>Role</b><b>Location</b><b>Experience</b></div><div className="ae-connector">↓</div><div className="ae-query-sentence">Find <strong>CEO or CTO</strong>, based in <strong>New York or Washington</strong>, excluding <strong>existing clients</strong>.</div><div className="ae-capabilities"><span>Review criteria</span><span>Edit values</span><span>Change operators</span><span>Add filter</span></div></>}
     {kind === 'exclude' && <><div className="ae-query-row"><span>At selection</span><b>Include</b><b className="ae-exclude">Exclude</b></div><div className="ae-connector">↓</div><div className="ae-query-row"><span>After selection</span><b className="ae-exclude">NOT · Canada</b></div><p>Exclusion is discoverable before selection and editable afterwards.</p></>}
     {kind === 'discovery' && <><div className="ae-search"><span aria-hidden="true">⌕</span> CEO</div><div className="ae-connector">↓</div><div className="ae-query-row"><span>Role title</span><b>Chief Executive Officer</b></div><p>Start with a value the user knows, then reveal where it belongs.</p></>}
   </figure>
@@ -161,11 +227,7 @@ export default function AltrataEditorial({ id, children, ImageSpace }: { id: str
       content = <><p>I started internally to identify <strong>structural, technical and usability risks</strong> while they were inexpensive to change. This round was not intended to validate the final direction with clients.</p><RoundOneSnapshot /><h3>Qualitative findings</h3><AltrataQualitativeFindings /><div className="ae-research-note"><Label>Research adjustment</Label><h3>Distinguishing between <strong>capability and usability</strong></h3><p>A concept could feel powerful yet remain difficult to operate. From the next round, we focused on ease of building and <strong>confidence that the resulting query represented the intended logic</strong>.</p></div></>
       break
     case 'round-2':
-      content = <><p>Round one tested whether the concepts were coherent. Round two tested whether they matched <strong>the searches clients actually needed to perform</strong>. I sampled across verticals and technical confidence, asking colleagues to bring complex real client requests.</p><Method people="8 · Commercial, Account Management and Client Success" task="A complex client search each participant brought" design="Both concepts per participant; counterbalanced order" /><div className="ae-round-map"><span>01 Simplify relationships</span><span>02 Make queries readable</span><span>03 Improve discovery</span><span>04 Validate the domain model</span></div><h3>01 · Move relationships to where they can be understood</h3><p>OR within a criterion was easy to explain: CEO OR CTO, New York OR Washington. <strong>OR between unrelated modules was harder</strong>: participants struggled to offer convincing client scenarios or identify the connector’s scope.</p><Table headings={['Evidence', 'Design response', 'Reasoning']} rows={[
-        ['P2 questioned why Location and Role needed OR; they were normally parts of one requirement', 'Remove module-level connectors from Concept B’s panel', 'Their cognitive cost exceeded demonstrated value'],
-        ['P4 preferred reading relationships left-to-right', 'Move higher-level AND / OR into the summary', 'Users can read and change the relationship in context'],
-        ['Concept A made condition boundaries explicit', 'Keep cross-condition AND / OR in the builder for client testing', 'Validate the capability where its scope was clearer'],
-      ]} /><Takeaway>{source[229]}</Takeaway><h3>02 · Turn the summary into a place to verify and edit</h3><p>P5 valued editing without repeatedly scrolling through the panel. P2 used the written query to read back her criteria and identify mistakes. <strong>Recognition replaced recall.</strong></p><Schematic kind="summary" /><p>The summary evolved beyond confirmation text: users could <strong>edit values, switch inclusion and exclusion, remove criteria, change operators and add filters</strong>.</p><ImageSpace after={241} /><div className="ae-research-note"><Label>Keeping the comparison fair</Label><h4>Both concepts needed the same verification layer.</h4><p>Only B initially had the summary. A preference for B could therefore reflect the summary rather than the inline model. I added it to A before client testing to <strong>remove that confounding variable</strong>.</p></div><div className="ae-split"><section><Label>Collaboration opportunity</Label><h3>Let the criteria travel with the list.</h3><p>A prospect developer might export results for a gift officer without an Altrata seat. We explored <strong>including the summary in exports</strong>, and <strong>sharing the query state</strong> so another researcher could inspect, modify and continue the work.</p></section><section><Label>Commercial opportunity</Label><h3>Explain the value of saved effort.</h3><p>Maggie described using saved prospecting time in renewal conversations. Her illustrative model compared an $11k subscription against approximately $25k of saved effort: a $14k net value story.</p><p className="ae-caption">A commercial value model, <strong>not a measured product outcome</strong>.</p></section></div><h3>03 · Meet users at the moment of intent</h3><div className="ae-decision-pair"><div><h4>Find values without knowing the filter architecture.</h4><p>P7 looked for keyword search immediately. Others searched for donations, roles and locations rather than knowing which filter contained them.</p><p>Full natural-language search was outside scope. We extended filter search to names, categories <strong>and values</strong>: CEO could surface Role title → Chief Executive Officer; United States could surface location or nationality filters.</p></div><Schematic kind="discovery" /></div><ImageSpace after={266} /><div className="ae-decision-pair"><div><h4>Expose exclusion before selection.</h4><p>P1 quickly understood the selected value’s is / not toggle. But users intending to exclude something had no indication that NOT existed before making a selection.</p><p>I added <strong>Include / Exclude inside the dropdown</strong>, keeping the compact control afterwards. In A, exclusion also became value-specific, allowing CEO OR CTO, but NOT CFO within one group.</p></div><Schematic kind="exclude" /></div><ImageSpace after={273} /><h3>04 · Test the model against professional experience</h3><div className="ae-dependency"><Label>Role status · Engineering dependency</Label><h4>Past CFO experience + current board membership</h4><p>Monika described current-or-prior CFO experience plus board experience as a common search. We added current/past status to the model, then checked it with Engineering. The API might require greater granularity, so the intended interaction and <strong>backend dependency</strong> were documented for scope or roadmap prioritisation.</p></div><Takeaway>Different verticals used different filters, but repeatedly needed the same logic. One reusable model avoided another cycle of design, engineering and a new usability pattern for every module.</Takeaway></>
+      content = <><p>Round one tested whether the concepts were coherent. Round two tested whether they matched <strong>the searches clients actually needed to perform</strong>. I sampled across verticals and technical confidence, asking colleagues to bring complex real client requests.</p><Method people="8 · Commercial, Account Management and Client Success" task="A complex client search each participant brought" design="Both concepts per participant; counterbalanced order" /><h3>The search summary became the answer to a query visibility problem</h3><p>Participants constantly used the search summary to <strong>check their own work</strong> and valued editing without repeatedly scrolling through the panel. They used the written query to read back their criteria and identify mistakes. <strong>Recognition replaced recall.</strong></p><Schematic kind="summary" /><p>The summary evolved beyond confirmation text: users could <strong>edit values, switch inclusion and exclusion, remove criteria, change operators and add filters</strong>.</p><ImageSpace after={241} /><div className="ae-research-note"><Label>Keeping the comparison fair</Label><h4>Both concepts needed the same verification layer.</h4><p>Only B initially had the summary. A preference for B could therefore reflect the summary rather than the inline model. I added it to A before client testing to <strong>remove that confounding variable</strong>.</p></div><CollaborationOpportunity /><section className="ae-commercial-opportunity"><Label>Commercial opportunity</Label><h3>Demonstrate the value of saved effort to clients — Renewal conversation</h3><p>Participants described how <strong>reducing manual prospecting time</strong> could become part of a renewal conversation. One illustrative model compared an $XXk subscription against approximately $XXk of saved effort: a $XXk net value story.</p><p>It showed how <strong>workflow improvements</strong> could be translated into a renewal conversation.</p><p className="ae-caption">A commercial value model, <strong>not a measured product outcome</strong>.</p></section><h3>Cross-module Boolean was technically possible, but the user value was unclear</h3><BooleanScopeFinding /><h3>03 · Meet users at the moment of intent</h3><div className="ae-decision-pair"><div><h4>Find values without knowing the filter architecture.</h4><p>P7 looked for keyword search immediately. Others searched for donations, roles and locations rather than knowing which filter contained them.</p><p>Full natural-language search was outside scope. We extended filter search to names, categories <strong>and values</strong>: CEO could surface Role title → Chief Executive Officer; United States could surface location or nationality filters.</p></div><Schematic kind="discovery" /></div><ImageSpace after={266} /><div className="ae-decision-pair"><div><h4>Expose exclusion before selection.</h4><p>P1 quickly understood the selected value’s is / not toggle. But users intending to exclude something had no indication that NOT existed before making a selection.</p><p>I added <strong>Include / Exclude inside the dropdown</strong>, keeping the compact control afterwards. In A, exclusion also became value-specific, allowing CEO OR CTO, but NOT CFO within one group.</p></div><Schematic kind="exclude" /></div><ImageSpace after={273} /><h3>04 · Test the model against professional experience</h3><div className="ae-dependency"><Label>Role status · Engineering dependency</Label><h4>Past CFO experience + current board membership</h4><p>Monika described current-or-prior CFO experience plus board experience as a common search. We added current/past status to the model, then checked it with Engineering. The API might require greater granularity, so the intended interaction and <strong>backend dependency</strong> were documented for scope or roadmap prioritisation.</p></div><Takeaway>Different verticals used different filters, but repeatedly needed the same logic. One reusable model avoided another cycle of design, engineering and a new usability pattern for every module.</Takeaway></>
       break
     case 'round-3':
       content = <><p>Client recruitment took more coordination, but we reached six clients across verticals with broadly moderate technical confidence. This time, <strong>each person tested only one concept</strong> to avoid prior exposure influencing the comparison.</p><Method people="6 clients · 3 per concept" task="The same benchmark search" design="Between-subject study" /><div className="ae-split"><section><Label>Benchmark · Senior technology and finance executives</Label><ul>{source.slice(305,311).map(t=><li key={t}>{t.replace(/^•\s*/, '')}</li>)}</ul></section><section><Label>Behavioural signals</Label><h4>Task success</h4><p>Did the final query represent the intended criteria?</p><h4>Time to complete</h4><p>How efficiently could clients construct the same query?</p><h4>Recovery and confidence</h4><p>Could they recognise and correct mistakes, then understand the result?</p></section></div><div className="ae-benchmark"><div><Label>Concept A · Task success</Label><strong>1 / 3</strong><div className="ae-people" aria-label="One of three succeeded"><i /><i className="empty" /><i className="empty" /></div></div><div><Label>Concept B · Task success</Label><strong>3 / 3</strong><div className="ae-people" aria-label="Three of three succeeded"><i /><i /><i /></div></div><div><Label>Benchmark completion</Label><strong>~44%</strong><p>faster with Concept B</p></div></div><p className="ae-caption"><strong>Small sample: directional results</strong>, consistent with behaviours observed in earlier rounds.</p><h3>The difference was how clients formed their search</h3><Table headings={['Behaviour', 'Concept A', 'Concept B']} rows={[
