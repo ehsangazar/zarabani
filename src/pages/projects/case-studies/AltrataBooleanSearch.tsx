@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import source from './altrata-content.json'
 import './altrata-case-study.css'
 import AltrataEditorial from './AltrataEditorial'
+import AltrataFinalScreen from './AltrataFinalScreen'
 
 type Chapter = { start: number; end: number; id: string; title?: boolean }
 
@@ -83,7 +84,11 @@ function ImageSpace({ after }: { after: number }) {
 }
 
 function TextBlock({ index }: { index: number }) {
-  const text = source[index]
+  const text = index === 6
+    ? '3× fewer search cycles'
+    : index === 24
+      ? source[index].replace('July – September 2026', 'June – August 2026')
+      : source[index]
   const attrs = { 'data-source-index': index }
   if (subheadings.has(index)) return <h3 {...attrs} className="al-source-subheading">{text}</h3>
   if (statements.has(index)) return <blockquote {...attrs} className="al-source-statement">{text}</blockquote>
@@ -95,7 +100,7 @@ function TextBlock({ index }: { index: number }) {
 
 type Group = { end: number; className: string; ranges: [number, number][] }
 const groups: Record<number, Group> = {
-  3: { end: 8, className: 'al-source-metrics', ranges: [[3, 5], [6, 8]] },
+  3: { end: 8, className: 'al-source-metrics', ranges: [[3, 4], [6, 7]] },
   9: { end: 24, className: 'al-source-context', ranges: [[9, 15], [16, 24]] },
   45: { end: 49, className: 'al-source-verticals', ranges: [[45, 45], [46, 46], [47, 47], [48, 48], [49, 49]] },
   59: { end: 64, className: 'al-source-three', ranges: [[59, 60], [61, 62], [63, 64]] },
@@ -114,6 +119,7 @@ function Blocks({ start, end, grouped = true }: { start: number; end: number; gr
       nodes.push(
         <Fragment key={index}>
           <div className={group.className}>
+            {index === 3 && <h3 className="al-impact-label">Impact</h3>}
             {group.ranges.map(([from, to]) => <div key={from}><Blocks start={from} end={to} grouped={false} /></div>)}
           </div>
           {group.end === 135 && <ImageSpace after={135} />}
@@ -144,10 +150,14 @@ function Blocks({ start, end, grouped = true }: { start: number; end: number; gr
 const AltrataBooleanSearch = () => (
   <article className="al-study al-full">
     <header className="al-source-intro">
-      <p className="al-eyebrow" data-source-index={0}>{source[0]}</p>
-      <h2 className="al-opening" data-source-index={1}>{source[1]}</h2>
-      <p className="al-lead" data-source-index={2}>{source[2]}</p>
+      <h2 className="al-eyebrow">Context</h2>
+      <p className="al-lead" data-source-index={2}>
+        {source[2].split(/(B2B data intelligence platform|6\.1 million people, 3\.1 million organisations|Advanced Search|actionable prospect lists)/g).map((part, index) =>
+          index % 2 === 1 ? <strong key={index}>{part}</strong> : part,
+        )}
+      </p>
       <Blocks start={3} end={24} />
+      <AltrataFinalScreen />
     </header>
     <nav className="al-nav" aria-label="Case study sections">
       {[
@@ -161,7 +171,12 @@ const AltrataBooleanSearch = () => (
         <div className="al-source-chapter-inner">
           <div className="al-source-heading">
             <span className="al-source-chapter-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-            {chapter.title ? (
+            {chapter.id === 'discovery' ? (
+              <div className="al-discovery-heading">
+                <h2 data-source-index={chapter.start}>{source[chapter.start]}</h2>
+                <p className="al-chapter-subtitle" data-source-index={chapter.start + 1}>{source[chapter.start + 1]}</p>
+              </div>
+            ) : chapter.title ? (
               <div>
                 <p className="al-eyebrow" data-source-index={chapter.start}>{source[chapter.start]}</p>
                 <h2 data-source-index={chapter.start + 1}>{source[chapter.start + 1]}</h2>

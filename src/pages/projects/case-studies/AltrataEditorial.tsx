@@ -1,5 +1,6 @@
 import type { ComponentType, ReactNode } from 'react'
 import source from './altrata-content.json'
+import AltrataExistingScreen from './AltrataExistingScreen'
 import './altrata-editorial.css'
 
 function Copy({ from, to = from }: { from: number; to?: number }) {
@@ -39,7 +40,7 @@ export default function AltrataEditorial({ id, children, ImageSpace }: { id: str
   let content: ReactNode
   switch (id) {
     case 'problem':
-      content = <><Copy from={27} to={29} /><div className="ae-split"><section><Label>The existing model</Label><h3>One flat query</h3><p>Location, Role, Experience and Education were implicitly combined with <strong>AND</strong>. That relationship was neither visible nor editable.</p><div className="ae-query-sentence">CEO <strong>AND</strong> London <strong>AND</strong> Financial Services</div></section><section><Label>The real search intent</Label><h3>Alternatives + exclusions</h3><p>Clients needed to express equivalent titles, several geographies and exceptions within the same search.</p><div className="ae-query-sentence">CEO <strong>OR</strong> CTO · Washington <strong>OR</strong> New York · New York-based company · <strong>NOT</strong> existing clients</div></section></div><Copy from={36} /><blockquote>{source[39]}</blockquote></>
+      content = <><Copy from={27} to={29} /><AltrataExistingScreen /><div className="ae-split"><section><Label>The existing model</Label><h3>One flat query</h3><p>Location, Role, Experience and Education were implicitly combined with <strong>AND</strong>. That relationship was neither visible nor editable.</p><div className="ae-query-sentence">CEO <strong>AND</strong> London <strong>AND</strong> Financial Services</div></section><section><Label>Could not be expressed</Label><h3>Alternatives + exclusions</h3><p>Clients needed to express equivalent titles, several geographies and exceptions within the same search.</p><div className="ae-query-sentence">CEO <strong>OR</strong> CTO · Washington <strong>OR</strong> New York · New York-based company · <strong>NOT</strong> existing clients</div></section></div><Copy from={36} /><blockquote>{source[39]}</blockquote></>
       break
     case 'discovery':
       content = <><Copy from={42} to={43} /><Table headings={['Customer group', 'Search criteria', 'Exceptions to handle']} rows={[

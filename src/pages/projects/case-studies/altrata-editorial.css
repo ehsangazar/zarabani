@@ -1,6 +1,14 @@
 .al-full { --al-copper: #a95027; --al-copper-line: #d58a59; }
+.al-source-heading .al-discovery-heading h2 { color: var(--al-copper); }
+.al-study .al-chapter-subtitle { font-size: clamp(20px, 2.3vw, 26px); line-height: 1.45; font-weight: 500; color: #425369; margin: 18px 0 0; }
+.al-final-screen { margin: 40px 0; }
+.al-final-screen a { display: block; border: 1px solid var(--al-line); border-radius: 10px; overflow: hidden; }
+.al-final-screen img { display: block; width: 100%; height: auto; }
+.al-final-screen figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; margin-top: 14px; color: #536981; font-size: 12px; }
+.al-final-screen figcaption span { color: var(--al-copper); }
 .ae-editorial { --ae-surface: #fff; --ae-soft: #f3f4f5; --ae-ink: #173552; --ae-muted: #536981; }
-.ae-editorial > p { max-width: 790px; margin: 0 0 24px 88px; }
+.ae-editorial > p { max-width: none; margin: 0 0 24px; }
+.ae-editorial > blockquote { max-width: none; }
 .ae-editorial strong { font-weight: 750; }
 .ae-editorial > h3 { margin: 54px 0 24px; font-size: 29px; letter-spacing: -.025em; }
 .ae-editorial h4 { font-size: 16px; font-weight: 750; }
@@ -93,13 +101,16 @@
 .ae-reflections > section { display: grid; grid-template-columns: 60px 1fr; gap: 30px; border-top: 1px solid var(--al-line); padding: 32px 0; }
 .ae-reflections > section > span { font-size: 35px; color: #819bb4; font-weight: 550; }
 .ae-reflections h3 { font-size: 25px; }
-.ae-reflections p { max-width: 770px; }
+.ae-reflections p { max-width: none; }
 .ae-editorial .al-source-image { margin-left: 0; display: grid; grid-template-columns: 1.25fr 1fr; }
 .ae-editorial .al-screen-space { min-height: 235px; padding: 25px; }
 .ae-editorial .al-screen-space strong { font-size: 16px; }
 .ae-editorial .al-annotations { align-content: center; padding: 25px; }
 /* Warm accents add contrast through typography and detail, not section fills. */
 .al-full .al-source-chapter-number,
+.al-full .al-source-intro > .al-eyebrow,
+.al-full .al-source-metrics .al-impact-label,
+.al-full .al-source-context .al-source-subheading,
 .al-full .al-source-heading .al-eyebrow,
 .ae-editorial .ae-label,
 .ae-symbol,
