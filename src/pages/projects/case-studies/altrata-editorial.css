@@ -1,5 +1,4 @@
 .al-full { --al-copper: #a95027; --al-copper-line: #d58a59; }
-.al-source-heading .al-discovery-heading h2 { color: var(--al-copper); }
 .al-study .al-chapter-subtitle { font-size: clamp(20px, 2.3vw, 26px); line-height: 1.45; font-weight: 500; color: #425369; margin: 18px 0 0; }
 .al-final-screen { margin: 40px 0; }
 .al-final-screen a { display: block; border: 1px solid var(--al-line); border-radius: 10px; overflow: hidden; }
@@ -25,11 +24,32 @@
 .ae-cards h3 { font-size: 21px; }
 .ae-cards p { font-size: 16px; }
 .ae-symbol { display: grid; place-items: center; width: 48px; height: 48px; background: var(--ae-soft); color: var(--ae-ink); border-radius: 12px; font-size: 18px; font-weight: 700; margin-bottom: 24px; }
+.ae-editorial .ae-workarounds { list-style: none; padding: 0; margin: 40px 0; }
+.ae-workarounds > li { position: relative; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 22px; padding: 0 0 40px; margin: 0; }
+.ae-workarounds > li:last-child { padding-bottom: 0; }
+.ae-workaround-step { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--al-copper-line); border-radius: 50%; color: var(--al-copper); font-size: 13px; font-weight: 750; }
+.ae-workarounds > li:not(:last-child)::before { content: ''; position: absolute; left: 21px; top: 51px; bottom: 12px; border-left: 1px solid var(--al-copper-line); }
+.ae-workarounds > li:not(:last-child)::after { content: ''; position: absolute; left: 18px; bottom: 12px; width: 7px; height: 7px; border-right: 1px solid var(--al-copper-line); border-bottom: 1px solid var(--al-copper-line); transform: rotate(45deg); }
+.ae-workarounds h3 { font-size: 20px; margin: 6px 0 12px; }
+.ae-workarounds p { margin: 0; color: #425369; font-size: 16px; }
 .ae-table { overflow-x: auto; margin: 36px 0; border: 1px solid var(--al-line); }
 .ae-table:focus-visible { outline: 2px solid #6295c4; outline-offset: 4px; }
 .ae-table table { margin: 0; background: var(--ae-surface); line-height: 1.6; }
 .ae-table thead { background: var(--ae-soft); }
 .ae-table thead th { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+.ae-segment-table thead th { color: var(--al-copper); }
+.ae-segment-label { display: flex; align-items: flex-start; gap: 12px; }
+.ae-segment-label svg { width: 22px; height: 22px; flex: 0 0 22px; margin-top: 1px; color: var(--al-copper); }
+.ae-boundary-table tbody tr { --boundary-tone: #64748b; --boundary-soft: #f1f5f9; }
+.ae-boundary-table tbody tr.ae-boundary-supported { --boundary-tone: #24745a; --boundary-soft: #eaf6f1; }
+.ae-boundary-table tbody tr.ae-boundary-possible { --boundary-tone: #356f9f; --boundary-soft: #edf5fb; }
+.ae-boundary-table tbody tr.ae-boundary-limited { --boundary-tone: #b33b35; --boundary-soft: #fbeeed; }
+.ae-boundary-table tbody tr.ae-boundary-protect { --boundary-tone: var(--al-copper); --boundary-soft: #fbf1eb; }
+.ae-boundary-table tbody tr.ae-boundary-deferred { --boundary-tone: #6b7280; --boundary-soft: #f1f2f4; }
+.ae-boundary-table tbody tr { box-shadow: inset 3px 0 0 var(--boundary-tone); }
+.ae-boundary-title { display: flex; align-items: flex-start; gap: 12px; }
+.ae-boundary-title small { display: block; width: max-content; margin-top: 8px; padding: 3px 8px; border-radius: 999px; background: var(--boundary-soft); color: var(--boundary-tone); font-size: 10px; line-height: 1.4; font-weight: 750; letter-spacing: .05em; text-transform: uppercase; }
+.ae-boundary-icon { display: grid; place-items: center; width: 27px; height: 27px; flex: 0 0 27px; border-radius: 50%; background: var(--boundary-soft); color: var(--boundary-tone); font-size: 14px; font-weight: 800; }
 .ae-table tbody th { font-size: 15px; font-weight: 750; width: 25%; min-width: 140px; }
 .ae-table td { font-size: 15px; min-width: 180px; }
 .ae-table th, .ae-table td { padding: 22px; }
@@ -46,6 +66,13 @@
 .ae-blocks { display: flex; align-items: center; gap: 10px; background: var(--ae-soft); padding: 18px; margin: 24px 0; }
 .ae-blocks span { border: 1px solid #a6bfd5; border-radius: 5px; background: var(--ae-surface); padding: 8px 12px; font-size: 13px; }
 .ae-blocks b { font-size: 11px; white-space: nowrap; }
+.ae-concept-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin: 40px 0 54px; align-items: start; }
+.ae-concept-comparison > article { display: grid; gap: 16px; min-width: 0; }
+.ae-prototype-video { margin: 0; min-width: 0; }
+.ae-prototype-video video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #071d3c; border: 1px solid var(--al-line); border-radius: 8px; }
+.ae-prototype-video figcaption { margin-top: 9px; color: #64748b; font-size: 12px; }
+.ae-concept-copy { border: 1px solid var(--al-line); background: var(--ae-surface); padding: 30px; min-width: 0; }
+.ae-concept-comparison > article:last-child .ae-concept-copy { background: var(--ae-soft); }
 .ae-capabilities { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
 .ae-capabilities span { font-size: 13px; padding: 8px 14px; border: 1px solid var(--al-line); border-radius: 5px; }
 .ae-method { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; border-block: 1px solid var(--al-line); padding: 25px 0; margin: 35px 0; }
@@ -125,6 +152,8 @@
 .ae-takeaway, .ae-query-sentence, .ae-process > div,
 .ae-round-map span, .ae-research-note, .ae-dependency { border-color: var(--al-copper-line); }
 .ae-process > div:not(:last-child)::after { color: var(--al-copper-line); }
+.ae-process > .ae-process-alert { border-top-color: #b33b35; }
+.ae-process .ae-process-alert > span, .ae-process .ae-process-alert > h3 { color: #b33b35; }
 .ae-research-note, .ae-dependency { background: var(--ae-surface); color: var(--ae-ink); }
 .ae-research-note h4, .ae-dependency h4 { color: var(--ae-ink); }
 .ae-benchmark { background: var(--ae-surface); border-color: var(--al-line); }
@@ -135,6 +164,7 @@
 .al-full .al-nav a:hover { color: var(--al-copper); }
 .al-full .al-source-metrics .al-source-metric { color: var(--al-copper); }
 @media(max-width:700px) {
+  .ae-concept-comparison { grid-template-columns: 1fr; gap: 38px; }
   .ae-editorial > p { margin-left: 0; }
   .ae-split, .ae-cards, .ae-process, .ae-decision-pair, .ae-method, .ae-score-grid, .ae-convergence, .ae-editorial .al-source-image { grid-template-columns: 1fr; gap: 22px; }
   .ae-cards { gap: 0; }

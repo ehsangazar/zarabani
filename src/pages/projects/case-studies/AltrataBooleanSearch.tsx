@@ -3,6 +3,7 @@ import source from './altrata-content.json'
 import './altrata-case-study.css'
 import AltrataEditorial from './AltrataEditorial'
 import AltrataFinalScreen from './AltrataFinalScreen'
+import { emphasizeAltrata } from './altrataEmphasis'
 
 type Chapter = { start: number; end: number; id: string; title?: boolean }
 
@@ -95,7 +96,7 @@ function TextBlock({ index }: { index: number }) {
   if (metrics.has(index)) return <p {...attrs} className="al-source-metric">{text}</p>
   if (examples.has(index)) return <p {...attrs} className="al-source-example">{text}</p>
   if (panels.has(index)) return <p {...attrs} className="al-source-panel">{text}</p>
-  return <p {...attrs}>{text}</p>
+  return <p {...attrs}>{emphasizeAltrata(text)}</p>
 }
 
 type Group = { end: number; className: string; ranges: [number, number][] }
@@ -130,7 +131,7 @@ function Blocks({ start, end, grouped = true }: { start: number; end: number; gr
       const items = []
       const first = index
       while (index <= end && source[index].startsWith('•')) {
-        items.push(<li key={index} data-source-index={index}>{source[index].replace(/^•\s*/, '')}</li>)
+        items.push(<li key={index} data-source-index={index}>{emphasizeAltrata(source[index].replace(/^•\s*/, ''))}</li>)
         index++
       }
       index--
@@ -171,7 +172,7 @@ const AltrataBooleanSearch = () => (
         <div className="al-source-chapter-inner">
           <div className="al-source-heading">
             <span className="al-source-chapter-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-            {chapter.id === 'discovery' ? (
+            {['discovery', 'workflow'].includes(chapter.id) ? (
               <div className="al-discovery-heading">
                 <h2 data-source-index={chapter.start}>{source[chapter.start]}</h2>
                 <p className="al-chapter-subtitle" data-source-index={chapter.start + 1}>{source[chapter.start + 1]}</p>
