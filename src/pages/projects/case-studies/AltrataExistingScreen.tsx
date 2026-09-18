@@ -1,5 +1,6 @@
 const AltrataExistingScreen = () => (
-  <figure className="al-final-screen">
+  <figure className="al-final-screen al-existing-screen">
+    <figcaption>Existing platform · Advanced Search before the redesign</figcaption>
     <a
       href="/case-studies/altrata/advanced-search-existing.png"
       target="_blank"
@@ -15,7 +16,7 @@ const AltrataExistingScreen = () => (
         decoding="async"
       />
     </a>
-    <figcaption>Existing platform · Advanced Search before the redesign <span>Open image for full detail ↗</span></figcaption>
+    <p className="al-image-detail">Open image for full detail ↗</p>
   </figure>
 )
 
