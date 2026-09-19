@@ -174,6 +174,89 @@ function ValueConnectorComparison() {
   </figure>
 }
 
+function ExclusionFinding() {
+  return <section className="ae-exclusion-finding">
+    <header><h3>Make exclusion discoverable before selection</h3><p>Participants quickly understood the is / not toggle on a selected value. But users intending to exclude something had no indication that NOT existed before making a selection. <strong>The interaction had a discoverability problem.</strong></p><p>I added <strong>Include / Exclude inside the dropdown</strong> in Concept B, keeping the is / not toggle treatment after selection.</p></header>
+    <div className="ae-exclusion-annotations">
+      <AnnotatedScreen portrait src="/case-studies/altrata/round-two-exclusion-before-selection.png" alt="Organization type dropdown with Include and Exclude controls visible before selecting a value" callouts={[
+        { x: 62, y: 54.5, marker: 'none', title: 'Before selection', text: <>Include / Exclude makes the choice visible <strong>before</strong> a value is selected.</> },
+      ]} />
+      <AnnotatedScreen portrait src="/case-studies/altrata/round-two-exclusion-after-selection.png" alt="Selected organization types with individual is and not controls" callouts={[
+        { x: 59, y: 74, marker: 'none', title: 'After selection', text: <>The compact is / not treatment remains attached to each selected value.</> },
+      ]} />
+    </div>
+  </section>
+}
+
+function ValueSpecificExclusion() {
+  return <section className="ae-value-specific-exclusion">
+    <header><h3>Make inclusion and exclusion value-specific in Concept A</h3><p>The builder’s earlier model could apply exclusion too broadly when multiple values belonged to one field.</p><p>I separated exclusion so an individual value could be negated without forcing the entire condition into an <strong>“is not”</strong> state.</p></header>
+    <ValueSpecificExclusionAnnotation />
+  </section>
+}
+
+function ValueSpecificExclusionAnnotation() {
+  const figure = useRef<HTMLElement>(null)
+  const [line, setLine] = useState({ width: 1, height: 1, path: '' })
+
+  useEffect(() => {
+    const root = figure.current
+    if (!root) return
+    const images = [...root.querySelectorAll('img')]
+    const note = root.querySelector<HTMLElement>('.ae-value-specific-note')!
+    const update = () => {
+      const bounds = root.getBoundingClientRect()
+      const first = images[0].getBoundingClientRect()
+      const second = images[1].getBoundingClientRect()
+      const noteBox = note.getBoundingClientRect()
+      const firstX = first.left - bounds.left + first.width * .385
+      const firstY = first.top - bounds.top + first.height * .72
+      const secondX = second.left - bounds.left + second.width * .305
+      const secondY = second.top - bounds.top + second.height * .79
+      const noteX = noteBox.right - bounds.left + 8
+      const noteY = noteBox.top - bounds.top + 14
+      const trunkX = (noteBox.right + first.left) / 2 - bounds.left
+      setLine({ width: bounds.width, height: bounds.height, path: `M ${firstX} ${firstY} H ${trunkX} M ${secondX} ${secondY} H ${trunkX} M ${trunkX} ${noteY} V ${secondY} M ${trunkX} ${noteY} H ${noteX}` })
+    }
+    const observer = new ResizeObserver(update)
+    observer.observe(root)
+    observer.observe(note)
+    images.forEach(image => { observer.observe(image); image.addEventListener('load', update) })
+    update()
+    return () => { observer.disconnect(); images.forEach(image => image.removeEventListener('load', update)) }
+  }, [])
+
+  return <figure ref={figure} className="ae-value-specific-exclusion-annotations">
+    <figcaption className="ae-value-specific-note"><strong>Value-specific exclusion</strong><p>Use <strong>not</strong> on a selected value—or <strong>+ exclude</strong> to add one—without negating the entire condition.</p></figcaption>
+    <div className="ae-value-specific-images">
+      <a href="/case-studies/altrata/round-two-concept-a-value-exclusion.png" target="_blank" rel="noopener noreferrer"><img src="/case-studies/altrata/round-two-concept-a-value-exclusion.png" alt="Concept A organization-type condition with Public included and Charity excluded independently" /></a>
+      <a href="/case-studies/altrata/round-two-concept-a-add-exclusion.png" target="_blank" rel="noopener noreferrer"><img src="/case-studies/altrata/round-two-concept-a-add-exclusion.png" alt="Concept A Wealth Tier condition with an option to add an excluded value" /></a>
+    </div>
+    <svg className="ae-value-specific-lines" viewBox={`0 0 ${line.width} ${line.height}`} preserveAspectRatio="none" aria-hidden="true"><path d={line.path} /></svg>
+  </figure>
+}
+
+function RoundTwoWrapUp() {
+  return <section className="ae-round-two-wrap-up">
+    <Label>Round 2 takeaway</Label>
+    <h3>Different verticals validated the decision to solve Boolean once, across Advanced Search</h3>
+    <div className="ae-wrap-up-grid"><article><span>What varied</span><p>Each vertical relied on different filters—from donations and wealth to roles, experience, assets and geography.</p></article><article><span>What stayed constant</span><p>Users repeatedly needed to <strong>include alternatives, combine criteria and exclude exceptions</strong>.</p></article></div>
+    <p className="ae-wrap-up-conclusion">A Location-only fix would have repeated the same product problem module by module. A shared logic model reduced future <strong>product and engineering rework</strong> while avoiding <strong>experience debt</strong>.</p>
+  </section>
+}
+
+function RoundTwoPrototypes() {
+  return <section className="ae-round-two-prototypes">
+    <Label>Round 2 prototypes</Label>
+    <h3>How the two concepts looked after the second round</h3>
+    <p>These prototypes capture the changes made after the second round of validation, before the concepts moved into client testing.</p>
+    <div className="ae-round-two-prototype-grid">
+      <PrototypeVideo concept="Concept A · Revised builder" src="/case-studies/altrata/round-two-concept-a-final.mp4" poster="/case-studies/altrata/round-two-concept-a-final-poster.jpg" />
+      <PrototypeVideo concept="Concept B · Revised inline model" src="/case-studies/altrata/round-two-concept-b-final.mp4" poster="/case-studies/altrata/round-two-concept-b-final-poster.jpg" />
+    </div>
+  </section>
+}
+
 function Schematic({ kind }: { kind: 'logic' | 'summary' | 'exclude' | 'discovery' }) {
   if (kind === 'summary') {
     return <figure className="ae-summary-screenshot"><img src="/case-studies/altrata/round-two-search-summary.png" alt="Search results summary showing the selected criteria and Boolean relationships in a readable sentence" /></figure>
@@ -227,7 +310,7 @@ export default function AltrataEditorial({ id, children, ImageSpace }: { id: str
       content = <><p>I started internally to identify <strong>structural, technical and usability risks</strong> while they were inexpensive to change. This round was not intended to validate the final direction with clients.</p><RoundOneSnapshot /><h3>Qualitative findings</h3><AltrataQualitativeFindings /><div className="ae-research-note"><Label>Research adjustment</Label><h3>Distinguishing between <strong>capability and usability</strong></h3><p>A concept could feel powerful yet remain difficult to operate. From the next round, we focused on ease of building and <strong>confidence that the resulting query represented the intended logic</strong>.</p></div></>
       break
     case 'round-2':
-      content = <><p>Round one tested whether the concepts were coherent. Round two tested whether they matched <strong>the searches clients actually needed to perform</strong>. I sampled across verticals and technical confidence, asking colleagues to bring complex real client requests.</p><Method people="8 · Commercial, Account Management and Client Success" task="A complex client search each participant brought" design="Both concepts per participant; counterbalanced order" /><h3>The search summary became the answer to a query visibility problem</h3><p>Participants constantly used the search summary to <strong>check their own work</strong> and valued editing without repeatedly scrolling through the panel. They used the written query to read back their criteria and identify mistakes. <strong>Recognition replaced recall.</strong></p><Schematic kind="summary" /><p>The summary evolved beyond confirmation text: users could <strong>edit values, switch inclusion and exclusion, remove criteria, change operators and add filters</strong>.</p><ImageSpace after={241} /><div className="ae-research-note"><Label>Keeping the comparison fair</Label><h4>Both concepts needed the same verification layer.</h4><p>Only B initially had the summary. A preference for B could therefore reflect the summary rather than the inline model. I added it to A before client testing to <strong>remove that confounding variable</strong>.</p></div><CollaborationOpportunity /><section className="ae-commercial-opportunity"><Label>Commercial opportunity</Label><h3>Demonstrate the value of saved effort to clients — Renewal conversation</h3><p>Participants described how <strong>reducing manual prospecting time</strong> could become part of a renewal conversation. One illustrative model compared an $XXk subscription against approximately $XXk of saved effort: a $XXk net value story.</p><p>It showed how <strong>workflow improvements</strong> could be translated into a renewal conversation.</p><p className="ae-caption">A commercial value model, <strong>not a measured product outcome</strong>.</p></section><h3>Cross-module Boolean was technically possible, but the user value was unclear</h3><BooleanScopeFinding /><h3>03 · Meet users at the moment of intent</h3><div className="ae-decision-pair"><div><h4>Find values without knowing the filter architecture.</h4><p>P7 looked for keyword search immediately. Others searched for donations, roles and locations rather than knowing which filter contained them.</p><p>Full natural-language search was outside scope. We extended filter search to names, categories <strong>and values</strong>: CEO could surface Role title → Chief Executive Officer; United States could surface location or nationality filters.</p></div><Schematic kind="discovery" /></div><ImageSpace after={266} /><div className="ae-decision-pair"><div><h4>Expose exclusion before selection.</h4><p>P1 quickly understood the selected value’s is / not toggle. But users intending to exclude something had no indication that NOT existed before making a selection.</p><p>I added <strong>Include / Exclude inside the dropdown</strong>, keeping the compact control afterwards. In A, exclusion also became value-specific, allowing CEO OR CTO, but NOT CFO within one group.</p></div><Schematic kind="exclude" /></div><ImageSpace after={273} /><h3>04 · Test the model against professional experience</h3><div className="ae-dependency"><Label>Role status · Engineering dependency</Label><h4>Past CFO experience + current board membership</h4><p>Monika described current-or-prior CFO experience plus board experience as a common search. We added current/past status to the model, then checked it with Engineering. The API might require greater granularity, so the intended interaction and <strong>backend dependency</strong> were documented for scope or roadmap prioritisation.</p></div><Takeaway>Different verticals used different filters, but repeatedly needed the same logic. One reusable model avoided another cycle of design, engineering and a new usability pattern for every module.</Takeaway></>
+      content = <><p>Round one tested whether the concepts were coherent. Round two tested whether they matched <strong>the searches clients actually needed to perform</strong>. I sampled across verticals and technical confidence, asking colleagues to bring complex real client requests.</p><Method people="8 · Commercial, Account Management and Client Success" task="A complex client search each participant brought" design="Both concepts per participant; counterbalanced order" /><h3>The search summary became the answer to a query visibility problem</h3><p>Participants constantly used the search summary to <strong>check their own work</strong> and valued editing without repeatedly scrolling through the panel. They used the written query to read back their criteria and identify mistakes. <strong>Recognition replaced recall.</strong></p><Schematic kind="summary" /><p>The summary evolved beyond confirmation text: users could <strong>edit values, switch inclusion and exclusion, remove criteria, change operators and add filters</strong>.</p><ImageSpace after={241} /><div className="ae-research-note"><Label>Keeping the comparison fair</Label><h4>Both concepts needed the same verification layer.</h4><p>Only B initially had the summary. A preference for B could therefore reflect the summary rather than the inline model. I added it to A before client testing to <strong>remove that confounding variable</strong>.</p></div><CollaborationOpportunity /><section className="ae-commercial-opportunity"><Label>Commercial opportunity</Label><h3>Demonstrate the value of saved effort to clients — Renewal conversation</h3><p>Participants described how <strong>reducing manual prospecting time</strong> could become part of a renewal conversation. One illustrative model compared an $XXk subscription against approximately $XXk of saved effort: a $XXk net value story.</p><p>It showed how <strong>workflow improvements</strong> could be translated into a renewal conversation.</p><p className="ae-caption">A commercial value model, <strong>not a measured product outcome</strong>.</p></section><h3>Cross-module Boolean was technically possible, but the user value was unclear</h3><BooleanScopeFinding /><section className="ae-natural-language-finding"><AnnotatedScreen src="/case-studies/altrata/round-two-filter-value-search.png" alt="Advanced Search filter picker with a search field that accepts filter names or values" intro={<><h3 className="ae-natural-language-title">Users kept trying to search in natural language</h3><p>Before navigating through the filter architecture, participants instinctively looked for somewhere to <strong>type what they wanted</strong> and used keyword search immediately. Others searched for donation, role and location values rather than knowing which filter contained them.</p><p>Full <strong>natural-language search</strong> was <strong>outside scope</strong>. We extended filter search so users could search not only by <strong>filter name or category</strong>, but also by a <strong>value</strong>: CEO could surface Role title; United States could surface location or nationality filters.</p><p>This reduced the amount of <strong>recall</strong> required in both concepts.</p></>} callouts={[{ x: 6.5, y: 50.5, marker: 'none', title: 'Search by filter or value', text: <>Users can begin with familiar language such as “CEO” or “United States,” then discover the relevant filter without first knowing the information architecture.</> }]} /></section><ExclusionFinding /><ValueSpecificExclusion /><h3>Test the model against professional experience</h3><div className="ae-dependency"><Label>Role status · Engineering dependency</Label><h4>The sessions also surfaced a more domain-specific requirement: <strong>current versus past roles</strong>.</h4><p>For executive-search scenarios, participants surfaced a common search: find someone with <strong>past CFO experience</strong> who <strong>currently sits on a board</strong>. This required Current and Past capability in the role filter.</p><p>A check with Engineering exposed a backend constraint: the existing API might not support the required granularity. The intended interaction and <strong>backend dependency</strong> were therefore documented for scope or roadmap prioritisation.</p></div><RoundTwoWrapUp /><RoundTwoPrototypes /></>
       break
     case 'round-3':
       content = <><p>Client recruitment took more coordination, but we reached six clients across verticals with broadly moderate technical confidence. This time, <strong>each person tested only one concept</strong> to avoid prior exposure influencing the comparison.</p><Method people="6 clients · 3 per concept" task="The same benchmark search" design="Between-subject study" /><div className="ae-split"><section><Label>Benchmark · Senior technology and finance executives</Label><ul>{source.slice(305,311).map(t=><li key={t}>{t.replace(/^•\s*/, '')}</li>)}</ul></section><section><Label>Behavioural signals</Label><h4>Task success</h4><p>Did the final query represent the intended criteria?</p><h4>Time to complete</h4><p>How efficiently could clients construct the same query?</p><h4>Recovery and confidence</h4><p>Could they recognise and correct mistakes, then understand the result?</p></section></div><div className="ae-benchmark"><div><Label>Concept A · Task success</Label><strong>1 / 3</strong><div className="ae-people" aria-label="One of three succeeded"><i /><i className="empty" /><i className="empty" /></div></div><div><Label>Concept B · Task success</Label><strong>3 / 3</strong><div className="ae-people" aria-label="Three of three succeeded"><i /><i /><i /></div></div><div><Label>Benchmark completion</Label><strong>~44%</strong><p>faster with Concept B</p></div></div><p className="ae-caption"><strong>Small sample: directional results</strong>, consistent with behaviours observed in earlier rounds.</p><h3>The difference was how clients formed their search</h3><Table headings={['Behaviour', 'Concept A', 'Concept B']} rows={[

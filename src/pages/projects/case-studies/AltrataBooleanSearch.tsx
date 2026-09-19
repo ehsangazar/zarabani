@@ -179,7 +179,13 @@ const AltrataBooleanSearch = () => (
         <div className="al-source-chapter-inner">
           <div className="al-source-heading">
             <span className="al-source-chapter-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-            {['discovery', 'workflow'].includes(chapter.id) ? (
+            {chapter.id === 'round-3' ? (
+              <div className="al-discovery-heading">
+                <p className="al-eyebrow" data-source-index={chapter.start}>Round 3</p>
+                <h2>Validating the direction with clients</h2>
+                <p className="al-chapter-subtitle" data-source-index={chapter.start + 1}>{source[chapter.start + 1]}</p>
+              </div>
+            ) : ['discovery', 'workflow'].includes(chapter.id) ? (
               <div className="al-discovery-heading">
                 <h2 data-source-index={chapter.start}>{source[chapter.start]}</h2>
                 <p className="al-chapter-subtitle" data-source-index={chapter.start + 1}>{source[chapter.start + 1]}</p>

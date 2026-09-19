@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 
-type Callout = { x: number; y: number; routeY?: number; marker?: 'dot' | 'ring'; title: string; text: ReactNode }
+type Callout = { x: number; y: number; routeY?: number; marker?: 'dot' | 'ring' | 'none'; title: string; text: ReactNode }
 
 export function AnnotatedScreen({ src, alt, callouts, portrait = false, intro, outro }: { src: string; alt: string; callouts: Callout[]; portrait?: boolean; intro?: ReactNode; outro?: ReactNode }) {
   const figure = useRef<HTMLElement>(null)
-  const [lines, setLines] = useState<{ path: string; x: number; y: number; marker: 'dot' | 'ring' }[]>([])
+  const [lines, setLines] = useState<{ path: string; x: number; y: number; marker: 'dot' | 'ring' | 'none' }[]>([])
   const [canvas, setCanvas] = useState({ width: 1, height: 1 })
   useEffect(() => {
     const root = figure.current
@@ -42,7 +42,7 @@ export function AnnotatedScreen({ src, alt, callouts, portrait = false, intro, o
   }, [callouts])
   return <figure ref={figure} className={`ae-margin-figure${portrait ? ' ae-margin-portrait' : ''}`}>
     <a className="ae-finding-screen" href={src} target="_blank" rel="noopener noreferrer" aria-label={`${alt} — open full image`}><img src={src} alt={alt} loading="lazy" /></a>
-    <svg className="ae-leader-lines" viewBox={`0 0 ${canvas.width} ${canvas.height}`} preserveAspectRatio="none" aria-hidden="true">{lines.map((line, i) => <g key={i}><path d={line.path} /><circle className={line.marker === 'ring' ? 'ae-target-ring' : ''} cx={line.x} cy={line.y} r={line.marker === 'ring' ? 10 : 3} /></g>)}</svg>
+    <svg className="ae-leader-lines" viewBox={`0 0 ${canvas.width} ${canvas.height}`} preserveAspectRatio="none" aria-hidden="true">{lines.map((line, i) => <g key={i}><path d={line.path} />{line.marker !== 'none' && <circle className={line.marker === 'ring' ? 'ae-target-ring' : ''} cx={line.x} cy={line.y} r={line.marker === 'ring' ? 10 : 3} />}</g>)}</svg>
     <figcaption>{intro && <div className="ae-margin-intro">{intro}</div>}{callouts.map(callout => <div className="ae-margin-callout" key={callout.title}><strong>{callout.title}</strong><p>{callout.text}</p></div>)}{outro}</figcaption>
   </figure>
 }
