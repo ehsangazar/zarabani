@@ -20,7 +20,7 @@ const chapters: Chapter[] = [
   { start: 344, end: 353, id: 'direction', title: true },
   { start: 354, end: 398, id: 'impact', title: true },
   { start: 399, end: 440, id: 'measurement', title: true },
-  { start: 441, end: 451, id: 'learning' },
+  { start: 441, end: 451, id: 'future-ai', title: true },
   { start: 452, end: 472, id: 'reflection' },
 ]
 
@@ -179,7 +179,19 @@ const AltrataBooleanSearch = () => (
         <div className="al-source-chapter-inner">
           <div className="al-source-heading">
             <span className="al-source-chapter-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-            {chapter.id === 'round-3' ? (
+            {chapter.id === 'future-ai' ? (
+              <div className="al-discovery-heading">
+                <p className="al-eyebrow">Future direction</p>
+                <h2>AI-assisted search</h2>
+                <p className="al-chapter-subtitle">Use natural language to build a visible, editable query.</p>
+              </div>
+            ) : chapter.id === 'measurement' ? (
+              <div className="al-discovery-heading">
+                <p className="al-eyebrow" data-source-index={chapter.start}>Post-launch</p>
+                <h2>Measuring whether it actually worked</h2>
+                <p className="al-chapter-subtitle" data-source-index={chapter.start + 1}>{source[chapter.start + 1]}</p>
+              </div>
+            ) : chapter.id === 'round-3' ? (
               <div className="al-discovery-heading">
                 <p className="al-eyebrow" data-source-index={chapter.start}>Round 3</p>
                 <h2>Validating the direction with clients</h2>
