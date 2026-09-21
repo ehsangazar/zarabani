@@ -17,7 +17,7 @@ export default function MinimalShell({ children }: { children: ReactNode }) {
         <Link className="ms-brand" to="/" aria-label="Zara Bani home" onClick={() => closeMenu()}><img src="/zara-logo.png" alt="" /><span>Zara Bani</span></Link>
         <button ref={menuRef} className="ms-menu" aria-expanded={open} aria-controls="site-navigation" onClick={() => setOpenPath(open ? null : pathname)}>{open ? 'Close' : 'Menu'}</button>
         <nav id="site-navigation" className={open ? 'ms-nav is-open' : 'ms-nav'} aria-label="Main navigation" onKeyDown={event => { if (event.key === 'Escape') { closeMenu(); menuRef.current?.focus() } }}>
-          {[['/projects', 'Work'], ['/about', 'About'], ['/blog', 'Writing'], ['/contact', 'Contact'], ['/resume', 'Résumé']].map(([to, label]) => <NavLink key={to} to={to} onClick={() => closeMenu()}>{label}</NavLink>)}
+          {[['/', 'Home'], ['/projects', 'Case Study'], ['/about', 'About'], ['/blog', 'Writing'], ['/contact', 'Contact'], ['/resume', 'Résumé']].map(([to, label]) => <NavLink key={to} to={to} end={to === '/'} onClick={() => closeMenu()}>{label}</NavLink>)}
           <a href={linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
         </nav>
       </header>
