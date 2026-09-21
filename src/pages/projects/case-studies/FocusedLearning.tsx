@@ -1,6 +1,6 @@
 const FocusedLearning = () => {
   return (
-    <div className="max-w-5xl mx-auto px-8 md:px-12">
+    <div className="focused-learning-study max-w-5xl mx-auto px-8 md:px-12">
       {/* Hero Section */}
       <div className="mb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-primary-dark mb-6">

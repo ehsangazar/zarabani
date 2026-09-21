@@ -297,6 +297,9 @@
 .minimal-site--case-study .al-source-dark { background: #11121a; }
 .minimal-site--case-study .al-source-dark :is(h2, h3, h4) { color: #fff !important; }
 .minimal-site--case-study .al-source-dark :is(p, li) { color: #e7e7ed; }
+.minimal-site--case-study .case-study-page .focused-learning-study h3[class*="text-[18px]"] {
+  color: #1b4d99 !important;
+}
 @media (max-width: 767px) {
   .minimal-site--case-study .case-study-page > section:first-of-type { padding-top: 48px !important; padding-bottom: 32px !important; }
   .minimal-site--case-study .case-study-page > section:first-of-type h1 { font-size: 36px !important; }
