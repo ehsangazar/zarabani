@@ -83,7 +83,7 @@ const ProjectDetail = () => {
   // Render case study
   if (caseStudy) {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="case-study-page min-h-screen bg-white">
         <PageMeta
           title={caseStudy.title}
           description={caseStudy.description}
@@ -155,7 +155,7 @@ const ProjectDetail = () => {
     // Check if it's document-management with custom detail page
     if (project.id === 'document-management') {
       return (
-        <div className="min-h-screen bg-white">
+        <div className="case-study-page min-h-screen bg-white">
           <PageMeta title={project.title} description={project.description} path={`/projects/${project.id}`} />
           {/* Hero Section */}
           <section className="bg-gradient-to-br from-warm/40 via-warm/20 to-neutral/20 py-24 px-4 sm:px-6 lg:px-8">
@@ -224,7 +224,7 @@ const ProjectDetail = () => {
     // Check if it's library-platform with custom detail page
     if (project.id === 'library-platform') {
       return (
-        <div className="min-h-screen bg-white">
+        <div className="case-study-page min-h-screen bg-white">
           <PageMeta title={project.title} description={project.description} path={`/projects/${project.id}`} />
           {/* Hero Section */}
           <section className="bg-gradient-to-br from-warm/40 via-warm/20 to-neutral/20 py-24 px-4 sm:px-6 lg:px-8">
@@ -293,7 +293,7 @@ const ProjectDetail = () => {
     // Check if it's company-website with custom detail page
     if (project.id === 'company-website') {
       return (
-        <div className="min-h-screen bg-white">
+        <div className="case-study-page min-h-screen bg-white">
           <PageMeta title={project.title} description={project.description} path={`/projects/${project.id}`} />
           {/* Hero Section */}
           <section className="bg-gradient-to-br from-warm/40 via-warm/20 to-neutral/20 py-24 px-4 sm:px-6 lg:px-8">
@@ -362,7 +362,7 @@ const ProjectDetail = () => {
     // Check if it's food-menu-app with custom detail page
     if (project.id === 'food-menu-app') {
       return (
-        <div className="min-h-screen bg-white">
+        <div className="case-study-page min-h-screen bg-white">
           <PageMeta title={project.title} description={project.description} path={`/projects/${project.id}`} />
           {/* Hero Section */}
           <section className="bg-gradient-to-br from-warm/40 via-warm/20 to-neutral/20 py-24 px-4 sm:px-6 lg:px-8">

@@ -11,7 +11,7 @@ export default function MinimalShell({ children }: { children: ReactNode }) {
   const open = openPath === pathname
   const closeMenu = () => setOpenPath(null)
   return (
-    <div className={`minimal-site${pathname.startsWith('/blog/') ? ' minimal-site--article' : ''}`}>
+    <div className={`minimal-site${pathname.startsWith('/blog/') ? ' minimal-site--article' : ''}${pathname.startsWith('/projects/') ? ' minimal-site--case-study' : ''}`}>
       <a className="ms-skip" href="#main-content">Skip to content</a>
       <header className="ms-header">
         <Link className="ms-brand" to="/" aria-label="Zara Bani home" onClick={() => closeMenu()}><img src="/zara-logo.png" alt="" /><span>Zara Bani</span></Link>

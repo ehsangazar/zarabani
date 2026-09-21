@@ -58,7 +58,7 @@ const ProjectDetailTemplate = ({ project }: ProjectDetailTemplateProps) => {
   const colors = colorClasses[project.color] || colorClasses.indigo
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="case-study-page min-h-screen bg-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-warm/40 via-warm/20 to-neutral/20 py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -180,4 +180,3 @@ const ProjectDetailTemplate = ({ project }: ProjectDetailTemplateProps) => {
 }
 
 export default ProjectDetailTemplate
-
