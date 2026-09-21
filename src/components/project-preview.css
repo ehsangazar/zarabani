@@ -1,0 +1,92 @@
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 24px;
+  max-width: 1040px;
+  margin-inline: auto;
+}
+.project-card { display: block; min-width: 0; color: var(--ms-ink, #252c30); }
+.project-card:focus-visible { outline: 2px solid var(--ms-focus, #376b5d); outline-offset: 7px; border-radius: 14px; }
+.project-preview {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: clamp(150px, 18vw, 210px);
+  padding-top: 20px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(25, 42, 65, .045);
+  background: #fafbfc;
+}
+.project-preview--altrata-boolean-search { background: radial-gradient(ellipse at 50% 60%, #edf2f6, #fafbfc 75%); }
+.project-preview--focused-learning { background: radial-gradient(ellipse at 50% 60%, #f1eee5, #fcfbf8 75%); }
+.project-preview--omaia { background: radial-gradient(ellipse at 50% 65%, #e4ece3, #f6f8f3 75%); }
+.project-preview--document-management { background: #f3f5fa; }
+.project-preview--library-platform { background: #f5f3f8; }
+.project-preview--company-website { background: #faf5f2; }
+.project-preview--food-menu-app { background: #faf7ed; }
+.project-preview__mockup {
+  width: 82%;
+  flex-shrink: 0;
+  position: relative;
+  transform: perspective(1200px) rotateX(3deg) rotateY(-4deg);
+}
+.project-preview__display {
+  overflow: hidden;
+  padding: 6px 6px 8px;
+  border: 1px solid #343a44;
+  border-radius: 11px 11px 5px 5px;
+  background: #1c2027;
+  box-shadow: 0 19px 34px -18px rgba(25, 37, 51, .42), 0 3px 7px rgba(25, 37, 51, .12);
+}
+.project-preview__chrome { height: 15px; display: flex; gap: 3px; align-items: center; padding: 0 7px; background: #fafafa; border-radius: 4px 4px 0 0; border-bottom: 1px solid #e9ebee; }
+.project-preview__chrome i { width: 3px; height: 3px; border-radius: 50%; background: #cbd0d7; }
+.project-preview__chrome span { margin-left: 20%; width: 40%; height: 5px; border-radius: 2px; background: #eceef1; }
+.project-preview__screen { position: relative; overflow: hidden; background: #fff; }
+.project-preview__screen img { display: block; width: 100%; height: auto; }
+.project-preview__laptop-base {
+  position: relative;
+  width: 112%;
+  height: 7px;
+  margin-left: -6%;
+  border-radius: 1px 1px 9px 9px;
+  background: linear-gradient(180deg, #e7eaee 0%, #aeb5be 52%, #f2f3f5 100%);
+  box-shadow: 0 12px 20px -13px rgba(27, 35, 45, .8);
+}
+.project-preview__laptop-base::after {
+  content: '';
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: -3px;
+  height: 3px;
+  border-radius: 0 0 50% 50%;
+  background: #89919b;
+}
+.project-preview__laptop-base span {
+  display: block;
+  width: 15%;
+  height: 2px;
+  margin: 0 auto;
+  border-radius: 0 0 4px 4px;
+  background: #9ba2ab;
+}
+.project-preview--phone .project-preview__mockup { width: 36%; transform: rotate(-5deg); }
+.project-preview--phone .project-preview__display { padding: 7px; border-radius: 24px; background: #111; }
+.project-preview--phone .project-preview__screen { border-radius: 17px; }
+.project-card__caption { display: flex; gap: 18px; justify-content: space-between; align-items: flex-start; padding: 12px 2px 0; }
+.project-card__caption h3 { font-size: var(--ms-text-card, 20px); line-height: 1.4; font-weight: 600; letter-spacing: -.02em; max-width: 94%; }
+.project-card__body { padding: 4px 2px 0; }
+.project-card__label { margin: 16px 0 8px; color: var(--ms-muted, #59656b); font-size: var(--ms-text-xs, 12px); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+.project-card__achievements { margin: 0; padding-left: 16px; color: var(--ms-muted, #59656b); font-size: var(--ms-text-sm, 14px); line-height: 1.6; }
+.project-card__achievements li + li { margin-top: 4px; }
+.project-card__achievements li::marker { color: #8997a6; }
+.project-card__caption > span { color: #74808e; font-size: 19px; transition: transform .3s; }
+.project-preview--coming-soon { align-items: center; padding-top: 0; }
+.project-preview__coming-soon { color: var(--ms-muted, #59656b); font-size: 18px; font-weight: 400; letter-spacing: .02em; }
+@media (max-width: 767px) {
+  .project-grid { grid-template-columns: 1fr; gap: 32px; }
+  .project-card__caption h3 { font-size: 18px; }
+  .project-preview { height: 190px; }
+}

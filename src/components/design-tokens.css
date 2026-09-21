@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'Portfolio Inter';
+  src: url('/fonts/InterVariable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* Portfolio-only tokens: never applied to the internal project shell. */
+.minimal-site {
+  --ms-font: 'Portfolio Inter', Inter, Verdana, sans-serif;
+  --ms-ink: #05060f;
+  --ms-muted: #60616a;
+  --ms-accent: #513deb;
+  --ms-line: #e8e8ed;
+  --ms-paper: #ffffff;
+  --ms-surface: #f6f5ff;
+  --ms-focus: #513deb;
+  --ms-accent-hover: #4430d3;
+  --ms-accent-pressed: #3927b9;
+  --ms-focus-ring: #b9afff;
+  --ms-neutral-surface: #f7f7fa;
+  --ms-text-xs: .75rem;
+  --ms-text-sm: .875rem;
+  --ms-text-base: 1.125rem;
+  --ms-text-lg: 1.125rem;
+  --ms-text-card: 1.25rem;
+  --ms-text-section: clamp(1.75rem, 3vw, 2.5rem);
+  --ms-text-display: clamp(2.25rem, 4.8vw, 3.625rem);
+  --ms-leading-body: 1.5;
+  --ms-leading-title: 1.2;
+  --ms-space-1: .25rem;
+  --ms-space-2: .5rem;
+  --ms-space-3: .75rem;
+  --ms-space-4: 1rem;
+  --ms-space-6: 1.5rem;
+  --ms-space-8: 2rem;
+  --ms-space-12: 3rem;
+  --ms-space-16: 4rem;
+  --ms-section-gap: clamp(3rem, 6vw, 5rem);
+  --ms-gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --ms-width: 1120px;
+  --ms-radius: 12px;
+  --ms-radius-sm: 6px;
+  --ms-motion: 180ms ease;
+}
