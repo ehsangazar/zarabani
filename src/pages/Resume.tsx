@@ -6,7 +6,7 @@ const Resume = () => {
     document.title = 'Zara Bani - Product Designer Resume';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Zara Bani - Product & UX Designer with 4+ years of experience designing B2B and B2C SaaS products. Expert in UX research, interaction design, and usability testing.');
+      metaDescription.setAttribute('content', 'Zara Bani - Product Designer with 5+ years of experience designing complex B2B SaaS products across web and mobile.');
     }
   }, []);
 
@@ -64,10 +64,66 @@ const Resume = () => {
       "Figma",
       "Design Systems",
       "Accessibility",
-      "Wireframing",
+      "Service Design",
+      "Product Analytics",
+      "AI and LLM Product Design",
+      "A/B Testing",
       "Prototyping"
     ]
   };
+
+  const experience = [
+    {
+      title: 'Product Designer', company: 'Altrata', location: 'London, UK', start: '2026-04', period: 'Apr 2026 - Present',
+      achievements: [
+        'Own end-to-end product design for a B2B data intelligence platform consolidating three enterprise products - RelSci, Wealth-X and BoardEx - into a unified platform.',
+        'Resolve conflicting workflow needs between client verticals inheriting different legacy products, defining shared patterns without regressing any group\'s core journey.',
+        'Helped hold account retention at 87% through the migration by resolving core usability issues.',
+        'Improved completion efficiency of complex search tasks by approximately 65% through Boolean logic and streamlined search interactions.',
+        'Brought support ticket volume back to the pre-migration baseline midway through the transition, ahead of the client success team\'s projection.',
+        'Plan and run discovery and usability studies directly with clients, triangulating findings against Tableau usage data.',
+        'Reduced concept iteration time by more than 80% by introducing AI-assisted prototyping workflows.',
+        'Designed responsive research and reporting workflows across desktop, tablet and mobile.'
+      ]
+    },
+    {
+      title: 'Product Designer', company: 'BetterBoard', location: 'London, UK', start: '2024-09', end: '2026-04', period: 'Sep 2024 - Apr 2026',
+      achievements: [
+        'Designed a regulated B2B SaaS case-management platform for practitioners managing complex, document-heavy immigration workflows.',
+        'Increased case processing throughput by 28% by redesigning multi-step application workflows and rationalising system architecture.',
+        'Improved first-pass submission accuracy by 70% with transparent, reviewable and overridable AI-assisted validation.',
+        'Reduced workflow friction by 30%, measured through fewer interaction steps and faster time-to-decision.',
+        'Extended case-tracking and document-capture journeys to mobile with touch-appropriate patterns.'
+      ]
+    },
+    {
+      title: 'Product Designer', company: 'TarsimInc', location: 'In-person', start: '2022-05', end: '2024-09', period: 'May 2022 - Sep 2024',
+      achievements: [
+        'Led UX/UI across 10+ B2B, B2C and SaaS products, owning research, flows, journey mapping, prototyping and usability testing.',
+        'Increased retention by 30% on a library management SaaS platform by restructuring data-heavy workflows.',
+        'Redesigned operational workflows for a B2B SaaS library platform used by 128 libraries.',
+        'Cut task completion time by 65% on an information-dense system by restructuring the dashboard and reducing interaction density.',
+        'Built a modular design system that reduced UI fragmentation across 10+ modules.',
+        'Designed native iOS and Android experiences for two products.',
+        'Partnered with engineers through implementation to maintain design quality through release.'
+      ]
+    },
+    {
+      title: 'UI/UX Designer', company: 'Noyan.co', location: 'In-person', start: '2021-12', end: '2022-04', period: 'Dec 2021 - Apr 2022',
+      achievements: [
+        'Improved operational throughput by 20% by redesigning ERP flows around users\' existing mental models.',
+        'Reduced UI inconsistencies by 85% and handoff revisions by 30% through a standardised design system.',
+        'Designed the ERP mobile companion around approval and status-check tasks needed away from a workstation.'
+      ]
+    }
+  ];
+
+  const skills = [
+    'Product design (web and mobile)', 'End-to-end ownership, discovery to delivery', 'User research and usability testing',
+    'Service design and journey mapping', 'Information architecture', 'Interaction and visual design',
+    'Accessibility (WCAG)', 'Design systems', 'Complex and data-heavy B2B SaaS', 'Product analytics (Tableau)',
+    'A/B testing', 'AI/LLM product design and AI-assisted prototyping', 'Cross-functional and commercial stakeholder collaboration', 'Figma'
+  ];
 
   return (
     <div className="resume-container" lang="en" itemScope itemType="https://schema.org/Resume">
@@ -305,9 +361,31 @@ const Resume = () => {
         }
 
         @media (max-width: 768px) {
+          .resume-container {
+            padding: 2rem 1.5rem;
+          }
+
           .header-content {
             grid-template-columns: 1fr;
             gap: 1rem;
+          }
+
+          .resume-name {
+            font-size: 2.25rem;
+          }
+
+          .experience-header {
+            flex-direction: column;
+            gap: 0.25rem;
+          }
+
+          .contact-item {
+            align-items: flex-start;
+          }
+
+          .print-button {
+            right: 1rem;
+            bottom: 1rem;
           }
         }
 
@@ -619,7 +697,7 @@ const Resume = () => {
       <section className="section" aria-label="Professional Summary">
         <h2 className="section-title">Professional Summary</h2>
         <p className="summary" itemProp="description">
-          Product Designer and UX Designer with 4+ years of experience designing B2B and B2C SaaS products across web and mobile platforms. End-to-end designer with strong expertise in User Experience Research, Interaction Design, Usability Testing, and User Interface Design, delivering 10+ real-world products from discovery to handoff. Experienced in designing data-heavy platforms, multi-role systems, and scalable SaaS solutions, where clarity, accessibility, and usability are critical. Known for translating user pain points into practical, business-aligned design decisions through research-driven thinking and close collaboration with Product Managers and Engineers. Proficient in Figma, Design Systems, Wireframing, Prototyping, and Accessibility standards (WCAG).
+          Product Designer with 5+ years designing complex B2B SaaS products across web and mobile. Experienced in turning ambiguous problems into intuitive, scalable workflows through research, interaction design, prototyping and close collaboration with product and engineering teams. Particularly experienced in data-heavy systems, operational workflows and designing experiences that work across desktop and mobile contexts.
         </p>
       </section>
 
@@ -627,74 +705,17 @@ const Resume = () => {
       <section className="section" aria-label="Professional Experience">
         <h2 className="section-title">Professional Experience</h2>
         
-        <div className="experience-item" itemScope itemType="https://schema.org/OrganizationRole">
-          <div className="experience-header">
-            <div>
-              <h3 className="job-title" itemProp="roleName">Product Designer (Freelance)</h3>
-              <p className="company" itemProp="worksFor" itemScope itemType="https://schema.org/Organization">
-                <span itemProp="name">Self-Employed</span> | <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress"><span itemProp="addressLocality">London</span>, <span itemProp="addressCountry">UK</span></span>
-              </p>
-            </div>
-            <span className="date">
-              <time itemProp="startDate" dateTime="2024-09">September 2024</time> — <time itemProp="endDate" dateTime="2025-01">Present</time>
-            </span>
-          </div>
-          <ul className="achievements-list">
-            <li>Delivered UX/UI solutions for early-stage startups, supporting user flows, interface design, and usability improvements</li>
-            <li>Collaborated closely with founders and developers to translate product requirements into feasible, user-centred designs</li>
-            <li>Improved usability and clarity of core flows (onboarding, content discovery, dashboards), supporting faster MVP validation and feature release</li>
-            <li>Balanced speed and quality in early-stage product environments with limited resources and evolving requirements</li>
-            <li>Selected products: tarazedu.com · persiajs.dev · noghtevorood.com · digitwinlab.tech · betterboard.ca · clubcp.app · commandly.dev</li>
-          </ul>
-        </div>
-
-        <div className="experience-item" itemScope itemType="https://schema.org/OrganizationRole">
-          <div className="experience-header">
-            <div>
-              <h3 className="job-title" itemProp="roleName">Product Designer (UI UX Designer)</h3>
-              <p className="company" itemProp="worksFor" itemScope itemType="https://schema.org/Organization">
-                <span itemProp="name">TarsimInc</span>
-              </p>
-            </div>
-            <span className="date">
-              <time itemProp="startDate" dateTime="2022-05">May 2022</time> — <time itemProp="endDate" dateTime="2024-09">September 2024</time>
-            </span>
-          </div>
-          <ul className="achievements-list">
-            <li>Led end-to-end UX/UI design across 10+ B2B and B2C SaaS products, owning research, flows, wireframes, prototyping, and usability testing</li>
-            <li>Designed an online learning platform for 10,000+ users, improving content hierarchy and reducing task completion time by 35%</li>
-            <li>Redesigned a SaaS document & library management system supporting 4 user roles, improving high-volume data entry efficiency</li>
-            <li>Improved usability of a public-facing library platform used by 14 libraries, increasing user engagement and satisfaction by 60%</li>
-            <li>Redesigned the company website in line with new brand guidelines, contributing to a 25% increase in user retention</li>
-            <li>Worked closely with product managers and developers to ensure technical feasibility and scalable design solutions</li>
-          </ul>
-        </div>
-
-        <div className="experience-item" itemScope itemType="https://schema.org/OrganizationRole">
-          <div className="experience-header">
-            <div>
-              <h3 className="job-title" itemProp="roleName">UI UX Designer</h3>
-              <p className="company" itemProp="worksFor" itemScope itemType="https://schema.org/Organization">
-                <span itemProp="name">NetNap</span>
-              </p>
-            </div>
-            <span className="date">
-              <time itemProp="startDate" dateTime="2021-12">December 2021</time> — <time itemProp="endDate" dateTime="2022-04">April 2022</time>
-            </span>
-          </div>
-          <ul className="achievements-list">
-            <li>Designed end-to-end user journeys for a web-based product, from requirements to high-fidelity UI</li>
-            <li>Conducted competitive analysis and usability reviews to identify gaps and improve user experience</li>
-            <li>Collaborated with developers to deliver consistent, user-centred interfaces under tight timelines</li>
-          </ul>
-        </div>
+        {experience.map(role => <div className="experience-item" itemScope itemType="https://schema.org/OrganizationRole" key={`${role.company}-${role.start}`}>
+          <div className="experience-header"><div><h3 className="job-title" itemProp="roleName">{role.title}</h3><p className="company" itemProp="worksFor" itemScope itemType="https://schema.org/Organization"><span itemProp="name">{role.company}</span> | {role.location}</p></div><span className="date"><time itemProp="startDate" dateTime={role.start}>{role.period}</time>{role.end && <meta itemProp="endDate" content={role.end} />}</span></div>
+          <ul className="achievements-list">{role.achievements.map(item => <li key={item}>{item}</li>)}</ul>
+        </div>)}
       </section>
 
       {/* Skills */}
       <section className="section skills-section" aria-label="Skills and Expertise">
         <h2 className="section-title">Skills & Expertise</h2>
         <p className="skills-list" itemScope itemType="https://schema.org/ItemList">
-          <span itemProp="itemListElement">Product Design</span>, <span itemProp="itemListElement">User Experience Design (UX)</span>, <span itemProp="itemListElement">User Interface Design (UI)</span>, <span itemProp="itemListElement">Interaction Design</span>, <span itemProp="itemListElement">User Research</span>, <span itemProp="itemListElement">Usability Testing</span>, <span itemProp="itemListElement">User Journeys</span>, <span itemProp="itemListElement">Information Architecture</span>, <span itemProp="itemListElement">Wireframing</span>, <span itemProp="itemListElement">Prototyping</span>, <span itemProp="itemListElement">Design Systems</span>, <span itemProp="itemListElement">Accessibility (WCAG)</span>, <span itemProp="itemListElement">High-Fidelity UI Design</span>, <span itemProp="itemListElement">Figma</span>, <span itemProp="itemListElement">Responsive Design</span>, <span itemProp="itemListElement">UI Components</span>, <span itemProp="itemListElement">Design Handoff</span>, <span itemProp="itemListElement">Component Libraries</span>, <span itemProp="itemListElement">Qualitative Research</span>, <span itemProp="itemListElement">Quantitative Research</span>, <span itemProp="itemListElement">User Interviews</span>, <span itemProp="itemListElement">Competitive Analysis</span>, <span itemProp="itemListElement">Heuristic Evaluation</span>, <span itemProp="itemListElement">Cross-functional Collaboration</span>, <span itemProp="itemListElement">HTML</span>, <span itemProp="itemListElement">CSS</span>, <span itemProp="itemListElement">Agile Methodology</span>, <span itemProp="itemListElement">Stakeholder Communication</span>, <span itemProp="itemListElement">Design Iteration</span>, <span itemProp="itemListElement">SaaS Design</span>, <span itemProp="itemListElement">B2B Design</span>, <span itemProp="itemListElement">B2C Design</span>
+          {skills.map((skill, index) => <span key={skill} itemProp="itemListElement">{skill}{index < skills.length - 1 ? ' · ' : ''}</span>)}
         </p>
       </section>
 
@@ -715,7 +736,7 @@ const Resume = () => {
             </span>
           </div>
           <p className="description" itemProp="description">
-            Key focus: Human Centred Design, UX Research & Evaluation, HTML & CSS, Interaction Design, Advanced and Immersive Technologies, Accessibility and assistive technology, Visual Interface Design
+            Focus on accessibility, complex systems and research-driven design. Capstone taken forward into a live digital product.
           </p>
         </div>
 
@@ -731,47 +752,6 @@ const Resume = () => {
               <time itemProp="startDate" dateTime="2017-09">September 2017</time> — <time itemProp="endDate" dateTime="2022-07">July 2022</time>
             </span>
           </div>
-          <p className="description">GPA: 17.38 out of 20</p>
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="section" aria-label="Certifications">
-        <h2 className="section-title">Certifications</h2>
-        
-        <div className="experience-item">
-          <div className="experience-header">
-            <div>
-              <h3 className="job-title">UX UI Design</h3>
-              <p className="company">Amanj Academy | Tehran, Iran</p>
-            </div>
-            <span className="date">October 2020</span>
-          </div>
-          <p className="description">
-            58 Hours (Project Driven) - Project: Designing a money management application
-          </p>
-          <ul className="achievements-list">
-            <li>Discovering and defining problems, conducting qualitative and quantitative research, user journey mapping</li>
-            <li>Using Double Diamond technique and other design methodologies</li>
-            <li>Wireframing, prototyping, and usability testing techniques</li>
-            <li>Designing with human factor consideration, accessibility factor in digital design, competitive analysis</li>
-          </ul>
-        </div>
-
-        <div className="experience-item">
-          <div className="experience-header">
-            <div>
-              <h3 className="job-title">UX & Web Design Master Course: Strategy, Design, Development</h3>
-              <p className="company">Udemy - By Joe Natoli</p>
-            </div>
-            <span className="date">October 2023</span>
-          </div>
-          <p className="description">23 Hours</p>
-          <ul className="achievements-list">
-            <li>Success plan and Strategy-led UX</li>
-            <li>Designing and building websites with human factor considerations</li>
-            <li>Human-centred web design principles</li>
-          </ul>
         </div>
       </section>
 
@@ -779,7 +759,7 @@ const Resume = () => {
       <section className="section" aria-label="Languages">
         <h2 className="section-title">Languages</h2>
         <p className="skills-list">
-          English (Professional), Persian (Native), German (Intermediate), Spanish (Intermediate)
+          Persian (Native) · English (Fluent) · German (Intermediate) · Spanish (Intermediate)
         </p>
       </section>
     </div>
