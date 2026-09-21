@@ -7,7 +7,7 @@ import ProjectPreview from './ProjectPreview'
 const cardCopy: Record<string, { title: string; achievements: string[] }> = {
   'altrata-boolean-search': {
     title: 'A scalable Boolean search framework',
-    achievements: ['Reduced time to create an actionable prospect list by approximately 60-70%', 'Reached 42% Boolean adoption among multi-filter search users within 45 days', '72% of Boolean queries led to a meaningful downstream action'],
+    achievements: ['Reduced time to create an actionable prospect list by 64%', 'Reached 42% Boolean adoption among multi-filter search users within 45 days', '72% of Boolean queries led to a meaningful downstream action'],
   },
   'focused-learning': {
     title: 'A clearer, more focused learning hub',
