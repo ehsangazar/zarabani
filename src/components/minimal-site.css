@@ -26,7 +26,8 @@
 .ms-eyebrow { font-size: var(--ms-text-sm); color: var(--ms-muted); margin: 0 0 18px; font-weight: 400; letter-spacing: .02em; }
 .ms-intro h1 { font-size: var(--ms-text-display); font-weight: 700; line-height: var(--ms-leading-title); letter-spacing: -1px; margin: 0 0 24px; }
 .ms-intro > p:not(.ms-eyebrow), .ms-home-intro-copy > p:not(.ms-eyebrow) { max-width: 62ch; font-size: var(--ms-text-base); color: var(--ms-muted); line-height: var(--ms-leading-body); }
-.ms-home-intro { padding-top: var(--ms-space-12); padding-bottom: var(--ms-section-gap); max-width: 820px; margin-inline: auto; text-align: center; }
+.ms-home-intro { min-height: calc(100svh - 105px); box-sizing: border-box; display: flex; align-items: center; justify-content: center; padding-top: var(--ms-space-12); padding-bottom: var(--ms-space-12); max-width: 820px; margin-inline: auto; text-align: center; }
+.ms-home-intro-copy { width: 100%; }
 .ms-home-intro-copy > p:not(.ms-eyebrow) { margin-inline: auto; }
 .ms-home-intro-copy > p:not(.ms-eyebrow) strong { color: var(--ms-ink); font-weight: 650; }
 .ms-text-link { min-height: 44px; color: var(--ms-accent); font-weight: 500; display: inline-flex; align-items: center; gap: 16px; font-size: var(--ms-text-sm); border-bottom: 1px solid #b9c2be; padding-bottom: 5px; margin-top: 22px; }
@@ -91,6 +92,7 @@
   .ms-nav.is-open { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
   .ms-page { padding-inline: 24px; }
   .ms-intro, .ms-home-intro { padding-top: 48px; padding-bottom: 42px; }
+  .ms-home-intro { min-height: calc(100svh - 93px); }
   .ms-intro h1 { font-size: 36px; }
   .ms-section { margin-bottom: 56px; }
   .ms-home-about, .ms-about-bio, .ms-detail-section { grid-template-columns: 1fr; gap: 26px; }
