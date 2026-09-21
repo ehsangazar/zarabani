@@ -1,0 +1,135 @@
+@font-face {
+  font-family: 'Portfolio Inter';
+  src: url('/fonts/InterVariable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+.cs-gate,
+.cs-footer {
+  font-family: 'Portfolio Inter', Inter, Verdana, sans-serif;
+  color: #05060f;
+}
+
+.cs-gate {
+  min-height: calc(100vh - 80px);
+  display: grid;
+  place-items: center;
+  padding: 112px 24px 72px;
+  background: #fff;
+}
+
+.cs-gate__panel {
+  width: min(100%, 600px);
+  padding: 48px;
+  border: 1px solid #e8e8ed;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.cs-gate__eyebrow {
+  margin: 0 0 16px;
+  color: #513deb;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cs-gate h1 {
+  margin: 0 0 18px;
+  color: #05060f;
+  font-size: clamp(34px, 5vw, 48px);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  line-height: 1.12;
+}
+
+.cs-gate__intro {
+  max-width: 48ch;
+  margin: 0 0 32px;
+  color: #60616a;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.cs-gate__form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #05060f;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cs-gate__form input {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 14px;
+  color: #05060f;
+  border: 1px solid #cfcfd7;
+  border-radius: 8px;
+  background: #fff;
+  outline: none;
+}
+
+.cs-gate__form input:focus {
+  border-color: #513deb;
+  box-shadow: 0 0 0 3px #b9afff66;
+}
+
+.cs-gate__form button {
+  width: 100%;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 11px 18px;
+  color: #fff;
+  border: 1px solid #4532d6;
+  border-radius: 8px;
+  background: #513deb;
+  font: 600 14px/1.5 'Portfolio Inter', Inter, sans-serif;
+  cursor: pointer;
+}
+
+.cs-gate__form button:hover { background: #4430d3; }
+.cs-gate__form button:focus-visible,
+.cs-gate__back:focus-visible { outline: 3px solid #b9afff; outline-offset: 3px; }
+.cs-gate__error { margin: 10px 0 0; color: #b42318; font-size: 14px; }
+.cs-gate__back { display: inline-flex; margin-top: 24px; color: #513deb; font-size: 14px; font-weight: 600; text-decoration: none; }
+.cs-gate__back:hover { color: #3927b9; text-decoration: underline; text-underline-offset: 4px; }
+
+.cs-footer {
+  width: calc(100% - 48px);
+  max-width: 1040px;
+  margin: 56px auto 0;
+  padding: 30px 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid #e8e8ed;
+  background: #fff;
+  font-size: 14px;
+}
+
+.cs-footer a { color: #05060f; text-decoration: none; }
+.cs-footer a:hover { color: #513deb; }
+.cs-footer__brand > a { font-size: 16px; font-weight: 700; }
+.cs-footer__brand p { margin: 7px 0 0; color: #60616a; font-size: 12px; }
+.cs-footer__links { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; color: #60616a; }
+.cs-footer__links a { min-height: 44px; display: inline-flex; align-items: center; color: #60616a; }
+.cs-footer__links a:hover { color: #513deb; text-decoration: underline; text-underline-offset: 4px; }
+
+@media (max-width: 767px) {
+  .cs-gate { padding: 104px 24px 56px; place-items: start center; }
+  .cs-gate__panel { padding: 28px 24px; }
+  .cs-gate h1 { font-size: 34px; }
+  .cs-footer { flex-direction: column; align-items: flex-start; margin-top: 40px; }
+  .cs-footer__links { gap: 8px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-gate *, .cs-footer * { transition: none !important; }
+}
