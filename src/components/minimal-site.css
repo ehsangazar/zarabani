@@ -300,6 +300,9 @@
 .minimal-site--case-study .case-study-page .focused-learning-study h3[class*="text-[18px]"] {
   color: #1b4d99 !important;
 }
+.minimal-site--case-study .case-study-page .omaia-study h3[class~="text-xl"][class~="text-primary"] {
+  color: #1b4d99 !important;
+}
 @media (max-width: 767px) {
   .minimal-site--case-study .case-study-page > section:first-of-type { padding-top: 48px !important; padding-bottom: 32px !important; }
   .minimal-site--case-study .case-study-page > section:first-of-type h1 { font-size: 36px !important; }

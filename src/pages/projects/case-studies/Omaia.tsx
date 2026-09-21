@@ -12,7 +12,7 @@ const omaiaLegacyPalette: CSSProperties = {
 const Omaia = () => {
   return (
     <div
-      className="max-w-5xl mx-auto px-8 md:px-12"
+      className="omaia-study max-w-5xl mx-auto px-8 md:px-12"
       style={omaiaLegacyPalette}
     >
       {/* Hero Section */}
