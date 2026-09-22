@@ -30,6 +30,7 @@
 .ms-home-intro-copy { width: 100%; }
 .ms-home-intro-copy > p:not(.ms-eyebrow) { margin-inline: auto; }
 .ms-home-intro-copy > p:not(.ms-eyebrow) strong { color: var(--ms-ink); font-weight: 650; }
+.ms-home-intro-copy > .ms-hero-thesis { max-width: 42ch; color: var(--ms-ink); font-size: clamp(1.125rem, 2vw, 1.375rem); line-height: 1.45; }
 .ms-text-link { min-height: 44px; color: var(--ms-accent); font-weight: 500; display: inline-flex; align-items: center; gap: 16px; font-size: var(--ms-text-sm); border-bottom: 1px solid #b9c2be; padding-bottom: 5px; margin-top: 22px; }
 .ms-text-link:hover { border-color: var(--ms-ink); }
 .ms-section { margin-bottom: var(--ms-section-gap); }
