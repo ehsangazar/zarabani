@@ -24,6 +24,7 @@
 .ms-page { max-width: var(--ms-width); padding: 0 var(--ms-gutter) var(--ms-space-12); margin-inline: auto; }
 .ms-intro { padding: 76px 0 60px; max-width: 700px; }
 .ms-eyebrow { font-size: var(--ms-text-sm); color: var(--ms-muted); margin: 0 0 18px; font-weight: 400; letter-spacing: .02em; }
+.ms-eyebrow.ms-eyebrow--accent { color: var(--ms-accent); font-weight: 600; }
 .ms-intro h1 { font-size: var(--ms-text-display); font-weight: 700; line-height: var(--ms-leading-title); letter-spacing: -1px; margin: 0 0 24px; }
 .ms-intro > p:not(.ms-eyebrow), .ms-home-intro-copy > p:not(.ms-eyebrow) { max-width: 62ch; font-size: var(--ms-text-base); color: var(--ms-muted); line-height: var(--ms-leading-body); }
 .ms-home-intro { min-height: calc(100svh - 105px); box-sizing: border-box; display: flex; align-items: center; justify-content: center; padding-top: var(--ms-space-12); padding-bottom: var(--ms-space-12); max-width: 960px; margin-inline: auto; text-align: center; }
