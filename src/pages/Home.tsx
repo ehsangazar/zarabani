@@ -10,7 +10,7 @@ export default function Home() {
       <dl className="ms-hero-stats">
         <div><dt>Years designing complex digital products</dt><dd>5+</dd></div>
         <div><dt>B2B SaaS &amp; enterprise workflows</dt><dd>10+</dd></div>
-        <div><dt>Organisations supported through SaaS platforms</dt><dd>128</dd></div>
+        <div><dt>Faster concept iteration through AI-assisted prototyping</dt><dd>80%</dd></div>
       </dl></div></header>
     <section className="ms-section" aria-labelledby="selected-work"><div className="ms-section-heading"><h2 id="selected-work">Selected work</h2><Link className="ms-secondary-link" to="/projects">All projects ↗</Link></div><ProjectGrid limit={4} /></section>
     <section className="ms-section ms-home-about"><div><p className="ms-eyebrow">How I work</p><h2>Curiosity first.<br />Clarity throughout.</h2></div><div><p>I help teams move from insight to action by aligning user needs with practical constraints, making informed trade-offs, and shaping clear, usable solutions.</p><p>My experience includes complex, data-heavy platforms and multi-role systems, where clarity, scalability, and usability matter.</p><Link className="ms-text-link" to="/about">More about my approach ↗</Link></div></section>
