@@ -1,0 +1,65 @@
+.library-study { max-width: 1040px; margin: auto; color: #444550; font-size: 17px; line-height: 1.75; }
+.library-study section + section { margin-top: 88px; }
+.library-study p { margin: 0 0 22px; max-width: 76ch; }
+.library-study .library-eyebrow { color: #6554bc; font-size: 12px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 20px; }
+.library-study h2 { font-size: clamp(26px, 3.5vw, 38px); line-height: 1.2; letter-spacing: -.035em; font-weight: 650; margin: 0 0 26px; }
+.library-study h3 { font-size: 23px; line-height: 1.4; font-weight: 600; letter-spacing: -.02em; margin: 40px 0 18px; }
+.library-study h4 { font-size: 13px; font-weight: 650; margin: 24px 0 8px; }
+.library-copy ul { list-style: disc; padding-left: 24px; margin: 0 0 28px; }
+.library-copy li { padding-left: 5px; margin-bottom: 9px; }
+.library-impact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 30px 0; margin: 32px 0; border-block: 1px solid #e8e8ed; }
+.library-impact strong { display: block; color: #513deb; font-size: clamp(26px, 3vw, 36px); line-height: 1.2; font-weight: 600; margin-bottom: 12px; }
+.library-impact span { display: block; font-size: 14px; line-height: 1.55; max-width: 26ch; }
+.library-meta { display: grid; grid-template-columns: 1.5fr 1fr; gap: 44px; font-size: 14px; margin: 28px 0 44px; }
+.library-meta dt { font-size: 12px; text-transform: uppercase; font-weight: 650; color: #60616a; margin-bottom: 10px; }
+.library-meta dd { margin: 0; }
+.library-screen { margin: 36px 0 48px; min-width: 0; }
+.library-screen a { display: block; border: 1px solid #e8e8ed; border-radius: 10px; overflow: hidden; background: #f5f6f9; }
+.library-screen img { display: block; width: 100%; height: auto; }
+.library-screen figcaption { margin-top: 12px; font-size: 13px; line-height: 1.6; color: #676874; }
+.library-screen a:focus-visible, .library-gallery summary:focus-visible, .library-back:focus-visible { outline: 3px solid #b9afff; outline-offset: 5px; }
+.library-gallery { border-block: 1px solid #e8e8ed; margin: 32px 0; padding: 20px 0; }
+.library-gallery summary { cursor: pointer; font-size: 15px; font-weight: 600; color: #513deb; }
+.library-gallery--showcase { border: 1px solid #dcd7ff; border-radius: 16px; padding: 0 24px; background: linear-gradient(135deg, #f8f7ff 0%, #fff 72%); box-shadow: 0 10px 30px rgba(81, 61, 235, .08); transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.library-gallery--showcase:hover { border-color: #b9afff; box-shadow: 0 14px 38px rgba(81, 61, 235, .13); transform: translateY(-2px); }
+.library-gallery--showcase[open] { border-color: #b9afff; box-shadow: 0 14px 38px rgba(81, 61, 235, .11); transform: none; }
+.library-gallery--showcase summary { min-height: 126px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 20px; padding: 22px 0; list-style: none; }
+.library-gallery--showcase summary::-webkit-details-marker { display: none; }
+.library-gallery__icon { width: 58px; height: 58px; display: grid; place-items: center; border-radius: 14px; color: #fff; background: #513deb; box-shadow: 0 8px 20px rgba(81, 61, 235, .25); }
+.library-gallery__icon svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.library-gallery__copy { display: grid; gap: 5px; }
+.library-gallery__copy strong { color: #171821; font-size: clamp(19px, 2.2vw, 24px); line-height: 1.25; letter-spacing: -.025em; }
+.library-gallery__copy > span { max-width: 62ch; color: #676874; font-size: 14px; font-weight: 450; line-height: 1.55; }
+.library-gallery__action { display: inline-flex; align-items: center; gap: 9px; padding: 10px 14px; border: 1px solid #d4ceff; border-radius: 999px; background: #fff; color: #513deb; font-size: 13px; font-weight: 650; white-space: nowrap; }
+.library-gallery__action svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s ease; }
+.library-gallery__open-label { display: none; }
+.library-gallery--showcase[open] .library-gallery__closed-label { display: none; }
+.library-gallery--showcase[open] .library-gallery__open-label { display: inline; }
+.library-gallery--showcase[open] .library-gallery__action svg { transform: rotate(180deg); }
+.library-gallery--showcase > .library-screen:first-of-type,
+.library-gallery--showcase > .library-mobile-grid:first-of-type { margin-top: 8px; }
+.library-before-grid, .library-mobile-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.library-mobile-grid { max-width: 860px; margin-inline: auto; padding: 0 16px; }
+.library-roles { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.library-roles > div { border-top: 1px solid #e8e8ed; }
+.library-roles h3 { margin-top: 24px; }
+.library-back { display: inline-block; margin-top: 50px; color: #513deb; font-size: 15px; font-weight: 600; }
+@media (max-width: 640px) {
+ .library-study { font-size: 16px; }
+ .library-study section + section { margin-top: 56px; }
+ .library-impact { gap: 24px; grid-template-columns: 1fr; }
+ .library-impact span { max-width: none; }
+ .library-meta, .library-roles { grid-template-columns: 1fr; gap: 24px; }
+ .library-before-grid, .library-mobile-grid { grid-template-columns: 1fr; max-width: 320px; margin-inline: auto; padding: 0; gap: 0; }
+ .library-gallery--showcase { padding: 0 18px; }
+ .library-gallery--showcase summary { min-height: 0; grid-template-columns: auto minmax(0, 1fr); gap: 14px; padding: 20px 0; }
+ .library-gallery__icon { width: 48px; height: 48px; border-radius: 12px; }
+ .library-gallery__icon svg { width: 24px; height: 24px; }
+ .library-gallery__copy strong { font-size: 18px; }
+ .library-gallery__copy > span { font-size: 13px; }
+ .library-gallery__action { grid-column: 1 / -1; justify-content: center; width: 100%; box-sizing: border-box; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+ .library-gallery--showcase, .library-gallery__action svg { transition: none; }
+}

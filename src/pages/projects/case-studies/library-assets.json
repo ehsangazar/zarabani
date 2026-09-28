@@ -1,0 +1,118 @@
+{
+  "add-magazin": {
+    "width": 902,
+    "height": 2000
+  },
+  "add-copy-2": {
+    "width": 2000,
+    "height": 1321
+  },
+  "add-copy": {
+    "width": 2000,
+    "height": 1321
+  },
+  "add": {
+    "width": 2000,
+    "height": 1321
+  },
+  "advanced-search": {
+    "width": 2000,
+    "height": 1321
+  },
+  "delete-confirmation-message-2": {
+    "width": 2000,
+    "height": 1321
+  },
+  "delete-confirmation-message": {
+    "width": 2000,
+    "height": 1321
+  },
+  "frame-9845": {
+    "width": 595,
+    "height": 2000
+  },
+  "management-of-books-main-2": {
+    "width": 2000,
+    "height": 1321
+  },
+  "management-of-books-main-3": {
+    "width": 2000,
+    "height": 1321
+  },
+  "management-of-books-main-4": {
+    "width": 2000,
+    "height": 1321
+  },
+  "management-of-books-main": {
+    "width": 2000,
+    "height": 1321
+  },
+  "management-of-books": {
+    "width": 2000,
+    "height": 1321
+  },
+  "print-2": {
+    "width": 2000,
+    "height": 1321
+  },
+  "print-3": {
+    "width": 2000,
+    "height": 1321
+  },
+  "print": {
+    "width": 2000,
+    "height": 1321
+  },
+  "store-dashboard---audiobook-2": {
+    "width": 2000,
+    "height": 1684
+  },
+  "store-dashboard---audiobook": {
+    "width": 2000,
+    "height": 1605
+  },
+  "store-dashboard---publish-card": {
+    "width": 2000,
+    "height": 1693
+  },
+  "iphone-16-pro---24": {
+    "width": 902,
+    "height": 2000
+  },
+  "iphone-16-pro---25": {
+    "width": 902,
+    "height": 2000
+  },
+  "iphone-16-pro---31": {
+    "width": 902,
+    "height": 2000
+  },
+  "iphone-16-pro---39": {
+    "width": 902,
+    "height": 2000
+  },
+  "iphone-16-pro---40": {
+    "width": 902,
+    "height": 2000
+  },
+  "iphone-16-pro---41": {
+    "width": 902,
+    "height": 2000
+  },
+  "iphone-16-pro---74": {
+    "width": 818,
+    "height": 2000
+  },
+  "legacy-historical-records": {
+    "width": 1280,
+    "height": 6240
+  },
+  "legacy-persian-records": {
+    "width": 1280,
+    "height": 5158
+  },
+  "legacy-book-entry": {
+    "width": 1216,
+    "height": 4002
+  }
+}

@@ -28,7 +28,7 @@ export const allProjects: Project[] = [
     id: 'document-management',
     title: "Redesigning a B2B SaaS Library Management System",
     description:
-      "Improving complex catalogue management and data-heavy workflows for institutional libraries",
+      "Turning a system built around its database into one built around daily library work, for 128 institutional libraries",
     icon: "menu_book",
     color: "violet",
     achievements: [
