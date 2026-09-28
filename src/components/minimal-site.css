@@ -234,6 +234,86 @@
   .ms-section-heading h2 { font-size: 26px; letter-spacing: -.5px; }
 }
 
+/* Homepage hero and its transition into selected work. */
+.ms-home-intro {
+  position: relative;
+  min-height: 0;
+  max-width: none;
+  margin: 24px 0 76px;
+  padding: clamp(44px, 6vw, 68px) clamp(30px, 5vw, 58px) 0;
+  display: block;
+  text-align: left;
+  border: 1px solid #ded9ff;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 84% 14%, rgba(81, 61, 235, .16), transparent 32%),
+    radial-gradient(circle at 15% 92%, rgba(185, 175, 255, .22), transparent 30%),
+    #f6f4ff;
+}
+.ms-home-intro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  opacity: .32;
+  pointer-events: none;
+  background-image: linear-gradient(#b9afff33 1px, transparent 1px), linear-gradient(90deg, #b9afff33 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom right, #000, transparent 64%);
+}
+.ms-home-intro-copy { position: relative; z-index: 1; }
+.ms-home-hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); gap: clamp(38px, 6vw, 76px); align-items: center; }
+.ms-home-hero-copy { max-width: 650px; }
+.ms-home-location { width: max-content; display: inline-flex; align-items: center; gap: 9px; margin-bottom: 22px; padding: 7px 11px; border: 1px solid #d8d3f6; border-radius: 999px; background: rgba(255, 255, 255, .68); color: #4e4f5a; font-size: 12px; font-weight: 600; }
+.ms-home-location > span { width: 8px; height: 8px; border-radius: 50%; background: #6bcb77; box-shadow: 0 0 0 3px #6bcb7724; }
+.ms-home-intro h1 { margin-bottom: 24px; font-size: clamp(3rem, 6.5vw, 5.25rem); line-height: .98; letter-spacing: -.065em; }
+.ms-home-intro-copy > .ms-home-hero-grid p:not(.ms-eyebrow) { max-width: 58ch; margin: 0; color: #50515c; font-size: 17px; line-height: 1.65; }
+.ms-home-intro-copy .ms-hero-thesis { max-width: 31ch; margin: 0 0 22px; font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.35; letter-spacing: -.025em; }
+.ms-home-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 28px; }
+.ms-home-actions .ms-text-link { margin-top: 0; }
+.ms-hero-framework { padding: 22px; border: 1px solid rgba(81, 61, 235, .17); border-radius: 22px; background: rgba(255, 255, 255, .7); box-shadow: 0 22px 55px rgba(54, 39, 154, .1); backdrop-filter: blur(8px); }
+.ms-hero-framework__label { margin: 0; color: var(--ms-accent); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.ms-hero-framework__map { position: relative; height: 250px; margin: 4px 0 8px; }
+.ms-hero-framework__map svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.ms-hero-framework__map path { fill: none; stroke: #bbb4e8; stroke-width: 1.25; stroke-dasharray: 4 6; }
+.ms-hero-node { position: absolute; z-index: 1; display: grid; place-items: center; min-width: 92px; min-height: 38px; padding: 7px 13px; border: 1px solid #d8d4ed; border-radius: 999px; background: #fff; color: #41434d; font-size: 13px; font-weight: 650; box-shadow: 0 7px 18px rgba(34, 29, 67, .08); }
+.ms-hero-node--users { top: 8px; left: 50%; transform: translateX(-50%); }
+.ms-hero-node--technology { bottom: 8px; left: 0; }
+.ms-hero-node--business { right: 0; bottom: 8px; }
+.ms-hero-framework__centre { position: absolute; top: 50%; left: 50%; width: 138px; height: 138px; display: grid; place-content: center; gap: 5px; transform: translate(-50%, -50%); border: 1px solid #9f94ef; border-radius: 50%; background: linear-gradient(145deg, #fff, #ece9ff); text-align: center; box-shadow: 0 14px 34px rgba(81, 61, 235, .16); }
+.ms-hero-framework__centre small { max-width: 12ch; margin: auto; color: #676874; font-size: 10px; line-height: 1.3; }
+.ms-hero-framework__centre strong { color: var(--ms-accent); font-size: 26px; letter-spacing: -.04em; }
+.ms-hero-framework__focus { margin: 0; color: #373943; font-size: 12px; font-weight: 650; line-height: 1.5; text-align: center; }
+.ms-hero-framework__journey { margin: 8px 0 0; color: #747581; font-size: 11px; line-height: 1.5; text-align: center; }
+.ms-home-intro .ms-hero-stats { position: relative; z-index: 2; margin: 48px -26px -42px; padding: 22px 24px; border: 1px solid #e2e1e8; border-radius: 18px; background: rgba(255, 255, 255, .96); box-shadow: 0 18px 45px rgba(31, 27, 54, .11); }
+.ms-home-intro .ms-hero-stats dd { color: var(--ms-ink); }
+.ms-home-work { padding-top: 20px; }
+.ms-home-work__heading { align-items: flex-end; margin-bottom: 30px; }
+.ms-home-work__heading .ms-eyebrow { margin: 0 0 9px; color: var(--ms-accent); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.ms-home-work__heading h2 { max-width: 18ch; font-size: clamp(1.8rem, 3.6vw, 2.7rem); letter-spacing: -.04em; }
+@media (max-width: 900px) {
+  .ms-home-hero-grid { grid-template-columns: 1fr; }
+  .ms-home-hero-copy { max-width: 720px; }
+  .ms-hero-framework { max-width: 560px; width: 100%; box-sizing: border-box; margin-inline: auto; }
+}
+@media (max-width: 767px) {
+  .ms-home-intro { min-height: 0; margin: 16px 0 58px; padding: 34px 24px 0; border-radius: 20px; }
+  .ms-home-intro h1 { font-size: clamp(2.75rem, 15vw, 4rem); }
+  .ms-home-intro-copy .ms-hero-thesis { font-size: 20px; }
+  .ms-home-intro-copy > .ms-home-hero-grid p:not(.ms-eyebrow) { font-size: 16px; }
+  .ms-hero-framework { padding: 18px; }
+  .ms-hero-framework__map { height: 230px; }
+  .ms-home-intro .ms-hero-stats { grid-template-columns: 1fr; gap: 0; margin: 34px -12px -30px; padding: 8px 16px; }
+  .ms-home-intro .ms-hero-stats > div { min-height: 66px; flex-direction: row; justify-content: space-between; align-items: center; gap: 20px; text-align: left; }
+  .ms-home-intro .ms-hero-stats > div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--ms-line); }
+  .ms-home-intro .ms-hero-stats dt { max-width: 30ch; }
+  .ms-home-intro .ms-hero-stats dd { order: 2; flex: 0 0 auto; font-size: 28px; }
+  .ms-home-work { padding-top: 10px; }
+  .ms-home-work__heading { align-items: flex-end; }
+  .ms-home-work__heading h2 { font-size: 27px; }
+}
+
 /* Case studies use the same shell and visual language while retaining their content. */
 .minimal-site--case-study .case-study-page,
 .minimal-site--case-study .case-study-page :is(h1, h2, h3, h4, p, li, a, span, button, input, label, dt, dd, figcaption) {
