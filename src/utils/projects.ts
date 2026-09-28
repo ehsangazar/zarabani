@@ -32,10 +32,10 @@ export const allProjects: Project[] = [
     icon: "menu_book",
     color: "violet",
     achievements: [
-      "35% reduction in task completion time",
-      "Improved interface for three distinct user roles",
-      "Enhanced librarian workflow efficiency",
-      "Cleaner information architecture and simplified navigation",
+      "~35% reduction in librarian task completion time",
+      "Used by 128 institutional libraries",
+      "Moved book entry from the desk to the shelf with mobile ISBN scanning",
+      "Rebuilt the information architecture around librarians’ workflows",
     ],
     technologies: [
       "Desktop UX",

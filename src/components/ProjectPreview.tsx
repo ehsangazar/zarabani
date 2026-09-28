@@ -23,8 +23,8 @@ const previews: Record<string, Preview> = {
     phone: true,
   },
   'document-management': {
-    src: '/case-studies/document-management/1.png',
-    alt: 'Library catalogue management interface',
+    src: '/case-studies/document-management/redesign/management-of-books-main.webp',
+    alt: 'Redesigned library catalogue management workspace',
   },
   'library-platform': {
     comingSoon: true,
