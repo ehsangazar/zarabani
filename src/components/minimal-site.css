@@ -296,6 +296,15 @@
 .minimal-site--case-study .case-study-page > section:nth-of-type(3) :is(h2, h3, h4) { color: var(--ms-ink) !important; }
 .minimal-site--case-study .al-study { --al-blue: var(--ms-accent); --al-line: var(--ms-line); color: #353640; }
 .minimal-site--case-study .al-study :is(h2, h3, h4) { color: var(--ms-ink) !important; }
+.minimal-site--case-study .case-study-page article h3.uppercase,
+.minimal-site--case-study .case-study-page article .al-source-intro > .al-eyebrow,
+.minimal-site--case-study .case-study-page article .al-source-metrics .al-impact-label,
+.minimal-site--case-study .case-study-page article .al-source-context .al-source-subheading,
+.minimal-site--case-study .case-study-page article .library-eyebrow,
+.minimal-site--case-study .case-study-page article .library-meta dt,
+.minimal-site--case-study .case-study-page article .ae-label {
+  color: var(--ms-accent) !important;
+}
 .minimal-site--case-study .al-results-strip strong,
 .minimal-site--case-study .al-learning,
 .minimal-site--case-study .al-closing { color: var(--ms-accent); }
