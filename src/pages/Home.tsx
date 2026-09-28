@@ -20,19 +20,15 @@ export default function Home() {
             </div>
           </div>
           <div className="ms-home-hero-visual">
-            <img className="ms-home-portrait" src="/zara-cutout.png" alt="Zara Bani" width="1155" height="1362" />
-            <aside className="ms-hero-framework" aria-label="Design approach: users, technology and business brought together through clarity">
-              <p className="ms-hero-framework__label">Where I work best</p>
-              <div className="ms-hero-framework__map" aria-hidden="true">
-                <svg viewBox="0 0 360 290" preserveAspectRatio="none"><path d="M180 42 180 132M61 228 145 168M299 228 215 168" /></svg>
-                <span className="ms-hero-node ms-hero-node--users">Users</span>
-                <span className="ms-hero-node ms-hero-node--technology">Technology</span>
-                <span className="ms-hero-node ms-hero-node--business">Business</span>
-                <div className="ms-hero-framework__centre"><small>Turning complexity into</small><strong>Clarity</strong></div>
-              </div>
-              <p className="ms-hero-framework__focus">AI-powered products · B2B SaaS · B2C · data-heavy systems</p>
-              <p className="ms-hero-framework__journey">Discovery → strategy → interaction → shipped product</p>
-            </aside>
+            <div className="ms-home-portrait-stage">
+              <span className="ms-home-portrait-greeting">Hi, I’m Zara.</span>
+              <img className="ms-home-portrait" src="/zara-cutout.png" alt="Zara Bani" width="509" height="600" />
+            </div>
+            <div className="ms-home-portrait-note">
+              <span>My sweet spot</span>
+              <strong>People. Technology. Business.</strong>
+              <small>Bringing them together to make complexity feel simple.</small>
+            </div>
           </div>
         </div>
       <dl className="ms-hero-stats">
