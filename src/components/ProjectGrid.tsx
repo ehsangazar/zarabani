@@ -33,17 +33,19 @@ export default function ProjectGrid({ limit }: { limit?: number }) {
   }, [])
   if (loading) return <p className="ms-muted" role="status">Loading projects…</p>
   return <div className="project-grid">
-    {projects.slice(0, limit).map(project => <Link
+    {projects.slice(0, limit).map((project, index) => <Link
       key={project.id} to={`/projects/${project.id}`} className="project-card"
     >
-      <ProjectPreview projectId={project.id} />
       <div className="project-card__body">
-        <div className="project-card__caption"><h3>{cardCopy[project.id]?.title ?? project.title}</h3><span aria-hidden="true">↗</span></div>
+        <p className="project-card__eyebrow">Case study <span>{String(index + 1).padStart(2, '0')}</span></p>
+        <div className="project-card__caption"><h3>{cardCopy[project.id]?.title ?? project.title}</h3></div>
         <p className="project-card__label">Key achievements</p>
         <ul className="project-card__achievements">
           {(cardCopy[project.id]?.achievements ?? project.achievements.slice(0, 3)).map(achievement => <li key={achievement}>{achievement}</li>)}
         </ul>
+        <span className="project-card__cta">Explore case study <span aria-hidden="true">↗</span></span>
       </div>
+      <ProjectPreview projectId={project.id} />
     </Link>)}
   </div>
 }

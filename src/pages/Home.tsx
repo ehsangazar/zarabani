@@ -42,7 +42,34 @@ export default function Home() {
       <div className="ms-section-heading ms-home-work__heading"><div><p className="ms-eyebrow">Selected work</p><h2 id="selected-work">Complex problems, made clearer.</h2></div><Link className="ms-secondary-link" to="/projects">All projects ↗</Link></div>
       <ProjectGrid limit={4} />
     </section>
-    <section className="ms-section ms-home-about"><div><p className="ms-eyebrow">How I work</p><h2>Curiosity first.<br />Clarity throughout.</h2></div><div><p>I help teams move from insight to action by aligning user needs with practical constraints, making informed trade-offs, and shaping clear, usable solutions.</p><p>My experience includes complex, data-heavy platforms and multi-role systems, where clarity, scalability, and usability matter.</p><Link className="ms-text-link" to="/about">More about my approach ↗</Link></div></section>
+    <section className="ms-section ms-home-about" aria-labelledby="approach-title">
+      <div className="ms-approach-inner">
+        <div className="ms-approach-copy">
+          <p className="ms-eyebrow">How I work</p>
+          <h2 id="approach-title">Curiosity first.<br />Clarity throughout.</h2>
+          <p className="ms-approach-lead">Good product thinking starts before the interface—with understanding what is worth solving, for whom, and why it matters.</p>
+          <p>I connect what people need with what the business needs to achieve and what technology makes possible. That means questioning assumptions, making trade-offs explicit, and helping teams choose a direction they can stand behind.</p>
+          <Link className="ms-text-link" to="/about">More about my approach ↗</Link>
+        </div>
+        <aside className="ms-hero-framework" aria-label="My approach connects users, technology and business to turn complexity into clarity">
+          <p className="ms-hero-framework__label">Where I work best</p>
+          <div className="ms-hero-framework__map" aria-hidden="true">
+            <svg viewBox="0 0 360 290" preserveAspectRatio="none"><path d="M180 42 180 132M61 228 145 168M299 228 215 168" /></svg>
+            <span className="ms-hero-node ms-hero-node--users">Users</span>
+            <span className="ms-hero-node ms-hero-node--technology">Technology</span>
+            <span className="ms-hero-node ms-hero-node--business">Business</span>
+            <div className="ms-hero-framework__centre"><small>Turning complexity into</small><strong>Clarity</strong></div>
+          </div>
+          <p className="ms-hero-framework__focus">AI-powered products · B2B SaaS · B2C · data-heavy systems</p>
+          <p className="ms-hero-framework__journey">Discovery → strategy → interaction → shipped product</p>
+        </aside>
+        <ol className="ms-approach-principles">
+          <li><span>01 / Frame</span><h3>Find the problem behind the request.</h3><p>Understand the context, uncover friction, and separate the underlying need from the proposed solution.</p></li>
+          <li><span>02 / Decide</span><h3>Make the trade-offs intentional.</h3><p>Weigh user value, business impact, and feasibility. Define what success looks like before committing to a direction.</p></li>
+          <li><span>03 / Learn</span><h3>Build to learn, then refine.</h3><p>Make ideas tangible, test the riskiest assumptions, and use feedback to guide what ships and what improves next.</p></li>
+        </ol>
+      </div>
+    </section>
     <section className="ms-section"><div className="ms-section-heading"><h2>Notes on design</h2><Link className="ms-secondary-link" to="/blog">All writing ↗</Link></div><WritingGrid limit={3} /></section>
     <section className="ms-invitation"><h2>Have something in mind?</h2><Link className="ms-text-link ms-primary-link" to="/contact">Let's talk ↗</Link></section>
   </div>

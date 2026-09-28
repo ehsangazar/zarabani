@@ -23,9 +23,9 @@
 .cs-gate__panel {
   width: min(100%, 600px);
   padding: 48px;
-  border: 1px solid #e8e8ed;
-  border-radius: 16px;
-  background: #fff;
+  border: 1px solid #e5e0f4;
+  border-radius: 24px;
+  background: var(--ms-surface, #f6f5ff);
 }
 
 .cs-gate__eyebrow {
@@ -124,7 +124,7 @@
 
 @media (max-width: 767px) {
   .cs-gate { padding: 104px 24px 56px; place-items: start center; }
-  .cs-gate__panel { padding: 28px 24px; }
+  .cs-gate__panel { padding: 28px 24px; border-radius: 20px; }
   .cs-gate h1 { font-size: 34px; }
   .cs-footer { flex-direction: column; align-items: flex-start; margin-top: 40px; }
   .cs-footer__links { gap: 8px 20px; }
