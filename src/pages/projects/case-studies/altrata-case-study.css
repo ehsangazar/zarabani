@@ -27,6 +27,16 @@
 .al-full .al-source-metric { font-size: clamp(25px, 3.5vw, 38px); line-height: 1.35; font-weight: 600; color: #204e7c; letter-spacing: -.025em; padding: 28px; background: #e6eef7; max-width: 950px; }
 .al-source-metrics .al-source-metric { padding: 0; background: none; margin-bottom: 0; }
 .al-source-metrics p { font-size: 15px; }
+@media(min-width:900px){
+  .al-source-metrics { grid-template-columns: 1fr 1.3fr 1fr; column-gap: 32px; }
+  .al-source-metrics [data-source-index="6"] { font-size: clamp(30px, 3vw, 34px); white-space: nowrap; }
+}
+@media(min-width:701px) and (max-width:899px){
+  .al-source-metrics { gap: 24px; grid-template-columns: 1fr; grid-template-rows: auto; }
+  .al-source-metrics .al-impact-label { margin-bottom: 0; }
+  .al-source-metrics > div + div { padding: 24px 0 0; }
+  .al-source-metrics > div { grid-row: auto; grid-template-rows: auto; gap: 12px; padding: 0; }
+}
 .al-source-context { grid-template-columns: 1.25fr 1fr; gap: 64px; font-size: 15px; }
 .al-source-context .al-source-subheading { font-size: 13px; text-transform: uppercase; letter-spacing: .12em; margin: 25px 0 16px; }
 .al-source-context > div > .al-source-subheading:first-child { margin-top: 0; }
