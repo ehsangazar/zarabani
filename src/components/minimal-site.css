@@ -309,9 +309,6 @@
 .minimal-site--case-study .case-study-page article .ae-label {
   color: var(--ms-accent) !important;
 }
-.minimal-site--case-study .case-study-page .al-source-metrics .al-source-metric {
-  color: #1f4f78 !important;
-}
 .minimal-site--case-study .al-results-strip strong,
 .minimal-site--case-study .al-learning,
 .minimal-site--case-study .al-closing { color: var(--ms-accent); }
