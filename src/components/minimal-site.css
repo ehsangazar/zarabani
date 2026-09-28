@@ -275,7 +275,10 @@
 .ms-home-intro-copy .ms-hero-thesis { max-width: 31ch; margin: 0 0 22px; font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.35; letter-spacing: -.025em; }
 .ms-home-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 28px; }
 .ms-home-actions .ms-text-link { margin-top: 0; }
-.ms-hero-framework { padding: 22px; border: 1px solid rgba(81, 61, 235, .17); border-radius: 22px; background: rgba(255, 255, 255, .7); box-shadow: 0 22px 55px rgba(54, 39, 154, .1); backdrop-filter: blur(8px); }
+.ms-home-hero-visual { position: relative; isolation: isolate; padding-top: 42px; }
+.ms-home-hero-visual::before { content: ''; position: absolute; top: -60px; right: -56px; z-index: 0; width: 226px; aspect-ratio: 1; border: 1px solid rgba(81, 61, 235, .16); border-radius: 50%; background: radial-gradient(circle at 40% 36%, rgba(255, 255, 255, .94), rgba(221, 214, 255, .76) 58%, rgba(189, 176, 255, .24)); }
+.ms-home-portrait { position: absolute; top: -82px; right: -66px; z-index: 3; width: clamp(172px, 15vw, 218px); height: auto; pointer-events: none; filter: drop-shadow(0 15px 18px rgba(42, 30, 104, .18)); }
+.ms-hero-framework { position: relative; z-index: 2; padding: 22px; border: 1px solid rgba(81, 61, 235, .17); border-radius: 22px; background: rgba(255, 255, 255, .78); box-shadow: 0 22px 55px rgba(54, 39, 154, .1); backdrop-filter: blur(8px); }
 .ms-hero-framework__label { margin: 0; color: var(--ms-accent); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .ms-hero-framework__map { position: relative; height: 250px; margin: 4px 0 8px; }
 .ms-hero-framework__map svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
@@ -298,6 +301,9 @@
 @media (max-width: 900px) {
   .ms-home-hero-grid { grid-template-columns: 1fr; }
   .ms-home-hero-copy { max-width: 720px; }
+  .ms-home-hero-visual { width: 100%; max-width: 560px; margin-inline: auto; padding-top: 58px; }
+  .ms-home-portrait { top: -54px; right: -30px; width: 176px; }
+  .ms-home-hero-visual::before { top: -34px; right: -26px; width: 184px; }
   .ms-hero-framework { max-width: 560px; width: 100%; box-sizing: border-box; margin-inline: auto; }
 }
 @media (max-width: 767px) {
@@ -305,6 +311,9 @@
   .ms-home-intro h1 { font-size: clamp(2.75rem, 15vw, 4rem); }
   .ms-home-intro-copy .ms-hero-thesis { font-size: 20px; }
   .ms-home-intro-copy > .ms-home-hero-grid p:not(.ms-eyebrow) { font-size: 16px; }
+  .ms-home-hero-visual { padding-top: 52px; }
+  .ms-home-portrait { top: -28px; right: -10px; width: 132px; }
+  .ms-home-hero-visual::before { top: -14px; right: -4px; width: 136px; }
   .ms-hero-framework { padding: 18px; }
   .ms-hero-framework__map { height: 230px; }
   .ms-home-intro .ms-hero-stats { grid-template-columns: 1fr; gap: 0; margin: 34px -12px -30px; padding: 8px 16px; }
