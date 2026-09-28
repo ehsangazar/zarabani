@@ -83,7 +83,7 @@ const ProjectDetail = () => {
   // Render case study
   if (caseStudy) {
     return (
-      <div className="case-study-page min-h-screen bg-white">
+      <div className={`case-study-page case-study-page--${caseStudy.id} min-h-screen bg-white`}>
         <PageMeta
           title={caseStudy.title}
           description={caseStudy.description}
