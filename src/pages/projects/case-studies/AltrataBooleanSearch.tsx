@@ -129,6 +129,12 @@ function Blocks({ start, end, grouped = true }: { start: number; end: number; gr
           <div className={group.className}>
             {index === 3 && <h3 className="al-impact-label">Impact</h3>}
             {group.ranges.map(([from, to]) => <div key={from}><Blocks start={from} end={to} grouped={false} /></div>)}
+            {index === 3 && (
+              <div>
+                <p className="al-source-metric">42% adoption</p>
+                <p>Multi-filter Advanced Search users used Boolean logic within the first 45 days</p>
+              </div>
+            )}
           </div>
           {group.end === 135 && <ImageSpace after={135} />}
         </Fragment>,
