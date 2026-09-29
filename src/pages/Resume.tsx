@@ -6,7 +6,7 @@ const Resume = () => {
     document.title = 'Zara Bani - Product Designer Resume';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Zara Bani - Product Designer with 5+ years of experience designing complex B2B SaaS products across web and mobile.');
+      metaDescription.setAttribute('content', 'Zara Bani - Product Designer with 5+ years designing complex, data-heavy and AI-enabled products across B2B SaaS, B2C and enterprise platforms.');
     }
   }, []);
 
@@ -32,7 +32,7 @@ const Resume = () => {
       }
     ],
     "sameAs": [
-      "https://www.linkedin.com/in/zara-bani-95a0991a8/"
+      "https://www.linkedin.com/in/zara-bani/"
     ],
     "alumniOf": [
       {
@@ -67,6 +67,12 @@ const Resume = () => {
       "Service Design",
       "Product Analytics",
       "AI and LLM Product Design",
+      "Human-AI Interaction Design",
+      "Designing for Uncertainty and Error Recovery",
+      "Functional Code Prototyping",
+      "Prompt and Context Engineering",
+      "MCP",
+      "Model Evaluation",
       "A/B Testing",
       "Prototyping"
     ]
@@ -76,35 +82,33 @@ const Resume = () => {
     {
       title: 'Product Designer', company: 'Altrata', location: 'London, UK', start: '2026-04', period: 'Apr 2026 - Present',
       achievements: [
-        'Own end-to-end product design for a B2B data intelligence platform consolidating three enterprise products - RelSci, Wealth-X and BoardEx - into a unified platform.',
-        'Resolve conflicting workflow needs between client verticals inheriting different legacy products, defining shared patterns without regressing any group\'s core journey.',
-        'Helped hold account retention at 87% through the migration by resolving core usability issues.',
-        'Improved completion efficiency of complex search tasks by approximately 65% through Boolean logic and streamlined search interactions.',
-        'Brought support ticket volume back to the pre-migration baseline midway through the transition, ahead of the client success team\'s projection.',
-        'Plan and run discovery and usability studies directly with clients, triangulating findings against Tableau usage data.',
-        'Reduced concept iteration time by more than 80% by introducing AI-assisted prototyping workflows.',
-        'Designed responsive research and reporting workflows across desktop, tablet and mobile.'
+        'Own end-to-end design for Altrata’s unified data intelligence platform, consolidating RelSci, Wealth-X and BoardEx across 6.1M people and 3.1M organisations into one experience for high-stakes prospecting and research.',
+        'Contributed to Edge, an AI assistant built on proprietary data. Researched defined-query and exploratory search behaviours to shape a direction where natural-language intent becomes a visible, editable query users can verify before acting.',
+        'Turned a migration parity ticket into a platform-wide Boolean search framework, aligning product and engineering on a reusable logic model. Cut time to build actionable prospect lists by approximately 65%, with 3× fewer search cycles, 42% adoption within 45 days and 72% of Boolean searches leading to downstream action.',
+        'Designed an editable query summary for verification and error recovery. Validated two opposing interaction models over three research rounds; the chosen model reached 3/3 task success and was approximately 44% faster.',
+        'Introduced AI-assisted prototyping with Claude as a design team practice, reproducing the live design system and product behaviour. Halved design cycle time and cut concept iteration by 80%, enabling research on real interactions before engineering implementation.',
+        'Redesigned relationship mapping around how clients reason about connection paths, raising prospecting accuracy to 67% and user confidence in results to 80%.',
+        'Held account retention at 87% through migration against a forecast of higher churn, and brought support tickets back to baseline halfway through, ahead of client success projections.'
       ]
     },
     {
       title: 'Product Designer', company: 'BetterBoard', location: 'London, UK', start: '2024-09', end: '2026-04', period: 'Sep 2024 - Apr 2026',
       achievements: [
-        'Designed a regulated B2B SaaS case-management platform for practitioners managing complex, document-heavy immigration workflows.',
-        'Increased case processing throughput by 28% by redesigning multi-step application workflows and rationalising system architecture.',
-        'Improved first-pass submission accuracy by 70% with transparent, reviewable and overridable AI-assisted validation.',
-        'Reduced workflow friction by 30%, measured through fewer interaction steps and faster time-to-decision.',
-        'Extended case-tracking and document-capture journeys to mobile with touch-appropriate patterns.'
+        'Owned end-to-end product design for an AI-powered practice-management platform for regulated Canadian immigration professionals, where errors carry legal consequences for clients.',
+        'Contributed to a high-trust human–AI validation model: AI never acts autonomously, every flag shows its reasoning, uncertain outputs are signalled, and practitioners review and correct each suggestion with clear recovery paths. First-pass submission accuracy rose by 70%.',
+        'Redesigned multi-step, data-heavy case workflows and simplified system architecture, increasing case processing throughput by 28% and cutting interaction steps and time-to-decision by 30%.'
       ]
     },
     {
-      title: 'Product Designer', company: 'TarsimInc', location: 'In-person', start: '2022-05', end: '2024-09', period: 'May 2022 - Sep 2024',
+      title: 'Product Designer', company: 'Tarsim Inc', location: 'In-person', start: '2022-05', end: '2024-09', period: 'May 2022 - Sep 2024',
       achievements: [
-        'Led UX/UI across 10+ B2B, B2C and SaaS products, owning research, flows, journey mapping, prototyping and usability testing.',
-        'Increased retention by 30% on a library management SaaS platform by restructuring data-heavy workflows.',
-        'Redesigned operational workflows for a B2B SaaS library platform used by 128 libraries.',
+        'Led the design team across 10+ B2B, B2C and EdTech products, owning research, journey mapping, prototyping, usability testing and release.',
+        'Led the redesign of a data-dense operational platform used by 128 libraries to manage structured records, inventory locations and operational documentation.',
+        'Ran repeated on-site research with librarians and rebuilt the information architecture around how they actually think and work.',
+        'Turned field observations into a mobile companion with ISBN barcode scanning, cutting new-book entry time by 80%.',
+        'Boosted new client acquisition, grew the platform from 99 to 128 libraries and increased retention by 30%, protecting and expanding recurring revenue.',
         'Cut task completion time by 65% on an information-dense system by restructuring the dashboard and reducing interaction density.',
-        'Built a modular design system that reduced UI fragmentation across 10+ modules.',
-        'Designed native iOS and Android experiences for two products.',
+        'Contributed to a modular design system that reduced UI fragmentation across 10+ modules.',
         'Partnered with engineers through implementation to maintain design quality through release.'
       ]
     },
@@ -119,10 +123,11 @@ const Resume = () => {
   ];
 
   const skills = [
-    'Product design (web and mobile)', 'End-to-end ownership, discovery to delivery', 'User research and usability testing',
-    'Service design and journey mapping', 'Information architecture', 'Interaction and visual design',
-    'Accessibility (WCAG)', 'Design systems', 'Complex and data-heavy B2B SaaS', 'Product analytics (Tableau)',
-    'A/B testing', 'AI/LLM product design and AI-assisted prototyping', 'Cross-functional and commercial stakeholder collaboration', 'Figma'
+    'Human–AI interaction design', 'AI/LLM product design', 'Designing for uncertainty and error recovery',
+    'Functional code prototyping', 'Claude Code, Codex and Claude Design', 'Prompt and context engineering',
+    'MCP', 'Model evaluation', 'HTML', 'CSS', 'JavaScript', 'Git', 'Data-dense and complex workflows',
+    'Information architecture', 'Interaction and visual design', 'Design systems', 'Accessibility (WCAG)',
+    'User research and usability testing', 'Product analytics', 'Figma', 'Stakeholder alignment'
   ];
 
   return (
@@ -679,8 +684,8 @@ const Resume = () => {
             </div>
             <div className="contact-item">
               <span className="contact-label">LinkedIn:</span>
-              <a href="https://www.linkedin.com/in/zara-bani-95a0991a8/" target="_blank" rel="noopener noreferrer" className="contact-item-link" itemProp="sameAs" aria-label="LinkedIn Profile">
-                https://www.linkedin.com/in/zara-bani-95a0991a8
+              <a href="https://www.linkedin.com/in/zara-bani/" target="_blank" rel="noopener noreferrer" className="contact-item-link" itemProp="sameAs" aria-label="LinkedIn Profile">
+                linkedin.com/in/zara-bani
               </a>
             </div>
             <div className="contact-item">
@@ -697,7 +702,7 @@ const Resume = () => {
       <section className="section" aria-label="Professional Summary">
         <h2 className="section-title">Professional Summary</h2>
         <p className="summary" itemProp="description">
-          Product Designer with 5+ years designing complex B2B SaaS products across web and mobile. Experienced in turning ambiguous problems into intuitive, scalable workflows through research, interaction design, prototyping and close collaboration with product and engineering teams. Particularly experienced in data-heavy systems, operational workflows and designing experiences that work across desktop and mobile contexts.
+          Product Designer with 5+ years experience designing complex, data-heavy and AI-enabled products across B2B SaaS, B2C and enterprise platforms. I help teams turn ambiguous problems into scalable product experiences through research, systems thinking, and close cross-functional collaboration. Experienced owning the end-to-end design process from early discovery and strategy through to execution and shipped products.
         </p>
       </section>
 
