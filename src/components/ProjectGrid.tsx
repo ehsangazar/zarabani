@@ -4,6 +4,8 @@ import { getAllCaseStudies } from '../utils/caseStudies'
 import { allProjects } from '../utils/projects'
 import ProjectPreview from './ProjectPreview'
 
+const featuredOrder = ['altrata-boolean-search', 'focused-learning', 'document-management', 'omaia']
+
 const cardCopy: Record<string, { title: string; achievements: string[] }> = {
   'altrata-boolean-search': {
     title: 'A scalable Boolean search framework',
@@ -26,7 +28,11 @@ export default function ProjectGrid({ limit }: { limit?: number }) {
     let cancelled = false
     void getAllCaseStudies().then(studies => {
       if (cancelled) return
-      setProjects([...studies, ...allProjects.filter(project => !studies.some(study => study.id === project.id))])
+      const combined = [...studies, ...allProjects.filter(project => !studies.some(study => study.id === project.id))]
+      setProjects([
+        ...featuredOrder.flatMap(id => combined.filter(project => project.id === id)),
+        ...combined.filter(project => !featuredOrder.includes(project.id)),
+      ])
       setLoading(false)
     })
     return () => { cancelled = true }
