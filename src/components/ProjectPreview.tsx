@@ -13,6 +13,10 @@ const previews: Record<string, Preview> = {
     src: '/project-previews/altrata.jpg',
     alt: 'Altrata Advanced Search product prototype',
   },
+  'altrata-ai-search': {
+    src: '/project-previews/altrata-ai-search.png',
+    alt: 'Altrata Advanced Search with an AI natural-language search interface',
+  },
   'focused-learning': {
     src: '/project-previews/learning.jpg',
     alt: 'Focused Learning lesson workspace prototype',

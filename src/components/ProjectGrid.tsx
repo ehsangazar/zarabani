@@ -4,7 +4,18 @@ import { getAllCaseStudies } from '../utils/caseStudies'
 import { allProjects } from '../utils/projects'
 import ProjectPreview from './ProjectPreview'
 
-const featuredOrder = ['altrata-boolean-search', 'focused-learning', 'document-management', 'omaia']
+const featuredOrder = ['altrata-boolean-search', 'focused-learning', 'altrata-ai-search', 'document-management', 'omaia']
+
+const comingSoonProject = {
+  id: 'altrata-ai-search',
+  title: 'AI-powered Advanced Search with Boolean control',
+  achievements: [
+    'Natural-language intent translated into structured filters',
+    'Boolean capability remains visible, editable and verifiable',
+    'A continuation of the Advanced Search framework',
+  ],
+  comingSoon: true,
+}
 
 const cardCopy: Record<string, { title: string; achievements: string[] }> = {
   'altrata-boolean-search': {
@@ -21,14 +32,20 @@ const cardCopy: Record<string, { title: string; achievements: string[] }> = {
   },
 }
 
+type GridProject = { id: string; title: string; achievements: string[]; comingSoon?: boolean }
+
 export default function ProjectGrid({ limit }: { limit?: number }) {
-  const [projects, setProjects] = useState<{ id: string; title: string; achievements: string[] }[]>([])
+  const [projects, setProjects] = useState<GridProject[]>([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     let cancelled = false
     void getAllCaseStudies().then(studies => {
       if (cancelled) return
-      const combined = [...studies, ...allProjects.filter(project => !studies.some(study => study.id === project.id))]
+      const combined: GridProject[] = [
+        ...studies,
+        ...allProjects.filter(project => !studies.some(study => study.id === project.id)),
+        comingSoonProject,
+      ]
       setProjects([
         ...featuredOrder.flatMap(id => combined.filter(project => project.id === id)),
         ...combined.filter(project => !featuredOrder.includes(project.id)),
@@ -39,19 +56,25 @@ export default function ProjectGrid({ limit }: { limit?: number }) {
   }, [])
   if (loading) return <p className="ms-muted" role="status">Loading projects…</p>
   return <div className="project-grid">
-    {projects.slice(0, limit).map((project, index) => <Link
-      key={project.id} to={`/projects/${project.id}`} className="project-card"
-    >
+    {projects.slice(0, limit).map((project, index) => {
+      const content = <>
       <div className="project-card__body">
         <p className="project-card__eyebrow">Case study <span>{String(index + 1).padStart(2, '0')}</span></p>
         <div className="project-card__caption"><h3>{cardCopy[project.id]?.title ?? project.title}</h3></div>
-        <p className="project-card__label">Key achievements</p>
+        <p className="project-card__label">{project.comingSoon ? 'What the case study will explore' : 'Key achievements'}</p>
         <ul className="project-card__achievements">
           {(cardCopy[project.id]?.achievements ?? project.achievements.slice(0, 3)).map(achievement => <li key={achievement}>{achievement}</li>)}
         </ul>
-        <span className="project-card__cta">Explore case study <span aria-hidden="true">↗</span></span>
+        {project.comingSoon
+          ? <span className="project-card__coming-soon">Coming soon</span>
+          : <span className="project-card__cta">Explore case study <span aria-hidden="true">↗</span></span>}
       </div>
       <ProjectPreview projectId={project.id} />
-    </Link>)}
+      </>
+
+      return project.comingSoon
+        ? <article key={project.id} className="project-card project-card--coming-soon" aria-label={`${project.title}, coming soon`}>{content}</article>
+        : <Link key={project.id} to={`/projects/${project.id}`} className="project-card">{content}</Link>
+    })}
   </div>
 }
