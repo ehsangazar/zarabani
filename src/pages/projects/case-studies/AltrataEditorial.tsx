@@ -335,7 +335,7 @@ export default function AltrataEditorial({ id, children, ImageSpace }: { id: str
       content = <><Copy from={42} to={43} /><Table segments headings={['Customer group', 'Search criteria', 'Exceptions to handle']} rows={[
         ['Nonprofit & education', 'Affinity, giving history and wealth', 'Prospects already assigned elsewhere'],
         ['Wealth & financial services', 'Multiple geographies and wealth bands', 'Existing clients'],
-        ['Investment banking', 'Equivalent decision-maker titles, sectors and organisations', '—'],
+        ['Investment banking', 'Equivalent decision-maker titles, sectors and organisations', 'Firms already covered'],
         ['Executive search', 'Titles, industries and experience', 'Adjacent but irrelevant profiles'],
         ['Healthcare', 'Geography, affinity and capacity', 'Restricted or previously contacted people'],
       ]} /><p>Different users were applying different filters, but they were repeatedly trying to do the same three things:</p><Cards items={[
