@@ -83,7 +83,7 @@ function DecisionCriteria() {
     ['04', 'Confidence in results', 'Could users trust that the resulting list reflected the search they meant to build?'],
   ]
   return <section className="ae-decision-criteria">
-    <header><Label>Decision criteria</Label><h3>Four things would decide the direction</h3></header>
+    <header><Label>Decision criteria</Label><h3>Four criteria would decide the direction</h3></header>
     <ol>{criteria.map(([number, title, description]) => <li key={number}><span aria-hidden="true">{number}</span><div><h4>{title}</h4><p>{description}</p></div></li>)}</ol>
   </section>
 }
