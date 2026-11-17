@@ -9,6 +9,7 @@ import Blog from './pages/Blog'
 import ProjectDetail from './pages/projects/ProjectDetail'
 import BlogDetail from './pages/blog/BlogDetail'
 import Resume from './pages/Resume'
+import DesignSystem from './pages/DesignSystem'
 import ProjectPasswordGate from './components/ProjectPasswordGate'
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogDetail />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/design-system" element={<DesignSystem />} />
             </Routes>
           </Layout>
         } />

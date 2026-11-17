@@ -123,7 +123,7 @@ const Resume = () => {
   ];
 
   return (
-    <div className="resume-container" lang="en" itemScope itemType="https://schema.org/Resume">
+    <div className="resume-container ds-scheme-light" lang="en" itemScope itemType="https://schema.org/Resume">
       <PageMeta {...staticPageMeta.resume} />
       {/* Structured Data for ATS */}
       <script
@@ -164,7 +164,7 @@ const Resume = () => {
             margin: 0 auto !important;
             padding: 0.5in 0.75in !important;
             background: white !important;
-            color: #06162e !important;
+            color: #1C1720 !important;
             font-family: Arial, Helvetica, sans-serif !important;
             font-size: 11pt !important;
             line-height: 1.5 !important;
@@ -172,31 +172,31 @@ const Resume = () => {
           
           /* Labels with website colors */
           .contact-label {
-            color: #09244c !important;
+            color: #4A265C !important;
             font-weight: 600 !important;
           }
           
           /* Headings and main text with website colors */
           .resume-name,
           h1, h2, h3, h4, h5, h6 {
-            color: #06162e !important;
+            color: #1C1720 !important;
           }
           
           .resume-title {
-            color: #09244c !important;
+            color: #4A265C !important;
           }
           
           .job-title {
-            color: #06162e !important;
+            color: #1C1720 !important;
           }
           
           .company {
-            color: #1b4d99 !important;
+            color: #A63D60 !important;
           }
           
           .section-title {
-            color: #06162e !important;
-            border-bottom: 2px solid #09244c !important;
+            color: #1C1720 !important;
+            border-bottom: 2px solid #4A265C !important;
           }
           
           .summary,
@@ -206,17 +206,17 @@ const Resume = () => {
           .skills-list,
           .skills-list span,
           p, li {
-            color: #06162e !important;
+            color: #1C1720 !important;
           }
           
           .date {
-            color: #1b4d99 !important;
+            color: #A63D60 !important;
           }
           
           /* Links with website colors */
           .contact-item-link,
           a {
-            color: #09244c !important;
+            color: #4A265C !important;
             text-decoration: underline !important;
           }
           
@@ -236,19 +236,19 @@ const Resume = () => {
           /* Header badge with website colors */
           .header-badge {
             background: rgba(245, 245, 245, 0.6) !important;
-            border: 1px solid rgba(9, 36, 76, 0.2) !important;
-            color: #06162e !important;
+            border: 1px solid rgba(74, 38, 92, 0.2) !important;
+            color: #1C1720 !important;
             box-shadow: none !important;
           }
           
           .header-badge .contact-label {
-            color: #09244c !important;
+            color: #4A265C !important;
           }
           
           /* Contact info box with website colors */
           .contact-info {
             background: rgba(245, 245, 245, 0.45) !important;
-            border: 1px solid rgba(9, 36, 76, 0.15) !important;
+            border: 1px solid rgba(74, 38, 92, 0.15) !important;
             backdrop-filter: none !important;
             box-shadow: none !important;
             padding: 0.5rem !important;
@@ -256,7 +256,7 @@ const Resume = () => {
           
           /* Achievement list markers with website colors */
           .achievements-list li::marker {
-            color: #09244c !important;
+            color: #4A265C !important;
           }
           
           /* Remove all visual effects */
@@ -322,7 +322,7 @@ const Resume = () => {
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
           font-size: 11pt;
           line-height: 1.5;
-          color: var(--color-primary-dark);
+          color: var(--ds-text);
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
           text-rendering: optimizeLegibility;
@@ -347,7 +347,7 @@ const Resume = () => {
           left: 0;
           right: 0;
           height: 3px;
-          background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+          background: var(--ds-brand);
           border-radius: 2px;
         }
 
@@ -381,7 +381,7 @@ const Resume = () => {
             align-items: flex-start;
           }
 
-          .print-button {
+          .resume-actions {
             right: 1rem;
             bottom: 1rem;
           }
@@ -397,14 +397,14 @@ const Resume = () => {
           font-size: 2.75rem;
           font-weight: 700;
           margin: 0;
-          color: var(--color-primary-dark);
+          color: var(--ds-text);
           letter-spacing: -0.02em;
           line-height: 1.2;
         }
 
         .resume-title {
           font-size: 1.375rem;
-          color: var(--color-primary);
+          color: var(--ds-brand);
           margin: 0;
           font-weight: 500;
           letter-spacing: 0.01em;
@@ -416,12 +416,12 @@ const Resume = () => {
           align-items: center;
           gap: 0.4rem;
           padding: 0.375rem 0.75rem;
-          background: rgba(9, 36, 76, 0.1);
-          border: 1px solid rgba(9, 36, 76, 0.2);
+          background: rgba(74, 38, 92, 0.1);
+          border: 1px solid rgba(74, 38, 92, 0.2);
           border-radius: 6px;
           font-size: 0.875rem;
           font-weight: 500;
-          color: var(--color-primary);
+          color: var(--ds-brand);
           margin-top: 0.375rem;
           width: fit-content;
           letter-spacing: 0.02em;
@@ -435,8 +435,8 @@ const Resume = () => {
           background: rgba(245, 245, 245, 0.4);
           backdrop-filter: blur(10px);
           border-radius: 12px;
-          border: 1px solid rgba(9, 36, 76, 0.15);
-          box-shadow: 0 2px 8px rgba(9, 36, 76, 0.08);
+          border: 1px solid rgba(74, 38, 92, 0.15);
+          box-shadow: 0 2px 8px rgba(74, 38, 92, 0.08);
         }
 
         @media print {
@@ -457,7 +457,7 @@ const Resume = () => {
 
         .contact-label {
           font-weight: 600;
-          color: var(--color-primary);
+          color: var(--ds-brand);
           margin-right: 0.25rem;
           flex-shrink: 0;
           min-width: fit-content;
@@ -465,17 +465,17 @@ const Resume = () => {
 
         .header-badge .contact-label {
           font-weight: 600;
-          color: var(--color-primary);
+          color: var(--ds-brand);
           margin-right: 0.25rem;
         }
 
         .contact-item-text {
-          color: var(--color-primary-dark);
+          color: var(--ds-text);
           font-weight: 400;
         }
 
         .contact-item-link {
-          color: var(--color-primary);
+          color: var(--ds-brand);
           text-decoration: underline;
           font-weight: 500;
           transition: color 0.2s;
@@ -483,7 +483,7 @@ const Resume = () => {
         }
 
         .contact-item-link:hover {
-          color: var(--color-accent);
+          color: var(--ds-accent-text);
           text-decoration: underline;
         }
 
@@ -510,10 +510,10 @@ const Resume = () => {
         .section-title {
           font-size: 0.875rem;
           font-weight: 700;
-          color: var(--color-primary-dark);
+          color: var(--ds-text);
           margin: 0 0 1rem 0;
           padding-bottom: 0.375rem;
-          border-bottom: 2px solid var(--color-primary);
+          border-bottom: 2px solid var(--ds-brand);
           text-transform: uppercase;
           letter-spacing: 0.1em;
           line-height: 1.4;
@@ -535,7 +535,7 @@ const Resume = () => {
         .job-title {
           font-size: 1rem;
           font-weight: 600;
-          color: var(--color-primary-dark);
+          color: var(--ds-text);
           margin: 0;
           letter-spacing: -0.005em;
           line-height: 1.4;
@@ -543,7 +543,7 @@ const Resume = () => {
 
         .company {
           font-size: 0.875rem;
-          color: var(--color-accent);
+          color: var(--ds-accent-text);
           font-weight: 500;
           margin: 0.25rem 0 0 0;
           line-height: 1.4;
@@ -551,7 +551,7 @@ const Resume = () => {
 
         .date {
           font-size: 0.8125rem;
-          color: var(--color-accent);
+          color: var(--ds-accent-text);
           font-weight: 400;
           white-space: nowrap;
           line-height: 1.4;
@@ -559,7 +559,7 @@ const Resume = () => {
 
         .description {
           margin: 0.625rem 0;
-          color: var(--color-primary-dark);
+          color: var(--ds-text);
           opacity: 0.85;
           line-height: 1.6;
           font-size: 0.875rem;
@@ -573,7 +573,7 @@ const Resume = () => {
 
         .achievements-list li {
           margin-bottom: 0.375rem;
-          color: var(--color-primary-dark);
+          color: var(--ds-text);
           opacity: 0.9;
           line-height: 1.6;
           font-size: 0.875rem;
@@ -582,13 +582,13 @@ const Resume = () => {
         }
 
         .achievements-list li::marker {
-          color: var(--color-primary);
+          color: var(--ds-brand);
           font-weight: 600;
           font-size: 1em;
         }
 
         .skills-list {
-          color: var(--color-primary-dark);
+          color: var(--ds-text);
           font-size: 0.875rem;
           line-height: 1.8;
           margin: 0;
@@ -609,46 +609,72 @@ const Resume = () => {
         }
 
         .summary {
-          color: var(--color-primary-dark);
+          color: var(--ds-text);
           opacity: 0.9;
           line-height: 1.65;
           font-size: 0.875rem;
           text-align: left;
         }
 
-        .print-button {
+        .resume-actions {
           position: fixed;
           bottom: 2rem;
           right: 2rem;
-          padding: 0.75rem 1.5rem;
-          background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-          color: white;
-          border: none;
-          border-radius: 8px;
-          font-weight: 600;
-          cursor: pointer;
-          box-shadow: 0 10px 25px rgba(9, 36, 76, 0.25);
-          transition: all 0.3s ease;
-          font-size: 0.875rem;
           z-index: 100;
-          letter-spacing: 0.05em;
-          line-height: 1.4;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          gap: 0.5rem;
+        }
+
+        .print-button,
+        .download-button {
+          display: inline-flex;
+          align-items: center;
+          min-height: 44px;
+          padding: 0.75rem 1.25rem;
+          border: 1px solid var(--ds-brand);
+          border-radius: 8px;
+          font: 600 0.875rem/1.4 var(--ds-font-sans);
+          text-decoration: none;
+          cursor: pointer;
+          transition: background-color 0.18s ease, color 0.18s ease;
+        }
+
+        .download-button {
+          background: var(--ds-brand);
+          color: var(--ds-on-brand);
+        }
+
+        .download-button:hover {
+          background: var(--ds-brand-hover);
+        }
+
+        .print-button {
+          background: var(--ds-surface-raised);
+          color: var(--ds-brand);
         }
 
         .print-button:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 15px 35px rgba(9, 36, 76, 0.35);
+          background: var(--ds-brand-tint);
         }
 
-        .print-button:active {
-          transform: translateY(-1px);
+        .print-button:focus-visible,
+        .download-button:focus-visible {
+          outline: 2px solid var(--ds-focus);
+          outline-offset: 3px;
         }
       `}</style>
 
-      {/* Print Button - Hidden when printing */}
-      <button className="print-button no-print" onClick={() => window.print()}>
-        Print / Save PDF
-      </button>
+      {/* Download and print actions - hidden when printing */}
+      <div className="resume-actions no-print">
+        <a className="download-button" href="/Zara-Bani-Product-Designer-CV.pdf" download>
+          Download CV (PDF)
+        </a>
+        <button className="print-button" onClick={() => window.print()}>
+          Print / Save PDF
+        </button>
+      </div>
 
       {/* Header */}
       <header className="resume-header" itemScope itemType="https://schema.org/Person">

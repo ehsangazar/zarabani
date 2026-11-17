@@ -3,6 +3,8 @@ import PageMeta from '../components/PageMeta'
 import { staticPageMeta } from '../utils/routeMeta'
 import ProjectGrid from '../components/ProjectGrid'
 import WritingGrid from '../components/WritingGrid'
+import MetricRow from '../components/MetricRow'
+import { heroMetrics } from '../utils/heroMetrics'
 
 export default function Home() {
   return <div className="ms-page">
@@ -31,11 +33,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      <dl className="ms-hero-stats">
-        <div><dt>Faster prospect-list creation at Altrata</dt><dd>65%</dd></div>
-        <div><dt>Better first-pass accuracy with AI-assisted validation at BetterBoard</dt><dd>70%</dd></div>
-        <div><dt>Feature adoption in three months for an EdTech learning hub</dt><dd>87%</dd></div>
-      </dl>
+      <MetricRow className="ms-hero-stats" metrics={heroMetrics} />
       </div>
     </header>
     <section className="ms-section ms-home-work" aria-labelledby="selected-work">
