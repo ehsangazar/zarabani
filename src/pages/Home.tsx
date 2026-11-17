@@ -52,17 +52,18 @@ export default function Home() {
         <aside className="ms-hero-framework" aria-label="My approach connects users, technology and business to turn complexity into clarity">
           <p className="ms-hero-framework__label">Where I work best</p>
           <div className="ms-hero-framework__map" aria-hidden="true">
-            <svg className="ms-venn" viewBox="0 0 360 300" role="presentation">
-              <circle className="ms-venn__c ms-venn__c--users" cx="180" cy="104" r="86" />
-              <circle className="ms-venn__c ms-venn__c--tech" cx="126" cy="196" r="86" />
-              <circle className="ms-venn__c ms-venn__c--biz" cx="234" cy="196" r="86" />
-              <text className="ms-venn__t" x="180" y="62" textAnchor="middle">Users</text>
-              <text className="ms-venn__s" x="180" y="80" textAnchor="middle">needs and research</text>
-              <text className="ms-venn__t" x="92" y="236" textAnchor="middle">Technology</text>
-              <text className="ms-venn__s" x="92" y="254" textAnchor="middle">AI and systems</text>
-              <text className="ms-venn__t" x="268" y="236" textAnchor="middle">Business</text>
-              <text className="ms-venn__s" x="268" y="254" textAnchor="middle">value and metrics</text>
-              <text className="ms-venn__centre" x="180" y="170" textAnchor="middle">Clarity</text>
+            <svg className="ms-venn" viewBox="0 0 360 330" role="presentation">
+              <circle className="ms-venn__c ms-venn__c--users" cx="180" cy="128" r="74" />
+              <circle className="ms-venn__c ms-venn__c--tech" cx="138" cy="200" r="74" />
+              <circle className="ms-venn__c ms-venn__c--biz" cx="222" cy="200" r="74" />
+              <circle className="ms-venn__core" cx="180" cy="176" r="35" />
+              <text className="ms-venn__centre" x="180" y="182" textAnchor="middle">Clarity</text>
+              <text className="ms-venn__t" x="180" y="24" textAnchor="middle">Users</text>
+              <text className="ms-venn__s" x="180" y="42" textAnchor="middle">needs and research</text>
+              <text className="ms-venn__t" x="64" y="300" textAnchor="middle">Technology</text>
+              <text className="ms-venn__s" x="64" y="318" textAnchor="middle">AI and systems</text>
+              <text className="ms-venn__t" x="296" y="300" textAnchor="middle">Business</text>
+              <text className="ms-venn__s" x="296" y="318" textAnchor="middle">value and metrics</text>
             </svg>
           </div>
           <p className="ms-hero-framework__focus">AI-powered products · B2B SaaS · B2C · data-heavy systems</p>
