@@ -1,22 +1,22 @@
 import { Link } from 'react-router-dom'
 import PageMeta from '../components/PageMeta'
+import { staticPageMeta } from '../utils/routeMeta'
 import ProjectGrid from '../components/ProjectGrid'
 import WritingGrid from '../components/WritingGrid'
 
 export default function Home() {
   return <div className="ms-page">
-    <PageMeta title="Zara Bani - Product & UX Designer" description="Product and UX Designer creating thoughtful experiences that put people first. Based in London." path="/" />
+    <PageMeta {...staticPageMeta.home} />
     <header className="ms-intro ms-home-intro">
       <div className="ms-home-intro-copy">
         <div className="ms-home-hero-grid">
           <div className="ms-home-hero-copy">
-            <p className="ms-eyebrow ms-home-location"><span aria-hidden="true" /> Product designer · London, UK</p>
-            <h1>Product <span>Designer</span></h1>
-            <h2 className="ms-hero-thesis">Building products is getting faster. Deciding what is worth building is becoming the real design challenge.</h2>
-            <p>I’m an end-to-end Product Designer focused on turning complex problems into simple, scalable experiences. I help teams uncover the right problems, define product direction, and create experiences that people trust.</p>
+            <p className="ms-eyebrow ms-home-location"><span aria-hidden="true" /> Product Designer · London, UK · Open to Senior and Product Designer roles (hybrid)</p>
+            <h1>Product Designer for <span>AI-native B2B products</span></h1>
+            <p>I design complex, data-heavy workflows and AI features people can trust, from research to shipped, measured results.</p>
             <div className="ms-home-actions">
-              <Link className="ms-text-link ms-primary-link" to="/projects">Explore Featured Work <span aria-hidden="true">↗</span></Link>
-              <Link className="ms-text-link" to="/about">How I work <span aria-hidden="true">→</span></Link>
+              <Link className="ms-text-link ms-primary-link" to="/projects">See case studies <span aria-hidden="true">↗</span></Link>
+              <Link className="ms-text-link" to="/resume">View CV <span aria-hidden="true">→</span></Link>
             </div>
           </div>
           <div className="ms-home-hero-visual">
@@ -32,9 +32,9 @@ export default function Home() {
           </div>
         </div>
       <dl className="ms-hero-stats">
-        <div><dt>Years designing complex digital products</dt><dd>5+</dd></div>
-        <div><dt>B2B SaaS, B2C &amp; enterprise workflows</dt><dd>10+</dd></div>
-        <div><dt>Faster concept iteration through AI-assisted prototyping</dt><dd>80%</dd></div>
+        <div><dt>Faster prospect-list creation at Altrata</dt><dd>65%</dd></div>
+        <div><dt>Better first-pass accuracy with AI-assisted validation at BetterBoard</dt><dd>70%</dd></div>
+        <div><dt>Feature adoption in three months for an EdTech learning hub</dt><dd>87%</dd></div>
       </dl>
       </div>
     </header>

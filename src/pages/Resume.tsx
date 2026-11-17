@@ -1,15 +1,7 @@
-import { useEffect } from 'react';
+import PageMeta from '../components/PageMeta';
+import { staticPageMeta } from '../utils/routeMeta';
 
 const Resume = () => {
-  // Update document meta tags for ATS
-  useEffect(() => {
-    document.title = 'Zara Bani - Product Designer Resume';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Zara Bani - Product Designer with 5+ years designing complex, data-heavy and AI-enabled products across B2B SaaS, B2C and enterprise platforms.');
-    }
-  }, []);
-
   // Structured data for ATS parsing
   const structuredData = {
     "@context": "https://schema.org",
@@ -132,6 +124,7 @@ const Resume = () => {
 
   return (
     <div className="resume-container" lang="en" itemScope itemType="https://schema.org/Resume">
+      <PageMeta {...staticPageMeta.resume} />
       {/* Structured Data for ATS */}
       <script
         type="application/ld+json"
