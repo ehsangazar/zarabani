@@ -4,9 +4,8 @@ import { getAllCaseStudies } from '../utils/caseStudies'
 import { allProjects } from '../utils/projects'
 import ProjectPreview from './ProjectPreview'
 
-// The two lead case studies, then everything else under "More work" in this order.
-const featuredOrder = ['altrata-boolean-search', 'document-management']
-const moreWorkOrder = ['focused-learning', 'omaia', 'altrata-ai-search']
+// Zara's own order: newest case study first.
+const featuredOrder = ['altrata-boolean-search', 'focused-learning', 'altrata-ai-search', 'document-management', 'omaia']
 
 const comingSoonProject = {
   id: 'altrata-ai-search',
@@ -48,7 +47,7 @@ export default function ProjectGrid({ limit }: { limit?: number }) {
         ...allProjects.filter(project => !studies.some(study => study.id === project.id)),
         comingSoonProject,
       ]
-      const order = [...featuredOrder, ...moreWorkOrder]
+      const order = featuredOrder
       setProjects([
         ...order.flatMap(id => combined.filter(project => project.id === id)),
         ...combined.filter(project => !order.includes(project.id)),
@@ -79,13 +78,5 @@ export default function ProjectGrid({ limit }: { limit?: number }) {
       ? <article key={project.id} className="project-card project-card--coming-soon" aria-label={`${project.title}, coming soon`}>{content}</article>
       : <Link key={project.id} to={`/projects/${project.id}`} className="project-card">{content}</Link>
   }
-  const featured = visible.filter(project => featuredOrder.includes(project.id))
-  const moreWork = visible.filter(project => !featuredOrder.includes(project.id))
-  return <>
-    <div className="project-grid">{featured.map(renderCard)}</div>
-    {moreWork.length > 0 && <>
-      <h2 className="project-grid__group-title">More work</h2>
-      <div className="project-grid">{moreWork.map((project, index) => renderCard(project, featured.length + index))}</div>
-    </>}
-  </>
+  return <div className="project-grid">{visible.map(renderCard)}</div>
 }
