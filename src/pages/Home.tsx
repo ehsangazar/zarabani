@@ -37,7 +37,7 @@ function AgentStatus() {
   }, [])
   return <>
     <span className="visually-hidden">Product Designer in London, UK, open to Senior and Product Designer roles (hybrid)</span>
-    <span aria-hidden="true"><code>zara.status</code> <span className="ms-agent-status" data-i={i}>{shown}</span><span className="ms-agent-caret" /></span>
+    <span className="ms-agent-line" aria-hidden="true"><code>zara.status</code><span className="ms-agent-status" data-i={i}>{shown}</span><span className="ms-agent-caret" /></span>
   </>
 }
 
