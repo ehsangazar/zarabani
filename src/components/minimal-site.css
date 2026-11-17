@@ -76,6 +76,7 @@
 }
 .ms-brand { display: flex; align-items: center; gap: var(--ds-space-3); }
 .ms-brand img { width: 42px; height: 48px; object-fit: contain; }
+@media (prefers-color-scheme: dark) { .ms-brand img { filter: invert(1) brightness(1.15); } }
 .ms-brand span { font-family: var(--ds-font-display); font-size: var(--ds-text-lg); font-weight: 560; letter-spacing: -.01em; }
 .ms-nav { display: flex; align-items: center; gap: 22px; font-size: var(--ds-text-sm); }
 .ms-nav a { min-height: 44px; display: inline-flex; align-items: center; color: var(--ds-text-muted); font-weight: 500; transition: color var(--ds-motion); }
@@ -155,7 +156,7 @@
 .ms-home-portrait-stage::before { content: ''; position: absolute; inset: 16px; border: 1px solid var(--ds-line); border-radius: inherit; pointer-events: none; }
 .ms-home-portrait { position: absolute; bottom: -26px; right: -4px; width: 310px; max-width: 92%; height: auto; pointer-events: none; filter: drop-shadow(-10px 10px 20px rgba(28, 23, 32, .1)); }
 .ms-home-portrait-greeting {
-  position: absolute; z-index: 2; left: 24px; top: 100px;
+  position: absolute; z-index: 2; left: 12px; top: 36px;
   color: var(--ds-brand);
   font-family: var(--ds-font-display); font-style: italic; font-weight: 460; font-size: 1.75rem; letter-spacing: -.01em;
   transform: rotate(-9deg);
@@ -340,7 +341,7 @@
   .ms-home-hero-copy > p:not(.ms-eyebrow) { font-size: 1.0625rem; }
   .ms-home-portrait-stage { height: 290px; }
   .ms-home-portrait { width: 265px; }
-  .ms-home-portrait-greeting { left: 16px; top: 80px; font-size: 1.5rem; }
+  .ms-home-portrait-greeting { left: 8px; top: 28px; font-size: 1.5rem; }
   .ms-home-portrait-note { margin-inline: 6px; padding: 16px; }
   .ds-metrics { grid-template-columns: 1fr; }
   .ds-metrics > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--ds-space-4); padding: var(--ds-space-4) 0; }
