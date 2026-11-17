@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import PageMeta from '../components/PageMeta'
 import { staticPageMeta } from '../utils/routeMeta'
@@ -6,6 +7,40 @@ import WritingGrid from '../components/WritingGrid'
 import MetricRow from '../components/MetricRow'
 import { heroMetrics } from '../utils/heroMetrics'
 
+const AGENT_STATUSES = [
+  'Open to Senior and Product Designer roles',
+  'Designing AI features people can trust',
+  'London, UK · hybrid',
+]
+
+function AgentStatus() {
+  const [i, setI] = useState(0)
+  const [shown, setShown] = useState(AGENT_STATUSES[0])
+  useEffect(() => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return
+    let cancelled = false
+    let timer: number
+    const typeNext = (next: number) => {
+      const text = AGENT_STATUSES[next]
+      let n = 0
+      const step = () => {
+        if (cancelled) return
+        n += 1
+        setShown(text.slice(0, n))
+        if (n < text.length) timer = window.setTimeout(step, 28)
+        else timer = window.setTimeout(() => { setI(next); typeNext((next + 1) % AGENT_STATUSES.length) }, 3200)
+      }
+      step()
+    }
+    timer = window.setTimeout(() => typeNext(1), 3200)
+    return () => { cancelled = true; window.clearTimeout(timer) }
+  }, [])
+  return <>
+    <span className="visually-hidden">Product Designer in London, UK, open to Senior and Product Designer roles (hybrid)</span>
+    <span aria-hidden="true"><code>zara.status</code> <span className="ms-agent-status" data-i={i}>{shown}</span><span className="ms-agent-caret" /></span>
+  </>
+}
+
 export default function Home() {
   return <div className="ms-page">
     <PageMeta {...staticPageMeta.home} />
@@ -13,7 +48,7 @@ export default function Home() {
       <div className="ms-home-intro-copy">
         <div className="ms-home-hero-grid">
           <div className="ms-home-hero-copy">
-            <p className="ms-eyebrow ms-home-location"><span aria-hidden="true" /> Product Designer · London, UK · Open to Senior and Product Designer roles (hybrid)</p>
+            <p className="ms-eyebrow ms-home-location"><span aria-hidden="true" /> <AgentStatus /></p>
             <h1>Product Designer for <span>AI-native B2B products</span></h1>
             <p>I design complex, data-heavy workflows and AI features people can trust, from research to shipped, measured results.</p>
             <div className="ms-home-actions">
