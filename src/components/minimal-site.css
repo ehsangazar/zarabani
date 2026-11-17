@@ -239,12 +239,13 @@
 .ms-hero-framework__label { color: var(--ds-accent-text) !important; font-size: var(--ds-text-xs); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
 .ms-hero-framework__map { position: relative; margin: var(--ds-space-4) 0; }
 .ms-venn { display: block; width: 100%; height: auto; overflow: visible; }
-.ms-venn__c { fill: var(--ds-brand); fill-opacity: .07; stroke: var(--ds-brand); stroke-width: 1.25; }
+.ms-venn__c { fill: var(--ds-brand); fill-opacity: .08; stroke: var(--ds-brand); stroke-opacity: .55; stroke-width: 1; }
 .ms-venn__c--biz { fill: var(--ds-accent); stroke: var(--ds-accent); }
-.ms-venn__c--tech { fill-opacity: .12; }
+.ms-venn__c--tech { fill-opacity: .14; }
 .ms-venn__t { fill: var(--ds-text); font-family: var(--ds-font-display); font-size: 17px; font-weight: 560; }
 .ms-venn__s { fill: var(--ds-text-muted); font-size: 11.5px; }
-.ms-venn__centre { fill: var(--ds-brand); font-family: var(--ds-font-display); font-style: italic; font-size: 22px; font-weight: 500; }
+.ms-venn__centre { fill: var(--ds-on-brand); font-family: var(--ds-font-display); font-style: italic; font-size: 15px; font-weight: 560; }
+.ms-venn__core { fill: var(--ds-brand); }
 .ms-hero-node { position: absolute; z-index: 1; display: grid; place-items: center; min-width: 92px; min-height: 36px; padding: 6px 12px; border: 1px solid var(--ds-line-strong); border-radius: 999px; background: var(--ds-surface-raised); color: var(--ds-text); font-size: var(--ds-text-sm); font-weight: 600; }
 .ms-hero-node--users { top: 8px; left: 50%; transform: translateX(-50%); }
 .ms-hero-node--technology { bottom: 8px; left: 0; }
