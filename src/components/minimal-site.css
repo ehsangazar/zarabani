@@ -192,7 +192,8 @@
 .ds-spec dd { margin: 0; font-size: .9375rem; line-height: 1.55; font-variant-numeric: tabular-nums; }
 
 /* ---------- Project cards ---------- */
-.minimal-site .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ds-grid-gap); max-width: none; }
+.minimal-site .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--ds-space-4); max-width: none; }
+@media (max-width: 1024px) { .minimal-site .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .minimal-site .project-card {
   position: relative; isolation: isolate; overflow: hidden;
   display: grid; grid-template-columns: 1fr; grid-template-rows: auto 1fr;
@@ -202,27 +203,27 @@
 }
 .minimal-site .project-card:hover, .minimal-site .project-card:focus-visible { border-color: var(--ds-brand); }
 .minimal-site .project-card:focus-visible { outline-offset: 4px; border-radius: var(--ds-radius-lg); }
-.minimal-site .project-card__body { position: relative; z-index: 1; order: 2; display: flex; flex-direction: column; align-items: flex-start; padding: var(--ds-space-6); }
-.project-card__eyebrow { display: flex; gap: var(--ds-space-3); margin-bottom: var(--ds-space-6); }
+.minimal-site .project-card__body { position: relative; z-index: 1; order: 2; display: flex; flex-direction: column; align-items: flex-start; padding: var(--ds-space-4); }
+.project-card__eyebrow { display: flex; gap: var(--ds-space-3); margin-bottom: var(--ds-space-3); }
 .project-card__eyebrow span { color: var(--ds-accent-text); }
 .minimal-site .project-card__caption { padding: 0; }
-.minimal-site .project-card__caption h3 { max-width: 30ch; margin: 0; font-family: var(--ds-font-display); font-size: 1.375rem; font-weight: 560; line-height: 1.2; letter-spacing: -.015em; transition: color var(--ds-motion); }
+.minimal-site .project-card__caption h3 { max-width: 30ch; margin: 0; font-family: var(--ds-font-display); font-size: 1.125rem; font-weight: 560; line-height: 1.2; letter-spacing: -.015em; transition: color var(--ds-motion); }
 .minimal-site .project-card:is(:hover, :focus-visible) h3 { color: var(--ds-brand); }
-.minimal-site .project-card__label { margin: var(--ds-space-6) 0 var(--ds-space-2); }
+.minimal-site .project-card__label { margin: var(--ds-space-3) 0 var(--ds-space-2); }
 .minimal-site .project-card__achievements { margin: 0; padding-left: 16px; color: var(--ds-text-muted); font-size: var(--ds-text-sm); line-height: 1.5; font-variant-numeric: tabular-nums; }
 .minimal-site .project-card__achievements li + li { margin-top: var(--ds-space-2); }
 .minimal-site .project-card__achievements li::marker { color: var(--ds-accent); }
-.project-card__cta, .ms-writing-cta { display: inline-flex; align-items: center; gap: var(--ds-space-4); margin-top: auto; padding-top: var(--ds-space-8); color: var(--ds-brand); font-size: var(--ds-text-sm); font-weight: 600; }
+.project-card__cta, .ms-writing-cta { display: inline-flex; align-items: center; gap: var(--ds-space-4); margin-top: auto; padding-top: var(--ds-space-4); color: var(--ds-brand); font-size: var(--ds-text-sm); font-weight: 600; }
 .project-card__cta > span, .ms-writing-cta > span { display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid var(--ds-line-strong); border-radius: 50%; }
 .project-card__coming-soon { display: inline-flex; align-items: center; margin-top: auto; padding: 6px 12px; border: 1px solid var(--ds-line-strong); border-radius: 999px; color: var(--ds-text-muted); font-size: var(--ds-text-xs); font-weight: 600; letter-spacing: .06em; }
 .minimal-site .project-card--coming-soon { cursor: default; }
-.minimal-site .project-card--coming-soon .project-card__achievements { margin-bottom: var(--ds-space-8); }
+.minimal-site .project-card--coming-soon .project-card__achievements { margin-bottom: var(--ds-space-4); }
 .minimal-site .project-card--coming-soon:hover { border-color: var(--ds-line); }
 .minimal-site .project-card--coming-soon:hover h3 { color: var(--ds-text); }
 .minimal-site .project-grid__group-title { margin: var(--ds-space-12) 0 var(--ds-space-6); padding-bottom: var(--ds-space-3); border-bottom: 1px solid var(--ds-line); font-size: var(--ds-text-xl); }
 
 /* Preview half of the card: the product imagery sits on a sunken panel and bleeds off the edge. */
-.minimal-site .project-card .project-preview { order: 1; position: relative; height: 280px; min-height: 0; padding: 0; border: 0; border-bottom: 1px solid var(--ds-line); border-radius: 0; align-items: center; justify-content: flex-start; overflow: hidden; background: var(--ds-surface-sunken); }
+.minimal-site .project-card .project-preview { order: 1; position: relative; height: 180px; min-height: 0; padding: 0; border: 0; border-bottom: 1px solid var(--ds-line); border-radius: 0; align-items: center; justify-content: flex-start; overflow: hidden; background: var(--ds-surface-sunken); }
 .minimal-site .project-card .project-preview__mockup { position: absolute; top: 36px; left: 40px; width: 118%; margin-left: 0; transform: rotate(-3deg); }
 .minimal-site .project-card .project-preview--altrata-ai-search .project-preview__mockup { top: 36px; left: 40px; width: 118%; height: 120%; }
 .minimal-site .project-card .project-preview--altrata-ai-search .project-preview__display { height: 100%; }
@@ -369,8 +370,8 @@
   .ms-approach-principles { grid-template-columns: 1fr; }
   .minimal-site .project-grid { grid-template-columns: 1fr; }
   .minimal-site .project-card { grid-template-columns: 1fr; }
-  .minimal-site .project-card__body { padding: var(--ds-space-6) var(--ds-space-6) var(--ds-space-4); }
-  .minimal-site .project-card .project-preview { height: 230px; }
+  .minimal-site .project-card__body { padding: var(--ds-space-4); }
+  .minimal-site .project-card .project-preview { height: 180px; }
   .minimal-site .project-card .project-preview__mockup { width: 125%; left: 28px; }
   .minimal-site .project-card .project-preview--altrata-ai-search .project-preview__mockup { left: 28px; width: 125%; height: 120%; }
   .minimal-site .project-card .project-preview--phone .project-preview__mockup { width: 42%; left: 30%; }

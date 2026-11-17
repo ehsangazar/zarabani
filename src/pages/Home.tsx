@@ -8,7 +8,7 @@ import MetricRow from '../components/MetricRow'
 import { heroMetrics } from '../utils/heroMetrics'
 
 const AGENT_STATUSES = [
-  'Open to Senior and Product Designer roles',
+  'Open to Product Designer roles',
   'Designing AI features people can trust',
   'London, UK · hybrid',
 ]
@@ -36,7 +36,7 @@ function AgentStatus() {
     return () => { cancelled = true; window.clearTimeout(timer) }
   }, [])
   return <>
-    <span className="visually-hidden">Product Designer in London, UK, open to Senior and Product Designer roles (hybrid)</span>
+    <span className="visually-hidden">Product Designer in London, UK, open to Product Designer roles (hybrid)</span>
     <span className="ms-agent-line" aria-hidden="true"><code>zara.status</code><span className="ms-agent-status" data-i={i}>{shown}</span><span className="ms-agent-caret" /></span>
   </>
 }
