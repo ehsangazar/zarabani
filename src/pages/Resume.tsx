@@ -24,7 +24,7 @@ const Resume = () => {
       }
     ],
     "sameAs": [
-      "https://www.linkedin.com/in/zara-bani/"
+      "https://www.linkedin.com/in/zara-bani-95a0991a8/"
     ],
     "alumniOf": [
       {
@@ -84,7 +84,7 @@ const Resume = () => {
       ]
     },
     {
-      title: 'Product Designer', company: 'BetterBoard', location: 'London, UK', start: '2024-09', end: '2026-04', period: 'Sep 2024 - Apr 2026',
+      title: 'Product Designer', company: 'BetterBoard', location: 'London, UK', start: '2024-09', end: '2026-02', period: 'Sep 2024 - Feb 2026',
       achievements: [
         'Owned end-to-end product design for an AI-powered practice-management platform for regulated Canadian immigration professionals, where errors carry legal consequences for clients.',
         'Contributed to a high-trust human–AI validation model: AI never acts autonomously, every flag shows its reasoning, uncertain outputs are signalled, and practitioners review and correct each suggestion with clear recovery paths. First-pass submission accuracy rose by 70%.',
@@ -92,20 +92,21 @@ const Resume = () => {
       ]
     },
     {
-      title: 'Product Designer', company: 'Tarsim Inc', location: 'In-person', start: '2022-05', end: '2024-09', period: 'May 2022 - Sep 2024',
+      title: 'Product Designer', company: 'Tarsim Inc', location: '', start: '2022-05', end: '2024-09', period: 'May 2022 - Sep 2024',
       achievements: [
         'Led the design team across 10+ B2B, B2C and EdTech products, owning research, journey mapping, prototyping, usability testing and release.',
         'Led the redesign of a data-dense operational platform used by 128 libraries to manage structured records, inventory locations and operational documentation.',
         'Ran repeated on-site research with librarians and rebuilt the information architecture around how they actually think and work.',
         'Turned field observations into a mobile companion with ISBN barcode scanning, cutting new-book entry time by 80%.',
-        'Boosted new client acquisition, grew the platform from 99 to 128 libraries and increased retention by 30%, protecting and expanding recurring revenue.',
+        'Reached 87% feature adoption within three months and cut lesson-task completion time by 35% by redesigning an EdTech learning hub around students\' learning journeys.',
+        'Contributed to 29% client-base growth (99 to 128 libraries) and 94% retention through usability and efficiency improvements, protecting and expanding recurring revenue.',
         'Cut task completion time by 65% on an information-dense system by restructuring the dashboard and reducing interaction density.',
         'Contributed to a modular design system that reduced UI fragmentation across 10+ modules.',
         'Partnered with engineers through implementation to maintain design quality through release.'
       ]
     },
     {
-      title: 'UI/UX Designer', company: 'Noyan.co', location: 'In-person', start: '2021-12', end: '2022-04', period: 'Dec 2021 - Apr 2022',
+      title: 'UI/UX Designer', company: 'Noyan.co', location: '', start: '2021-12', end: '2022-04', period: 'Dec 2021 - Apr 2022',
       achievements: [
         'Improved operational throughput by 20% by redesigning ERP flows around users\' existing mental models.',
         'Reduced UI inconsistencies by 85% and handoff revisions by 30% through a standardised design system.',
@@ -703,8 +704,8 @@ const Resume = () => {
             </div>
             <div className="contact-item">
               <span className="contact-label">LinkedIn:</span>
-              <a href="https://www.linkedin.com/in/zara-bani/" target="_blank" rel="noopener noreferrer" className="contact-item-link" itemProp="sameAs" aria-label="LinkedIn Profile">
-                linkedin.com/in/zara-bani
+              <a href="https://www.linkedin.com/in/zara-bani-95a0991a8/" target="_blank" rel="noopener noreferrer" className="contact-item-link" itemProp="sameAs" aria-label="LinkedIn Profile">
+                linkedin.com/in/zara-bani-95a0991a8
               </a>
             </div>
             <div className="contact-item">
@@ -721,7 +722,7 @@ const Resume = () => {
       <section className="section" aria-label="Professional Summary">
         <h2 className="section-title">Professional Summary</h2>
         <p className="summary" itemProp="description">
-          Product Designer with 5+ years experience designing complex, data-heavy and AI-enabled products across B2B SaaS, B2C and enterprise platforms. I help teams turn ambiguous problems into scalable product experiences through research, systems thinking, and close cross-functional collaboration. Experienced owning the end-to-end design process from early discovery and strategy through to execution and shipped products.
+          Product Designer with 5+ years of experience across B2B SaaS, enterprise and consumer products, specialising in complex workflows, AI-enabled experiences and scalable design systems. I lead end-to-end design projects, turning user research into measurable product improvements, and introduce AI-assisted workflows that speed up design and validation.
         </p>
       </section>
 
@@ -730,7 +731,7 @@ const Resume = () => {
         <h2 className="section-title">Professional Experience</h2>
         
         {experience.map(role => <div className="experience-item" itemScope itemType="https://schema.org/OrganizationRole" key={`${role.company}-${role.start}`}>
-          <div className="experience-header"><div><h3 className="job-title" itemProp="roleName">{role.title}</h3><p className="company" itemProp="worksFor" itemScope itemType="https://schema.org/Organization"><span itemProp="name">{role.company}</span> | {role.location}</p></div><span className="date"><time itemProp="startDate" dateTime={role.start}>{role.period}</time>{role.end && <meta itemProp="endDate" content={role.end} />}</span></div>
+          <div className="experience-header"><div><h3 className="job-title" itemProp="roleName">{role.title}</h3><p className="company" itemProp="worksFor" itemScope itemType="https://schema.org/Organization"><span itemProp="name">{role.company}</span>{role.location && <> | {role.location}</>}</p></div><span className="date"><time itemProp="startDate" dateTime={role.start}>{role.period}</time>{role.end && <meta itemProp="endDate" content={role.end} />}</span></div>
           <ul className="achievements-list">{role.achievements.map(item => <li key={item}>{item}</li>)}</ul>
         </div>)}
       </section>
