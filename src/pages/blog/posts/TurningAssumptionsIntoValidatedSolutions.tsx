@@ -191,7 +191,7 @@ export const TurningAssumptionsIntoValidatedSolutions: BlogPostComponent = {
         </p>
       </section>
 
-      <section className="mt-16 bg-gradient-to-br from-primary to-primary-dark text-white p-10 rounded-2xl text-center">
+      <section className="mt-16 bg-primary text-on-primary p-10 rounded-2xl text-center">
         <h2 className="text-3xl font-bold mb-4">Want to chat about this?</h2>
         <p className="text-xl mb-8 text-white/90">
           Let's connect and share what we've learned

@@ -1,152 +1,35 @@
 @import "tailwindcss";
+@import "./components/design-tokens.css";
 
-/* Custom Design System Variables */
-@layer base {
-  :root {
-    --color-primary: #09244c;
-    /* Deep navy */
-    --color-primary-dark: #06162e;
-    /* Midnight navy */
-    --color-secondary: #12366f;
-    /* Royal navy */
-    --color-accent: #1b4d99;
-    /* Accent blue */
-    --color-warm: #eef3fb;
-    /* Light blue tint */
-    --color-neutral: #cfd8ea;
-    /* Cool light blue */
-  }
+/*
+ * Tailwind colour names used across the case studies and articles, mapped onto
+ * the semantic tokens. `inline` makes each utility read the token where it is
+ * used, so a `.ds-scheme-light` subtree and dark mode both resolve correctly.
+ */
+@theme inline {
+  --color-primary: var(--ds-brand);
+  --color-primary-dark: var(--ds-text);
+  --color-secondary: var(--ds-brand);
+  --color-accent: var(--ds-accent-text);
+  --color-warm: var(--ds-surface-sunken);
+  --color-neutral: var(--ds-line);
+  --color-on-primary: var(--ds-on-brand);
+  --font-sans: var(--ds-font-sans);
+  --font-display: var(--ds-font-display);
 }
 
-@theme {
-  --color-primary: #09244c;
-  --color-primary-dark: #06162e;
-  --color-secondary: #12366f;
-  --color-accent: #1b4d99;
-  --color-warm: #eef3fb;
-  --color-neutral: #cfd8ea;
-}
-
-/* Custom Animations */
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes gradient-shift {
-
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes mesh-gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 8s ease infinite;
-}
-
-.animate-mesh {
-  background-size: 400% 400%;
-  animation: mesh-gradient 15s ease infinite;
-}
-
-.fade-in-up {
-  animation: fade-in-up 0.6s ease-out;
-}
-
-/* Glassmorphism */
+/* Legacy card surface in older case studies: a flat raised panel, no blur. */
 .glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: var(--ds-surface-raised);
+  border: 1px solid var(--ds-line);
 }
 
-.glass-dark {
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Mesh Background */
-.mesh-gradient {
-  background: #09244c;
-}
-
-/* Artistic Shapes */
-.blob {
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  filter: blur(40px);
-  opacity: 0.7;
-}
-
-/* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #eef3fb;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #09244c;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #071c3c;
-}
-
-/* Text Gradient - Now solid color */
-.text-gradient {
-  color: #09244c;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
