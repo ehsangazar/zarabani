@@ -10,7 +10,7 @@ export const WhyProductDesignersShouldBeStorytellers: BlogPostComponent = {
     date: '2026-02-05',
     readTime: 5,
     tags: ['Product Design', 'UX Design', 'Storytelling', 'Empathy', 'User Research'],
-    featuredImage: '/case-studies/Article/storytelling.png',
+    featuredImage: '/blog/storytellers/chat.png',
   },
   content: (
     <div className="blog-content">

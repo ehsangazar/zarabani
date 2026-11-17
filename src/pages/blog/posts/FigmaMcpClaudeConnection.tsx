@@ -9,7 +9,7 @@ export const FigmaMcpClaudeConnection: BlogPostComponent = {
     date: '2026-02-27',
     readTime: 8,
     tags: ['Figma', 'MCP', 'Claude', 'Product Design', 'Design Systems'],
-    featuredImage: '/blog/figma-mcp-claude/hero-v2.svg',
+    featuredImage: '/blog/figma-mcp-claude/chat.png',
   },
   content: (
     <div className="blog-content">
