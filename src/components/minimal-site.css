@@ -149,8 +149,8 @@
 }
 .ms-home-location > span { flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%; background: var(--ds-success); box-shadow: 0 0 0 0 var(--ds-success); animation: ms-pulse 2.4s ease-out infinite; }
 .ms-home-location code { padding: 2px 6px; border-radius: 4px; background: var(--ds-brand-tint); color: var(--ds-brand); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em; }
-.ms-agent-line { display: inline-flex; align-items: center; gap: 8px; min-width: 0; white-space: nowrap; }
-.ms-agent-status { overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
+.ms-agent-line { display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; white-space: nowrap; }
+.ms-agent-status { flex: 0 0 auto; font-variant-numeric: tabular-nums; }
 .ms-home-location { min-height: 34px; max-width: 100%; }
 .ms-agent-caret { display: inline-block; width: 1px; height: 1em; margin-left: 2px; vertical-align: -2px; background: currentColor; animation: ms-blink 1s steps(1) infinite; }
 @keyframes ms-pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--ds-success) 55%, transparent); } 70% { box-shadow: 0 0 0 7px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
