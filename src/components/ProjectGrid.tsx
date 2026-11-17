@@ -4,7 +4,9 @@ import { getAllCaseStudies } from '../utils/caseStudies'
 import { allProjects } from '../utils/projects'
 import ProjectPreview from './ProjectPreview'
 
-const featuredOrder = ['altrata-boolean-search', 'focused-learning', 'altrata-ai-search', 'document-management', 'omaia']
+// The two lead case studies, then everything else under "More work" in this order.
+const featuredOrder = ['altrata-boolean-search', 'document-management']
+const moreWorkOrder = ['focused-learning', 'omaia', 'altrata-ai-search']
 
 const comingSoonProject = {
   id: 'altrata-ai-search',
@@ -20,11 +22,11 @@ const comingSoonProject = {
 const cardCopy: Record<string, { title: string; achievements: string[] }> = {
   'altrata-boolean-search': {
     title: 'A scalable Boolean search framework',
-    achievements: ['Reduced time to create an actionable prospect list by 64%', 'Reached 42% Boolean adoption among multi-filter search users within 45 days', '72% of Boolean queries led to a meaningful downstream action'],
+    achievements: ['Reduced time to create an actionable prospect list by 65%', 'Reached 42% Boolean adoption among multi-filter search users within 45 days', '72% of Boolean queries led to a meaningful downstream action'],
   },
   'focused-learning': {
     title: 'A clearer, more focused learning hub',
-    achievements: ['Reduced lesson completion time by 35%', 'Reached an 81% adoption rate within the first three months', 'Created one structured learning flow for 10,000+ students'],
+    achievements: ['Reduced lesson completion time by 35%', 'Reached an 87% adoption rate within the first three months', 'Created one structured learning flow for 10,000+ students'],
   },
   omaia: {
     title: 'Omaia: support for postpartum mothers',
@@ -46,35 +48,44 @@ export default function ProjectGrid({ limit }: { limit?: number }) {
         ...allProjects.filter(project => !studies.some(study => study.id === project.id)),
         comingSoonProject,
       ]
+      const order = [...featuredOrder, ...moreWorkOrder]
       setProjects([
-        ...featuredOrder.flatMap(id => combined.filter(project => project.id === id)),
-        ...combined.filter(project => !featuredOrder.includes(project.id)),
+        ...order.flatMap(id => combined.filter(project => project.id === id)),
+        ...combined.filter(project => !order.includes(project.id)),
       ])
       setLoading(false)
     })
     return () => { cancelled = true }
   }, [])
   if (loading) return <p className="ms-muted" role="status">Loading projects…</p>
-  return <div className="project-grid">
-    {projects.slice(0, limit).map((project, index) => {
-      const content = <>
-      <div className="project-card__body">
-        <p className="project-card__eyebrow">Case study <span>{String(index + 1).padStart(2, '0')}</span></p>
-        <div className="project-card__caption"><h3>{cardCopy[project.id]?.title ?? project.title}</h3></div>
-        <p className="project-card__label">{project.comingSoon ? 'What the case study will explore' : 'Key achievements'}</p>
-        <ul className="project-card__achievements">
-          {(cardCopy[project.id]?.achievements ?? project.achievements.slice(0, 3)).map(achievement => <li key={achievement}>{achievement}</li>)}
-        </ul>
-        {project.comingSoon
-          ? <span className="project-card__coming-soon">Coming soon</span>
-          : <span className="project-card__cta">Explore case study <span aria-hidden="true">↗</span></span>}
-      </div>
-      <ProjectPreview projectId={project.id} />
-      </>
+  const visible = projects.slice(0, limit)
+  const renderCard = (project: GridProject, index: number) => {
+    const content = <>
+    <div className="project-card__body">
+      <p className="project-card__eyebrow">Case study <span>{String(index + 1).padStart(2, '0')}</span></p>
+      <div className="project-card__caption"><h3>{cardCopy[project.id]?.title ?? project.title}</h3></div>
+      <p className="project-card__label">{project.comingSoon ? 'What the case study will explore' : 'Key achievements'}</p>
+      <ul className="project-card__achievements">
+        {(cardCopy[project.id]?.achievements ?? project.achievements.slice(0, 3)).map(achievement => <li key={achievement}>{achievement}</li>)}
+      </ul>
+      {project.comingSoon
+        ? <span className="project-card__coming-soon">Coming soon</span>
+        : <span className="project-card__cta">Explore case study <span aria-hidden="true">↗</span></span>}
+    </div>
+    <ProjectPreview projectId={project.id} />
+    </>
 
-      return project.comingSoon
-        ? <article key={project.id} className="project-card project-card--coming-soon" aria-label={`${project.title}, coming soon`}>{content}</article>
-        : <Link key={project.id} to={`/projects/${project.id}`} className="project-card">{content}</Link>
-    })}
-  </div>
+    return project.comingSoon
+      ? <article key={project.id} className="project-card project-card--coming-soon" aria-label={`${project.title}, coming soon`}>{content}</article>
+      : <Link key={project.id} to={`/projects/${project.id}`} className="project-card">{content}</Link>
+  }
+  const featured = visible.filter(project => featuredOrder.includes(project.id))
+  const moreWork = visible.filter(project => !featuredOrder.includes(project.id))
+  return <>
+    <div className="project-grid">{featured.map(renderCard)}</div>
+    {moreWork.length > 0 && <>
+      <h2 className="project-grid__group-title">More work</h2>
+      <div className="project-grid">{moreWork.map((project, index) => renderCard(project, featured.length + index))}</div>
+    </>}
+  </>
 }
