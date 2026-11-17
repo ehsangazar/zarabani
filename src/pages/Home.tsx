@@ -22,8 +22,8 @@ export default function Home() {
             </div>
           </div>
           <div className="ms-home-hero-visual">
+            <span className="ms-home-portrait-greeting">Hi, I’m Zara.</span>
             <div className="ms-home-portrait-stage">
-              <span className="ms-home-portrait-greeting">Hi, I’m Zara.</span>
               <img className="ms-home-portrait" src="/zara-cutout.png" alt="Zara Bani" width="509" height="600" />
             </div>
             <div className="ms-home-portrait-note">
