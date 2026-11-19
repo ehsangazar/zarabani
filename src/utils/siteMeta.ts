@@ -5,9 +5,9 @@
 
 export const SITE_URL = 'https://zarabani.design'
 export const SITE_NAME = 'Zara Bani'
-export const SITE_TITLE = 'Zara Bani - Product & UX Designer'
+export const SITE_TITLE = 'Zara Bani - Product Designer for AI-native B2B products'
 export const SITE_DESCRIPTION =
-  'Product and UX Designer passionate about creating thoughtful experiences that put people first. Based in London.'
+  'Zara Bani is a London-based Product Designer for AI-native B2B products. She designs complex, data-heavy workflows and AI features people can trust, from research to shipped, measured results.'
 
 /** Default image for social cards (use 1200×630 for best results). Falls back to /zara.png. */
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/zara.png`
@@ -28,6 +28,11 @@ function toAbsoluteUrl(path: string): string {
   if (path.startsWith('http')) return path
   const base = path.startsWith('/') ? SITE_URL : `${SITE_URL}/`
   return path.startsWith('/') ? `${SITE_URL}${path}` : `${base}${path}`
+}
+
+/** Document title for a page. Shared with the build-time prerender so both agree. */
+export function formatTitle(title: string): string {
+  return title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`
 }
 
 function getOrCreateMeta(attribute: 'name' | 'property', key: string): HTMLMetaElement {
@@ -63,7 +68,7 @@ export function setPageMeta(input: PageMetaInput): void {
 
   const imageUrl = image ? toAbsoluteUrl(image) : DEFAULT_OG_IMAGE
 
-  document.title = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`
+  document.title = formatTitle(title)
 
   setMetaContent('name', 'description', description)
 
@@ -71,6 +76,14 @@ export function setPageMeta(input: PageMetaInput): void {
   setMetaContent('property', 'og:description', description)
   setMetaContent('property', 'og:image', imageUrl)
   setMetaContent('property', 'og:url', url)
+  // Each route ships a prerendered canonical; keep it in step on client-side navigation.
+  let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
+  if (!canonical) {
+    canonical = document.createElement('link')
+    canonical.rel = 'canonical'
+    document.head.appendChild(canonical)
+  }
+  canonical.href = url
   setMetaContent('property', 'og:type', type)
   setMetaContent('property', 'og:site_name', SITE_NAME)
 
