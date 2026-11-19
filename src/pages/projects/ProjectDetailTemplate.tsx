@@ -165,7 +165,7 @@ const ProjectDetailTemplate = ({ project }: ProjectDetailTemplateProps) => {
           <div className="mt-16 text-center">
             <Link
               to="/projects"
-              className="group inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300 overflow-hidden"
+              className="group inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300 overflow-hidden"
             >
               <svg className="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />

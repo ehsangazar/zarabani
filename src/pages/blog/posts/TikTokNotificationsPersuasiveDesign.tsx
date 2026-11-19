@@ -382,7 +382,7 @@ export const TikTokNotificationsPersuasiveDesign: BlogPostComponent = {
           Let's choose to build products that respect people's time, attention, and autonomy—not products that exploit their vulnerabilities for engagement metrics.
         </p>
 
-        <div className="bg-warm p-8 rounded-xl border border-primary/20 mt-8">
+        <div className="bg-gradient-to-br from-warm/20 to-primary/10 p-8 rounded-xl border border-primary/20 mt-8">
           <h3 className="text-xl font-bold text-primary-dark mb-4">Questions for Reflection</h3>
           <ul className="space-y-3 text-primary-dark/80">
             <li className="flex items-start gap-3">
@@ -401,7 +401,7 @@ export const TikTokNotificationsPersuasiveDesign: BlogPostComponent = {
         </div>
       </section>
 
-      <section className="mt-16 bg-primary text-on-primary p-10 rounded-2xl text-center">
+      <section className="mt-16 bg-gradient-to-br from-primary to-primary-dark text-white p-10 rounded-2xl text-center">
         <h2 className="text-3xl font-bold mb-4">Let's discuss this</h2>
         <p className="text-xl mb-8 text-white/90">
           I'd love to hear your thoughts on persuasive design and ethical UX

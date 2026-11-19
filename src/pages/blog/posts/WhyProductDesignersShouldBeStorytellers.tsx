@@ -10,7 +10,7 @@ export const WhyProductDesignersShouldBeStorytellers: BlogPostComponent = {
     date: '2026-02-05',
     readTime: 5,
     tags: ['Product Design', 'UX Design', 'Storytelling', 'Empathy', 'User Research'],
-    featuredImage: '/blog/storytellers/chat.png',
+    featuredImage: '/case-studies/Article/storytelling.png',
   },
   content: (
     <div className="blog-content">
@@ -72,7 +72,7 @@ export const WhyProductDesignersShouldBeStorytellers: BlogPostComponent = {
         </p>
       </section>
 
-      <section className="mt-16 bg-primary text-on-primary p-10 rounded-2xl text-center">
+      <section className="mt-16 bg-gradient-to-br from-primary to-primary-dark text-white p-10 rounded-2xl text-center">
         <h2 className="text-3xl font-bold mb-4">Let's discuss this</h2>
         <p className="text-xl mb-8 text-white/90">
           I'd love to hear how you use storytelling in your design process

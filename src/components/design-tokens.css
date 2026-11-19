@@ -1,4 +1,3 @@
-/* Fraunces (display serif, SIL OFL) is bundled from @fontsource-variable/fraunces in main.tsx. */
 @font-face {
   font-family: 'Portfolio Inter';
   src: url('/fonts/InterVariable.woff2') format('woff2');
@@ -7,106 +6,41 @@
   font-display: swap;
 }
 
-/*
- * Zara Bani design system: one token layer for every page.
- *
- * Components only read the semantic names below. Each has a light value and a
- * dark value; the dark block swaps them under prefers-color-scheme.
- * `.ds-scheme-light` pins the light values on a subtree that was authored for
- * paper (case-study bodies, the printable résumé), so its hard-coded light
- * surfaces never meet dark-mode text.
- *
- * The /design-system page reads these two blocks from the live stylesheet, so
- * a value changed here is the value it documents and checks for contrast.
- */
-:root,
-.ds-scheme-light {
-  color-scheme: light;
-  --ds-text: #1C1720;
-  --ds-text-muted: #5F5866;
-  --ds-surface: #FBFAF7;
-  --ds-surface-raised: #FFFFFF;
-  --ds-surface-sunken: #F3F0EA;
-  --ds-line: #E5E0D8;
-  --ds-line-strong: #8A8290;
-  --ds-brand: #4A265C;
-  --ds-brand-hover: #3A1D49;
-  --ds-brand-tint: #F1EBF3;
-  --ds-on-brand: #FFFFFF;
-  --ds-accent: #C45678;
-  --ds-accent-text: #A63D60;
-  --ds-focus: #4A265C;
-  --ds-success: #2E6B45;
-  --ds-warning: #8A5700;
-  --ds-danger: #B3261E;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --ds-text: #F2EEF4;
-    --ds-text-muted: #B4AABB;
-    --ds-surface: #17131A;
-    --ds-surface-raised: #211B25;
-    --ds-surface-sunken: #120F14;
-    --ds-line: #3A3240;
-    --ds-line-strong: #7E7385;
-    --ds-brand: #CDB0DC;
-    --ds-brand-hover: #DCC5E8;
-    --ds-brand-tint: #2A2130;
-    --ds-on-brand: #1C1720;
-    --ds-accent: #E58AA6;
-    --ds-accent-text: #E58AA6;
-    --ds-focus: #E5C8F0;
-    --ds-success: #86C79C;
-    --ds-warning: #E6B85C;
-    --ds-danger: #F2A097;
-  }
-}
-
-/* Mode-independent scales. */
-:root {
-  --ds-font-sans: 'Portfolio Inter', Inter, ui-sans-serif, system-ui, sans-serif;
-  --ds-font-display: 'Fraunces Variable', Fraunces, Georgia, 'Times New Roman', serif;
-
-  --ds-text-xs: .75rem;
-  --ds-text-sm: .875rem;
-  --ds-text-base: 1.125rem;
-  --ds-text-lg: 1.25rem;
-  --ds-text-xl: 1.5rem;
-  --ds-text-2xl: clamp(1.75rem, 3vw, 2.25rem);
-  --ds-text-3xl: clamp(2.25rem, 4.8vw, 3.5rem);
-  --ds-text-display: clamp(2.5rem, 5.5vw, 4.25rem);
-  --ds-leading-body: 1.55;
-  --ds-leading-title: 1.12;
-
-  --ds-space-1: .25rem;
-  --ds-space-2: .5rem;
-  --ds-space-3: .75rem;
-  --ds-space-4: 1rem;
-  --ds-space-6: 1.5rem;
-  --ds-space-8: 2rem;
-  --ds-space-12: 3rem;
-  --ds-space-16: 4rem;
-  --ds-space-20: 5rem;
-  --ds-section-gap: clamp(3rem, 6vw, 5rem);
-  --ds-gutter: clamp(1.25rem, 4vw, 2.5rem);
-  --ds-grid-gap: 1.5rem;
-  --ds-width: 1120px;
-
-  --ds-radius-sm: 4px;
-  --ds-radius: 8px;
-  --ds-radius-lg: 12px;
-  --ds-motion: 180ms ease;
-}
-
-html {
-  background: var(--ds-surface);
-  color: var(--ds-text);
-  font-family: var(--ds-font-sans);
-}
-
-/* A pinned subtree paints its own light surface so it reads as a sheet of paper. */
-.ds-scheme-light {
-  color: var(--ds-text);
+/* Portfolio-only tokens: never applied to the internal project shell. */
+.minimal-site {
+  --ms-font: 'Portfolio Inter', Inter, Verdana, sans-serif;
+  --ms-ink: #05060f;
+  --ms-muted: #60616a;
+  --ms-accent: #513deb;
+  --ms-line: #e8e8ed;
+  --ms-paper: #ffffff;
+  --ms-surface: #f6f5ff;
+  --ms-focus: #513deb;
+  --ms-accent-hover: #4430d3;
+  --ms-accent-pressed: #3927b9;
+  --ms-focus-ring: #b9afff;
+  --ms-neutral-surface: #f7f7fa;
+  --ms-text-xs: .75rem;
+  --ms-text-sm: .875rem;
+  --ms-text-base: 1.125rem;
+  --ms-text-lg: 1.125rem;
+  --ms-text-card: 1.25rem;
+  --ms-text-section: clamp(1.75rem, 3vw, 2.5rem);
+  --ms-text-display: clamp(2.25rem, 4.8vw, 3.625rem);
+  --ms-leading-body: 1.5;
+  --ms-leading-title: 1.2;
+  --ms-space-1: .25rem;
+  --ms-space-2: .5rem;
+  --ms-space-3: .75rem;
+  --ms-space-4: 1rem;
+  --ms-space-6: 1.5rem;
+  --ms-space-8: 2rem;
+  --ms-space-12: 3rem;
+  --ms-space-16: 4rem;
+  --ms-section-gap: clamp(3rem, 6vw, 5rem);
+  --ms-gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --ms-width: 1120px;
+  --ms-radius: 12px;
+  --ms-radius-sm: 6px;
+  --ms-motion: 180ms ease;
 }
