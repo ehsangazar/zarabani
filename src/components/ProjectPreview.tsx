@@ -9,6 +9,10 @@ interface Preview {
 
 // Add product imagery to coming-soon entries when available.
 const previews: Record<string, Preview> = {
+  'altrata-pathfinder': {
+    src: '/case-studies/pathfinder/redesign-overview.png',
+    alt: 'Altrata Pathfinder redesign with persistent reference points and grouped relationship paths',
+  },
   'altrata-boolean-search': {
     src: '/project-previews/altrata.jpg',
     alt: 'Altrata Advanced Search product prototype',

@@ -1,0 +1,30 @@
+.pf-direction { margin-top: 64px; padding-top: 64px; border-top: 1px solid var(--ms-line, #e5e5eb); color: var(--ms-ink, #20212a); scroll-margin-top: 120px; }
+.pf-direction .pf-direction__eyebrow { margin: 0 0 16px; color: var(--ms-accent, #513deb); font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.pf-direction h2 { max-width: 850px; margin: 0 0 24px; font-size: clamp(2rem, 3.8vw, 2.75rem); line-height: 1.15; letter-spacing: -.035em; font-weight: 650; }
+.pf-direction h3 { margin: 0 0 12px; font-size: 1.3rem; line-height: 1.4; letter-spacing: -.02em; font-weight: 600; }
+.pf-direction p { margin: 0; color: var(--ms-muted, #62636b); font-size: 1rem; line-height: 1.75; }
+.pf-direction header > p:last-child { max-width: 850px; font-size: 1.125rem; }
+.pf-direction__contexts { margin: 36px 0 40px; }
+.pf-direction__surfaces { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; padding: 28px; border: 1px solid #e5e5eb; border-radius: 10px; background: #fafafb; }
+.pf-direction__screenshot { display: block; margin-bottom: 20px; border: 1px solid #dce2ea; border-radius: 7px; overflow: hidden; background: #001a3d; }
+.pf-direction__screenshot img { display: block; width: 100%; height: auto; }
+.pf-direction__screenshot:focus-visible { outline: 3px solid #513deb; outline-offset: 4px; }
+.pf-direction__surfaces h3 { font-size: 1.125rem; margin-bottom: 6px; }
+.pf-direction__surfaces p, .pf-direction__contexts figcaption { font-size: .875rem; }
+.pf-direction__contexts figcaption { margin-top: 12px; color: var(--ms-muted, #62636b); line-height: 1.6; }
+.pf-direction__shift { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+.pf-direction__shift > div { padding: 24px 0; border-top: 2px solid #dce2ea; }
+.pf-direction__shift > div + div { border-color: #513deb; }
+.pf-direction__alignment { display: grid; grid-template-columns: 1fr 1.65fr; gap: 40px; padding: 28px 0; margin-top: 12px; }
+.pf-direction__goal { margin-top: 16px; padding: 28px 32px; border-left: 3px solid #513deb; background: #f5f3ff; }
+@media (max-width: 760px) {
+  .pf-direction { margin-top: 48px; padding-top: 44px; }
+  .pf-direction__surfaces, .pf-direction__shift, .pf-direction__alignment { grid-template-columns: 1fr; }
+  .pf-direction__surfaces { gap: 28px; padding: 24px; }
+  .pf-direction__shift { gap: 8px; }
+  .pf-direction__alignment { gap: 4px; }
+  .pf-direction__goal { padding: 24px; }
+}
+
+.pf-direction__surfaces > div:first-child { grid-column: 1 / -1; text-align: center; }
+.pf-direction__surfaces > div:first-child .pf-direction__screenshot { max-width: 680px; margin-inline: auto; }

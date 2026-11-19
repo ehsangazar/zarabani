@@ -1,0 +1,40 @@
+.pf-release { margin-top: 64px; padding-top: 64px; border-top: 1px solid #e5e5eb; color: var(--ms-ink, #20212a); scroll-margin-top: 120px; }
+.pf-release .pf-release__eyebrow { margin: 0 0 16px; color: var(--ms-accent, #513deb); font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.pf-release h2 { max-width: 850px; margin: 0 0 24px; font-size: clamp(2rem, 3.8vw, 2.75rem); line-height: 1.15; letter-spacing: -.035em; font-weight: 650; }
+.pf-release h3 { margin: 0 0 14px; font-size: 1.4rem; line-height: 1.35; letter-spacing: -.025em; font-weight: 600; }
+.pf-release h4 { margin: 0 0 12px; font-size: 1.125rem; line-height: 1.4; font-weight: 600; }
+.pf-release p, .pf-release li { margin: 0; font-size: 1rem; line-height: 1.75; color: var(--ms-muted, #62636b); }
+.pf-release header > p:last-child { max-width: 900px; font-size: 1.125rem; }
+.pf-release__scope { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 32px; }
+.pf-release__scope > div { padding: 24px 0; border-top: 2px solid #d9d4ee; }
+.pf-release__scope > div:first-child { border-color: #513deb; }
+.pf-release__scope ul { padding-left: 20px; margin: 0; list-style: disc; }
+.pf-release__scope li + li { margin-top: 8px; }
+.pf-release__rollout, .pf-release__measurement, .pf-release__results { margin-top: 48px; }
+.pf-release__rollout ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin: 28px 0 0; padding: 28px; border: 1px solid #e5e5eb; border-radius: 10px; background: #fafafb; list-style: none; }
+.pf-release__rollout li { border-top: 3px solid #b8aeef; padding-top: 20px; }
+.pf-release__rollout li:last-child { border-color: #513deb; }
+.pf-release__rollout strong { display: block; color: #513deb; font-size: 1.8rem; letter-spacing: -.035em; margin-bottom: 12px; }
+.pf-release__rollout h4 { color: var(--ms-ink, #20212a); }
+.pf-release__feedback { margin: 28px 0 24px; padding: 28px; background: #f7f8fa; border: 1px solid #e5e5eb; border-radius: 10px; }
+.pf-release__feedback-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.pf-release__feedback-cards > div { padding: 24px; border-radius: 8px; border: 1px solid #e5e5eb; background: white; }
+.pf-release__feedback-cards > div > span { display: block; font-size: .875rem; line-height: 1.5; color: var(--ms-muted, #62636b); margin-bottom: 16px; }
+.pf-release__sample-options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.pf-release__sample-options span { padding: 7px 10px; border: 1px solid #d9d4ee; border-radius: 5px; color: #4e426f; font-size: .875rem; background: #faf9ff; }
+.pf-release__feedback figcaption { margin-top: 16px; font-size: .875rem; line-height: 1.6; color: var(--ms-muted, #62636b); }
+.pf-release__cadence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 24px; padding-block: 24px; border-block: 1px solid #e5e5eb; }
+.pf-release__cadence strong { display: block; font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+.pf-release__cadence span { color: var(--ms-muted, #62636b); font-size: .875rem; line-height: 1.6; display: block; }
+.pf-release__metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 28px; }
+.pf-release__metrics > div { border-top: 2px solid #513deb; padding-top: 24px; }
+.pf-release__metrics > div > strong { display: block; color: #513deb; font-size: clamp(2.5rem, 4vw, 3.4rem); line-height: 1.1; letter-spacing: -.045em; margin-bottom: 20px; }
+.pf-release__metrics small { font-size: 1.2rem; letter-spacing: -.02em; font-weight: 500; }
+.pf-release__metrics > div > span { display: block; font-size: .875rem; margin-top: 16px; color: var(--ms-muted, #62636b); }
+.pf-release .pf-release__evidence { margin-top: 24px; font-size: .875rem; }
+.pf-release__ownership { margin-top: 36px; padding: 28px 32px; background: #f5f3ff; border-left: 3px solid #513deb; }
+@media(max-width:760px) {
+  .pf-release { margin-top: 48px; padding-top: 44px; }
+  .pf-release__scope, .pf-release__rollout ol, .pf-release__feedback-cards, .pf-release__cadence, .pf-release__metrics { grid-template-columns: 1fr; gap: 24px; }
+  .pf-release__ownership, .pf-release__feedback, .pf-release__rollout ol { padding: 24px; }
+}

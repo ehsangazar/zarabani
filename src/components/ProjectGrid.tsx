@@ -4,7 +4,7 @@ import { getAllCaseStudies } from '../utils/caseStudies'
 import { allProjects } from '../utils/projects'
 import ProjectPreview from './ProjectPreview'
 
-const featuredOrder = ['altrata-boolean-search', 'focused-learning', 'altrata-ai-search', 'document-management', 'omaia']
+const featuredOrder = ['altrata-boolean-search', 'altrata-pathfinder', 'focused-learning', 'altrata-ai-search', 'document-management', 'omaia']
 
 const comingSoonProject = {
   id: 'altrata-ai-search',
@@ -18,6 +18,10 @@ const comingSoonProject = {
 }
 
 const cardCopy: Record<string, { title: string; achievements: string[] }> = {
+  'altrata-pathfinder': {
+    title: 'Keeping relationship paths readable',
+    achievements: ['Preserved context through long relationship paths', 'Aligned visual signals to make strength easier to compare', 'Owned the redesign from diagnosis through implementation review'],
+  },
   'altrata-boolean-search': {
     title: 'A scalable Boolean search framework',
     achievements: ['Reduced time to create an actionable prospect list by 64%', 'Reached 42% Boolean adoption among multi-filter search users within 45 days', '72% of Boolean queries led to a meaningful downstream action'],

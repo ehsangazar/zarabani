@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import PageMeta from '../components/PageMeta'
 import ProjectGrid from '../components/ProjectGrid'
 import WritingGrid from '../components/WritingGrid'
+import PortfolioChat from '../components/PortfolioChat'
 
 export default function Home() {
   return <div className="ms-page">
@@ -38,6 +39,7 @@ export default function Home() {
       </dl>
       </div>
     </header>
+    <PortfolioChat />
     <section className="ms-section ms-home-work" aria-labelledby="selected-work">
       <div className="ms-section-heading ms-home-work__heading"><div><p className="ms-eyebrow">Selected work</p><h2 id="selected-work">Thoughtful design. Useful outcomes.</h2></div><Link className="ms-secondary-link" to="/projects">All projects ↗</Link></div>
       <ProjectGrid limit={5} />

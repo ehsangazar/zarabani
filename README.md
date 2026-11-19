@@ -4,6 +4,10 @@ Portfolio website for Zara Bani, Product & UX Designer.
 
 Built with React, TypeScript, Vite, and Tailwind CSS.
 
+## AI portfolio chat
+
+The homepage assistant is a frontend-only demo with prepared portfolio answers. No backend, API key, or external AI calls are required. See [demo notes](docs/portfolio-chat.md).
+
 ## Deployment
 
 This site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch.

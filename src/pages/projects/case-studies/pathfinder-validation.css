@@ -1,0 +1,35 @@
+.pf-validation { margin-top: 64px; padding-top: 64px; border-top: 1px solid #e5e5eb; color: var(--ms-ink, #20212a); scroll-margin-top: 120px; }
+.pf-validation .pf-validation__eyebrow { margin: 0 0 16px; color: var(--ms-accent, #513deb); font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.pf-validation h2 { max-width: 850px; margin: 0 0 24px; font-size: clamp(2rem, 3.8vw, 2.75rem); line-height: 1.15; letter-spacing: -.035em; font-weight: 650; }
+.pf-validation h3 { margin: 0 0 14px; font-size: 1.4rem; line-height: 1.35; letter-spacing: -.025em; font-weight: 600; }
+.pf-validation h4 { margin: 0 0 12px; font-size: 1.125rem; line-height: 1.4; font-weight: 600; }
+.pf-validation p { margin: 0; font-size: 1rem; line-height: 1.75; color: var(--ms-muted, #62636b); }
+.pf-validation header > p:last-child { max-width: 900px; font-size: 1.125rem; }
+.pf-validation__method { display: grid; grid-template-columns: .65fr 1fr 1.35fr 1.2fr; gap: 24px; padding: 28px; margin: 32px 0 24px; border: 1px solid #e5e5eb; border-radius: 10px; background: #fafafb; }
+.pf-validation__method dt { font-size: .875rem; margin-bottom: 12px; color: var(--ms-muted, #62636b); }
+.pf-validation__method dd { margin: 0; font-size: 1rem; font-weight: 550; line-height: 1.5; }
+.pf-validation__method > div:first-child dd { font-size: 2rem; line-height: 1.1; }
+.pf-validation__focus, .pf-validation__insights { margin-top: 48px; }
+.pf-validation__questions, .pf-validation__findings { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.pf-validation__questions > div { padding-top: 20px; border-top: 2px solid #d9d4ee; }
+.pf-validation__questions > div:first-child { border-color: #513deb; }
+.pf-validation__questions span, .pf-validation__routes span { display: block; font-size: .875rem; color: var(--ms-muted, #62636b); margin-bottom: 12px; }
+.pf-validation__questions h3 { font-size: 1.2rem; }
+.pf-validation__access { margin-top: 48px; padding: 32px; background: #fafafb; border: 1px solid #e5e5eb; border-radius: 10px; }
+.pf-validation__routes { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 28px 0; }
+.pf-validation__routes > div { padding: 22px; background: #fff; border: 1px solid #e5e5eb; border-radius: 8px; }
+.pf-validation__routes > div + div { border-color: #d8d0fb; background: #f5f3ff; }
+.pf-validation__ready { border-top: 1px solid #e5e5eb; padding-top: 24px; }
+.pf-validation__brand-heading { display: flex; align-items: center; gap: 12px; }
+.pf-validation__brand-heading img { width: 28px; height: 28px; object-fit: contain; flex-shrink: 0; }
+.pf-validation__access > .pf-validation__brand-heading img { width: 34px; height: 34px; }
+.pf-validation__ready strong { display: block; font-size: 1.125rem; font-weight: 600; margin-bottom: 8px; }
+.pf-validation__findings { margin-top: 28px; }
+.pf-validation__findings > div { border-top: 1px solid #e5e5eb; padding-top: 24px; }
+.pf-validation__next { margin-top: 36px; padding: 28px 32px; background: #f5f3ff; border-left: 3px solid #513deb; }
+@media(max-width:760px) {
+  .pf-validation { margin-top: 48px; padding-top: 44px; }
+  .pf-validation__method { grid-template-columns: 1fr 1fr; padding: 24px; }
+  .pf-validation__questions, .pf-validation__findings, .pf-validation__routes { grid-template-columns: 1fr; gap: 24px; }
+  .pf-validation__access, .pf-validation__next { padding: 24px; }
+}

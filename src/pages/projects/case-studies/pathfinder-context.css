@@ -1,0 +1,43 @@
+.pf-context { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--ms-line, #e5e5eb); color: var(--ms-ink, #20212a); }
+.pf-context .pf-context__eyebrow { margin: 0 0 16px; color: var(--ms-accent, #513deb); font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.pf-context h2 { margin: 0 0 24px; font-size: clamp(2rem, 3.8vw, 2.75rem); line-height: 1.15; letter-spacing: -.035em; font-weight: 650; }
+.pf-context p { font-size: 1rem; line-height: 1.75; color: var(--ms-muted, #62636b); margin: 0; }
+.pf-context .pf-context__intro { max-width: 800px; font-size: 1.125rem; }
+.pf-context h3 { margin: 0 0 12px; font-size: 1.25rem; line-height: 1.4; font-weight: 600; letter-spacing: -.02em; }
+.pf-context__audiences { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; padding: 32px; margin: 36px 0 52px; background: #fafafb; border: 1px solid var(--ms-line, #e5e5eb); border-radius: 10px; }
+.pf-context__audiences svg { width: 26px; height: 26px; color: #62636b; margin-bottom: 18px; }
+.pf-context__diagram { margin: 28px 0 0; }
+.pf-context__diagram-scroll { padding: 24px 12px 8px; background: #f7f8fa; border: 1px solid #e5e8ed; border-radius: 10px; overflow-x: auto; }
+.pf-context__diagram svg { display: block; width: 100%; min-width: 650px; font-family: inherit; }
+.pf-context__column-labels { fill: #626a78; font-size: 12px; letter-spacing: 1px; }
+.pf-context__node-labels { font-size: 16px; font-weight: 550; }
+.pf-context__node-notes { font-size: 13px; }
+.pf-context__diagram figcaption { margin-top: 12px; font-size: .875rem; line-height: 1.6; color: var(--ms-muted, #62636b); }
+.pf-context__strength { display: grid; grid-template-columns: 1fr 1.65fr; gap: 40px; padding: 32px 0; margin-top: 16px; }
+.pf-context__strength p + p { margin-top: 8px; }
+.pf-context__business { margin-top: 20px; padding: 28px 32px; border-left: 3px solid #513deb; background: #f5f3ff; }
+.pf-context__business p:last-child { max-width: 850px; }
+.pf-context__audiences { margin-bottom: 0; }
+.pf-context__jobs { margin: 0 0 72px; text-align: center; }
+.pf-context__merge { height: 64px; margin-bottom: 16px; }
+.pf-context__merge svg { display: block; width: 100%; height: 100%; fill: none; stroke: #b9aeef; stroke-width: 1.5; }
+.pf-context__job-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 52px; text-align: left; }
+.pf-context__job-grid::before { content: ''; position: absolute; top: -28px; left: 25%; right: 25%; height: 28px; border: 1.5px solid #b9aeef; border-bottom: 0; border-radius: 8px 8px 0 0; }
+.pf-context__job-grid::after { content: ''; position: absolute; top: -48px; left: 50%; height: 20px; border-left: 1.5px solid #b9aeef; }
+.pf-context__job-grid > div { display: flex; flex-direction: column; border-top: 2px solid #d9d4ee; padding-top: 22px; }
+.pf-context__capability { display: flex; flex-direction: column; align-items: center; gap: 18px; padding-top: 24px; margin-top: auto; color: #513deb; }
+.pf-context__capability svg { width: 24px; height: 32px; flex-shrink: 0; }
+.pf-context__capability span { display: block; box-sizing: border-box; width: 100%; padding: 24px; border: 1px solid #d8d0ff; border-radius: 10px; background: #f5f3ff; text-align: center; font-size: 1.375rem; line-height: 1.4; font-weight: 650; letter-spacing: -.02em; }
+.pf-context__job-grid h4 { font-size: 1.125rem; font-weight: 600; margin: 0 0 12px; }
+@media (max-width: 760px) {
+  .pf-context__job-grid { grid-template-columns: 1fr; margin-top: 28px; }
+  .pf-context__job-grid::before, .pf-context__job-grid::after { display: none; }
+  .pf-context__merge { height: 36px; }
+  .pf-context__merge svg { display: none; }
+  .pf-context__merge::after { content: ''; display: block; height: 100%; width: 0; margin-inline: auto; border-left: 1.5px solid #b9aeef; }
+  .pf-context { margin-top: 56px; padding-top: 44px; }
+  .pf-context__audiences { grid-template-columns: 1fr; gap: 28px; padding: 24px; margin-bottom: 0; }
+  .pf-context__audiences svg { margin-bottom: 12px; }
+  .pf-context__strength { grid-template-columns: 1fr; gap: 4px; }
+  .pf-context__business { padding: 24px; }
+}

@@ -2,6 +2,7 @@ import { type ComponentType } from 'react'
 import Omaia from '../pages/projects/case-studies/Omaia'
 import FocusedLearning from '../pages/projects/case-studies/FocusedLearning'
 import AltrataBooleanSearch from '../pages/projects/case-studies/AltrataBooleanSearch'
+import Pathfinder from '../pages/projects/case-studies/PathfinderOpening'
 
 export interface CaseStudy {
   id: string
@@ -25,6 +26,19 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
 
   try {
     const caseStudies: CaseStudy[] = [
+      {
+        id: 'altrata-pathfinder',
+        title: 'From tangled paths to meaningful connections',
+        description: "Redesigning Pathfinder's relationship-mapping experience",
+        category: 'Product Design Case Study',
+        technologies: ['Interaction Design', 'Visual Design', 'Prototyping', 'Usability Testing', 'Product Collaboration', 'Enterprise SaaS'],
+        achievements: [
+          'Reframed visual fatigue as loss of context during scrolling',
+          'Designed persistent anchors, grouped paths and a clearer strength hierarchy',
+          'Validated current-overlap indicators with counterbalanced internal evaluation and client feedback',
+        ],
+        component: Pathfinder,
+      },
       {
         id: 'altrata-boolean-search',
         title: 'Turning a parity request into a scalable Boolean search framework for an enterprise data platform',

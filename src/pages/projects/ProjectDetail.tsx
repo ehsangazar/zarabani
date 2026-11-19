@@ -5,6 +5,7 @@ import { allProjects, type Project } from '../../utils/projects'
 import ProjectDetailTemplate from './ProjectDetailTemplate'
 import PageMeta from '../../components/PageMeta'
 import Icon from '../../components/Icon'
+import MoreCaseStudies from '../../components/MoreCaseStudies'
 import DocumentManagement from './case-studies/DocumentManagement'
 import LibraryPlatform from './case-studies/LibraryPlatform'
 import CompanyWebsite from './case-studies/CompanyWebsite'
@@ -144,6 +145,7 @@ const ProjectDetail = () => {
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             {caseStudy.component && <caseStudy.component />}
+            <MoreCaseStudies currentId={caseStudy.id} />
           </div>
         </section>
       </div>

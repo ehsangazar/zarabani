@@ -1,0 +1,29 @@
+.more-case-studies {
+  max-width: 1040px;
+  margin: 64px auto 0;
+  padding-top: 32px;
+  border-top: 1px solid #e5e5eb;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.more-case-studies > a,
+.more-case-studies > button {
+  padding: 12px 18px;
+  border: 1px solid #d5cfef;
+  border-radius: 6px;
+  background: #f5f3ff;
+  color: #513deb;
+  font: inherit;
+  font-size: .875rem;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+}
+.more-case-studies > a:hover { background: #ebe6ff; border-color: #b9aeef; }
+.more-case-studies > button:disabled { background: #f6f6f7; color: #96969e; border-color: #e5e5eb; cursor: not-allowed; }
+.more-case-studies > a:focus-visible { outline: 3px solid #7964ed; outline-offset: 4px; }
+@media(max-width:420px) {
+  .more-case-studies { gap: 12px; }
+  .more-case-studies > a, .more-case-studies > button { flex: 1; padding: 12px; }
+}

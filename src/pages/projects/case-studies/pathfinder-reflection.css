@@ -1,0 +1,16 @@
+.pf-reflection-close { margin-top: 64px; padding: 64px 0 12px; border-top: 1px solid #e5e5eb; color: var(--ms-ink, #20212a); scroll-margin-top: 120px; }
+.pf-reflection-close .pf-reflection-close__eyebrow { margin: 0 0 16px; color: var(--ms-accent, #513deb); font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.pf-reflection-close h2 { max-width: 850px; margin: 0 0 24px; font-size: clamp(2rem, 3.8vw, 2.75rem); line-height: 1.15; letter-spacing: -.035em; font-weight: 650; }
+.pf-reflection-close h3 { margin: 0 0 14px; font-size: 1.3rem; line-height: 1.4; letter-spacing: -.02em; font-weight: 600; }
+.pf-reflection-close p { margin: 0; font-size: 1rem; line-height: 1.75; color: var(--ms-muted, #62636b); }
+.pf-reflection-close header > p:last-child { max-width: 900px; font-size: 1.125rem; }
+.pf-reflection-close__lessons { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 36px; }
+.pf-reflection-close__lessons > div { border-top: 1px solid #e5e5eb; padding-top: 24px; }
+.pf-reflection-close__lessons strong { color: var(--ms-ink, #20212a); font-weight: 600; }
+.pf-reflection-close__takeaway { margin-top: 40px; padding: 32px; background: #f5f3ff; border-left: 3px solid #513deb; }
+.pf-reflection-close__takeaway > p:last-child { color: var(--ms-ink, #20212a); font-size: clamp(1.3rem, 2.3vw, 1.75rem); line-height: 1.5; letter-spacing: -.025em; }
+@media(max-width:760px) {
+  .pf-reflection-close { margin-top: 48px; padding-top: 44px; }
+  .pf-reflection-close__lessons { grid-template-columns: 1fr; gap: 28px; }
+  .pf-reflection-close__takeaway { padding: 24px; }
+}
