@@ -167,7 +167,7 @@ const BlogDetail = () => {
           <p className="text-primary-dark/60 mb-8">{error || 'The post you\'re looking for does not exist.'}</p>
           <Link
             to="/blog"
-            className="bg-primary text-on-primary px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors inline-block"
+            className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors inline-block"
           >
             Back to Blog
           </Link>
@@ -177,7 +177,7 @@ const BlogDetail = () => {
   }
 
   return (
-    <div className="ds-scheme-light min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <PageMeta
         title={post.metadata.title}
         description={post.metadata.excerpt}
@@ -190,13 +190,19 @@ const BlogDetail = () => {
       {/* Reading Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200 z-50">
         <div 
-          className="h-full bg-primary transition-all duration-150"
+          className="h-full bg-gradient-to-r from-primary to-warm transition-all duration-150"
           style={{ width: `${readingProgress}%` }}
         ></div>
       </div>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-warm/40 via-warm/20 to-neutral/20 pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Animated background */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-warm/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+
         <div className="max-w-4xl mx-auto relative z-10">
           {/* Title */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-dark mb-8 leading-tight">
@@ -232,7 +238,7 @@ const BlogDetail = () => {
             <span className="text-sm font-semibold text-primary-dark/60">Share:</span>
             <button
               onClick={shareOnLinkedIn}
-              className="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-lg hover:bg-primary-dark transition-colors text-sm font-semibold"
+              className="flex items-center gap-2 px-4 py-2 bg-[#09244c] text-white rounded-lg hover:bg-[#06162e] transition-colors text-sm font-semibold"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -241,7 +247,7 @@ const BlogDetail = () => {
             </button>
             <button
               onClick={shareOnTwitter}
-              className="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-lg hover:bg-primary-dark transition-colors text-sm font-semibold"
+              className="flex items-center gap-2 px-4 py-2 bg-[#12366f] text-white rounded-lg hover:bg-[#09244c] transition-colors text-sm font-semibold"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
@@ -271,7 +277,7 @@ const BlogDetail = () => {
       </section>
 
       {/* Breadcrumb */}
-      <section className="bg-white border-b border-neutral/30 py-4 px-4 sm:px-6 lg:px-8 sticky top-1 z-40">
+      <section className="bg-white border-b border-neutral/30 py-4 px-4 sm:px-6 lg:px-8 sticky top-1 z-40 backdrop-blur-lg bg-white/95">
         <div className="max-w-7xl mx-auto">
           <nav className="flex items-center gap-2 text-sm">
             <Link
@@ -300,7 +306,7 @@ const BlogDetail = () => {
       </section>
 
       {/* Main Content with Sidebar */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-warm">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="lg:grid lg:grid-cols-12 lg:gap-12">
             {/* Table of Contents - Sidebar (only when post has sections with ids) */}
@@ -321,7 +327,7 @@ const BlogDetail = () => {
                           onClick={() => scrollToSection(section.id)}
                           className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-all ${
                             activeSection === section.id
-                              ? 'bg-primary text-on-primary font-semibold'
+                              ? 'bg-primary text-white font-semibold'
                               : 'text-primary-dark/70 hover:bg-primary/10 hover:text-primary'
                           }`}
                         >
@@ -380,7 +386,7 @@ const BlogDetail = () => {
                         className="group bg-white rounded-xl shadow-lg shadow-primary/5 border border-neutral/30 overflow-hidden hover:shadow-2xl hover:shadow-primary/15 transition-all duration-300 hover:-translate-y-1"
                       >
                         {relatedPost.metadata.featuredImage && (
-                          <div className="relative h-48 overflow-hidden bg-warm">
+                          <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-warm/20">
                             <img
                               src={relatedPost.metadata.featuredImage}
                               alt={relatedPost.metadata.title}

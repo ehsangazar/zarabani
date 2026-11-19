@@ -24,7 +24,7 @@ export default function MinimalShell({ children }: { children: ReactNode }) {
       <main id="main-content" tabIndex={-1}>{children}</main>
       <footer className="ms-footer">
         <div><Link to="/">Zara Bani</Link><p>Product & UX designer · London, UK</p></div>
-        <div className="ms-footer-links"><Link to="/design-system">Design system</Link><a href="mailto:me@zarabani.design">Email ↗</a><a href={linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a><span>© {new Date().getFullYear()}</span></div>
+        <div className="ms-footer-links"><a href="mailto:me@zarabani.design">Email ↗</a><a href={linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a><span>© {new Date().getFullYear()}</span></div>
       </footer>
     </div>
   )

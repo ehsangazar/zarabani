@@ -1,45 +1,8 @@
-import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import PageMeta from '../components/PageMeta'
 import { staticPageMeta } from '../utils/routeMeta'
 import ProjectGrid from '../components/ProjectGrid'
 import WritingGrid from '../components/WritingGrid'
-import MetricRow from '../components/MetricRow'
-import { heroMetrics } from '../utils/heroMetrics'
-
-const AGENT_STATUSES = [
-  'Open to Product Designer roles',
-  'Designing AI features people can trust',
-  'London, UK · hybrid',
-]
-
-function AgentStatus() {
-  const [i, setI] = useState(0)
-  const [shown, setShown] = useState(AGENT_STATUSES[0])
-  useEffect(() => {
-    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return
-    let cancelled = false
-    let timer: number
-    const typeNext = (next: number) => {
-      const text = AGENT_STATUSES[next]
-      let n = 0
-      const step = () => {
-        if (cancelled) return
-        n += 1
-        setShown(text.slice(0, n))
-        if (n < text.length) timer = window.setTimeout(step, 28)
-        else timer = window.setTimeout(() => { setI(next); typeNext((next + 1) % AGENT_STATUSES.length) }, 3200)
-      }
-      step()
-    }
-    timer = window.setTimeout(() => typeNext(1), 3200)
-    return () => { cancelled = true; window.clearTimeout(timer) }
-  }, [])
-  return <>
-    <span className="visually-hidden">Product Designer in London, UK, open to Product Designer roles (hybrid)</span>
-    <span className="ms-agent-line" aria-hidden="true"><code>zara.status</code><span className="ms-agent-status" data-i={i}>{shown}</span><span className="ms-agent-caret" /></span>
-  </>
-}
 
 export default function Home() {
   return <div className="ms-page">
@@ -48,7 +11,7 @@ export default function Home() {
       <div className="ms-home-intro-copy">
         <div className="ms-home-hero-grid">
           <div className="ms-home-hero-copy">
-            <p className="ms-eyebrow ms-home-location"><span aria-hidden="true" /> <AgentStatus /></p>
+            <p className="ms-eyebrow ms-home-location"><span aria-hidden="true" /> Product Designer · London, UK · Open to Product Designer roles (hybrid)</p>
             <h1>Product Designer for <span>AI-native B2B products</span></h1>
             <p>I design complex, data-heavy workflows and AI features people can trust, from research to shipped, measured results.</p>
             <div className="ms-home-actions">
@@ -57,8 +20,8 @@ export default function Home() {
             </div>
           </div>
           <div className="ms-home-hero-visual">
-            <span className="ms-home-portrait-greeting">Hi, I’m Zara.</span>
             <div className="ms-home-portrait-stage">
+              <span className="ms-home-portrait-greeting">Hi, I’m Zara.</span>
               <img className="ms-home-portrait" src="/zara-cutout.png" alt="Zara Bani" width="509" height="600" />
             </div>
             <div className="ms-home-portrait-note">
@@ -68,7 +31,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-      <MetricRow className="ms-hero-stats" metrics={heroMetrics} />
+      <dl className="ms-hero-stats">
+        <div><dt>Faster prospect-list creation at Altrata</dt><dd>65%</dd></div>
+        <div><dt>Better first-pass accuracy with AI-assisted validation at BetterBoard</dt><dd>70%</dd></div>
+        <div><dt>Feature adoption in three months for an EdTech learning hub</dt><dd>87%</dd></div>
+      </dl>
       </div>
     </header>
     <section className="ms-section ms-home-work" aria-labelledby="selected-work">
@@ -87,19 +54,11 @@ export default function Home() {
         <aside className="ms-hero-framework" aria-label="My approach connects users, technology and business to turn complexity into clarity">
           <p className="ms-hero-framework__label">Where I work best</p>
           <div className="ms-hero-framework__map" aria-hidden="true">
-            <svg className="ms-venn" viewBox="0 0 360 330" role="presentation">
-              <circle className="ms-venn__c ms-venn__c--users" cx="180" cy="128" r="74" />
-              <circle className="ms-venn__c ms-venn__c--tech" cx="138" cy="200" r="74" />
-              <circle className="ms-venn__c ms-venn__c--biz" cx="222" cy="200" r="74" />
-              <circle className="ms-venn__core" cx="180" cy="176" r="35" />
-              <text className="ms-venn__centre" x="180" y="182" textAnchor="middle">Clarity</text>
-              <text className="ms-venn__t" x="180" y="24" textAnchor="middle">Users</text>
-              <text className="ms-venn__s" x="180" y="42" textAnchor="middle">needs and research</text>
-              <text className="ms-venn__t" x="64" y="300" textAnchor="middle">Technology</text>
-              <text className="ms-venn__s" x="64" y="318" textAnchor="middle">AI and systems</text>
-              <text className="ms-venn__t" x="296" y="300" textAnchor="middle">Business</text>
-              <text className="ms-venn__s" x="296" y="318" textAnchor="middle">value and metrics</text>
-            </svg>
+            <svg viewBox="0 0 360 290" preserveAspectRatio="none"><path d="M180 42 180 132M61 228 145 168M299 228 215 168" /></svg>
+            <span className="ms-hero-node ms-hero-node--users">Users</span>
+            <span className="ms-hero-node ms-hero-node--technology">Technology</span>
+            <span className="ms-hero-node ms-hero-node--business">Business</span>
+            <div className="ms-hero-framework__centre"><small>Turning complexity into</small><strong>Clarity</strong></div>
           </div>
           <p className="ms-hero-framework__focus">AI-powered products · B2B SaaS · B2C · data-heavy systems</p>
           <p className="ms-hero-framework__journey">Discovery → strategy → interaction → shipped product</p>

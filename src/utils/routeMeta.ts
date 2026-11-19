@@ -38,11 +38,6 @@ export const staticPageMeta = {
     title: 'Contact',
     description: 'Get in touch with Zara Bani for new opportunities and collaborations.',
   },
-  designSystem: {
-    path: '/design-system',
-    title: 'Design system',
-    description: 'The design system behind this portfolio: colour tokens with measured contrast, the type and spacing scales, core components and the accessibility rules they follow.',
-  },
   resume: {
     path: '/resume',
     title: 'Zara Bani - Product Designer Resume',

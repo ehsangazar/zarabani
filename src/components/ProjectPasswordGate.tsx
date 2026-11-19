@@ -7,7 +7,6 @@ import {
   projectPassword,
 } from '../utils/projectPassword'
 import { caseStudySummaries } from '../utils/caseStudySummaries'
-import SpecBox from './SpecBox'
 
 interface ProjectPasswordGateProps {
   children: ReactNode
@@ -42,18 +41,17 @@ const ProjectPasswordGate = ({ children }: ProjectPasswordGateProps) => {
     <section className="cs-gate">
       {summary && (
         // No heading element here: the gate's h1 stays the page's first heading.
-        <SpecBox
-          eyebrow="At a glance"
-          title={summary.title}
-          label={`${summary.title}, at a glance`}
-          rows={[
-            ...(summary.role ? [{ label: 'Role', value: summary.role }] : []),
-            ...(summary.company ? [{ label: 'Company', value: summary.company }] : []),
-            ...(summary.when ? [{ label: 'When', value: summary.when }] : []),
-            { label: 'Problem', value: summary.problem },
-            { label: 'Outcome', value: summary.outcome },
-          ]}
-        />
+        <aside className="cs-summary" aria-label={`${summary.title}, at a glance`}>
+          <p className="cs-summary__eyebrow">At a glance</p>
+          <p className="cs-summary__title">{summary.title}</p>
+          <dl>
+            {summary.role && <div><dt>Role</dt><dd>{summary.role}</dd></div>}
+            {summary.company && <div><dt>Company</dt><dd>{summary.company}</dd></div>}
+            {summary.when && <div><dt>When</dt><dd>{summary.when}</dd></div>}
+            <div><dt>Problem</dt><dd>{summary.problem}</dd></div>
+            <div><dt>Outcome</dt><dd>{summary.outcome}</dd></div>
+          </dl>
+        </aside>
       )}
       <div className="cs-gate__panel">
           <p className="cs-gate__eyebrow">Protected project</p>
@@ -75,7 +73,7 @@ const ProjectPasswordGate = ({ children }: ProjectPasswordGateProps) => {
             />
             {error && <p className="cs-gate__error" role="alert">{error}</p>}
 
-            <button type="submit" className="ms-primary-link">View case study <span aria-hidden="true">↗</span></button>
+            <button type="submit">View case study <span aria-hidden="true">↗</span></button>
           </form>
 
           <Link to="/projects" className="cs-gate__back">← Back to case studies</Link>
