@@ -35,12 +35,19 @@
 .pf-release__ownership { margin-top: 36px; padding: 28px 32px; background: #f5f3ff; border-left: 3px solid #513deb; }
 .pf-release__business-outcome { margin-top: 56px; padding-top: 48px; border-top: 1px solid #e5e5eb; }
 .pf-release__business-outcome p + p { margin-top: 20px; }
+.pf-release__retention-result { display: flex; align-items: center; gap: 28px; padding: 32px; margin-top: 28px; background: #f5f3ff; border-left: 3px solid #513deb; }
+.pf-release__retention-result > strong { color: #513deb; font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: 1; letter-spacing: -.045em; }
+.pf-release__retention-result h4 { margin: 0 0 8px; font-size: 1.25rem; }
 .pf-release__business-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 28px 0; padding: 28px 0; border-block: 1px solid #e5e5eb; }
-.pf-release__business-metrics strong { display: block; font-size: clamp(1.4rem, 2.7vw, 2rem); line-height: 1.25; margin-bottom: 10px; }
+.pf-release__business-metrics strong { display: flex; align-items: center; gap: 12px; font-size: clamp(1.4rem, 2.7vw, 2rem); line-height: 1.25; margin-bottom: 10px; }
+.pf-release__trend { width: 28px; height: 28px; flex-shrink: 0; }
+.pf-release__trend--up { color: #21864b; }
+.pf-release__trend--down { color: #cf3947; }
 .pf-release__business-metrics span { color: var(--ms-muted, #62636b); font-size: .875rem; }
 .pf-release__business-outcome a { color: #513deb; text-underline-offset: 4px; }
 .pf-release .pf-release__business-takeaway { color: var(--ms-ink, #20212a); font-weight: 550; }
 @media(max-width:760px) {
+  .pf-release__retention-result { flex-wrap: wrap; gap: 20px; padding: 24px; }
   .pf-release { margin-top: 48px; padding-top: 44px; }
   .pf-release__business-metrics { grid-template-columns: 1fr; gap: 24px; }
   .pf-release__scope, .pf-release__rollout ol, .pf-release__feedback-cards, .pf-release__cadence, .pf-release__metrics { grid-template-columns: 1fr; gap: 24px; }
