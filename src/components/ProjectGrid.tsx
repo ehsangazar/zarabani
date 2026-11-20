@@ -4,7 +4,7 @@ import { getAllCaseStudies } from '../utils/caseStudies'
 import { allProjects } from '../utils/projects'
 import ProjectPreview from './ProjectPreview'
 
-const featuredOrder = ['altrata-boolean-search', 'altrata-pathfinder', 'focused-learning', 'altrata-ai-search', 'document-management', 'omaia']
+const featuredOrder = ['altrata-pathfinder', 'altrata-boolean-search', 'focused-learning', 'altrata-ai-search', 'document-management', 'omaia']
 
 const comingSoonProject = {
   id: 'altrata-ai-search',
