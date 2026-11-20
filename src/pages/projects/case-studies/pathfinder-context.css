@@ -48,3 +48,6 @@
   .pf-context__business-goal, .pf-context__business-response { padding: 24px; }
   .pf-context__business-arrow { transform: rotate(90deg); justify-self: center; }
 }
+
+.pf-context__job-grid h4 { display: flex; align-items: center; gap: 12px; }
+.pf-context__job-icon { width: 24px; height: 24px; flex-shrink: 0; color: #62636b; }
