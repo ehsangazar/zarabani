@@ -32,9 +32,9 @@ export default function Home() {
           </div>
         </div>
       <dl className="ms-hero-stats">
-        <div><dt>Faster prospect-list creation at Altrata</dt><dd>65%</dd></div>
-        <div><dt>Better first-pass accuracy with AI-assisted validation at BetterBoard</dt><dd>70%</dd></div>
-        <div><dt>Feature adoption in three months for an EdTech learning hub</dt><dd>87%</dd></div>
+        <div><dt>Customer retention across Altrata’s migration effort, supported by the Pathfinder redesign</dt><dd>80%</dd></div>
+        <div><dt>Boolean searches led to an export, save, list addition or share at Altrata</dt><dd>72%</dd></div>
+        <div><dt>Learning-hub adoption within three months</dt><dd>87%</dd></div>
       </dl>
       </div>
     </header>
