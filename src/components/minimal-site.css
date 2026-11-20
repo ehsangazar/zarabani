@@ -258,6 +258,13 @@
 .minimal-site .project-card--coming-soon:hover h3 { color: var(--ms-ink); }
 .minimal-site .project-card .project-preview { height: 100%; min-height: 440px; padding: 0; border: 0; border-radius: 0; align-items: center; justify-content: flex-start; overflow: hidden; background: transparent; }
 .minimal-site .project-card .project-preview__mockup { position: absolute; top: 32px; left: 32px; width: 185%; margin-left: 0; transform: rotate(-4deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .minimal-site .project-card .project-preview__mockup { transition: scale 450ms ease, translate 450ms ease; }
+  .minimal-site .project-card:focus-visible .project-preview__mockup { scale: 1.04; translate: -6px -8px; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .minimal-site .project-card:hover .project-preview__mockup { scale: 1.04; translate: -6px -8px; }
+}
 .minimal-site .project-card .project-preview--altrata-ai-search .project-preview__mockup { top: 30px; left: 28px; width: 185%; height: 86%; transform: rotate(-4deg); }
 .minimal-site .project-card .project-preview--altrata-ai-search .project-preview__display { height: 100%; }
 .minimal-site .project-card .project-preview--altrata-ai-search .project-preview__screen { height: calc(100% - 15px); }
