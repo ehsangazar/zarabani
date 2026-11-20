@@ -357,6 +357,7 @@
 .ms-hero-framework__journey { margin: 8px 0 0; color: #747581; font-size: 11px; line-height: 1.5; text-align: center; }
 .ms-home-intro .ms-hero-stats { position: relative; z-index: 2; margin: 48px -26px -42px; padding: 22px 24px; border: 1px solid #e2e1e8; border-radius: 18px; background: rgba(255, 255, 255, .96); box-shadow: 0 18px 45px rgba(31, 27, 54, .11); }
 .ms-home-intro .ms-hero-stats dd { color: var(--ms-ink); }
+.ms-home-intro .ms-hero-stats dt { text-align: center; }
 .ms-home-work { padding-top: 20px; }
 .ms-home-work__heading { align-items: flex-end; margin-bottom: 30px; }
 .ms-home-work__heading .ms-eyebrow { margin: 0 0 9px; color: var(--ms-accent); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
