@@ -29,5 +29,17 @@ export default function PathfinderRelease() {
       <div><strong><small>Up to </small>60%</strong><h4>Reported increase in client satisfaction</h4><p>Aggregated reporting from Customer Support, Commercial and Account Management, particularly around readability and navigation.</p><span>Client-facing team reporting</span></div>
     </div><p className="pf-release__evidence">These are respondent feedback and aggregated client-team reports. Without a behavioural baseline, they do not establish a measured improvement in task completion time.</p></div>
     <aside className="pf-release__ownership"><p className="pf-release__eyebrow">Ownership beyond delivery</p><h3>Stay accountable after the design ships</h3><p>I helped shape what we released, how we evaluated it in live use, and when we had enough confidence to make the redesigned experience available to every client account.</p></aside>
+    <section className="pf-release__business-outcome" aria-labelledby="pf-business-outcome-title">
+      <p className="pf-release__eyebrow">Back to the business goal</p>
+      <h3 id="pf-business-outcome-title">Contributing to customer retention during migration</h3>
+      <p>Later that quarter, Altrata reported achieving its retention objective. These were company-level outcomes across the broader migration effort:</p>
+      <div className="pf-release__business-metrics">
+        <div><strong>+2 percentage points</strong><span>Reported increase in retention</span></div>
+        <div><strong>No churn reported</strong><span>Within the relevant migrated customer cohort</span></div>
+      </div>
+      <p>Several migration and product experience improvements contributed to that outcome. Pathfinder was one part of that effort: making a core workflow clearer and easier to use so customers could transition confidently to the unified platform.</p>
+      <p>After Pathfinder, I moved on to the other core workflow: <a href="/projects/altrata-boolean-search">Advanced Search</a>.</p>
+      <p className="pf-release__business-takeaway">For me, product ownership meant connecting a problem to business priorities, making deliberate design and release decisions, and evaluating the experience once it reached customers.</p>
+    </section>
   </section>
 }
