@@ -20,7 +20,7 @@ const comingSoonProject = {
 const cardCopy: Record<string, { title: string; achievements: string[] }> = {
   'altrata-pathfinder': {
     title: 'Keeping relationship paths readable',
-    achievements: ['Preserved context through long relationship paths', 'Aligned visual signals to make strength easier to compare', 'Owned the redesign from diagnosis through implementation review'],
+    achievements: ['79% of respondents found actionable connections easy to identify', 'Up to 60% reported increase in client satisfaction', 'Contributed to a wider migration effort that achieved 80% customer retention'],
   },
   'altrata-boolean-search': {
     title: 'A scalable Boolean search framework',
