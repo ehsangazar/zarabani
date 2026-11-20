@@ -11,7 +11,7 @@ export default function Home() {
       <div className="ms-home-intro-copy">
         <div className="ms-home-hero-grid">
           <div className="ms-home-hero-copy">
-            <p className="ms-eyebrow ms-home-location"><span aria-hidden="true" /> Product Designer · London, UK · Open to Product Designer roles (hybrid)</p>
+            <p className="ms-eyebrow ms-home-location"><span aria-hidden="true" /> Product Designer · London, UK · Open to Product Designer roles</p>
             <h1>Product Designer for <span>AI-native B2B products</span></h1>
             <p>I design complex, data-heavy workflows and AI features people can trust, from research to shipped, measured results.</p>
             <div className="ms-home-actions">
