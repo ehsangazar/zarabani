@@ -17,6 +17,7 @@
 .pf-context__strength p + p { margin-top: 8px; }
 .pf-context__business { margin-top: 20px; padding: 28px 32px; border-left: 3px solid #513deb; background: #f5f3ff; }
 .pf-context__business p:last-child { max-width: 850px; }
+.pf-context__business .pf-context__business-approach { margin-top: 16px; }
 .pf-context__audiences { margin-bottom: 0; }
 .pf-context__jobs { margin: 0 0 72px; text-align: center; }
 .pf-context__merge { height: 64px; margin-bottom: 16px; }

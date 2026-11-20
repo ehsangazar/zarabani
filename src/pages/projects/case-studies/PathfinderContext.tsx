@@ -53,12 +53,13 @@ export default function PathfinderContext() {
     <header>
       <p className="pf-context__eyebrow">Product context</p>
       <h2 id="pf-context-title">Protecting customer retention through migration</h2>
-      <p className="pf-context__intro">Altrata is a data and relationship intelligence platform used across nonprofit fundraising, wealth management and investment banking. I began by looking at the main jobs these customer segments needed to accomplish.</p>
+      <p className="pf-context__intro">Altrata is a data and relationship intelligence platform used across nonprofit fundraising, wealth management and investment banking.</p>
     </header>
     <aside className="pf-context__business">
       <p className="pf-context__eyebrow">Business context</p>
-      <h3>Preserve trusted workflows through migration</h3>
-      <p>Around 800 customers had already moved from established products to Altrata’s unified platform, with more expected that quarter. Customer retention and preserving the workflows people relied on were major priorities. We needed to identify where the new platform created friction and which improvements would deliver the most value.</p>
+      <h3>Customer retention was a key business KPI that quarter</h3>
+      <p>Around 800 customers had already migrated to Altrata’s unified platform, with more expected that quarter. We needed to minimise disruption to established workflows and address friction that could put retention at risk.</p>
+      <p className="pf-context__business-approach">To identify where design could have the greatest impact on that goal, I started by mapping the core jobs each customer segment relied on and where friction in those journeys could put the migration experience at risk.</p>
     </aside>
     <div className="pf-context__audiences">
       {audiences.map(audience => <div key={audience.name}>
