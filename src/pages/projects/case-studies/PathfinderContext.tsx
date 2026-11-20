@@ -57,13 +57,15 @@ export default function PathfinderContext() {
     </header>
     <aside className="pf-context__business">
       <div className="pf-context__business-goal">
-        <p className="pf-context__eyebrow">Business context</p>
-        <h3>Customer retention was a key business KPI that quarter</h3>
+        <p className="pf-context__eyebrow">Business priority</p>
+        <h3>Protect customer retention during migration</h3>
+        <p className="pf-context__business-approach">Retention was a key business KPI that quarter. Around 800 customers had already migrated, with more expected to follow.</p>
       </div>
       <svg className="pf-context__business-arrow" viewBox="0 0 40 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M1 12h36M29 4l8 8-8 8" /></svg>
       <div className="pf-context__business-response">
-      <p>Around 800 customers had already migrated to Altrata’s unified platform, with more expected that quarter. We needed to minimise disruption to established workflows and address friction that could put retention at risk.</p>
-      <p className="pf-context__business-approach">To identify where design could have the greatest impact on that goal, I started by mapping the core jobs each customer segment relied on and where friction in those journeys could put the migration experience at risk.</p>
+        <p className="pf-context__eyebrow">Product opportunity</p>
+        <h3>Identify friction in the workflows customers rely on</h3>
+        <p>I mapped the core jobs each customer segment relied on to identify where product improvements could support the retention goal: minimising disruption and addressing friction that could put the migration experience at risk.</p>
       </div>
     </aside>
     <div className="pf-context__audiences">
