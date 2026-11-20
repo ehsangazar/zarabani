@@ -14,6 +14,13 @@ export interface CaseStudySummary {
 }
 
 export const caseStudySummaries: Record<string, CaseStudySummary> = {
+  'altrata-pathfinder': {
+    title: 'Altrata: making relationship paths easier to follow',
+    role: 'Product Designer, sole designer from discovery to delivery',
+    company: 'Altrata, data and relationship intelligence',
+    problem: 'Customers migrating to a unified platform struggled to interpret connection strength and navigate complex relationship networks.',
+    outcome: '79% of respondents found actionable connections easy to identify; up to 60% reported increase in client satisfaction. Contributed to a wider migration effort that achieved 89% customer retention.',
+  },
   'altrata-boolean-search': {
     title: 'Altrata: a scalable Boolean search framework',
     role: 'Product Designer, end-to-end design',

@@ -38,7 +38,7 @@ const ProjectPasswordGate = ({ children }: ProjectPasswordGateProps) => {
   }
 
   return (
-    <section className="cs-gate">
+    <section className={`cs-gate${summary ? ' cs-gate--with-summary' : ''}`}>
       {summary && (
         // No heading element here: the gate's h1 stays the page's first heading.
         <aside className="cs-summary" aria-label={`${summary.title}, at a glance`}>
