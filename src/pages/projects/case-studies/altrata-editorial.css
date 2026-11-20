@@ -504,3 +504,6 @@
   .ae-editorial > h3 { font-size: 26px; }
   .ae-split > section, .ae-schematic { padding: 22px; }
 }
+
+.al-final-screen video { display: block; width: 100%; height: auto; border: 1px solid var(--al-line); border-radius: 10px; }
+.al-final-screen figcaption button { background: transparent; border: 0; padding: 0; font: inherit; color: var(--al-copper); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
