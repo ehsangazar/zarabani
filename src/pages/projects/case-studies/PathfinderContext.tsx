@@ -56,10 +56,15 @@ export default function PathfinderContext() {
       <p className="pf-context__intro">Altrata is a data and relationship intelligence platform used across nonprofit fundraising, wealth management and investment banking.</p>
     </header>
     <aside className="pf-context__business">
-      <p className="pf-context__eyebrow">Business context</p>
-      <h3>Customer retention was a key business KPI that quarter</h3>
+      <div className="pf-context__business-goal">
+        <p className="pf-context__eyebrow">Business context</p>
+        <h3>Customer retention was a key business KPI that quarter</h3>
+      </div>
+      <svg className="pf-context__business-arrow" viewBox="0 0 40 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M1 12h36M29 4l8 8-8 8" /></svg>
+      <div className="pf-context__business-response">
       <p>Around 800 customers had already migrated to Altrata’s unified platform, with more expected that quarter. We needed to minimise disruption to established workflows and address friction that could put retention at risk.</p>
       <p className="pf-context__business-approach">To identify where design could have the greatest impact on that goal, I started by mapping the core jobs each customer segment relied on and where friction in those journeys could put the migration experience at risk.</p>
+      </div>
     </aside>
     <div className="pf-context__audiences">
       {audiences.map(audience => <div key={audience.name}>
