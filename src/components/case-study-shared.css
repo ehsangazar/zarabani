@@ -29,7 +29,7 @@
 }
 
 .cs-gate { gap: 24px; }
-.cs-gate--with-summary { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); max-width: 1160px; margin-inline: auto; align-items: stretch; }
+.cs-gate--with-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 1160px; margin-inline: auto; align-items: stretch; }
 .cs-gate--with-summary > * { width: 100%; box-sizing: border-box; }
 @media (max-width: 900px) {
   .cs-gate--with-summary { grid-template-columns: 1fr; }
