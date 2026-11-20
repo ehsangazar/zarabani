@@ -49,7 +49,7 @@ export default function ProjectGrid({ limit }: { limit?: number }) {
         ...studies,
         ...allProjects.filter(project => !studies.some(study => study.id === project.id)),
         comingSoonProject,
-      ]
+      ].filter(project => !['library-platform', 'company-website', 'food-menu-app'].includes(project.id))
       const order = featuredOrder
       setProjects([
         ...order.flatMap(id => combined.filter(project => project.id === id)),
