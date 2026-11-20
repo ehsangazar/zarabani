@@ -55,6 +55,7 @@
 .pathfinder-opening__impact dl > div { display: flex; flex-direction: column; gap: 12px; }
 .pathfinder-opening__impact dl > div + div { border-left: 1px solid #dcd5fa; padding-left: 28px; }
 .pathfinder-opening__impact dt { font-size: 1rem; line-height: 1.5; color: var(--ms-ink, #20212a); }
+.pathfinder-opening__retention-note { display: block; margin-top: 8px; font-size: .8125rem; line-height: 1.5; color: var(--ms-muted, #62636b); }
 .pathfinder-opening__impact dd {
   order: -1;
   margin: 0;

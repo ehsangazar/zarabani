@@ -73,7 +73,7 @@ export default function PathfinderOpening() {
         <h2 id="pathfinder-impact-title">Impact</h2>
         <dl>
           <div><dt>Ease of finding connections</dt><dd>79%</dd></div>
-          <div><dt>Connection-strength clarity</dt><dd>82%</dd></div>
+          <div><dt>Customer retention<small className="pathfinder-opening__retention-note">Exceeded the 78% target · Company-wide migration outcome</small></dt><dd>80%</dd></div>
           <div><dt>Reported client satisfaction increase</dt><dd><span>Up to </span>60%</dd></div>
         </dl>
       </section>
