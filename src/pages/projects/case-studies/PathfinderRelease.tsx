@@ -32,8 +32,8 @@ export default function PathfinderRelease() {
     <section className="pf-release__business-outcome" aria-labelledby="pf-business-outcome-title">
       <p className="pf-release__eyebrow">Back to the business goal</p>
       <h3 id="pf-business-outcome-title">Contributing to customer retention during migration</h3>
-      <p>Later that quarter, Altrata reported retention reaching 80%, exceeding its 78% retention objective by two percentage points. These were company-level outcomes across the broader migration effort:</p>
-      <div className="pf-release__retention-result"><strong>80%</strong><div><h4>Retention achieved</h4><p>Against a 78% retention target</p></div></div>
+      <p>Later that quarter, Altrata reported retention reaching 89%, exceeding its 87% retention objective by two percentage points. These were company-level outcomes across the broader migration effort:</p>
+      <div className="pf-release__retention-result"><strong>89%</strong><div><h4>Retention achieved</h4><p>Against a 87% retention target</p></div></div>
       <div className="pf-release__business-metrics">
         <div><strong><svg className="pf-release__trend pf-release__trend--up" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M12 21V3m-7 7 7-7 7 7" /></svg>+2 percentage points</strong><span>Reported increase in retention</span></div>
         <div><strong><svg className="pf-release__trend pf-release__trend--down" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M12 3v18m-7-7 7 7 7-7" /></svg>No churn reported</strong><span>Within the relevant migrated customer cohort</span></div>

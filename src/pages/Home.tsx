@@ -32,7 +32,7 @@ export default function Home() {
           </div>
         </div>
       <dl className="ms-hero-stats">
-        <div><dt>Customer retention across Altrata’s migration effort, supported by the Pathfinder redesign</dt><dd>80%</dd></div>
+        <div><dt>Customer retention across Altrata’s migration effort, supported by the Pathfinder redesign</dt><dd>89%</dd></div>
         <div><dt>Boolean searches led to an export, save, list addition or share at Altrata</dt><dd>72%</dd></div>
         <div><dt>Learning-hub adoption within three months</dt><dd>87%</dd></div>
       </dl>
