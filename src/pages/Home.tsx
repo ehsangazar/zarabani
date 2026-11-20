@@ -1,10 +1,37 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import PageMeta from '../components/PageMeta'
 import { staticPageMeta } from '../utils/routeMeta'
 import ProjectGrid from '../components/ProjectGrid'
 import WritingGrid from '../components/WritingGrid'
 
+const designContexts = ['AI-native B2B SaaS products', 'B2C experiences', 'enterprise platforms', 'complex data workflows', 'Vibe coding']
+
 export default function Home() {
+  const [contextIndex, setContextIndex] = useState(0)
+  const [previousContext, setPreviousContext] = useState<number | null>(null)
+  useEffect(() => {
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    let timer: ReturnType<typeof setInterval> | undefined
+    let slideTimer: ReturnType<typeof setTimeout> | undefined
+    let currentIndex = 0
+    const update = () => {
+      clearInterval(timer)
+      clearTimeout(slideTimer)
+      currentIndex = 0
+      setContextIndex(0)
+      setPreviousContext(null)
+      if (!motion.matches) timer = setInterval(() => {
+        setPreviousContext(currentIndex)
+        currentIndex = (currentIndex + 1) % designContexts.length
+        setContextIndex(currentIndex)
+        slideTimer = setTimeout(() => setPreviousContext(null), 650)
+      }, 2500)
+    }
+    update()
+    motion.addEventListener('change', update)
+    return () => { clearInterval(timer); clearTimeout(slideTimer); motion.removeEventListener('change', update) }
+  }, [])
   return <div className="ms-page">
     <PageMeta {...staticPageMeta.home} />
     <header className="ms-intro ms-home-intro">
@@ -12,7 +39,7 @@ export default function Home() {
         <div className="ms-home-hero-grid">
           <div className="ms-home-hero-copy">
             <p className="ms-eyebrow ms-home-location"><span aria-hidden="true" /> Product Designer · London, UK · Open to Product Designer roles</p>
-            <h1>Product Designer for <span>AI-native B2B products</span></h1>
+            <h1 aria-label="Product Designer: AI-native B2B SaaS products, B2C experiences, enterprise platforms, complex data workflows and vibe coding">Product Designer <span className="ms-rotating-context" aria-hidden="true">{designContexts.map((context, index) => <span key={context} className={index === contextIndex ? 'is-active' : index === previousContext ? 'is-exiting' : ''}>{context}</span>)}</span></h1>
             <p>I design complex, data-heavy workflows and AI features people can trust, from research to shipped, measured results.</p>
             <div className="ms-home-actions">
               <Link className="ms-text-link ms-primary-link" to="/projects">See case studies <span aria-hidden="true">↗</span></Link>

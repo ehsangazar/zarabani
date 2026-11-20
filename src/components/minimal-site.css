@@ -145,6 +145,15 @@
 
 /* Uxcel-inspired typography and controls, scoped to the portfolio. */
 .ms-home-intro h1 span { color: var(--ms-accent); }
+.ms-home-intro h1 .ms-rotating-context { display: grid; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
+.ms-rotating-context > span { grid-area: 1 / 1; visibility: hidden; }
+.ms-rotating-context > span.is-active { visibility: visible; }
+@media (prefers-reduced-motion: no-preference) {
+  .ms-rotating-context > span.is-active { animation: ms-context-enter 650ms cubic-bezier(.22, 1, .36, 1) both; }
+  .ms-rotating-context > span.is-exiting { visibility: visible; animation: ms-context-exit 650ms cubic-bezier(.22, 1, .36, 1) both; }
+}
+@keyframes ms-context-enter { from { transform: translateY(-115%); } to { transform: translateY(0); } }
+@keyframes ms-context-exit { from { transform: translateY(0); } to { transform: translateY(115%); } }
 .ms-home-intro-copy > p:not(.ms-eyebrow) { font-size: var(--ms-text-base); }
 .ms-brand span { font-weight: 700; }
 .ms-nav a { font-weight: 500; }
@@ -325,7 +334,7 @@
 }
 .ms-home-intro-copy { position: relative; z-index: 1; }
 .ms-home-hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); gap: clamp(38px, 6vw, 76px); align-items: center; }
-.ms-home-hero-copy { max-width: 650px; }
+.ms-home-hero-copy { min-width: 0; max-width: 650px; }
 .ms-home-location { width: max-content; max-width: 100%; display: inline-flex; align-items: center; gap: 9px; margin-bottom: 22px; padding: 7px 11px; border: 1px solid #d8d3f6; border-radius: 999px; background: rgba(255, 255, 255, .68); color: #4e4f5a; font-size: 12px; font-weight: 600; }
 .ms-home-location > span { width: 8px; height: 8px; border-radius: 50%; background: #6bcb77; box-shadow: 0 0 0 3px #6bcb7724; }
 .ms-home-intro h1 { margin-bottom: 24px; font-size: clamp(2.5rem, 5vw, 4.25rem); line-height: 1.02; letter-spacing: -.055em; }
@@ -363,7 +372,7 @@
 .ms-home-work__heading .ms-eyebrow { margin: 0 0 9px; color: var(--ms-accent); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .ms-home-work__heading h2 { max-width: 18ch; font-size: clamp(1.8rem, 3.6vw, 2.7rem); letter-spacing: -.04em; }
 @media (max-width: 900px) {
-  .ms-home-hero-grid { grid-template-columns: 1fr; }
+  .ms-home-hero-grid { grid-template-columns: minmax(0, 1fr); }
   .ms-home-hero-copy { max-width: 720px; }
   .ms-home-hero-visual { max-width: 380px; }
   .ms-hero-framework { max-width: 560px; width: 100%; box-sizing: border-box; margin-inline: auto; }
