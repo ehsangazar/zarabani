@@ -40,7 +40,7 @@ export default function AltrataFinalScreen() {
 
   return <figure className="al-final-screen">
     <video ref={videoRef} muted loop playsInline preload="metadata" poster="/case-studies/altrata/boolean-demo-poster.jpg" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} aria-label="Advanced Search demonstration: adding filters, excluding a location, editing values and removing filters">
-      <source src="/case-studies/altrata/boolean-interaction-demo.mp4" type="video/mp4" />
+      <source src="/case-studies/altrata/boolean-interaction-demo.mp4?v=2" type="video/mp4" />
     </video>
     <figcaption>Final design · Advanced Search in action <button type="button" onClick={togglePlayback}>{playing ? 'Pause animation' : 'Play animation'}</button></figcaption>
   </figure>
