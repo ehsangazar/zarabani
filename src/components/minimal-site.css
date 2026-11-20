@@ -12,7 +12,7 @@
 }
 .minimal-site a { text-decoration: none; }
 .minimal-site a:focus-visible, .minimal-site button:focus-visible { outline: 2px solid var(--ms-focus); outline-offset: 5px; border-radius: 4px; }
-.ms-header { position: sticky; top: 0; z-index: 80; width: 100%; max-width: none; margin: 0 auto; padding: 28px max(40px, calc((100vw - var(--ms-width)) / 2 + 40px)); display: flex; justify-content: space-between; align-items: center; gap: 24px; background: rgba(255, 255, 255, .96); border-bottom: 1px solid var(--ms-line); backdrop-filter: blur(12px); }
+.ms-header { position: sticky; top: 0; z-index: 80; width: 100%; max-width: none; margin: 0 auto; padding: 18px max(40px, calc((100vw - var(--ms-width)) / 2 + 40px)); display: flex; justify-content: space-between; align-items: center; gap: 24px; background: rgba(255, 255, 255, .96); border-bottom: 1px solid var(--ms-line); backdrop-filter: blur(12px); }
 .ms-brand { display: flex; align-items: center; gap: 12px; font-size: var(--ms-text-lg); font-weight: 600; letter-spacing: -.05em; }
 .ms-brand img { width: 42px; height: 48px; object-fit: contain; }
 .ms-brand span { font-size: var(--ms-text-base); letter-spacing: -.02em; font-weight: 500; color: var(--ms-ink); }
@@ -87,7 +87,7 @@
 .minimal-site--article main > div > section:first-of-type button { background: transparent; color: var(--ms-muted); border: 1px solid var(--ms-line); font-weight: 400; }
 .minimal-site--article main > div > section:first-of-type button:hover { background: var(--ms-neutral-surface); color: var(--ms-ink); }
 @media (max-width: 767px) {
-  .ms-header { padding: 22px 24px; flex-wrap: wrap; }
+  .ms-header { padding: 14px 24px; flex-wrap: wrap; }
   .ms-menu { display: block; min-width: 64px; min-height: 44px; font-size: var(--ms-text-sm); cursor: pointer; padding: 8px 12px; border: 1px solid var(--ms-line); border-radius: var(--ms-radius-sm); background: var(--ms-paper); }
   .ms-nav { display: none; width: 100%; flex-wrap: wrap; gap: 10px 24px; border-top: 1px solid var(--ms-line); padding-top: 12px; }
   .ms-nav.is-open { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
